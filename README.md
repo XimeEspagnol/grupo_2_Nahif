@@ -7,3 +7,9 @@ La página web en desarrollo ofrece productos de vestimenta y accesorios de dife
 *Visual Look* [http://visualook.com/es/](http://visualook.com/es/)  
 *Mastromarino* [http://robinmastromarino.com/](http://robinmastromarino.com/)  
 *Baloop* [https://www.baloop.com.ar/](https://www.baloop.com.ar/)  
+
+### Miembros
+
+**Pedro Dinia**
+
+Tengo 29 años soy arquitecto. Nací, crecí y vivo en Cordoba. Disfruto mucho de la música, mis amigos, el futbol y de viajar.
