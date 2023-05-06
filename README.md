@@ -22,6 +22,8 @@ Tengo 29 años soy arquitecto. Nací, crecí y vivo en Cordoba. Disfruto mucho d
 
 **Xime Espagnol**
 
+Tengo 49 años y soy de Buenos Aires. Tengo 2 hijas, trabajo en organización de eventos corporativos y estudié diseño gráfico. Me gusta programar, y tengo conocimientos básicos y me estoy perfeccionando con este curso. 
+
 **Mariana Muñoz**
 
 **Pablo Obregon**
