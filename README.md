@@ -10,6 +10,24 @@ La página web en desarrollo ofrece productos de vestimenta y accesorios de dife
 
 ### Miembros
 
+**Lauti Andrades**
+
+**Juli Carlomagno**
+
 **Pedro Dinia**
 
 Tengo 29 años soy arquitecto. Nací, crecí y vivo en Cordoba. Disfruto mucho de la música, mis amigos, el futbol y de viajar.
+
+**Daza Efrain**
+
+**Xime Espagnol**
+
+**Mariana Muñoz**
+
+**Pablo Obregon**
+
+**Pau Reventós**
+
+
+
+
