@@ -14,6 +14,8 @@ La página web en desarrollo ofrece productos de vestimenta y accesorios de dife
 
 **Juli Carlomagno**
 
+Tengo 23 años y soy de Buenos Aires. Soy bailarina, hice una carrera de danza de 4 años y sigo tomando clases para perfeccionarme. No tengo conocimientos previos de programación pero me está interesando muchísimo.
+
 **Pedro Dinia**
 
 Tengo 29 años soy arquitecto. Nací, crecí y vivo en Cordoba. Disfruto mucho de la música, mis amigos, el futbol y de viajar.
