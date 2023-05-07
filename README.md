@@ -30,7 +30,9 @@ Tengo 49 años y soy de Buenos Aires. Tengo 2 hijas, trabajo en organización de
 
 Tengo 18 años y soy de Buenos Aires. El año pasado termine la secudndaria y tambien un curso de diseño grafico. Empece de 0 con todo esto de la programacion pero de a poco voy sumando conocimientos. 
 
-**Pau Reventós**
+**Pau Raventós**
+
+Tengo 34 años y soy la ciudad de Mar del Plata. Desde que terminé el secundario incursioné en carreras como Bioquímica (de la cual realicé 2 años y medio debido a que tuve que dejar por trabajo), viví algunos meses en Brasil y España, y luego estudié Martillera Pública para mi trabajo actual en Desarrolladora e Inmobiliaria. Estoy arrancando de cero en esto de la programación, con lo cual es mi primera experiencia y la estoy disfrutando mucho!.
 
 
 
