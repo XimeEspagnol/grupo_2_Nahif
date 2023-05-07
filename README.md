@@ -28,6 +28,8 @@ Tengo 49 años y soy de Buenos Aires. Tengo 2 hijas, trabajo en organización de
 
 **Pablo Obregon**
 
+Tengo 18 años y soy de Buenos Aires. El año pasado termine la secudndaria y tambien un curso de diseño grafico. Empece de 0 con todo esto de la programacion pero de a poco voy sumando conocimientos. 
+
 **Pau Reventós**
 
 
