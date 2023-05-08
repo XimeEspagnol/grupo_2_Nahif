@@ -11,7 +11,9 @@ La página web en desarrollo ofrece productos de vestimenta y accesorios de dife
 ### Miembros
 
 **Lauti Andrades**
+
 tengo 19 años , soy de la Pampa. 
+
 **Juli Carlomagno**
 
 Tengo 23 años y soy de Buenos Aires. Soy bailarina, hice una carrera de danza de 4 años y sigo tomando clases para perfeccionarme. No tengo conocimientos previos de programación pero me está interesando muchísimo.
