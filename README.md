@@ -12,7 +12,7 @@ La página web en desarrollo ofrece productos de vestimenta y accesorios de dife
 
 **Lauti Andrades**
 
-tengo 19 años , soy de la Pampa. 
+tengo 19 años y soy de La Pampa.  Me gusta mucho la musica , estudie dos intrumentos y despues decidi continuar aprendiendo solo. es mi primera exper con la programacion y me esta gustando, veo una buena oportunidad para el futuro.
 
 **Juli Carlomagno**
 
