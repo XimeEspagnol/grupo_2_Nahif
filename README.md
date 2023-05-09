@@ -31,6 +31,7 @@ Tengo 28 años y soy de Buenos Aires, actualmente trabajo como personal administ
 Tengo 49 años y soy de Buenos Aires. Tengo 2 hijas, trabajo en organización de eventos corporativos y estudié diseño gráfico. Me gusta programar, y tengo conocimientos básicos y me estoy perfeccionando con este curso. 
 
 **Mariana Muñoz**
+
 Tengo 17 años, soy de Colombia. El año pasado de gradué del colegio y soy estudiante de inglés. Soy nueva en todo lo de programación y no tengo ningún conocimiento previo.
 
 **Pablo Obregon**
