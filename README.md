@@ -2,11 +2,11 @@
 La página web en desarrollo ofrece productos de vestimenta y accesorios de diferentes estilos, que apuntan a un público femenino. 
 
 **Referentes**  
-*Adidas* [(https://www.adidas.com.ar/](https://www.adidas.com.ar/)  
-*Dafiti* [https://www.dafiti.com.ar/femenino/](https://www.dafiti.com.ar/femenino/)  
-*Visual Look* [http://visualook.com/es/](http://visualook.com/es/)  
-*Mastromarino* [http://robinmastromarino.com/](http://robinmastromarino.com/)  
-*Baloop* [https://www.baloop.com.ar/](https://www.baloop.com.ar/)  
+*Adidas* [(https://www.adidas.com.ar/](https://www.adidas.com.ar/) - Referente de estética
+*Dafiti* [https://www.dafiti.com.ar/femenino/](https://www.dafiti.com.ar/femenino/) - Nos interesan los productos que ofrecen y el público al que se lo ofrecen
+*Visual Look* [http://visualook.com/es/](http://visualook.com/es/) - Referente de un probador virtual
+*Mastromarino* [http://robinmastromarino.com/](http://robinmastromarino.com/) - Nos interesa de acá las transiciones
+*Baloop* [https://www.baloop.com.ar/](https://www.baloop.com.ar/) - Lo elegimos por la estética que presenta
 
 ### Miembros
 
