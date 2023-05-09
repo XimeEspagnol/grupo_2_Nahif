@@ -32,7 +32,7 @@ Tengo 49 años y soy de Buenos Aires. Tengo 2 hijas, trabajo en organización de
 
 **Mariana Muñoz**
 
-Tengo 17 años, soy de Colombia. El año pasado de gradué del colegio y soy estudiante de inglés. Soy nueva en todo lo de programación y no tengo ningún conocimiento previo.
+Tengo 17 años, soy de Colombia. El año pasado me gradué del colegio y soy estudiante de inglés en una academia. Soy nueva en todo lo de programación y no tengo ningún conocimiento previo.
 
 **Pablo Obregon**
 
