@@ -23,6 +23,7 @@ Tengo 23 años y soy de Buenos Aires. Soy bailarina, hice una carrera de danza d
 Tengo 29 años soy arquitecto. Nací, crecí y vivo en Cordoba. Disfruto mucho de la música, mis amigos, el futbol y de viajar.
 
 **Daza Efrain**
+
 Tengo 28 años y soy de Buenos Aires, actualmente trabajo como personal administrativo de Policia. Estoy finalizando la carrera de Técnico en Comercio Exterior y en cuanto al curso de programación no tengo conocimientos previos.
 
 **Xime Espagnol**
