@@ -6,7 +6,7 @@
     justify-content: center;
 }
 
-h2 {
+.main-login h2 {
     text-align: center;
     padding: 20px;
     width: 100%;
@@ -64,15 +64,15 @@ h2 {
     text-shadow: 1px 1px 1px #2a2e2c;
 }
 
-form a{
+.login a{
     text-decoration: none;
     color:#2a2e2c
 }
-form input, form a, form button{
+.login input, form a, form button{
     margin-bottom: 10px;
     width: 85%;
 }
-form input:focus{
+.login input:focus{
     background-color:#EAF4F4;
 }
 
@@ -81,7 +81,7 @@ form input:focus{
         max-width: 350px;
         font-size: 1em;
     }
-    form input, form a, form button{
+    .login input, form a, form button{
         font-size: 1em;
     }
     .olvidaste, .cuenta{
