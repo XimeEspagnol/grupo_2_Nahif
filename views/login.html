@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,37 +12,27 @@
     <link href="https://fonts.cdnfonts.com/css/arial" rel="stylesheet">
     <link rel="stylesheet" href="/css/login.css">
 </head>
+
 <body>
     <header>
 
     </header>
-    
-    <main>
-        <h2>
-           ACCEDE A TU CUENTA 
-        </h2>
-        <section class="login">
-            <section>
-                <p class="datos">E-mail</p>
-                <p class="datos">Contraseña</p>
-                <div class="boton">
-                    Iniciar
-                </div>
-                <p class="texto">¿Olvidaste tu contraseña?</p>
-                <div class="boton">
-                    Continuar con Google
-                </div>
-                <p class="texto">Si no tenés cuenta</p>
-                <div class="boton">
-                    Registrate
-                </div>
 
-            </section>
-        </section>
+    <main>
+        <h2>ACCEDE A TU CUENTA</h2>
+        <form action="/" method="GET" class="login">
+            <input type="email" name="email" placeholder="E-mail">
+            <input type="password" name="password" placeholder="Contraseña">
+            <button type="submit" class="ingresar">Ingresar</button>
+            <a href="#" class="olvidaste">¿Olvidaste tu contraseña?</a>
+            <a href="#" class="cuenta">Si no tenés cuenta</a>
+            <a href="#" class="boton">Registrate</a>
+        </form>
     </main>
-    
+
     <footer>
 
     </footer>
 </body>
+
 </html>
