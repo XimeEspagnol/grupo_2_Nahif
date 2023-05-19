@@ -1,60 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/migha" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/arial" rel="stylesheet">
 </head>
+
 <body>
     <header>
 
     </header>
-    <main>
-        <h2>Mi carrito</h2>
-        <div>
-            <img src="" alt="">
-            <h4>Nombre del producto</h4>
-            <p>Talle: M</p>
-            <p>Cantidad: 1</p>
-            <p>$7.200</p>
-        </div>
-        <div>
-            <img src="" alt="">
-            <h4>Nombre del producto</h4>
-            <p>Talle: S</p>
-            <p>Cantidad: 1</p>
-            <p>$3.000</p>
-        </div>
-        <div>
-            <h3>Resumen del pedido</h3>
-            <div>
+    <main class="mainCarrito">
+        <h1>Mi carrito</h1>
+        <div class="contenedorCarrito">
+            <div class="productosCarrito">
                 <div>
-                    <p>Producto 1</p>
-                    <p>Precio</p>
-                    <p>$5.700</p>
+                    <img src="/img/buzo_blend.jpg" alt="buzoBlend">
+                    <h4>Buzo Blend</h4>
+                    <p>Talle: M</p>
+                    <p>Color: Negro</p>
+                    <p>$7.200</p>
+                    <a href="#">Cantidad: 1</a>
+                    <a href="#">Eliminar</a>
                 </div>
                 <div>
-                    <p>Producto 1</p>
-                    <p>Precio</p>
-                    <p>$4.500</p>
-                </div>
-                <div>
-                    <p>Total</p>
-                    <p>$10.200</p>
+                    <img src="/img/crop_top.jpg" alt="cropTop">
+                    <h4>Crop Top</h4>
+                    <p>Talle: S</p>
+                    <p>Color: Negro</p>
+                    <p>$3.000</p>
+                    <a href="#">Cantidad: 1</a>
+                    <a href="#">Eliminar</a>
                 </div>
             </div>
-            <form action="/" method="get">
-                <button type="submit">Ir a pagar</button>
-            </form>
-            <form action="/" method="get">
-                <button type="submit">Seguir comprando</button>
-            </form>
+            <div class="resumenCarrito">
+                <h3>Resumen del pedido</h3>
+                <div class="detalleCarrito">
+                    <div class="preciosCarrito">
+                        <h4>Buzo Blend</h4>
+                        <p class="preciosResumenCarrito">Precio</p>
+                        <p class="pesosResumenCarritos">$7.200</p>
+                    </div>
+                    <div class="preciosCarrito">
+                        <h4>Crop Top</h4>
+                        <p class="preciosResumenCarrito">Precio</p>
+                        <p class="pesosResumenCarritos">$3.000</p>
+                    </div>
+                    <div class="total">
+                        <h4>Total</h4>
+                        <p>$10.200</p>
+                    </div>
+                </div>
+                <form action="#" method="get">
+                    <button class="botonPagar" type="submit">Ir a pagar</button>
+                </form>
+                <form action="/" method="get">
+                    <button class="botonSeguir" type="submit">Seguir comprando</button>
+                </form>
+            </div>
         </div>
     </main>
     <footer>
 
     </footer>
 </body>
+
 </html>

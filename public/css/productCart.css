@@ -1,0 +1,122 @@
+.mainCarrito {
+    background-color: #EAF4F4;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.mainCarrito h1 {
+    font-weight: 700;
+    margin: 10px;
+    padding: 15px;
+}
+
+.mainCarrito h3 {
+    font-weight: 600;
+}
+
+.productosCarrito {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 5px;
+    justify-content: space-around;
+    width: 45%;
+    text-align: center;
+}
+
+.productosCarrito div {
+    background-color: #6B9080;
+    padding: 5px;
+    margin: 10px;
+}
+
+.productosCarrito div img {
+    width: 55%;
+}
+
+.productosCarrito div a {
+    background-color: #A4C3B2;
+    width: fit-content;
+    text-decoration: none;
+    color: black;
+    width: 50%;
+}
+
+.resumenCarrito {
+    width: 45%;
+    margin: 5px;
+    align-items: center;
+    padding: 3px;
+    align-self: flex-start;
+}
+
+.resumenCarrito h3 {
+    font-size: 20px;
+    margin: 0px 10px 10px 10px;
+}
+
+.detalleCarrito {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: #6B9080;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.preciosCarrito{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.preciosResumenCarrito {
+    width: 48%;
+}
+
+.pesosResumenCarrito {
+    width: 48%;
+}
+
+.preciosCarrito h4 {
+    width: 100%;
+}
+
+.total {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px black solid;
+    align-items: center;
+}
+
+.total h4 {
+    width: 48%;
+}
+
+.total p {
+    width: 36%;
+    justify-self: flex-end;
+}
+
+.contenedorCarrito {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.botonPagar {
+    background-color: #A4C3B2;
+    text-align: center;
+}
+
+.botonSeguir {
+    background-color: #A4C3B2;
+    text-align: center;
+}
