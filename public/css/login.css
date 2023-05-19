@@ -28,13 +28,11 @@ h2 {
 
 .boton {
     background-color: #6B9080;
-    box-shadow: #2a2e2c;
     text-align: center;
     margin: auto;
     padding: 5px;
     width: fit-content;
     border-radius: 10%;
-
 }
 
 .ingresar {
@@ -43,6 +41,7 @@ h2 {
     margin: auto;
     width:fit-content;
     padding: 5px;
+    border-radius: 10%;
 }
 
 .olvidaste, .cuenta{
@@ -59,12 +58,18 @@ form a{
 }
 form input, form a, form button{
     margin-bottom: 10px;
-    width: 90%;
+    width: 85%;
 }
 
 @media (min-width:450px){
     .login {
         max-width: 350px;
-
+        font-size: 1em;
+    }
+    form input, form a, form button{
+        font-size: 1em;
+    }
+    .olvidaste, .cuenta{
+        font-size: 0.7em;
     }
 }
