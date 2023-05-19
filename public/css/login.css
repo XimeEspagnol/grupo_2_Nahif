@@ -1,4 +1,4 @@
-main {
+.main-login {
     background-color: #EAF4F4;
     font-family: 'Roboto', sans-serif;
     display: flex;
@@ -25,14 +25,18 @@ h2 {
     font-size: 80%;
     box-shadow: 3px 3px 5px 1px #2a2e2c;
 }
-
-.boton {
+.email, .password{
+    color:#6B9080;
+    padding: 5px
+}
+.registro {
     background-color: #6B9080;
     text-align: center;
     margin: auto;
     padding: 5px;
     width: fit-content;
     border-radius: 10%;
+    color:#EAF4F4
 }
 
 .ingresar {
@@ -42,6 +46,10 @@ h2 {
     width:fit-content;
     padding: 5px;
     border-radius: 10%;
+    color:#EAF4F4
+}
+.ingresar:hover{
+    background-color: #557567;
 }
 
 .olvidaste, .cuenta{
@@ -50,6 +58,10 @@ h2 {
     font-weight: 100;
     text-align: center;
     margin-top: 2%;
+    color:#6B9080
+}
+.olvidaste:hover, .boton:hover{
+    text-shadow: 1px 1px 1px #2a2e2c;
 }
 
 form a{
@@ -59,6 +71,9 @@ form a{
 form input, form a, form button{
     margin-bottom: 10px;
     width: 85%;
+}
+form input:focus{
+    background-color:#EAF4F4;
 }
 
 @media (min-width:450px){
