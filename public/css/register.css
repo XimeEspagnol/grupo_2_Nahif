@@ -1,9 +1,10 @@
 form { 
-    width: 90%;
+    max-width: 360px;
     margin-left: 14px;
     background-color: #a4c3b2;
     border: #6b6d6c 1px;
     border-radius: 5%;;
+    box-shadow: 3px 3px 5px 1px #2a2e2c;
 }
 
 h2 {
@@ -31,6 +32,7 @@ h2 {
     font-family: Roboto;
     text-align: left;
     width: 100%;
+    margin-left: 3px;
 }
 
 .input-registro {
@@ -39,7 +41,8 @@ h2 {
     width: 97%;
     justify-content: space-around;
     border: none;
-    
+    margin-left: 3px;
+    margin-right: 5px;
 }
 
 .registro-noRobot {
@@ -89,6 +92,7 @@ h2 {
     padding: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
+    border-radius: 5%;
 }
 
 .registro-div-iniciaSesion {
