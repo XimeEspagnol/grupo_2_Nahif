@@ -150,8 +150,14 @@ form {
         font-size: 20px;
     }
 
+    .label-registro {
+        margin-left: 10px;
+    }
+
     .input-registro {
         font-size: 20px;
+        font-weight: normal;
+        margin-left: 10px;
     }
 
    .label-registro {
