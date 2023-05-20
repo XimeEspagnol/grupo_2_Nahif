@@ -1,0 +1,35 @@
+main {
+    font-family: Roboto;
+}
+
+h2 {
+    text-align: center;
+    color: #666;
+    font-weight: bold;
+}
+
+.label-registro {
+    text-align: left;
+}
+
+.input-registro {
+    background-color: #cce3de;
+}
+
+.registro-noRobot {
+    background-color: #eaf4f4;
+}
+
+.registro-input-checkbox {
+    background-color: #cce3de;
+}
+
+registro-boton-crearCuenta {
+    background-color: #cce3de ;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.registro-link-iniciaSesion {
+    font-weight: bold;
+}

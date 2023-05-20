@@ -18,38 +18,40 @@
 
     </header>
 
-    <main id="formulario-registro">
+    <main id="main-registro">
 
         <form action="/" method="get">
 
-            <div >
-                <label for="nombreCompleto">Nombre Completo</label>
-                <input type="text" name="nombreCompleto" id="nombreCompleto">
+            <h2>CREAR CUENTA</h2>
+
+            <div class="nombre-registro">
+                <label class="label-registro" for="nombreCompleto">Nombre Completo</label>
+                <input class="input-registro" type="text" name="nombreCompleto" id="nombreCompleto">
             </div>
 
-            <div >   
-                <label for="email">Email</label> 
-                <input type="text" name="usuario" id="email">
+            <div class="email-registro">   
+                <label class="label-registro" for="email">Email</label> 
+                <input class="input-registro" type="text" name="usuario" id="email">
             </div>
 
-            <div>
-                <label for="Contraseña">Contraseña</label> 
-                <input type="password" name="contrasenia" id="Contraseña">
+            <div class="contraseña-registro">
+                <label class="label-registro" for="Contraseña">Contraseña</label> 
+                <input class="input-registro" type="password" name="contrasenia" id="Contraseña">
             </div>
 
-            <div>
-                <label for="confirmarContraseña">Confirmar Contraseña</label> 
-                <input type="password" name="confirmarContrasenia" id="confirmarContraseña">
+            <div class="conf-contra-registro">
+                <label class="label-registro" for="confirmarContraseña">Confirmar Contraseña</label> 
+                <input class="input-registro" type="password" name="confirmarContrasenia" id="confirmarContraseña">
             </div>
 
-        <div class="register-noRobot">
+            <div class="registro-noRobot">
 
-                <div class="register-robot">   
-                    <input type="checkbox" name="noSoyUnRobot" id="noSoyUnRobot">
+                <div class="registro-robot">   
+                    <input class="registro-input-checkbox" type="checkbox" name="noSoyUnRobot" id="noSoyUnRobot">
                     <label for="noSoyUnRobot">No soy un robot</label>
                 </div>  
 
-                <div class="register-captcha"> 
+                <div class="registro-captcha"> 
                     <input type="image" src="/public/img/RecaptchaLogo.svg.png" alt="captcha">
                     <input type="text" name="privacidadCondiciones" value="Privacidad-Condiciones">
                 </div>
@@ -57,12 +59,12 @@
             </div>
 
             <div>
-                <button type="submit">CREAR CUENTA</button>
+                <button class="registro-boton-crearCuenta" type="submit">CREAR CUENTA</button>
             </div>
 
             <div>
                 <input type="text" name="iniciaSesion" value="¿Ya tenés una cuenta?">
-                <a href="#">Iniciá Sesión</a>
+                <a class="registro-link-iniciaSesion" href="#">Iniciá Sesión</a>
             </div>
 
         </form>
