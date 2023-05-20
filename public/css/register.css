@@ -178,5 +178,10 @@ form {
    .registro-link-iniciaSesion {
         font-size: 19px;
    }
+
+   .privacidad-condiciones {
+        font-size: 16px;
+        margin-top: 0;
+   }
   
 }
