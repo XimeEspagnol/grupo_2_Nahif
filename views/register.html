@@ -1,0 +1,49 @@
+<main id="formulario-registro">
+
+    <form action="/" method="get">
+
+        <div >
+            <label for="nombreCompleto">Nombre Completo</label>
+            <input type="text" name="nombreCompleto" id="nombreCompleto">
+        </div>
+
+        <div >   
+            <label for="email">Email</label> 
+            <input type="text" name="usuario" id="email">
+        </div>
+
+        <div>
+            <label for="Contraseña">Contraseña</label> 
+            <input type="password" name="contrasenia" id="Contraseña">
+        </div>
+
+        <div>
+            <label for="confirmarContraseña">Confirmar Contraseña</label> 
+            <input type="password" name="confirmarContrasenia" id="confirmarContraseña">
+        </div>
+
+       <div class="register-noRobot">
+
+            <div class="register-robot">   
+                <input type="checkbox" name="noSoyUnRobot" id="noSoyUnRobot">
+                <label for="noSoyUnRobot">No soy un robot</label>
+            </div>  
+
+            <div class="register-captcha"> 
+                <input type="image" src="/public/img/RecaptchaLogo.svg.png" alt="captcha">
+                <input type="text" name="privacidadCondiciones" value="Privacidad-Condiciones">
+            </div>
+
+        </div>
+
+        <div>
+            <button type="submit">CREAR CUENTA</button>
+        </div>
+
+        <div>
+            <input type="text" name="iniciaSesion" value="¿Ya tenés una cuenta?">
+            <a href="#">Iniciá Sesión</a>
+        </div>
+        
+    </form>
+</main>
