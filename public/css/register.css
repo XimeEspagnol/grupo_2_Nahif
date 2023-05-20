@@ -1,35 +1,117 @@
-main {
-    font-family: Roboto;
+form { 
+    width: 90%;
+    margin-left: 14px;
+    background-color: #a4c3b2;
+    border: #6b6d6c 1px;
+    border-radius: 5%;;
 }
 
 h2 {
     text-align: center;
-    color: #666;
+    font-family: migha;
     font-weight: bold;
+    color: #666;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.email-registro {
+    padding-top: 10px;
+}
+
+.contraseña-registro {
+    padding-top: 10px;
+}
+
+.conf-contra-registro {
+    padding-top: 10px;
 }
 
 .label-registro {
+    font-family: Roboto;
     text-align: left;
+    width: 100%;
 }
 
 .input-registro {
-    background-color: #cce3de;
+    background-color: #FFF;   
+    font-size: 18px;
+    width: 97%;
+    justify-content: space-around;
+    border: none;
+    
 }
 
 .registro-noRobot {
-    background-color: #eaf4f4;
+    display: flex;
+    background-color: #a4c3b2;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    align-items: center;
+    font-family: Roboto;
+}
+
+.registro-robot {
+    width: 50%;
+}
+
+.registro-label-noRobot {
+    font-size: 14px;
 }
 
 .registro-input-checkbox {
     background-color: #cce3de;
 }
 
-registro-boton-crearCuenta {
-    background-color: #cce3de ;
-    color: #FFF;
-    font-weight: bold;
+.registro-div-boton {
+    text-align: center;
+    background-color: #a4c3b2;
 }
+
+.registro-captcha {
+    width: 40%;
+    margin-left: 15px;
+}
+
+.privacidad-condiciones {
+    font-size: 10px;
+}
+
+
+.registro-boton-crearCuenta {
+    background-color: #6B9080;
+    color: #FFF;
+    font-family: migha;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.registro-div-iniciaSesion {
+    text-align: center;
+    font-family: Roboto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.registro-yaTenesUnaCuenta {
+    width: 48%;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
 
 .registro-link-iniciaSesion {
     font-weight: bold;
+    color: #666;
+    width: 42%;
+    font-size: 14px;
+    padding-right: 10px;
 }

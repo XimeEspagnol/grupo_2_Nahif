@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/arial" rel="stylesheet">
-    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/register.css">
 </head>
 
 <body>
@@ -48,22 +48,22 @@
 
                 <div class="registro-robot">   
                     <input class="registro-input-checkbox" type="checkbox" name="noSoyUnRobot" id="noSoyUnRobot">
-                    <label for="noSoyUnRobot">No soy un robot</label>
+                    <label class="registro-label-noRobot" for="noSoyUnRobot">No soy un robot</label>
                 </div>  
 
                 <div class="registro-captcha"> 
-                    <input type="image" src="/public/img/RecaptchaLogo.svg.png" alt="captcha">
-                    <input type="text" name="privacidadCondiciones" value="Privacidad-Condiciones">
+                    <input type="image" src="public/img/RecaptchaLogo.png" alt="captcha">
+                    <p class="privacidad-condiciones">"Privacidad-Condiciones"</p>
                 </div>
 
             </div>
 
-            <div>
+            <div class="registro-div-boton">
                 <button class="registro-boton-crearCuenta" type="submit">CREAR CUENTA</button>
             </div>
 
-            <div>
-                <input type="text" name="iniciaSesion" value="¿Ya tenés una cuenta?">
+            <div class="registro-div-iniciaSesion">
+                <p class="registro-yaTenesUnaCuenta">¿Ya tenés una cuenta?</p>
                 <a class="registro-link-iniciaSesion" href="#">Iniciá Sesión</a>
             </div>
 
