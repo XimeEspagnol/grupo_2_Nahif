@@ -27,16 +27,18 @@
 }
 .email, .password{
     color:#6B9080;
-    padding: 10px
+    padding: 10px;
+    transition: all 300ms;
 }
-.registro {
+.main-login .registro {
     background-color: #6B9080;
     text-align: center;
     margin: auto;
     padding: 5px;
     width: fit-content;
     border-radius: 10%;
-    color:#EAF4F4
+    color:#EAF4F4;
+    transition: all 300ms;
 }
 
 .ingresar {
@@ -46,10 +48,12 @@
     width:fit-content;
     padding: 5px;
     border-radius: 10%;
-    color:#EAF4F4
+    color:#EAF4F4;
+    transition: all 300ms;
 }
 .ingresar:hover, .registro:hover{
     background-color: #557567;
+    box-shadow: 1px 1px 5px 1px #2a2e2c;
 }
 
 .olvidaste, .cuenta{
@@ -58,7 +62,8 @@
     font-weight: 100;
     text-align: center;
     margin-top: 2%;
-    color:#6B9080
+    color:#6B9080;
+    transition: all 300ms;
 }
 .olvidaste:hover {
     text-shadow: 1px 1px 1px #2a2e2c;
@@ -70,6 +75,7 @@
 .login input, form a, form button{
     margin-bottom: 10px;
     width: 85%;
+    transition: all 300ms;
 }
 .login input:focus{
     background-color:#EAF4F4;
