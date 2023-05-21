@@ -104,6 +104,10 @@ form {
     border-radius: 5%;
 }
 
+.registro-boton-crearCuenta:hover {
+    text-shadow: 1px 1px 1px #2a2e2c;
+}
+
 .registro-div-iniciaSesion {
     text-align: center;
     font-family: Roboto;
@@ -128,6 +132,11 @@ form {
     padding-right: 10px;
 }
 
+.registro-link-iniciaSesion:hover {
+    text-shadow: 1px 1px 1px #2a2e2c;
+}
+
+ 
 @media (min-width: 361px) {
 
 
