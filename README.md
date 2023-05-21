@@ -1,6 +1,9 @@
 # grupo_2_Nahif
 La página web en desarrollo ofrece productos de vestimenta y accesorios de diferentes estilos, que apuntan a un público femenino. 
 
+**LINK DE TRELLO**
+https://trello.com/invite/grupo223349282/ATTI6c8f03176311ad9d748d9ed1bd61a0a13EF9586E
+
 **Referentes**  
 *Adidas* [(https://www.adidas.com.ar/](https://www.adidas.com.ar/) - Referente de estética  
 *Dafiti* [https://www.dafiti.com.ar/femenino/](https://www.dafiti.com.ar/femenino/) - Nos interesan los productos que ofrecen y el público al que se lo ofrecen  
