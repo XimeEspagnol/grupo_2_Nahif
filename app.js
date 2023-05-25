@@ -28,4 +28,6 @@ app.get("/reCaptcha", (req, res) => {
 app.get("/product", (req, res) => {
     res.sendFile(path.resolve(__dirname, "./views/productDetail.html"))
 })
-
+app.get("/categorias", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "./views/categorias.html"))
+})
