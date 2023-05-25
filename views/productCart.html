@@ -23,23 +23,41 @@
         <h1>Mi carrito</h1>
         <div class="contenedorCarrito">
             <div class="productosCarrito">
-                <div>
-                    <img src="/img/buzo_blend.jpg" alt="buzoBlend">
-                    <h4>Buzo Blend</h4>
-                    <p>Talle: M</p>
-                    <p>Color: Negro</p>
-                    <p>$7.200</p>
-                    <a href="#">Cantidad: 1</a>
-                    <a href="#">Eliminar</a>
+                <div class="prodCarrito">
+                    <div class="divFotoCarrito">
+                        <img src="/img/buzo_blend.jpg" alt="buzoBlend">
+                    </div>
+                    <div class="detalleProdCarrito">
+                        <h4>Buzo Blend</h4>
+                        <p>$7.200</p>
+                        <div>
+                            <p>Talle: M</p>
+                            <p>Color: Negro</p>
+                        </div>
+
+                        <div>
+                            <a href="#">Cantidad: 1</a>
+                            <a href="#">Eliminar</a>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <img src="/img/crop_top.jpg" alt="cropTop">
-                    <h4>Crop Top</h4>
-                    <p>Talle: S</p>
-                    <p>Color: Negro</p>
-                    <p>$3.000</p>
-                    <a href="#">Cantidad: 1</a>
-                    <a href="#">Eliminar</a>
+                <div class="prodCarrito">
+                    <div class="divFotoCarrito">
+                        <img src="/img/crop_top.jpg" alt="cropTop">
+                    </div>
+                    <div class="detalleProdCarrito">
+                        <h4>Crop Top</h4>
+                        <p>$3.000</p>
+                        <div>
+                            <p>Talle: S</p>
+                            <p>Color: Negro</p>
+                        </div>
+
+                        <div>
+                            <a href="#">Cantidad: 1</a>
+                            <a href="#">Eliminar</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="resumenCarrito">
@@ -60,12 +78,14 @@
                         <p>$10.200</p>
                     </div>
                 </div>
-                <form action="#" method="get">
-                    <button class="botonPagar" type="submit">Ir a pagar</button>
-                </form>
-                <form action="/" method="get">
-                    <button class="botonSeguir" type="submit">Seguir comprando</button>
-                </form>
+                <div class="botonesCarrito">
+                    <form action="#" method="get">
+                        <button class="botonPagar" type="submit">Ir a pagar</button>
+                    </form>
+                    <form action="/" method="get">
+                        <button class="botonSeguir" type="submit">Seguir comprando</button>
+                    </form>
+                </div>
             </div>
         </div>
     </main>
