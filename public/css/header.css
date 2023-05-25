@@ -1,0 +1,53 @@
+header {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: migha;
+    background-image: url("/img/fondo-hojas.png");
+    font-size: 25px;
+
+}
+.header-top{
+    display: flex;
+    justify-content: space-between;
+    background-image: url("/img/fondo-hojas.png");
+    width: 100vw;
+    font-size: 25px;
+}
+
+header .fotoLogo {
+    width: 15vw;
+    max-width: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+header .fotoLogo img {
+    width: 100%;
+    padding: 10px;
+}
+
+header .nombreMarca {
+    margin: auto;
+}
+
+.header-bottom{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    justify-content: space-around;
+    background-color: #CCE3DE;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.header-bottom a{
+    text-decoration: none;
+}
+
+
+@media (min-width: 769px){
+    .header-bottom{
+        font-size: 15px;
+    }
+}
