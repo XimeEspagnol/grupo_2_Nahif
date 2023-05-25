@@ -82,11 +82,10 @@
 
 .registro-captcha {
     width: 45%;
-    
 }
 
 .registro-reCaptcha {
-    width: 55%;
+    width: 45%;
 }
 
 .privacidad-condiciones {
@@ -154,10 +153,8 @@
 .registro-div-iniciaSesion {
     margin-left: 205px;
     margin-right: 210px;
-}
-
 } 
-
+}
 @media (min-width: 769px) {
     
     #main-registro {
@@ -167,7 +164,7 @@
         background-color: #EAF4F4;
     }
     
-    form {
+    .form-registro {
         max-width: 850px;
     }
 
