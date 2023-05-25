@@ -1,6 +1,6 @@
 
 
-form { 
+.form-registro { 
     margin-left: 14px;
     background-color: #a4c3b2;
     border: #6b6d6c 1px;
@@ -123,6 +123,7 @@ form {
     width: 48%;
     font-size: 14px;
     margin-left: 10px;
+    margin-bottom: 23px;
 }
 
 
@@ -138,9 +139,22 @@ form {
     text-shadow: 1px 1px 1px #2a2e2c;
 }
 
+.registro-link-iniciaSesion {
+    margin-top: 5px;
+    padding-right: 20px;
+}
+
  
 @media (min-width: 361px) {
 
+.registro-yaTenesUnaCuenta {
+    margin-bottom: 18px;
+}
+
+.registro-div-iniciaSesion {
+    margin-left: 205px;
+    margin-right: 210px;
+}
 
 } 
 
@@ -158,7 +172,7 @@ form {
     }
 
     .registro-label-noRobot {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     .label-registro {
@@ -194,6 +208,7 @@ form {
 
    .registro-link-iniciaSesion {
         font-size: 19px;
+        margin-top: 10px;
    }
 
    .privacidad-condiciones {
