@@ -1,0 +1,111 @@
+body {
+    margin: 0
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: migha;
+    background-image: url("/img/fondo-hojas.png");
+    font-size: 25px;
+    width: 100vw;
+    position: relative;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    background-image: url("/img/fondo-hojas.png");
+    width: 100vw;
+    font-size: 25px;
+}
+
+header .fotoLogo {
+    width: 15vw;
+    max-width: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+header .fotoLogo img {
+    width: 100%;
+    padding: 10px;
+}
+
+header .nombreMarca {
+    margin: auto;
+}
+
+.header-menu {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    padding: 5px;
+    background-color: #a4c3b2;
+    border-radius: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.nav-lateral{
+    display: none;
+    transition: all 350ms;
+}
+.header-menu:hover .nav-lateral{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap:10px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.header-menu:hover{
+    box-shadow: 1px 1px 3px #2a2e2c;
+}
+
+.header-menu input{
+    max-width: 100px;
+}
+.header-menu i{
+    color: #666;
+}
+.header-bottom {
+    display: none
+}
+
+.header-bottom a,
+.nav-lateral a {
+    text-decoration: none;
+    color: #6b9080;
+    transition: all 350ms;
+}
+.nav-lateral a {
+    font-size: 20px;
+    color: #666;
+}
+
+.header-bottom a:hover {
+    text-shadow: 1px 1px 3px #6b9080;
+}
+
+
+@media (min-width: 769px) {
+    .header-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100vw;
+        justify-content: space-around;
+        background-color: #CCE3DE;
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .header-menu {
+        display: none;
+    }
+
+    .header-bottom {
+        font-size: 15px;
+    }
+}
