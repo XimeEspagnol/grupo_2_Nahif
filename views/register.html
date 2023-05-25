@@ -20,53 +20,55 @@
 
     <main id="main-registro">
 
-        <form class="forma-registro" action="/" method="get">
+        <div class="form-registro">      
 
-            <h2 class="subtitulo-crear-cuenta">CREAR CUENTA</h2>
+            <form action="/" method="get">
 
-            <div class="nombre-registro">
-                <label class="label-registro" for="nombreCompleto">Nombre Completo</label>
-                <input class="input-registro" type="text" name="nombreCompleto" id="nombreCompleto">
-            </div>
+                <h2 class="subtitulo-crear-cuenta">CREAR CUENTA</h2>
 
-            <div class="email-registro">   
-                <label class="label-registro" for="email">E-mail</label> 
-                <input class="input-registro" type="text" name="usuario" id="email">
-            </div>
-
-            <div class="contraseña-registro">
-                <label class="label-registro" for="Contraseña">Contraseña</label> 
-                <input class="input-registro" type="password" name="contrasenia" id="Contraseña">
-            </div>
-
-            <div class="conf-contra-registro">
-                <label class="label-registro" for="confirmarContraseña">Confirmar Contraseña</label> 
-                <input class="input-registro" type="password" name="confirmarContrasenia" id="confirmarContraseña">
-            </div>
-
-            <div class="registro-noRobot">
-
-                <div class="registro-robot">   
-                    <input class="registro-input-checkbox" type="checkbox" name="noSoyUnRobot" id="noSoyUnRobot">
-                    <label class="registro-label-noRobot" for="noSoyUnRobot">No soy un robot</label>
-                </div>  
-
-                <div class="registro-captcha"> 
-                    <input href="#" class="registro-reCaptcha" type="image" src="/img/RecaptchaLogo.png" alt="captcha">
-                    <p class="privacidad-condiciones">"Privacidad-Condiciones"</p>
+                <div class="nombre-registro">
+                    <label class="label-registro" for="nombreCompleto">Nombre Completo</label>
+                    <input class="input-registro" type="text" name="nombreCompleto" id="nombreCompleto">
                 </div>
 
-            </div>
+                <div class="email-registro">   
+                    <label class="label-registro" for="email">E-mail</label> 
+                    <input class="input-registro" type="text" name="usuario" id="email">
+                </div>
 
-            <div class="registro-div-boton">
-                <button class="registro-boton-crearCuenta" type="submit">CREAR CUENTA</button>
-            </div>
+                <div class="contraseña-registro">
+                    <label class="label-registro" for="Contraseña">Contraseña</label> 
+                    <input class="input-registro" type="password" name="contrasenia" id="Contraseña">
+                </div>
 
-            <div class="registro-div-iniciaSesion">
-                <p class="registro-yaTenesUnaCuenta">¿Ya tenés una cuenta?</p>
-                <a class="registro-link-iniciaSesion" href="/login">Iniciá Sesión</a>
-            </div>
+                <div class="conf-contra-registro">
+                    <label class="label-registro" for="confirmarContraseña">Confirmar Contraseña</label> 
+                    <input class="input-registro" type="password" name="confirmarContrasenia" id="confirmarContraseña">
+                </div>
 
+                <div class="registro-noRobot">
+
+                    <div class="registro-robot">   
+                        <input class="registro-input-checkbox" type="checkbox" name="noSoyUnRobot" id="noSoyUnRobot">
+                        <label class="registro-label-noRobot" for="noSoyUnRobot">No soy un robot</label>
+                    </div>  
+
+                    <div class="registro-captcha"> 
+                        <input href="/home" class="registro-reCaptcha" type="image" src="/img/RecaptchaLogo.png" alt="captcha">
+                        <p class="privacidad-condiciones">"Privacidad-Condiciones"</p>
+                    </div>
+
+                </div>
+
+                <div class="registro-div-boton">
+                    <button href="/home" class="registro-boton-crearCuenta" type="submit">CREAR CUENTA</button>
+                </div>
+
+                <div class="registro-div-iniciaSesion">
+                    <p class="registro-yaTenesUnaCuenta">¿Ya tenés una cuenta?</p>
+                    <a class="registro-link-iniciaSesion" href="/login">Iniciá Sesión</a>
+                </div>
+            </div>      
         </form>
     </main>
 

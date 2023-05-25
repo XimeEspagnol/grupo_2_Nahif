@@ -38,7 +38,7 @@
 
 .input-registro {
     background-color: #FFF;   
-    font-size: 16px;
+    font-size: 14px;
     width: 97%;
     justify-content: space-around;
     border:none;
@@ -108,6 +108,8 @@
 
 .registro-boton-crearCuenta:hover {
     text-shadow: 1px 1px 1px #2a2e2c;
+    background-color: #2a7474;
+    transition: all 0.3s;
 }
 
 .registro-div-iniciaSesion {

@@ -22,11 +22,6 @@ app.get("/register", (req, res) => {
     res.sendFile(path.resolve(__dirname, "./views/register.html"))
 })
 
-<<<<<<< HEAD
-app.get("/reCaptcha", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/reCaptcha.html"))
-=======
 app.get("/product", (req, res) => {
     res.sendFile(path.resolve(__dirname, "./views/productDetail.html"))
->>>>>>> b85a6c6830fa532bbe94e4a30dd2c1accaba7e73
 })
