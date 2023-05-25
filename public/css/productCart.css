@@ -9,6 +9,9 @@
     font-weight: 700;
     margin: 10px;
     padding: 15px;
+    padding-bottom: 0px;
+    font-family: migha;
+    color:#666;
 }
 
 .mainCarrito h3 {
@@ -36,9 +39,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 5%;
+    border-radius: 3%;
     padding-top: 15px;
     padding-bottom: 15px;
+    box-shadow: 3px 3px 5px 1px #2a2e2c;
 }
 
 .productosCarrito div.prodCarrito div.divFotoCarrito {
@@ -49,15 +53,30 @@
     width: 90%;
 }
 
-.productosCarrito div.prodCarrito div.detalleProdCarrito a {
+.detalleProdCarrito a {
     width: fit-content;
     text-decoration: none;
     color: black;
     width: 45%;
 }
 
+.detalleProdCarrito a:hover {
+    text-shadow: #2a2e2c 1px 1px 1px;
+}
+
+.detalleProdCarrito select {
+    text-decoration: none;
+    color: black;
+    background-color: #EAF4F4;
+    width: 45%;
+}
+
 .detalleProdCarrito {
     width: 100%;
+}
+
+.detalleProdCarrito h4 {
+    font-size: 15px;
 }
 
 .detalleProdCarrito div {
@@ -83,6 +102,8 @@
 .resumenCarrito h3 {
     font-size: 20px;
     margin: 0px 10px 10px 10px;
+    font-family: migha;
+    color:#666;
 }
 
 .detalleCarrito {
@@ -95,7 +116,8 @@
     margin-bottom: 5px;
     padding-top: 5%;
     padding-bottom: 5%;
-    border-radius: 5%;
+    border-radius: 3%;
+    box-shadow: 3px 3px 5px 1px #2a2e2c;
 }
 
 .preciosCarrito{
@@ -105,16 +127,17 @@
     justify-content: space-between;
 }
 
+.preciosCarrito h4 {
+    font-size: 15px;
+    width: 100%;
+}
+
 .preciosResumenCarrito {
     width: 48%;
 }
 
 .pesosResumenCarrito {
     width: 48%;
-}
-
-.preciosCarrito h4 {
-    width: 100%;
 }
 
 .total {
@@ -128,6 +151,7 @@
 
 .total h4 {
     width: 45%;
+    font-size: 15px;
 }
 
 .total p {
@@ -144,15 +168,31 @@
 }
 
 .botonPagar, .botonSeguir {
+    font-family: migha;
+    color: white;
     background-color: #6B9080;
     text-align: center;
     width: fit-content;
-    border-radius: 5%;
+    border-radius: 7%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    box-shadow: 3px 3px 5px 1px #2a2e2c;
 }
 
+.botonPagar {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.botonPagar:hover, .botonSeguir:hover {
+background-color: #557567;
+box-shadow: 1px 1px 5px 1px #2a2e2c;
+}
 @media (min-width: 769px) {
     .productosCarrito div.prodCarrito {
         flex-direction: row;
         justify-content: space-around;
+    }
+    .detalleProdCarrito a, .detalleProdCarrito select{
+        width: 30%;
     }
 }
