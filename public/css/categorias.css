@@ -1,0 +1,73 @@
+.miCategorias{
+    background-color: #EAF4F4;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2{
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0px;
+}
+
+.miCatergoria2{
+    display: flex;
+}
+    
+.lista-categoria{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    
+}
+
+
+.lista-categoria .items-categoria{
+    display: block;
+    width: 90%;
+    padding: 15px 0px;
+    margin-bottom: 20px;
+    background-color: #6b9080;
+
+    text-align: center;
+    border-radius: 2px;
+    text-decoration: none;
+    color: black;
+}
+
+/* PRODUCTOS====== */
+
+.lista-productos{
+    display:flex;
+    flex-wrap: wrap;
+    width: 78%;
+}
+
+main div section article{
+   background-color: #6b9080;
+    width: 20%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    box-shadow : 0px 0px 10px #666
+    
+}
+main div section article img{
+    width: 100%;
+}
+main div section article h3{
+    text-align: center
+}
+
+main div section article p{
+    display: block;
+    width: 100%;
+    padding: 2px;
+
+    text-align: left;
+    text-decoration: none;
+
+}
+.descuento{
+    text-decoration: line-through;
+}
