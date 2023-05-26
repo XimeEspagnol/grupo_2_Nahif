@@ -8,6 +8,7 @@
     border: #6b6d6c 1px;
     border-radius: 5%;;
     box-shadow: 3px 3px 5px 1px #2a2e2c;
+    max-width: 600px;
 }
 
 .subtitulo-crear-cuenta {
@@ -183,7 +184,7 @@
     }
 
     .form-registro {
-        max-width: 700px;
+        max-width: 600px;
     }
 
     .registro-label-noRobot {
