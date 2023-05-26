@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,64 +18,98 @@
 
 <body>
     <header>
-
+        <div class="header-logo">
+            <a href="/">
+                <div class="fotoLogo"><img src="/img/LOGO-01.png" alt="logo"></div>
+            </a>
+        </div>
+        <div class="header-top">
+            <h1 class="nombreMarca">NAHIF</h1>
+        </div>
+        <div class="header-menu">
+            <i class="fas fa-bars"></i>
+            <div class="nav-lateral">
+                <a href="/categorias">CATEGORIAS</a>
+                <a href="#">PROBADOR</a>
+                <a href="/carrito">CARRITO <i class="fas fa-shopping-cart"></i></a>
+                <a href="#">CONTACTO</a>
+                <a href="/register">REGISTRATE <i class="fas fa-id-card"></i></a>
+                <a href="/login">INGRESA <i class="fas fa-user"></i></a>
+                <div>
+                    <input type="search" name="buscador" placeholder="Buscar">
+                    <a class="botonLupa" href="#"><i class="fas fa-search"></i></a>
+                </div>
+            </div>
+        </div>
+        <nav class="header-bottom">
+            <a href="/categorias">CATEGORIAS</a>
+            <a href="#">PROBADOR</a>
+            <a href="/carrito">CARRITO <i class="fas fa-shopping-cart"></i></a>
+            <a href="#">CONTACTO</a>
+            <a href="/register">REGISTRATE <i class="fas fa-id-card"></i></a>
+            <a href="/login">INGRESA <i class="fas fa-user"></i></a>
+            <div class="botonLupa">
+                <input type="search" name="buscador" placeholder="Buscar">
+                <a class="botonLupa" href="#"><i class="fas fa-search"></i></a>
+            </div>
+        </nav>
     </header>
 
     <main class="mainproducto">
-    <div class="contenidoProd">
-        <div class="producto">
-            <h3>Polera Combinada</h3>
-            <div class="productosC">
-                <img src="/img/polera-c2.png" alt="polera-c2">
-                <img src="/img/polera-c3.png" alt="polera-c3">
-                <img src="/img/polera-c4.png" alt="polera-c4">
+        <div class="contenidoProd">
+            <div class="producto">
+                <h3>Polera Combinada</h3>
+                <div class="productosC">
+                    <img src="/img/polera-c2.png" alt="polera-c2">
+                    <img src="/img/polera-c3.png" alt="polera-c3">
+                    <img src="/img/polera-c4.png" alt="polera-c4">
+                </div>
+                <div class="principal">
+                    <img src="/img/polera-combinada.png" alt="polera combinada">
+                </div>
             </div>
-            <div class="principal">
-                <img src="/img/polera combinada.png" alt="polera combinada">
+            <div class="unificacion">
+                <div class="selecciones">
+                    <div>
+                        <label>Colores Disponibles</label>
+                        <select class="colores">
+                            <option>Negro</option>
+                            <option>Azul</option>
+                            <option>Blanco</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Cantidad</label>
+                        <select class="Cantidad">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Talles</label>
+                        <select class="talles">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="botones">
+                    <form action="#" method="get">
+                        <button class="botonPagar" type="submit">Añadir al Vestidor</button>
+                    </form>
+                    <form action="/" method="get">
+                        <button class="botonSeguir" type="submit">Añadir al Carrito</button>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="unificacion">
-            <div class="selecciones">
-                <div>
-                    <label>Colores Disponibles</label>
-                    <select class="colores">
-                        <option>Negro</option>
-                        <option>Azul</option>
-                        <option>Blanco</option>
-                    </select>
-                </div>
-                <div>
-                    <label>Cantidad</label>
-                    <select class="Cantidad">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                </div>
-                <div>
-                    <label>Talles</label>
-                    <select class="talles">
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                    </select>
-                </div>
-            </div>
-            <div class="botones">
-                <form action="#" method="get">
-                    <button class="botonPagar" type="submit">Añadir al Vestidor</button>
-                </form>
-                <form action="/" method="get">
-                    <button class="botonSeguir" type="submit">Añadir al Carrito</button>
-                </form>
-            </div>
+        <div class="productocomplemento">
+            <h3>Completa tu look</h3>
+            <img src="/img/crop_top.jpg" alt="cropTop">
+            <img src="/img/buzo_blend.jpg" alt="buzoBlend">
         </div>
-    </div>        
-            <div class="productocomplemento">
-                <h3>Completa tu look</h3>
-                <img src="/img/crop_top.jpg" alt="cropTop">
-                <img src="/img/buzo_blend.jpg" alt="buzoBlend">
-            </div>
     </main>
 
     <footer>

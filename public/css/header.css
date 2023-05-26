@@ -1,23 +1,28 @@
-body {
-    margin: 0
+body{
+    margin-top: 0;
+    margin-left: 0;
 }
-
-header {
-    display: flex;
-    flex-wrap: wrap;
-    font-family: migha;
-    background-image: url("/img/fondo-hojas.png");
-    font-size: 25px;
+main{
     width: 100vw;
-    position: relative;
 }
-
 .header-top {
     display: flex;
     justify-content: space-between;
     background-image: url("/img/fondo-hojas.png");
     width: 100vw;
     font-size: 25px;
+}
+
+.header-top h1 {
+    font-weight: 400;
+    transition: all 350ms;
+}
+
+.header-logo {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    transition: all 400ms;
 }
 
 header .fotoLogo {
@@ -30,7 +35,6 @@ header .fotoLogo {
 
 header .fotoLogo img {
     width: 100%;
-    padding: 10px;
 }
 
 header .nombreMarca {
@@ -42,36 +46,51 @@ header .nombreMarca {
     right: 10px;
     top: 15px;
     padding: 5px;
-    background-color: #a4c3b2;
-    border-radius: 8%;
+    background-color: #CCE3DE;
+    border-radius: 5%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    transition: all 400ms;
 }
-.nav-lateral{
+
+.nav-lateral {
     display: none;
-    transition: all 350ms;
+    transition: all 400ms;
 }
-.header-menu:hover .nav-lateral{
+
+.header-menu:hover .nav-lateral {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap:10px;
+    gap: 10px;
     margin-top: 20px;
     font-size: 20px;
 }
-.header-menu:hover{
+
+.header-menu:hover {
     box-shadow: 1px 1px 3px #2a2e2c;
 }
 
-.header-menu input{
+.header-menu input {
     max-width: 100px;
 }
-.header-menu i{
-    color: #666;
+
+.header-menu i {
+    color: #6b9080;
 }
+
 .header-bottom {
-    display: none
+    display: none;
+    transition: all 350ms;
+}
+.header-bottom .botonLupa, .header-menu .botonLupa{
+    color: #6b9080;
+    background-color: #CCE3DE;
+    border:none
+}
+.header-bottom a:hover, .nav-lateral a:hover{
+    text-shadow: 1px 1px 3px #2a2e2c;
 }
 
 .header-bottom a,
@@ -80,9 +99,10 @@ header .nombreMarca {
     color: #6b9080;
     transition: all 350ms;
 }
+
 .nav-lateral a {
     font-size: 20px;
-    color: #666;
+    color: #6b9080;
 }
 
 .header-bottom a:hover {
@@ -93,19 +113,27 @@ header .nombreMarca {
 @media (min-width: 769px) {
     .header-bottom {
         display: flex;
-        flex-wrap: wrap;
         width: 100vw;
         justify-content: space-around;
         background-color: #CCE3DE;
         font-size: 12px;
-        padding: 5px;
+        padding: 5px 0px 5px 0px;
     }
 
     .header-menu {
         display: none;
     }
 
+    .header-top h1 {
+        font-size: 3em;
+    }
+
     .header-bottom {
         font-size: 15px;
     }
+
+    .header-logo{
+        top:20px
+    }
+
 }
