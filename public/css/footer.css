@@ -3,7 +3,10 @@ footer{
     flex-wrap: wrap;
     background-color: #96b499;
     height: 150px;
-    width: 100%;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
     
 }
 
@@ -17,18 +20,16 @@ footer{
 
 .footerbottom {
     display: flex;
-
     width: 100%;
     justify-content: space-around;
-    
     height: 40%;
 }
 
 .logonh{
     width: 100%;
-    height: 70%;
-    margin-left: 80px;
-
+    max-width: 70px;
+    min-width: 35px;
+    transition: all 350ms;
 }   
 
 .footerbottom .footermail {
@@ -41,6 +42,7 @@ footer{
 .buscadornh{
     width: 75% ;
     padding-left: 101px;
+    transition: all 350ms;
 }
 
 
@@ -56,44 +58,40 @@ footer .buscadornh .input {
     border: 1px solid #000;
     color: #666;  
     border-radius: 5px;
-    height: 25px; 
+    height: 15px; 
     width: 63%;
                                
     
 }
 
 .uno{
-    width: 10%;
+    width: 20%;
     padding: 5px;
+    justify-content: center;
     display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    
-    
+    align-items: center;
+     
 }
 .dos{
-    width: 42.5%;
+    width: 32.5%;
     padding: 5px;
     display: flex;
     justify-content: center;
-    text-justify: left;
+   
 
 }
 
 .tres{
-    width: 42.5%;
+    width: 32.5%;
     padding: 5px;
     display: flex;
     justify-content: center;
-    text-justify: left;
+    
 }
 
 .cuatro{
-    width: 5%;
     padding: 5px;
-    
-    display: flex;
-    
+    display: flex; 
 }
 
 .redes{
@@ -117,12 +115,14 @@ footer .buscadornh .input {
 }
 
 .dos .listaizq a{
-    font-size: 16px; 
+    font-size: 12px; 
+    transition: all 350ms;
 
 }
 
 .tres .listader a{
-    font-size: 16px;
+    font-size: 12px;
+    transition: all 350ms;
 }
 
 .listaizq{
@@ -138,8 +138,13 @@ footer .buscadornh .input {
     margin-block: none;
 }
 
+.suscribitenh{
+    margin-block-end: 0em;
+    margin-block-start: 0em;
+}
+
 .PNF{
-    font-size: 8px;
+    font-size: 6px;
 }
 
 .mail{
@@ -147,8 +152,37 @@ footer .buscadornh .input {
     color: #666;
 }
 
+.footermail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 .mail:hover{
     color: #39b54a;
     transition: 1s;
+}
+
+@media (min-width:769px) {
+    .dos .listaizq a{
+        font-size: 16px; 
+    
+    }
+    
+    .tres .listader a{
+        font-size: 16px;
+    }
+
+    .PNF{
+        font-size: 8px;
+    }
+    
+    .buscadornh{
+        padding-left: 235px;
+    }
+  
+    
+    
 }
 
