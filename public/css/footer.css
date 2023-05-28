@@ -148,7 +148,7 @@ footer .buscadornh .input {
 }
 
 .mail{
-    font-size: 14px;
+    font-size: 10px;
     color: #666;
 }
 
@@ -182,7 +182,10 @@ footer .buscadornh .input {
         padding-left: 235px;
     }
   
-    
+    .mail{
+        font-size: 14px;
+        color: #666;
+    }
     
 }
 
