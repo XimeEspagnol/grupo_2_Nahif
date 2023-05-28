@@ -1,0 +1,143 @@
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #96b499;
+    height: 150px;
+    width: 100%;  
+}
+
+.footertop{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    width: 100%;
+    padding-top: 10px;
+   
+}
+
+.footerbottom {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    padding-bottom: 10px;
+}
+
+.logonh{
+    height: 70px;
+    width: 70px;
+    margin-left: 80px;
+}   
+
+.footerbottom .footermail {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin-left: 20px;
+}
+
+.buscadornh{
+    width: 75% ;
+    padding-left: 101px;
+}
+
+footer .buscadornh .input {
+    background-color: #FFF;
+    border: 1px solid #000;
+    color: #666;  
+    border-radius: 5px;     
+}
+
+.newsletter{
+    background-color: #FFF;
+    border: 1px solid #000;
+    color: #666;  
+    border-radius: 5px;
+    height: 25px; 
+    width: 63%;
+                               
+    
+}
+
+.uno{
+    width: 10%;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    height: 80%;
+    
+}
+.dos{
+    width: 42.5%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    text-justify: left;
+    height: 80% 
+}
+
+.tres{
+    width: 42.5%;
+    padding: 5px;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    text-justify: left;
+}
+
+.cuatro{
+    width: 5%;
+    height: 80%;
+    padding: 5px;
+}
+
+.redes{
+    list-style-type: none;
+    color: #666;
+}
+
+.iconosderecha {
+    margin: 5px;
+    list-style-type: none;
+    color: #666;
+}
+
+.twitter{
+    margin-bottom: 10px;
+}
+
+.facebook{
+    margin-bottom: 10px;
+}
+
+.dos .listaizq a{
+    font-size: 16px;    
+}
+
+.tres .listader a{
+    font-size: 16px;   
+}
+
+.listaizq{
+    list-style-type: none;
+    color: #666;  
+}
+.listader{
+    list-style-type: none;
+    color: #666;  
+}
+
+.PNF{
+    font-size: 8px;
+}
+
+.mail{
+    font-size: 14px;
+    color: #666;
+}
+
+.mail:hover{
+    color: #39b54a;
+    transition: 1s;
+}
