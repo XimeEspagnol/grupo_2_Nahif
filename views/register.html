@@ -10,17 +10,52 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/arial" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/general.css">
 </head>
 
 <body>
     <header>
-
+        <div class="header-logo">
+            <a href="/">
+                <div class="fotoLogo"><img src="/img/LOGO-01.png" alt="logo"></div>
+            </a>
+        </div>
+        <div class="header-top">
+            <h1 class="nombreMarca">NAHIF</h1>
+        </div>
+        <div class="header-menu">
+            <i class="fas fa-bars"></i>
+            <div class="nav-lateral">
+                <a href="/categorias">CATEGORIAS</a>
+                <a href="#">PROBADOR</a>
+                <a href="/carrito">CARRITO <i class="fas fa-shopping-cart"></i></a>
+                <a href="#">CONTACTO</a>
+                <a href="/register">REGISTRATE <i class="fas fa-id-card"></i></a>
+                <a href="/login">INGRESA <i class="fas fa-user"></i></a>
+                <div>
+                    <input type="search" name="buscador" placeholder="Buscar">
+                    <a class="botonLupa" href="#"><i class="fas fa-search"></i></a>
+                </div>
+            </div>
+        </div>
+        <nav class="header-bottom">
+            <a href="/categorias">CATEGORIAS</a>
+            <a href="#">PROBADOR</a>
+            <a href="/carrito">CARRITO <i class="fas fa-shopping-cart"></i></a>
+            <a href="#">CONTACTO</a>
+            <a href="/register">REGISTRATE <i class="fas fa-id-card"></i></a>
+            <a href="/login">INGRESA <i class="fas fa-user"></i></a>
+            <div class="botonLupa">
+                <input type="search" name="buscador" placeholder="Buscar">
+                <a class="botonLupa" href="#"><i class="fas fa-search"></i></a>
+            </div>
+        </nav>
     </header>
 
     <main id="main-registro">
 
-        <div class="form-registro">      
+        <div class="form-registro">
 
             <form action="/" method="get">
 
@@ -31,30 +66,31 @@
                     <input class="input-registro" type="text" name="nombreCompleto" id="nombreCompleto">
                 </div>
 
-                <div class="email-registro">   
-                    <label class="label-registro" for="email">E-mail</label> 
+                <div class="email-registro">
+                    <label class="label-registro" for="email">E-mail</label>
                     <input class="input-registro" type="text" name="usuario" id="email">
                 </div>
 
                 <div class="contraseña-registro">
-                    <label class="label-registro" for="Contraseña">Contraseña</label> 
+                    <label class="label-registro" for="Contraseña">Contraseña</label>
                     <input class="input-registro" type="password" name="contrasenia" id="Contraseña">
                 </div>
 
                 <div class="conf-contra-registro">
-                    <label class="label-registro" for="confirmarContraseña">Confirmar Contraseña</label> 
+                    <label class="label-registro" for="confirmarContraseña">Confirmar Contraseña</label>
                     <input class="input-registro" type="password" name="confirmarContrasenia" id="confirmarContraseña">
                 </div>
 
                 <div class="registro-noRobot">
 
-                    <div class="registro-robot">   
+                    <div class="registro-robot">
                         <input class="registro-input-checkbox" type="checkbox" name="noSoyUnRobot" id="noSoyUnRobot">
                         <label class="registro-label-noRobot" for="noSoyUnRobot">No soy un robot</label>
-                    </div>  
+                    </div>
 
-                    <div class="registro-captcha"> 
-                        <input href="/home" class="registro-reCaptcha" type="image" src="/img/RecaptchaLogo.png" alt="captcha">
+                    <div class="registro-captcha">
+                        <input href="/home" class="registro-reCaptcha" type="image" src="/img/RecaptchaLogo.png"
+                            alt="captcha">
                         <p class="privacidad-condiciones">"Privacidad-Condiciones"</p>
                     </div>
 
@@ -68,11 +104,78 @@
                     <p class="registro-yaTenesUnaCuenta">¿Ya tenés una cuenta?</p>
                     <a class="registro-link-iniciaSesion" href="/login">Iniciá Sesión</a>
                 </div>
-            </div>      
+        </div>
         </form>
     </main>
 
     <footer>
+
+        <div class="footertop">
+
+            <div class="uno">        
+                <img class="logonh" class="img-logonh" src="/img/LOGO-01.png" alt="logo-nh">    
+            </div>
+            <div class="dos">
+
+                <ul class="listaizq">
+                    <li>
+                        <a href="#">CONTACTO</a>
+                    </li>
+                    <li>
+                        <a href="#">ENVIOS</a>
+                    </li>
+                    <li>
+                        <a href="#">NAIF'S CLUB</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tres">
+                <ul class="listader">
+                    <li>
+                        <a href="#">PRODUCTOS</a>
+                    </li>
+                    <li>
+                        <a href="#">CAMBIOS Y DEVOLUCIONES</a>
+                    </li>
+                    <li>
+                        <a href="#">LOCALES</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="cuatro">
+                <ul class="redes">
+                    <li class="facebook">
+                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                        
+                    </li>
+                    <li class="twitter">   
+                        <a href="#"></a><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="instagram">
+                        <a href="#"></a><i class="fab fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+
+
+    <div class="footerbottom">
+
+        <div class="footermail">
+            <a class="mail" href="mailto:atencionalcliente@nahif.com">atencionalcliente@nahif.com</a>   
+            <a class="PNF">NAHIF ©COPYRIGHT ®ALL RIGHTS RESERVED</a>
+                
+        </div>
+        <div class="buscadornh">
+
+            <h6 class="suscribitenh">Suscribite a nuestro newsletter para recibir notificaciones</h6>
+            <input class="newsletter" class="text-field" type="text" name="nombreCompleto" placeholder="e-mail">
+               
+        </div>
+    </div>
+    
 
     </footer>
 </body>
