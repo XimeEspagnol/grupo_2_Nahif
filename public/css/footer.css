@@ -3,30 +3,32 @@ footer{
     flex-wrap: wrap;
     background-color: #96b499;
     height: 150px;
-    width: 100%;  
+    width: 100%;
+    
 }
 
 .footertop{
     display: flex;
-    flex-wrap: wrap;
     padding: 5px;
     width: 100%;
     padding-top: 10px;
-   
+    height: 60%;
 }
 
 .footerbottom {
     display: flex;
-    flex-wrap: wrap;
+
     width: 100%;
     justify-content: space-around;
-    padding-bottom: 10px;
+    
+    height: 40%;
 }
 
 .logonh{
-    height: 70px;
-    width: 70px;
+    width: 100%;
+    height: 70%;
     margin-left: 80px;
+
 }   
 
 .footerbottom .footermail {
@@ -40,6 +42,7 @@ footer{
     width: 75% ;
     padding-left: 101px;
 }
+
 
 footer .buscadornh .input {
     background-color: #FFF;
@@ -65,7 +68,7 @@ footer .buscadornh .input {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    height: 80%;
+    
     
 }
 .dos{
@@ -74,13 +77,12 @@ footer .buscadornh .input {
     display: flex;
     justify-content: center;
     text-justify: left;
-    height: 80% 
+
 }
 
 .tres{
     width: 42.5%;
     padding: 5px;
-    height: 80%;
     display: flex;
     justify-content: center;
     text-justify: left;
@@ -88,13 +90,16 @@ footer .buscadornh .input {
 
 .cuatro{
     width: 5%;
-    height: 80%;
     padding: 5px;
+    
+    display: flex;
+    
 }
 
 .redes{
     list-style-type: none;
     color: #666;
+    margin-block: none;
 }
 
 .iconosderecha {
@@ -112,20 +117,25 @@ footer .buscadornh .input {
 }
 
 .dos .listaizq a{
-    font-size: 16px;    
+    font-size: 16px; 
+
 }
 
 .tres .listader a{
-    font-size: 16px;   
+    font-size: 16px;
 }
 
 .listaizq{
     list-style-type: none;
     color: #666;  
+    margin: none;
+    margin-block: none;
 }
+
 .listader{
     list-style-type: none;
-    color: #666;  
+    color: #666;   
+    margin-block: none;
 }
 
 .PNF{
@@ -141,3 +151,4 @@ footer .buscadornh .input {
     color: #39b54a;
     transition: 1s;
 }
+
