@@ -24,13 +24,31 @@
 }
 
 .productocomplemento img {
-    width: 33%;
+    border: 5px solid #6B9080;
+    margin: 1px;
+}
+
+.img1{
+    width: 20%;
+}
+
+.img2{
+    width: 19.2%;
+}
+
+.img3{
+    width: 17.1%;
+}
+
+.img4{
+    width: 17%;
 }
 
 .producto {
+    padding: 15px;
     display: flex;
     flex-wrap: wrap;
-    width: 90vw;
+    width: 100%;
 }
 
 .principal img {
@@ -58,14 +76,49 @@
 
 .selecciones {
     display: flex;
+    box-sizing: border-box;
 }
 
 .selecciones div {
     border: 1px solid #6B9080;
+    background-color: #6B9080;
+    color: #EAF4F4;
+    text-align: center;
+    display: flex;
+    box-sizing: border-box;
 }
 
-@media (min-width: 361px) {
+.botones1{
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.botones{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   box-sizing: border-box;
+   width: 50%;
+}
+
+.botonPagar{
+    border-radius: 5px;
+    padding: 5px;
+    color: #EAF4F4;
+}
+
+.botonSeguir{
+    border-radius: 5px;
+    padding: 5px;
+    color: #EAF4F4;
+}
+
+
+@media (min-width: 361px) {
+    .botones{
+        align-items: center;
+        justify-content: space-around;
+    }
 }
 
 @media (min-width: 769px) {
@@ -76,5 +129,15 @@
 .unificacion{
     width: 40%;
     align-self: center;
+}
+
+.botones{
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-around;
+    box-sizing: content-box;
+    align-items: center;
 }
 }
