@@ -10,6 +10,7 @@
 .contenidoProd {
     display: flex;
     flex-wrap: wrap;
+    width: 100vw;
     transition: all 350ms;
     
 }
@@ -21,6 +22,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    padding: 10px;
 }
 
 .productocomplemento h3{
@@ -67,17 +69,20 @@
 
 .principal {
     width: 75%;
+    text-align: center;
 }
 
 .productosC {
     width: 25%;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
 }
 
 .productosC img{
     border-bottom: 5px solid #EAF4F4;
     width: 60%;
+    max-width: 80px;
 }
 
 .producto h3{
@@ -155,11 +160,11 @@
 
 @media (min-width: 769px) {
 .producto{
-    width: 60%;
+    width: 70%;
 }
 
 .unificacion{
-    width: 40%;
+    width: 25%;
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -175,10 +180,7 @@
     box-sizing: content-box;
     align-items: center;
 }
-.contenidoProd {
 
-    flex-wrap: nowrap;
-}
 
 .producto h3, .producto p{
     display: none;
