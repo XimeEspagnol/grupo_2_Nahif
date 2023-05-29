@@ -141,6 +141,7 @@ header .nombreMarca {
 
 .home{
     display: flex;
+    background-color: #EAF4F4;
 }
 
 .home-content{
@@ -148,13 +149,13 @@ header .nombreMarca {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 220px;
-    margin-left: 50px;
+    margin-top: 50px;
 }   
 
 .home-content .logo {
-    width: 300px;
-    height: 100px;
+    width: 100%;
+    max-width: 300px;
+    max-height: 100px;
 }
 
 
@@ -167,30 +168,27 @@ button{
     background: transparent;
     border: none;
     margin-top: 25px;
+    margin-bottom: 10px;
     cursor: pointer;
     box-shadow: .5rem .5rem 1rem #6b9080;
 }
 
 .col{
     display: flex;
-    height: 50vh;
-    margin: 5%;
+    margin-top: 5%;
     justify-content: space-around;
     width: 100%;
  }
 
 .card{
-    display: inline-block;
-    width: 300px;
-    height: 350px;
+    width: 100%;
     border-radius: 15px;
     padding: 25px 25px;
     box-sizing: border-box;
     margin: 10px 15px;
     background-position: center;
     background-size: cover;
-    margin-right: 100px;
-}
+ }
 
 .card1{
     background-image: url("/img/buzo_blend.jpg");
@@ -207,17 +205,12 @@ button{
     transform: translateY(-10px);
 }
 
-
-
-.textOfertas{
-    color: #6b9080;
+.card h3{
+    color:#CCE3DE;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
-.p{
-    color: beige;
-}
-
-@media  (max-width: 1080px) {
+@media  (max-width: 769px) {
     .home{
         display: flex;
         flex-direction: column; 
@@ -227,5 +220,8 @@ button{
     .col{
         display: flex;
         flex-wrap: wrap;
+    }
+    .col .card{
+        width: 45%;
     }
 }
