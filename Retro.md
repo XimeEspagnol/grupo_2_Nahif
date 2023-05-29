@@ -1,17 +1,13 @@
 **NUESTRA RETROSPECTIVA DE GRUPO**
 
-1. Comenzar a hacer.
+1. Comenzar a probar cosas nuevas, en la medida que se vayan aprendiendo:
 -Efectos
 -Transiciones
--Ser diferentes
+-Ser diferentes dentro de lo que el conocimiento y la curiosidad nos permita!
 
-2. Hacer más.
+2. Hacer más reuniones o poner fechas de entregas parciales.
 
-3. Continuar haciendo.
+3. Continuar ayudándonos para resolver las dudas en equipo.
 
-4. Hacer menos.
-¿Qué es lo que no nos aporta tanto valor y debemos darle menos importancia?
-
-5. Dejar de hacer.
-
-
+*ACLARACIÓN REGISTER: 
+El reCaptcha, ya que es un tema que aún no se vio, al cliquearlo nos llevará al home.*
