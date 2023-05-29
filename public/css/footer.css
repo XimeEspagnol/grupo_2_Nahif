@@ -134,6 +134,9 @@ footer .buscadornh .input {
     margin-block: none;
 }
 
+.listader a:visited, .listaizq a:visited {
+    color: #666;
+}
 .suscribitenh{
     margin-block-end: 0em;
     margin-block-start: 0em;
