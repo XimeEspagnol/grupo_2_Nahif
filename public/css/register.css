@@ -4,6 +4,7 @@
     margin-left: 14px;
     margin-right: 14px;
     margin-top: 20px;
+    margin-bottom: 20px;
     background-color: #a4c3b2;
     border: #6b6d6c 1px;
     border-radius: 5%;;
@@ -156,6 +157,13 @@
  
 @media (min-width: 361px) {
 
+    #main-registro {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #EAF4F4;
+    }
+
     .registro-yaTenesUnaCuenta { 
         margin-left: 48px;
         margin-bottom: 23px;
@@ -175,13 +183,6 @@
 }
 
 @media (min-width: 769px) {
-    
-    #main-registro {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #EAF4F4;
-    }
 
     .form-registro {
         max-width: 600px;
