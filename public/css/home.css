@@ -1,0 +1,231 @@
+body{
+    margin-top: 0;
+    margin-left: 0;
+}
+main{
+    width: 100vw;
+}
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    background-image: url("/img/fondo-hojas.png");
+    width: 100vw;
+    font-size: 25px;
+}
+
+.header-top h1 {
+    font-weight: 400;
+    transition: all 350ms;
+}
+
+.header-logo {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    transition: all 400ms;
+}
+
+header .fotoLogo {
+    width: 15vw;
+    max-width: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+header .fotoLogo img {
+    width: 100%;
+}
+
+header .nombreMarca {
+    margin: auto;
+}
+
+.header-menu {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    padding: 5px;
+    background-color: #CCE3DE;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: all 400ms;
+}
+
+.nav-lateral {
+    display: none;
+    transition: all 400ms;
+}
+
+.header-menu:hover .nav-lateral {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.header-menu:hover {
+    box-shadow: 1px 1px 3px #2a2e2c;
+}
+
+.header-menu input {
+    max-width: 100px;
+}
+
+.header-menu i {
+    color: #6b9080;
+}
+
+.header-bottom {
+    display: none;
+    transition: all 350ms;
+}
+.header-bottom .botonLupa, .header-menu .botonLupa{
+    color: #6b9080;
+    background-color: #CCE3DE;
+    border:none
+}
+.header-bottom a:hover, .nav-lateral a:hover{
+    text-shadow: 1px 1px 3px #2a2e2c;
+}
+
+.header-bottom a,
+.nav-lateral a {
+    text-decoration: none;
+    color: #6b9080;
+    transition: all 350ms;
+}
+
+.nav-lateral a {
+    font-size: 20px;
+    color: #6b9080;
+}
+
+.header-bottom a:hover {
+    text-shadow: 1px 1px 3px #6b9080;
+}
+
+
+@media (min-width: 769px) {
+    .header-bottom {
+        display: flex;
+        width: 100vw;
+        justify-content: space-around;
+        background-color: #CCE3DE;
+        font-size: 12px;
+        padding: 5px 0px 5px 0px;
+    }
+
+    .header-menu {
+        display: none;
+    }
+
+    .header-top h1 {
+        font-size: 3em;
+    }
+
+    .header-bottom {
+        font-size: 15px;
+    }
+
+    .header-logo{
+        top:20px
+    }
+
+}
+
+
+.home{
+    display: flex;
+}
+
+.home-content{
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 220px;
+    margin-left: 50px;
+}   
+
+.home-content .logo {
+    width: 300px;
+    height: 100px;
+}
+
+
+button{
+    width: 100px;
+    height: 50px;
+    color: #000;
+    font-size: 12px;
+    padding: 12px 0;
+    background: transparent;
+    border: none;
+    margin-top: 25px;
+    cursor: pointer;
+    box-shadow: .5rem .5rem 1rem #6b9080;
+}
+
+.col{
+    display: flex;
+    height: 50vh;
+    margin: 5%;
+    justify-content: space-around;
+    width: 100%;
+ }
+
+.card{
+    display: inline-block;
+    width: 300px;
+    height: 350px;
+    border-radius: 15px;
+    padding: 25px 25px;
+    box-sizing: border-box;
+    margin: 10px 15px;
+    background-position: center;
+    background-size: cover;
+    margin-right: 100px;
+}
+
+.card1{
+    background-image: url("/img/buzo_blend.jpg");
+    text-align: center;
+}
+
+
+.card2{
+    background-image: url("/img/media polera.png");
+    text-align: center;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+
+
+.textOfertas{
+    color: #6b9080;
+}
+
+.p{
+    color: beige;
+}
+
+@media  (max-width: 1080px) {
+    .home{
+        display: flex;
+        flex-direction: column; 
+        justify-content: space-around;
+    }
+
+    .col{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
