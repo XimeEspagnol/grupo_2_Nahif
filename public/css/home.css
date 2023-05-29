@@ -204,17 +204,19 @@ button{
     position: absolute;
     top: 20px;
     padding: 10px;
-    width: 65%;
+    width: 55%;
+    max-width: 350px;
     color:#CCE3DE;
     background-color: rgba(151, 209, 151, 0.2);
-}
+        align-content: center;
+    }
 
 .card a img{
     margin-right: 0px;
         display: flex;
         width: 100%;
         border-radius: 8%;
-        align-content: center;
+
 
 }
 
@@ -245,12 +247,15 @@ button{
         align-items: center;
     }
     .col .card{
-        width: 80%;
+        width: 100%;
     }
+
     .home-titulo{
         position: absolute;
         top: 50px;
 
-        left: 85px;
+    }
+    .card img{
+        width: 100%;
     }
 }
