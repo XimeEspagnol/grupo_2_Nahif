@@ -8,7 +8,9 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    margin: 15px 0px;
+    padding: 15px 0px;
+    margin-top: 0%;
+    font-family: MIGHA;
 }
 
 .miCatergoria2{
@@ -16,7 +18,7 @@
 }
     
 .lista-categoria{
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 20%;
     
@@ -43,15 +45,16 @@
     flex-wrap: wrap;
     width: 78%;
 }
-
 main div section article{
-   background-color: #6b9080;
-    width: 20%;
-    margin-left: 5%;
-    margin-bottom: 5%;
-    box-shadow : 0px 0px 10px #666
-    
-}
+    background-color: #6b9080;
+     width: 45%;
+     margin-left: 5%;
+     margin-bottom: 5%;
+     box-shadow : 0px 0px 10px #666
+     
+ }
+
+
 
 main div section article img{
     width: 100%;
@@ -72,3 +75,29 @@ main div section article p{
 .descuento{
     text-decoration: line-through;
 }
+
+@media(min-width:361px){
+    
+
+}
+
+    
+
+
+@media(min-width:780px){
+    .lista-categoria{
+        display: flex;
+    }
+    
+    main div section article{
+        background-color: #6b9080;
+         width: 20%;
+         margin-left: 5%;
+         margin-bottom: 5%;
+         box-shadow : 0px 0px 10px #666
+         
+     }
+
+    
+}
+   
