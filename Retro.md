@@ -14,4 +14,5 @@
 
 5. Dejar de hacer.
 
-
+ACLARACIÓN REGISTER: 
+El reCaptcha, ya que es un tema que aún no se vio, al cliquearlo nos llevará al home. 
