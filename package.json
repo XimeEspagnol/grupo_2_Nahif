@@ -4,7 +4,7 @@
   "description": "La página web en desarrollo ofrece productos de vestimenta y accesorios de diferentes estilos, que apuntan a un público femenino.",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon ./src/app.js"
   },
   "keywords": [],
   "author": "",
