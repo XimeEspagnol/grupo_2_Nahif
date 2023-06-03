@@ -1,0 +1,95 @@
+.mainAltaProd {
+    background-color: #EAF4F4;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100vw;
+    text-align: center;
+}
+
+.mainAltaProd h2 {
+    text-align: center;
+    font-family: migha;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+    font-size: 20px;
+    color: #666;
+    transition: all 350ms;
+}
+
+.mainAltaProd form {
+    background-color: #a4c3b2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    width: 70%;
+    padding: 15px 0;
+    margin-bottom: 30px;
+    border-radius: 5%;
+    font-size: 80%;
+    box-shadow: 3px 3px 5px 1px #2a2e2c;
+    margin-right: 0;
+}
+
+.formAltaProd {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.formAltaProd p {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.formAltaProd input, .formAltaProd label {
+    margin: 10px 0;
+    border-radius: 5%;
+}
+
+.colProdAlta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.colProdAlta p {
+    width: 100%;
+}
+
+.colProdAlta label, .talleProdAlta label{
+    margin-left: 3px;
+}
+
+.colProdAlta input, .talleProdAlta input {
+    margin-left: 8px;
+}
+
+.cantTalleAltaProd {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 60%;
+}
+
+.cantTalleAltaProd input {
+    max-width: 40px;
+    width: 45%;
+    margin-left: 5px;
+}
+
+.cantTalleAltaProd label{
+    width: 45%;
+}
+
+.precioProdAlta {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.precioProdAlta input {
+    max-width: 60px;
+}

@@ -10,4 +10,6 @@ router.get('/categorias', controller.categorias);
 
 router.get('/probador', controller.probador);
 
+router.get('/altaProducto', controller.altaProducto)
+
 module.exports = router
