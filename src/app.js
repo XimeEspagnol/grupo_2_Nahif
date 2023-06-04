@@ -5,6 +5,8 @@ const app = express()
 /*const publicPath = path.resolve(__dirname, "./public")*/
 app.use(express.static('public'))
 
+app.set ('view engine', 'ejs')
+
 const mainRouter = require ('./routes/mainRouter');
 const productRouter = require ('./routes/productRouter');
 const userRouter = require ('./routes/userRouter');

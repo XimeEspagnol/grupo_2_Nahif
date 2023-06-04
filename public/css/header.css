@@ -84,15 +84,23 @@ header .nombreMarca {
     display: none;
     transition: all 350ms;
 }
-.header-bottom .botonLupa, .header-menu .botonLupa{
+.formSearch {
     color: #6b9080;
     background-color: #CCE3DE;
-    border:none
+    border:none;
+    display: flex;
 }
-.header-bottom a:hover, .nav-lateral a:hover{
-    text-shadow: 1px 1px 3px #2a2e2c;
+.formSearch:hover{
+    box-shadow: 1px 1px 3px #2a2e2c;
 }
-
+.formSearch input, .formSearch button{
+    background-color: #fff;
+    border: none;
+}
+.botonLupa{
+    margin:0;
+    padding: 0;
+}
 .header-bottom a,
 .nav-lateral a {
     text-decoration: none;
