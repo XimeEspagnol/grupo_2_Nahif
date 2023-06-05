@@ -16,43 +16,9 @@
 </head>
 
 <body>
-    <header>
-        <div class="header-logo">
-            <a href="/">
-                <div class="fotoLogo"><img src="/img/LOGO-01.png" alt="logo"></div>
-            </a>
-         </div>
-        <div class="header-top">
-            <h1 class="nombreMarca">NAHIF</h1>
-        </div>
-        <div class="header-menu">
-            <i class="fas fa-bars"></i>
-            <div class="nav-lateral">
-                <a href="/categorias">CATEGORIAS</a>
-                <a href="#">PROBADOR</a>
-                <a href="/carrito">CARRITO <i class="fas fa-shopping-cart"></i></a>
-                <a href="#">CONTACTO</a>
-                <a href="/register">REGISTRATE <i class="fas fa-id-card"></i></a>
-                <a href="/login">INGRESA <i class="fas fa-user"></i></a>
-                <div>
-                    <input type="search" name="buscador" placeholder="Buscar">
-                    <a class="botonLupa" href="#"><i class="fas fa-search"></i></a>
-                </div>
-            </div>
-        </div>
-        <nav class="header-bottom">
-            <a href="/categorias">CATEGORIAS</a>
-            <a href="#">PROBADOR</a>
-            <a href="/carrito">CARRITO <i class="fas fa-shopping-cart"></i></a>
-            <a href="#">CONTACTO</a>
-            <a href="/register">REGISTRATE <i class="fas fa-id-card"></i></a>
-            <a href="/login">INGRESA <i class="fas fa-user"></i></a>
-            <div class="botonLupa">
-                <input type="search" name="buscador" placeholder="Buscar">
-                <a class="botonLupa" href="#"><i class="fas fa-search"></i></a>
-            </div>
-        </nav>
-    </header>
+    
+    <%- include('./partials/header') %>
+
     <main class="mainCarrito">
         <h1>Mi carrito</h1>
         <div class="contenedorCarrito">
@@ -129,76 +95,9 @@
             </div>
         </div>
     </main>
-    <footer>
 
-        <div class="footertop">
+    <%- include('./partials/footer') %>
 
-            <div class="uno">        
-                <img class="logonh" class="img-logonh" src="/img/LOGO-01.png" alt="logo-nh">    
-            </div>
-            <div class="dos">
-
-                <ul class="listaizq">
-                    <li>
-                        <a href="#">CONTACTO</a>
-                    </li>
-                    <li>
-                        <a href="#">ENVIOS</a>
-                    </li>
-                    <li>
-                        <a href="#">NAIF'S CLUB</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="tres">
-                <ul class="listader">
-                    <li>
-                        <a href="#">PRODUCTOS</a>
-                    </li>
-                    <li>
-                        <a href="#">CAMBIOS Y DEVOLUCIONES</a>
-                    </li>
-                    <li>
-                        <a href="#">LOCALES</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="cuatro">
-                <ul class="redes">
-                    <li class="facebook">
-                        <a href="#"><i class="fab fa-facebook-square"></i></a>
-                        
-                    </li>
-                    <li class="twitter">   
-                        <a href="#"></a><i class="fab fa-twitter"></i></a>
-                    </li>
-                    <li class="instagram">
-                        <a href="#"></a><i class="fab fa-instagram"></i></a>
-                    </li>
-                </ul>
-            </div>
-
-
-        </div>
-
-
-    <div class="footerbottom">
-
-        <div class="footermail">
-            <a class="mail" href="mailto:atencionalcliente@nahif.com">atencionalcliente@nahif.com</a>   
-            <a class="PNF">NAHIF ©COPYRIGHT ®ALL RIGHTS RESERVED</a>
-                
-        </div>
-        <div class="buscadornh">
-
-            <h6 class="suscribitenh">Suscribite a nuestro newsletter para recibir notificaciones</h6>
-            <input class="newsletter" class="text-field" type="text" name="nombreCompleto" placeholder="e-mail">
-               
-        </div>
-    </div>
-    
-
-    </footer>
 </body>
 
 </html>

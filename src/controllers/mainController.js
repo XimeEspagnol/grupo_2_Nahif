@@ -6,7 +6,7 @@ const controller = {
         res.sendFile(path.resolve('./views/home.html'))
     },
     carrito: (req,res) =>{
-        res.sendFile(path.resolve('./views/productCart.html'))
+        res.render('productCart')
     }
 };
 
