@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nahif product</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,21 +21,21 @@
     <main class="mainproducto">
         <div class="contenidoProd">
             <div class="producto">
-                <h3>Polera Combinada</h3>
-                <p>$2.500</p>
+                <h3><%= detalle.nombre %></h3>
+                <p>$ <%= detalle.precio %></p>
                 <div class="productosC">
-                    <img src="/img/polera-c2.png" alt="polera-c2">
-                    <img src="/img/polera-c3.png" alt="polera-c3">
-                    <img src="/img/polera-c4.png" alt="polera-c4">
+                    <% for (let i = 0; (i < detalle.fotosExtra.length) ; i++) { %>
+                    <img src="/img/<%= detalle.fotosExtra[i] %>" alt="foto <%= i%>">
+                    <% } %>
                 </div>
                 <div class="principal">
-                    <img src="/img/polera-combinada.png" alt="polera combinada">
+                    <img src="/img/<%= detalle.foto %>" alt="<%= detalle.nombre %>">
                 </div>
             </div>
             <div class="unificacion">
                 <div class="nombreProdMedia">
-                    <h3>Polera Combinada</h3>
-                    <p>$2.500</p>
+                    <h3><%= detalle.nombre %></h3>
+                    <p>$ <%= detalle.precio %></p>
                 </div>
                 <div class="selecciones">
                     <div>
