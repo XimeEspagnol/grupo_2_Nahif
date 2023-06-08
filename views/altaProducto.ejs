@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('./partials/head', {title = 'Nahif Form Productos'})%>
+
+<body>
+    <%- include ('./partials/header') %>
+    <main class="mainAltaProd">
+        <form action="/" method="get" class="altaProducto">
+            <h2>ALTA DE PRODUCTO</h2>
+            <div class="formAltaProd">
+
+                <input type="text" name="nombreProdAlta" placeholder="Nombre del producto">
+                <textarea name="descProdAlta" id="" cols="30" rows="7">Descripción del producto</textarea>
+                <label for="fotoProdAlta">Fotos del producto</label>
+                <input type="file" name="fotoProdAlta" id="fotoProdAlta" multiple>
+
+                <div>
+                    <label for="categoriaProdAlta">Categoría del producto</label>
+                    <select name="categoriaProdAlta" id="categoriaProdAlta">
+                        <option value="poleras">Poleras</option>
+                        <option value="buzos">Buzos</option>
+                        <option value="pantalones">Pantalones</option>
+                        <option value="remeras">Remeras</option>
+                    </select>
+                </div>
+                <div class="colProdAlta">
+                    <p>Colores disponibles</p>
+                    <div>
+                        <input type="checkbox" name="coloresProdAlta" value="negro" id="negro">
+                        <label for="negro">Negro</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="coloresProdAlta" value="blanco" id="blanco">
+                        <label for="blanco">Blanco</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="coloresProdAlta" value="azul" id="azul">
+                        <label for="azul">Azul</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="coloresProdAlta" value="rosa" id="rosa">
+                        <label for="rosa">Rosa</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="coloresProdAlta" value="crema" id="crema">
+                        <label for="crema">Crema</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="coloresProdAlta" value="verde" id="verde">
+                        <label for="verde">Verde</label>
+                    </div>
+                </div>
+                <div class="tallesProdAlta">
+                    <p>Talles disponibles</p>
+                    <input type="checkbox" name="talleProdAlta" value="talleUnico" id="talleUnico">
+                    <label for="talleUnico">Talle único</label>
+                    <input type="checkbox" name="talleProdAlta" value="small" id="small">
+                    <label for="small">S</label>
+                    <input type="checkbox" name="talleProdAlta" value="medium" id="medium">
+                    <label for="medium">M</label>
+                    <input type="checkbox" name="talleProdAlta" value="large" id="large">
+                    <label for="large">L</label>
+                </div>
+                <div class="cantTalleAltaProd">
+                    <p>Cantidades por talle</p>
+                    <div>
+                        <label for="tU">Talle único</label>
+                        <input type="number" name="tU" id="tU" value="0">
+                    </div>
+                    <div>
+                        <label for="tS">S</label>
+                        <input type="number" name="tS" id="tS" value="0">
+                    </div>
+                    <div>
+                        <label for="tM">M</label>
+                        <input type="number" name="tM" id="tM" value="0">
+                    </div>
+                    <div>
+                        <label for="tL">L</label>
+                        <input type="number" name="tL" id="tL" value="0">
+                    </div>
+                </div>
+                <div class="precioProdAlta">
+                    <label for="precioProdAlta">Precio: $</label>
+                    <input type="number" name="precioProdAlta" id="precioProdAlta" value="0">
+                </div>
+                <div>
+                    <button type="submit" class="ingresar">INGRESAR</button>
+                    <button type="reset" class="borrar">BORRAR</button>
+                </div>
+            </div>
+        </form>
+    </main>
+    <%- include ('./partials/footer') %>
+</body>
+
+</html>

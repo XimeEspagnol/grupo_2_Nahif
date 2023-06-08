@@ -46,7 +46,7 @@ header .nombreMarca {
     right: 10px;
     top: 15px;
     padding: 5px;
-    background-color: #CCE3DE;
+    background-color: rgba(204, 227, 222, 80%);
     border-radius: 5%;
     display: flex;
     flex-direction: column;

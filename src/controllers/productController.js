@@ -97,7 +97,7 @@ const controller = {
         res.sendFile(path.resolve('./views/probador.html'))
     },
     altaProducto: (req, res) => {
-        res.sendFile(path.resolve('./views/altaProducto.html'))
+        res.render('altaProducto')
     }
 
 };
