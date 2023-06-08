@@ -12,4 +12,6 @@ router.get('/probador', controller.probador);
 
 router.get('/altaProducto', controller.altaProducto)
 
+router.get('/modificar/:id', controller.modifProducto)
+
 module.exports = router
