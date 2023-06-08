@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include ('./partials/head', {title = 'Nahif Form Productos'})%>
+<%- include ('./partials/head', {title: 'Nahif Form Productos'})%>
 
 <body>
     <%- include ('./partials/header') %>
@@ -13,7 +13,7 @@
                 <input type="text" name="nombreProdAlta" placeholder="Nombre del producto">
                 <textarea name="descProdAlta" id="" cols="30" rows="7">Descripción del producto</textarea>
                 <label for="fotoProdAlta">Fotos del producto</label>
-                <input type="file" name="fotoProdAlta" id="fotoProdAlta" multiple>
+                <input type="file" name="fotoProdAlta" accept=".jpg, .png" id="fotoProdAlta" multiple>
 
                 <div>
                     <label for="categoriaProdAlta">Categoría del producto</label>
