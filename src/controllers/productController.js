@@ -27,7 +27,7 @@ const detalleProd = [
     },
     {
         id: 4,
-        foto: 'poleron-Largo2.png',
+        foto: 'Poleron-Largo2.png',
         fotosExtra: ["polera-c2.png","polera-c3.png","polera-c4.png"],
         nombre: "Polera Trenzas Black",
         detalle: "Polera punto morley con trenza lateral",
