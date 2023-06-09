@@ -12,9 +12,10 @@
     flex-wrap: wrap;
     width: 100vw;
     transition: all 350ms;
-    
+
 }
-.unificacion{
+
+.unificacion {
     transition: all 350ms;
 }
 
@@ -25,7 +26,7 @@
     padding: 10px;
 }
 
-.productocomplemento h3{
+.productocomplemento h3 {
     width: 100%;
 
 }
@@ -37,19 +38,19 @@
     width: 25%;
 }
 
-.img1{
+.img1 {
     width: 20%;
 }
 
-.img2{
+.img2 {
     width: 19.2%;
 }
 
-.img3{
+.img3 {
     width: 17.1%;
 }
 
-.img4{
+.img4 {
     width: 17%;
 }
 
@@ -79,21 +80,21 @@
     align-items: flex-end;
 }
 
-.productosC img{
+.productosC img {
     border-bottom: 5px solid #EAF4F4;
     width: 60%;
     max-width: 80px;
 }
 
-.producto h3{
+.producto h3 {
     width: 60%;
     font-family: migha;
     color: #6B9080
-    
 }
-.producto p{
+
+.producto p {
     width: 40%;
-    color:#6B9080;
+    color: #6B9080;
     font-weight: bold;
     font-family: migha;
     font-size: 14px;
@@ -112,29 +113,31 @@
     display: flex;
     box-sizing: border-box;
 }
-.selecciones label{
+
+.selecciones label {
     margin-right: 5px;
 }
 
-.botones1{
+.botones1 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.botones{
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   box-sizing: border-box;
-   width: 50%;
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 50%;
 }
 
-.botonPagar{
+.botonPagar {
     border-radius: 5px;
     color: #EAF4F4;
 }
 
-.botonProbador{
+.botonProbador,
+.botonModifProd {
     border-radius: 5px;
     font-family: migha;
     padding: 5px;
@@ -147,68 +150,80 @@
     margin-top: 5px;
     box-shadow: 3px 3px 5px 1px #2a2e2c;
 }
-.nombreProdMedia{
+
+.nombreProdMedia {
     display: none;
 }
 
+.botonProbador:hover,
+.botonModifProd:hover,
+.botonPagar:hover {
+    background-color: #557567;
+    box-shadow: 1px 1px 5px 1px #2a2e2c;
+}
+
 @media (min-width: 361px) {
-    .botones{
+    .botones {
         align-items: center;
         justify-content: space-around;
     }
 }
 
 @media (min-width: 769px) {
-.producto{
-    width: 70%;
-}
+    .producto {
+        width: 70%;
+    }
 
-.unificacion{
-    width: 25%;
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-}
+    .unificacion {
+        width: 25%;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
 
-.botones{
-    width: 60%;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-    justify-content: space-around;
-    box-sizing: content-box;
-    align-items: center;
-}
+    .botones {
+        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        justify-content: space-around;
+        box-sizing: content-box;
+        align-items: center;
+    }
 
 
-.producto h3, .producto p{
-    display: none;
-}
-.nombreProdMedia{
-    display: flex;
-}
+    .producto h3,
+    .producto p {
+        display: none;
+    }
 
-.nombreProdMedia h3{
-    width: 60%;
-    font-family: migha;
-    color: #6B9080
-    
-}
-.nombreProdMedia p{
-    width: 40%;
-    color:#6B9080;
-    font-weight: bold;
-    font-family: migha;
-    font-size: 14px;
-}
-.selecciones{
-    display: flex;
-    flex-direction: column;
-    gap: 5px
-}
-.selecciones div{
-    width: fit-content;
-    padding: 2px;
-}
+    .nombreProdMedia {
+        display: flex;
+    }
+
+    .nombreProdMedia h3 {
+        width: 60%;
+        font-family: migha;
+        color: #6B9080
+    }
+
+    .nombreProdMedia p {
+        width: 40%;
+        color: #6B9080;
+        font-weight: bold;
+        font-family: migha;
+        font-size: 14px;
+    }
+
+    .selecciones {
+        display: flex;
+        flex-direction: column;
+        gap: 5px
+    }
+
+    .selecciones div {
+        width: fit-content;
+        padding: 2px;
+    }
 }

@@ -26,19 +26,21 @@
     flex-direction: column;
     align-items: center;
     margin-top: 15px;
-    width: 45%;
+    width: 80%;
     padding: 15px 0;
     margin-bottom: 30px;
     border-radius: 5%;
     font-size: 80%;
     box-shadow: 3px 3px 5px 1px #2a2e2c;
     margin-right: 0;
+    transition: all 350ms;
 }
 
-.formAltaProd {
+.formAltaProd, .formAltaProducto{
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 100%;
 }
 
 .formAltaProd p {
@@ -47,9 +49,42 @@
     color: #666;
 }
 
-.formAltaProd input, .formAltaProd label {
-    margin: 10px 0;
+.formAltaProd textarea{
+    width: 95%;
+}
+
+ .formAltaProd label {
     border-radius: 5%;
+}
+
+.listaFotosMod{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+    width: 100%;
+}
+.listaFotosMod label{
+    width: 16%;
+}
+
+.fotoMod {
+    width: 15%;
+}
+
+.nuevaFotoProd {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    gap:10px;
+    width: 90%;
+    justify-content: center;
+    border: 1px solid #6B9080;
+}
+
+.categoriasAlta{
+    margin-top: 10px;
 }
 
 .colProdAlta {
@@ -58,15 +93,22 @@
     justify-content: center;
 }
 
-.colProdAlta p {
-    width: 100%;
+.colProdAlta div{
+    display: flex;
+    align-items: center;
 }
 
-.colProdAlta label, .talleProdAlta label{
+.colProdAlta p, .tallesProdAlta p, .cantTalleAltaProd p{
+    width: 100%;
+    margin-bottom: 7px;
+}
+
+
+.colProdAlta label, .tallesProdAlta label{
     margin-left: 3px;
 }
 
-.colProdAlta input, .talleProdAlta input {
+.colProdAlta input, .tallesProdAlta input {
     margin-left: 8px;
 }
 
@@ -75,10 +117,12 @@
     flex-direction: column;
     flex-wrap: wrap;
     width: 60%;
+    align-items: center;
+    gap:5px
 }
 
 .cantTalleAltaProd input {
-    max-width: 40px;
+    max-width: 50px;
     width: 45%;
     margin-left: 5px;
 }
@@ -103,11 +147,16 @@
     margin: 0px 5px;
     border-radius: 10%;
     color: #EAF4F4;
+    height: fit-content;
 }
 
 .formAltaProd button:hover {
     background-color: #557567;
     box-shadow: 1px 1px 5px 1px #2a2e2c;
+}
+
+.botonesAlta{
+    margin-top: 10px;
 }
 
 @media (min-width: 769px) {
@@ -122,5 +171,15 @@
     }
     .precioProdAlta {
         font-size: 20px;
+    }
+    .formAltaProd label {
+        border-radius: 5%;
+        width: 16%;
+    }
+    .nuevaFotoProd {
+        flex-wrap: nowrap;
+    }
+    .mainAltaProd form {
+        width: 50%;
     }
 }
