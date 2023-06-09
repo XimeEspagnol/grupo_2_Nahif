@@ -7,6 +7,7 @@ const detalleProd = [
         nombre: "Polera Combinada",
         detalle: "Polera combinada manga campana Odesa",
         precio: 8290,
+        descuento: 2000,
         colores: ['Negro', 'Azul', 'Rosa'],
         talles: ['S', 'M'],
         tU: 0,
@@ -20,6 +21,7 @@ const detalleProd = [
         nombre: "Polera lanilla",
         detalle: "Polera lanilla brush con recorte tipo corset Bellrose",
         precio: 5490,
+        descuento: 2000,
         colores: ['Crema', 'Blanca', 'Rosa'],
         talles: ['S', 'M', 'L'],
         tU: 0,
@@ -33,6 +35,7 @@ const detalleProd = [
         nombre: "Polera con diseño Trenza",
         detalle: "Polera trenzas gruesas y finas Linette",
         precio: 6990,
+        descuento: 2000,
         colores: ['Crema', 'Blanco', 'Verde', 'Azul'],
         talles: ['L', 'M'],
         tU: 0,
@@ -46,6 +49,7 @@ const detalleProd = [
         nombre: "Polera Trenzas Black",
         detalle: "Polera punto morley con trenza lateral",
         precio: 7690,
+        descuento: 2000,
         colores: ['Negro', 'Azul', 'Blanco', 'Crema', 'Verde'],
         talles: ['Talle único'],
         tU: 8,
@@ -59,6 +63,7 @@ const detalleProd = [
         nombre: "Polera Combinada Marrón",
         detalle: "Polera combinada manga campana Odesa",
         precio: 8290,
+        descuento: 2000,
         colores: ['Negro', 'Verde', 'Blanco'],
         talles: ['S', 'L'],
         tU: 0,
@@ -72,6 +77,7 @@ const detalleProd = [
         nombre: "Remera algodón",
         detalle: "Polera lanilla brush con recorte tipo corset Bellrose",
         precio: 5490,
+        descuento: 2000,
         colores: ['Negro', 'Blanco'],
         talles: ['S', 'M', 'L'],
         tU: 0,
@@ -85,6 +91,7 @@ const detalleProd = [
         nombre: "Remera oversize",
         detalle: "Polera trenzas gruesas y finas Linette",
         precio: 6990,
+        descuento: 2000,
         colores: ['Negro', 'Azul', 'Rosa', 'Verde'],
         talles: ['Talle único'],
         tU: 11,
@@ -98,6 +105,7 @@ const detalleProd = [
         nombre: "Remera Corta",
         detalle: "Polera punto morley con trenza lateral",
         precio: 7690,
+        descuento: 2000,
         colores: ['Negro', 'Azul', 'Blanca'],
         talles: ['S', 'M', 'L'],
         tU: 0,
@@ -111,6 +119,7 @@ const detalleProd = [
         nombre: "Remera lanilla",
         detalle: "Polera trenzas gruesas y finas Linette",
         precio: 6990,
+        descuento: 2000,
         colores: ['Verde', 'Azul', 'Rosa', 'Crema'],
         talles: ['M', 'L'],
         tU: 0,
@@ -124,6 +133,7 @@ const detalleProd = [
         nombre: "Remera manga larga",
         detalle: "Polera punto morley con trenza lateral",
         precio: 7690,
+        descuento: 2000,
         colores: ['Negro', 'Blanca', 'Crema'],
         talles: ['S', 'M', 'L'],
         tU: 0,
@@ -141,7 +151,7 @@ const controller = {
         else return res.send("ERROR 404 NOT FOUND")
     },
     categorias: (req, res) => {
-        res.sendFile(path.resolve('./views/categorias.html'))
+        res.render('categorias',{categoriaProd:detalleProd})
     },
     probador: (req, res) => {
         res.sendFile(path.resolve('./views/probador.html'))

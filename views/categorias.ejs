@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head', {title: "Nahif Login"})%>
+
+
+<body>
+
+<%- include("./partials/header") %>
+
+    <main class="miCategorias">
+        <h2>Productos Disponibles</h2>
+            <div class="miCatergoria2">
+                
+           
+                <div class="lista-categoria">
+                    <a href="#" class="items-categoria">Buzos</a>
+                    <a href="#" class="items-categoria">Camperas</a>
+                    <a href="#" class="items-categoria">Remeras</a>
+                    <a href="#" class="items-categoria">Pantalones</a>
+                    <a href="#" class="items-categoria">Shorts</a>
+                    <a href="#" class="items-categoria">Calzas</a>
+                    <a href="#" class="items-categoria">otros</a>
+                </div>
+                <section class="lista-productos">
+                    <% categoriaProd.forEach(productos => {%>
+                        
+                 
+                    <Article>
+
+                        <a href="/product/<%=productos.id%>"><img src = "img/<%=productos.fotos[0]%>" alt="<%=productos.nombre%>"></a>
+                
+                        <h3 class="desc-prod"><%=productos.nombre%></h3>
+                        <p class="precio">precio: $ <%=productos.precio%></p>
+                        <p class="descuento">ahorra: $ <%=productos.descuento%></p>
+                    </Article>
+                    <%}); %>
+
+                    
+                </section>
+            </div>
+    </main>
+    <%- include('./partials/footer')%>
+
+</body>
+</html>
