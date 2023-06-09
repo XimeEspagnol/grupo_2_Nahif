@@ -89,7 +89,7 @@
 .producto h3 {
     width: 60%;
     font-family: migha;
-    color: #6B9080
+    color: #6B9080;
 }
 
 .producto p {
@@ -171,11 +171,11 @@
 
 @media (min-width: 769px) {
     .producto {
-        width: 70%;
+        width: 50%;
     }
 
     .unificacion {
-        width: 25%;
+        width: 30%;
         align-self: center;
         display: flex;
         flex-direction: column;
@@ -205,7 +205,8 @@
     .nombreProdMedia h3 {
         width: 60%;
         font-family: migha;
-        color: #6B9080
+        color: #6B9080;
+        font-size: 18px;
     }
 
     .nombreProdMedia p {
@@ -213,7 +214,8 @@
         color: #6B9080;
         font-weight: bold;
         font-family: migha;
-        font-size: 14px;
+        font-size: 18px;
+        text-align: right;
     }
 
     .selecciones {
