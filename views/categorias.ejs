@@ -14,13 +14,9 @@
                 
            
                 <div class="lista-categoria">
-                    <a href="#" class="items-categoria">Buzos</a>
-                    <a href="#" class="items-categoria">Camperas</a>
-                    <a href="#" class="items-categoria">Remeras</a>
-                    <a href="#" class="items-categoria">Pantalones</a>
-                    <a href="#" class="items-categoria">Shorts</a>
-                    <a href="#" class="items-categoria">Calzas</a>
-                    <a href="#" class="items-categoria">otros</a>
+                    <% for (i=0; i<listCategorias.length; i++){ %>
+                        <a href="#" class="items-categoria"><%= listCategorias[i] %></a>
+                    <% } %>
                 </div>
                 <section class="lista-productos">
                     <% categoriaProd.forEach(productos => {%>

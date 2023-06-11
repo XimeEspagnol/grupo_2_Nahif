@@ -28,9 +28,9 @@
                     <div>
                         <label>Colores Disponibles</label>
                         <select class="colores">
-                            <option>Negro</option>
-                            <option>Azul</option>
-                            <option>Blanco</option>
+                            <% for(let i=0;i<detalle.colores.length;i++){ %>
+                            <option name="colores"><%= detalle.colores[i] %></option>
+                            <% } %>
                         </select>
                     </div>
                     <div>
@@ -44,9 +44,9 @@
                     <div>
                         <label>Talles</label>
                         <select class="talles">
-                            <option>S</option>
-                            <option>M</option>
-                            <option>L</option>
+                            <% for(let i=0;i<detalle.talles.length;i++){ %>
+                                <option name="talles"><%= detalle.talles[i] %></option>
+                            <% } %>
                         </select>
                     </div>
                 </div>

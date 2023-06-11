@@ -8,6 +8,7 @@ const detalleProd = [
         detalle: "Polera combinada manga campana Odesa",
         precio: 8290,
         descuento: 2000,
+        categoria:"Poleras",
         colores: ['Negro', 'Azul', 'Rosa'],
         talles: ['S', 'M'],
         tU: 0,
@@ -22,6 +23,7 @@ const detalleProd = [
         detalle: "Polera lanilla brush con recorte tipo corset Bellrose",
         precio: 5490,
         descuento: 2000,
+        categoria:"Poleras",
         colores: ['Crema', 'Blanca', 'Rosa'],
         talles: ['S', 'M', 'L'],
         tU: 0,
@@ -36,6 +38,7 @@ const detalleProd = [
         detalle: "Polera trenzas gruesas y finas Linette",
         precio: 6990,
         descuento: 2000,
+        categoria:"Poleras",
         colores: ['Crema', 'Blanco', 'Verde', 'Azul'],
         talles: ['L', 'M'],
         tU: 0,
@@ -50,6 +53,7 @@ const detalleProd = [
         detalle: "Polera punto morley con trenza lateral",
         precio: 7690,
         descuento: 2000,
+        categoria:"Poleras",
         colores: ['Negro', 'Azul', 'Blanco', 'Crema', 'Verde'],
         talles: ['Talle único'],
         tU: 8,
@@ -64,6 +68,7 @@ const detalleProd = [
         detalle: "Polera combinada manga campana Odesa",
         precio: 8290,
         descuento: 2000,
+        categoria:"Poleras",
         colores: ['Negro', 'Verde', 'Blanco'],
         talles: ['S', 'L'],
         tU: 0,
@@ -78,6 +83,7 @@ const detalleProd = [
         detalle: "Polera lanilla brush con recorte tipo corset Bellrose",
         precio: 5490,
         descuento: 2000,
+        categoria:"Remeras",
         colores: ['Negro', 'Blanco'],
         talles: ['S', 'M', 'L'],
         tU: 0,
@@ -92,6 +98,7 @@ const detalleProd = [
         detalle: "Polera trenzas gruesas y finas Linette",
         precio: 6990,
         descuento: 2000,
+        categoria:"Remeras",
         colores: ['Negro', 'Azul', 'Rosa', 'Verde'],
         talles: ['Talle único'],
         tU: 11,
@@ -106,6 +113,7 @@ const detalleProd = [
         detalle: "Polera punto morley con trenza lateral",
         precio: 7690,
         descuento: 2000,
+        categoria:"Remeras",
         colores: ['Negro', 'Azul', 'Blanca'],
         talles: ['S', 'M', 'L'],
         tU: 0,
@@ -120,6 +128,7 @@ const detalleProd = [
         detalle: "Polera trenzas gruesas y finas Linette",
         precio: 6990,
         descuento: 2000,
+        categoria:"Remeras",
         colores: ['Verde', 'Azul', 'Rosa', 'Crema'],
         talles: ['M', 'L'],
         tU: 0,
@@ -134,6 +143,7 @@ const detalleProd = [
         detalle: "Polera punto morley con trenza lateral",
         precio: 7690,
         descuento: 2000,
+        categoria:"Remeras",
         colores: ['Negro', 'Blanca', 'Crema'],
         talles: ['S', 'M', 'L'],
         tU: 0,
@@ -143,6 +153,8 @@ const detalleProd = [
     }
 ];
 
+const listCategorias=['Buzos','Camperas','Remeras','Pantalones','Shorts','Calzas','Poleras']
+
 const controller = {
 
     product: (req, res) => {
@@ -151,20 +163,22 @@ const controller = {
         else return res.send("ERROR 404 NOT FOUND")
     },
     categorias: (req, res) => {
-        return res.render('categorias',{categoriaProd:detalleProd})
+        return res.render('categorias',{categoriaProd:detalleProd, listCategorias: listCategorias})
     },
     probador: (req, res) => {
         return res.render('probador')
     },
     altaProducto: (req, res) => {
-        return res.render('altaProducto')
+        return res.render('altaProducto', {listCategorias: listCategorias})
     },
     modifProducto: (req, res) => {
         const prodEncontrado = detalleProd.find(row => row.id == req.params.id)
-        if (prodEncontrado) return res.render('modifProducto', {detalle: prodEncontrado})
+        if (prodEncontrado) return res.render('modifProducto', {detalle: prodEncontrado, listCategorias: listCategorias})
         else return res.send("ERROR 404 NOT FOUND")
     }
 
 };
+
+
 
 module.exports = controller;

@@ -22,10 +22,9 @@
                         <div class="categoriasAlta">
                             <label for="categoriaProdAlta">Categoría del producto</label>
                             <select name="categoriaProdAlta" id="categoriaProdAlta">
-                                <option value="poleras">Poleras</option>
-                                <option value="buzos">Buzos</option>
-                                <option value="pantalones">Pantalones</option>
-                                <option value="remeras">Remeras</option>
+                                <% for (let i=0; i<listCategorias.length;i++){ %>
+                                <option value="<%= listCategorias[i] %>"><%= listCategorias[i] %></option>
+                                <% } %>
                             </select>
                         </div>
                         <div class="colProdAlta">
