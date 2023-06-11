@@ -23,7 +23,7 @@ const prodCart = [
 const controller = {
 
     home: (req,res) =>{
-        res.sendFile(path.resolve('./views/home.html'))
+        return res.render('home')
     },
     carrito: (req,res) =>{
         return res.render('productCart', {cart: prodCart})

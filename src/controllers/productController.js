@@ -151,10 +151,10 @@ const controller = {
         else return res.send("ERROR 404 NOT FOUND")
     },
     categorias: (req, res) => {
-        res.render('categorias',{categoriaProd:detalleProd})
+        return res.render('categorias',{categoriaProd:detalleProd})
     },
     probador: (req, res) => {
-        res.sendFile(path.resolve('./views/probador.html'))
+        return res.render('probador')
     },
     altaProducto: (req, res) => {
         return res.render('altaProducto')
