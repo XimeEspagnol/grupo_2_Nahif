@@ -1,6 +1,7 @@
 const path = require('path');
+const fs= require('fs')
 
-const detalleProd = [
+/*const detalleProd = [
     {
         id: 1,
         fotos: ["polera-combinada.png", "polera-c2.png","polera-c3.png","polera-c4.png"],
@@ -151,9 +152,13 @@ const detalleProd = [
         tM: 2,
         tL: 1,
     }
-];
+];*/
 
-const listCategorias=['Buzos','Camperas','Remeras','Pantalones','Shorts','Calzas','Poleras']
+//const listCategorias=['Buzos','Camperas','Remeras','Pantalones','Shorts','Calzas','Poleras']
+
+const detalleProd = JSON.parse(fs.readFileSync(path.resolve('./src/database/products.json')))
+const listCategorias = JSON.parse(fs.readFileSync(path.resolve('./src/database/categorias.json')))
+const listColores = JSON.parse(fs.readFileSync(path.resolve('./src/database/colores.json')))
 
 const controller = {
 
@@ -173,8 +178,26 @@ const controller = {
     },
     modifProducto: (req, res) => {
         const prodEncontrado = detalleProd.find(row => row.id == req.params.id)
-        if (prodEncontrado) return res.render('modifProducto', {detalle: prodEncontrado, listCategorias: listCategorias})
+        if (prodEncontrado) return res.render('modifProducto', {detalle: prodEncontrado, listCategorias: listCategorias, listColores: listColores})
         else return res.send("ERROR 404 NOT FOUND")
+    },
+    processModifProd:(req, res) => {
+        const prodEncontrado = detalleProd.find(prod => prod.id == req.params.id)
+        if (req.body.fotoProdPpal != "") prodEncontrado.fotoPpal= req.body.fotoProdPpal
+        if (req.body.fotoProdAlta != "") prodEncontrado.fotos= req.body.fotoProdAlta
+        prodEncontrado.nombre= req.body.nombreProdAlta
+        prodEncontrado.detalle= req.body.descProdAlta
+        prodEncontrado.precio= 7690
+        prodEncontrado.descuento= 2000
+        prodEncontrado.categoria= req.body.categoria
+        prodEncontrado.colores= req.body.coloresProdAlta
+        prodEncontrado.talles= req.body.talleProdAlta
+        prodEncontrado.tU= req.body.tU
+        prodEncontrado.tS= req.body.tS
+        prodEncontrado.tM= req.body.tM
+        prodEncontrado.tL= req.body.tL
+        fs.writeFileSync(path.resolve('./src/database/products.json'), JSON.stringify(detalleProd, null, 2), "utf-8")
+        return res.redirect('/products')
     }
 
 };

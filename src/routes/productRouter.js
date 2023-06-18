@@ -30,8 +30,8 @@ router.get('/altaProducto', controller.altaProducto)
 
 
 //FORM EDIT
-router.get('/modificar/:id', controller.modifProducto)
-
+router.get('/modificarProd/:id', controller.modifProducto)
+router.patch('/modificarProd/:id', controller.processModifProd)
 
 //FORM DELETE
 

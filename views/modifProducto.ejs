@@ -6,30 +6,29 @@
     <body>
         <%- include ('./partials/header') %>
             <main class="mainAltaProd">
-                <form action="/" method="get" class="altaProducto">
+                <form action="/modificarProd/<%= detalle.id %>?_method=PATCH" method="post" class="altaProducto">
                     <h2>MODIFICACIÓN DE PRODUCTO</h2>
                     <div class="formAltaProd">
 
                         <input type="text" name="nombreProdAlta" placeholder="Nombre del producto"
                             value="<%= detalle.nombre %>">
                         <textarea name="descProdAlta" id="" cols="30" rows="7"><%= detalle.detalle %></textarea>
-                        <form action="/" method="get">
                             <div class="listaFotosMod">
                                 <label for="fotoProdAlta">Fotos del producto</label>
-                                <% for (let i=0; (i < detalle.fotos.length) ; i++) { %>
+                                <img class="fotoMod" src="/img/<%= detalle.fotoPpal %>" alt="fotoPpal">
+                                <% for (let i=0; (i < detalle.fotos.length) ; i++) { %> 
                                     <img class="fotoMod" src="/img/<%= detalle.fotos[i] %>" alt="foto <%= i%>">
                                     <% } %>
                             </div>
-                            <form action="/" method="get">
+                            <div class="nuevaFotoProd">
+                                <label for="fotoProdPpal">Cambiar foto principal</label>
+                                <input type="file" name="fotoProdPpal" accept=".jpg, .png" id="fotoProdPpal">
+                            </div>
                                 <div class="nuevaFotoProd">
                                     <label for="fotoProdAlta">Agregar fotos nuevas</label>
                                     <input type="file" name="fotoProdAlta" accept=".jpg, .png" id="fotoProdAlta"
                                         multiple>
-                                    <button type="submit" class="ingresar">Agregar</button>
                                 </div>
-                            </form>
-
-                        </form>
                         <div class="categoriasAlta">
                             <label for="categoriaProdAlta">Categoría del producto</label>
                             <select name="categoriaProdAlta" id="categoriaProdAlta">
@@ -43,91 +42,48 @@
                         </div>
                         <div class="colProdAlta">
                             <p>Colores disponibles</p>
-                            <div>
-                                <% let colorNegro=detalle.colores.find(element=> element == 'Negro')%>
-                                    <%if (colorNegro) {%>
-                                        <input type="checkbox" name="coloresProdAlta" value="negro" id="negro" checked>
+                            <% for (let i=0; i< listColores.length;i++) { %>
+                                <div>
+                                    <% let colorActual = detalle.colores.find(element=> element == listColores[i])%>
+                                    <%if (colorActual) {%>
+                                        <input type="checkbox" name="coloresProdAlta" value="<%= listColores[i] %>" id="<%= listColores[i] %>" checked>
                                         <%}else {%>
-                                            <input type="checkbox" name="coloresProdAlta" value="negro" id="negro">
+                                            <input type="checkbox" name="coloresProdAlta" value="<%= listColores[i] %>" id="<%= listColores[i] %>">
                                             <% }%>
-                                                <label for="negro">Negro</label>
-                            </div>
-                            <div>
-                                <% let colorBlanco=detalle.colores.find(element=> element == 'Blanco')%>
-                                    <%if (colorBlanco) {%>
-                                        <input type="checkbox" name="coloresProdAlta" value="blanco" id="blanco"
-                                            checked>
-                                        <%}else {%>
-                                            <input type="checkbox" name="coloresProdAlta" value="blanco" id="blanco">
-                                            <% }%>
-                                                <label for="blanco">Blanco</label>
-                            </div>
-                            <div>
-                                <% let colorAzul=detalle.colores.find(element=> element == 'Azul')%>
-                                    <%if (colorAzul) {%>
-                                        <input type="checkbox" name="coloresProdAlta" value="azul" id="azul" checked>
-                                        <%}else {%>
-                                            <input type="checkbox" name="coloresProdAlta" value="azul" id="azul">
-                                            <% }%>
-                                                <label for="azul">Azul</label>
-                            </div>
-                            <div>
-                                <% let colorRosa=detalle.colores.find(element=> element == 'Rosa')%>
-                                    <%if (colorRosa) {%>
-                                        <input type="checkbox" name="coloresProdAlta" value="rosa" id="rosa" checked>
-                                        <%}else {%>
-                                            <input type="checkbox" name="coloresProdAlta" value="rosa" id="rosa">
-                                            <% }%>
-                                                <label for="rosa">Rosa</label>
-                            </div>
-                            <div>
-                                <% let colorCrema=detalle.colores.find(element=> element == 'Crema')%>
-                                    <%if (colorCrema) {%>
-                                        <input type="checkbox" name="coloresProdAlta" value="crema" id="crema" checked>
-                                        <%}else {%>
-                                            <input type="checkbox" name="coloresProdAlta" value="crema" id="crema">
-                                            <% }%>
-                                                <label for="crema">Crema</label>
-                            </div>
-                            <div>
-                                <% let colorVerde=detalle.colores.find(element=> element == 'Verde')%>
-                                    <%if (colorVerde) {%>
-                                        <input type="checkbox" name="coloresProdAlta" value="verde" id="verde" checked>
-                                        <%}else {%>
-                                            <input type="checkbox" name="coloresProdAlta" value="verde" id="verde">
-                                            <% }%>
-                                                <label for="verde">Verde</label>
-                            </div>
+                                                <label for="<%= listColores[i] %>"><%= listColores[i] %></label>
+                                </div>
+                            <% } %>
+                            
                         </div>
                         <div class="tallesProdAlta">
                             <p>Talles disponibles</p>
                             <% let talleTU=detalle.talles.find(element=> element == 'Talle único')%>
                                 <%if (talleTU) {%>
-                                    <input type="checkbox" name="talleProdAlta" value="talleUnico" id="talleUnico"
+                                    <input type="checkbox" name="talleProdAlta" value="Talle único" id="talleUnico"
                                         checked>
                                 <%}else {%>
-                                    <input type="checkbox" name="talleProdAlta" value="talleUnico" id="talleUnico">
+                                    <input type="checkbox" name="talleProdAlta" value="Talle único" id="talleUnico">
                                 <% }%>
                             <label for="talleUnico">Talle único</label>
                             <% let talleTS=detalle.talles.find(element=> element == 'S')%>
                             <%if (talleTS) {%>
-                                <input type="checkbox" name="talleProdAlta" value="small" id="small" checked>
+                                <input type="checkbox" name="talleProdAlta" value="S" id="small" checked>
                             <%}else {%>
-                                <input type="checkbox" name="talleProdAlta" value="small" id="small">
+                                <input type="checkbox" name="talleProdAlta" value="S" id="small">
                             <% }%>
                             <label for="small">S</label>
                             <% let talleTM=detalle.talles.find(element=> element =='M')%>
                             <%if (talleTM) {%>
-                                <input type="checkbox" name="talleProdAlta" value="medium" id="medium" checked>
+                                <input type="checkbox" name="talleProdAlta" value="M" id="medium" checked>
                             <%}else {%>
-                                <input type="checkbox" name="talleProdAlta" value="medium" id="medium">
+                                <input type="checkbox" name="talleProdAlta" value="M" id="medium">
                             <% }%>
                             <label for="medium">M</label>
                             <% let talleTL=detalle.talles.find(element=>element == 'L')%>
                             <%if (talleTL) {%>
-                                <input type="checkbox" name="talleProdAlta" value="large" id="large" checked>
+                                <input type="checkbox" name="talleProdAlta" value="L" id="large" checked>
                             <%}else {%>
-                                <input type="checkbox" name="talleProdAlta" value="medium" id="medium">
+                                <input type="checkbox" name="talleProdAlta" value="L" id="large">
                             <% }%>
                             <label for="large">L</label>
                         </div>
