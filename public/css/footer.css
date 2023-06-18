@@ -13,16 +13,16 @@ footer{
 .footertop{
     display: flex;
     padding: 5px;
-    width: 100%;
-    padding-top: 10px;
-    height: 60%;
+    width: 90%;
+    padding-top: 8px;
+    height: 55%;
 }
 
 .footerbottom {
     display: flex;
     width: 100%;
-    justify-content: space-around;
-    height: 40%;
+    justify-content: space-between;
+    height: 30%;
 }
 
 .logonh{
@@ -32,16 +32,22 @@ footer{
     transition: all 350ms;
 }   
 
-.footerbottom .footermail {
+.footerbottom {
+    display: flex;
+    width: 100%;
+}
+.footermail{
     display: flex;
     flex-direction: column;
-    width: 20%;
-    margin-left: 20px;
+    align-items: flex-start;
+    margin-left: 10px;
+    width: 40%;
+    transition: all 350ms;
 }
-
 .buscadornh{
-    width: 75% ;
-    padding-left: 50px;
+    width: 58% ;
+    padding-left: 35px;
+    max-width: 300px;
     transition: all 350ms;
 }
 
@@ -59,7 +65,7 @@ footer .buscadornh .input {
     color: #666;  
     border-radius: 5px;
    /* height: 15px;*/ 
-    width: 63%;  
+    width: 70%;  
 }
 
 .uno{
@@ -71,15 +77,13 @@ footer .buscadornh .input {
      
 }
 .dos{
-    width: 32.5%;
-    padding: 5px;
+    width: 30%;
     display: flex;
     justify-content: center;
 }
 
 .tres{
-    width: 32.5%;
-    padding: 5px;
+    width: 40%;
     display: flex;
     justify-content: center;
     
@@ -91,23 +95,11 @@ footer .buscadornh .input {
 }
 
 .redes{
+    display: flex;
+    flex-direction: column;
     list-style-type: none;
     color: #666;
-    margin-block: none;
-}
-
-.iconosderecha {
-    margin: 5px;
-    list-style-type: none;
-    color: #666;
-}
-
-.twitter{
-    margin-bottom: 10px;
-}
-
-.facebook{
-    margin-bottom: 10px;
+    margin: none;
 }
 
 .dos .listaizq a{
@@ -121,43 +113,36 @@ footer .buscadornh .input {
     transition: all 350ms;
 }
 
-.listaizq{
+.listaizq, .listader{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 0px;
     list-style-type: none;
     color: #666;  
-    margin: none;
-    margin-block: none;
 }
 
-.listader{
-    list-style-type: none;
-    color: #666;   
-    margin-block: none;
-}
 
 .listader a:visited, .listaizq a:visited {
     color: #666;
 }
 .suscribitenh{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
     margin-block-end: 0em;
     margin-block-start: 0em;
+    max-width: 300px;
 }
 
 .PNF{
-    font-size: 6px;
+    font-size: 7px;
 }
 
 .mail{
-    font-size: 8px;
+    font-size: 9px;
     color: #666;
     transition: all 350ms;
 }
-
-.footermail{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 
 .mail:hover{
     color: #39b54a;
@@ -174,16 +159,23 @@ footer .buscadornh .input {
     }
 
     .PNF{
-        font-size: 8px;
+        font-size: 10px;
     }
     
     .buscadornh{
-        padding-left: 235px;
+        max-width: 400px;
     }
   
     .mail{
         font-size: 14px;
         color: #666;
+    }
+    .suscribitenh{
+        font-size: 12px;
+        max-width: 400px;
+    }
+    .footermail{
+        margin-left: 40px;
     }
 }
 
