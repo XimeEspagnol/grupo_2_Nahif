@@ -5,6 +5,7 @@ const app = express()
 const mainRouter = require ('./routes/mainRouter');
 const productRouter = require ('./routes/productRouter');
 const userRouter = require ('./routes/userRouter');
+const methodOverride = require('method-override')
 
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false }));
