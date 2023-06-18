@@ -1,5 +1,5 @@
 const path = require('path');
-const fs= require('fs')
+const fs = require('fs')
 
 /*const detalleProd = [
     {
@@ -168,34 +168,55 @@ const controller = {
         else return res.send("ERROR 404 NOT FOUND")
     },
     categorias: (req, res) => {
-        return res.render('categorias',{categoriaProd:detalleProd, listCategorias: listCategorias})
+        return res.render('categorias', { categoriaProd: detalleProd, listCategorias: listCategorias })
     },
     probador: (req, res) => {
         return res.render('probador')
     },
     altaProducto: (req, res) => {
-        return res.render('altaProducto', {listCategorias: listCategorias})
+        return res.render('altaProducto', { listCategorias: listCategorias })
+    },
+    processAltaProducto: (req, res) => {
+        console.log(req.body );
+        console.log(req.file);
+        let prodNuevo = {
+            "id": detalleProd.length + 1,
+            "fotoPpal": req.file.filename,
+            "fotos": "",
+            "nombre": req.body.nombreProdAlta,
+            "detalle": req.body.descProdAlta,
+            "precio": req.body.precioProdAlta,
+            "categoria": req.body.categoriaProdAlta,
+            "colores": req.body.coloresProdAlta,
+            "talles": req.body.talleProdAlta,
+            "tU": req.body.tU,
+            "tS": req.body.tS,
+            "tM": req.body.tM,
+            "tL": req.body.tL,
+        }
+        fs.writeFileSync(path.resolve('./src/database/products.json'), JSON.stringify([...detalleProd, prodNuevo], null, 2), "utf-8")
+        return res.redirect('/altaProducto/create')
     },
     modifProducto: (req, res) => {
         const prodEncontrado = detalleProd.find(row => row.id == req.params.id)
-        if (prodEncontrado) return res.render('modifProducto', {detalle: prodEncontrado, listCategorias: listCategorias, listColores: listColores})
+        if (prodEncontrado) return res.render('modifProducto', { detalle: prodEncontrado, listCategorias: listCategorias, listColores: listColores })
         else return res.send("ERROR 404 NOT FOUND")
     },
-    processModifProd:(req, res) => {
+    processModifProd: (req, res) => {
         const prodEncontrado = detalleProd.find(prod => prod.id == req.params.id)
-        if (req.body.fotoProdPpal != "") prodEncontrado.fotoPpal= req.body.fotoProdPpal
-        if (req.body.fotoProdAlta != "") prodEncontrado.fotos= req.body.fotoProdAlta
-        prodEncontrado.nombre= req.body.nombreProdAlta
-        prodEncontrado.detalle= req.body.descProdAlta
-        prodEncontrado.precio= 7690
-        prodEncontrado.descuento= 2000
-        prodEncontrado.categoria= req.body.categoria
-        prodEncontrado.colores= req.body.coloresProdAlta
-        prodEncontrado.talles= req.body.talleProdAlta
-        prodEncontrado.tU= req.body.tU
-        prodEncontrado.tS= req.body.tS
-        prodEncontrado.tM= req.body.tM
-        prodEncontrado.tL= req.body.tL
+        if (req.body.fotoProdPpal != "") prodEncontrado.fotoPpal = req.body.fotoProdPpal
+        if (req.body.fotoProdAlta != "") prodEncontrado.fotos = req.body.fotoProdAlta
+        prodEncontrado.nombre = req.body.nombreProdAlta
+        prodEncontrado.detalle = req.body.descProdAlta
+        prodEncontrado.precio = 7690
+        prodEncontrado.descuento = 2000
+        prodEncontrado.categoria = req.body.categoria
+        prodEncontrado.colores = req.body.coloresProdAlta
+        prodEncontrado.talles = req.body.talleProdAlta
+        prodEncontrado.tU = req.body.tU
+        prodEncontrado.tS = req.body.tS
+        prodEncontrado.tM = req.body.tM
+        prodEncontrado.tL = req.body.tL
         fs.writeFileSync(path.resolve('./src/database/products.json'), JSON.stringify(detalleProd, null, 2), "utf-8")
         return res.redirect('/products')
     }

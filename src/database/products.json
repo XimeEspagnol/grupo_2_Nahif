@@ -11,6 +11,7 @@
     "detalle": "Polera combinada manga campana Odesa prueba",
     "precio": 7690,
     "descuento": 2000,
+    "categoria": "Poleras",
     "colores": [
       "Rosa",
       "Verde",
@@ -37,6 +38,7 @@
     "detalle": "Polera lanilla brush con recorte tipo corset Bellrose",
     "precio": 7690,
     "descuento": 2000,
+    "categoria": "Poleras",
     "colores": [
       "Negro",
       "Rosa",
@@ -62,6 +64,7 @@
     "detalle": "Polera trenzas gruesas y finas Linette",
     "precio": 7690,
     "descuento": 2000,
+    "categoria": "Poleras",
     "colores": [
       "Crema",
       "Verde",
@@ -269,5 +272,35 @@
     "tS": 3,
     "tM": 2,
     "tL": 1
+  },
+  {
+    "id": 11,
+    "fotoPpal": "1687113569563.jpg",
+    "fotos": "",
+    "nombre": "sdv",
+    "detalle": "xcbxDescripción del producto",
+    "precio": "4",
+    "categoria": "Remeras",
+    "colores": "rosa",
+    "talles": "small",
+    "tU": "0",
+    "tS": "1",
+    "tM": "0",
+    "tL": "0"
+  },
+  {
+    "id": 12,
+    "fotoPpal": "1687114642486.jpg",
+    "fotos": "",
+    "nombre": "uycv",
+    "detalle": "Descripción del productohv ihv",
+    "precio": "5476",
+    "categoria": "Pantalones",
+    "colores": "blanco",
+    "talles": "small",
+    "tU": "0",
+    "tS": "1",
+    "tM": "0",
+    "tL": "0"
   }
 ]

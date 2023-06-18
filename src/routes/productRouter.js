@@ -6,7 +6,7 @@ const multer= require('multer');
 const controller = require('../controllers/productController');
 
 const storage= multer.diskStorage({
-    destination: (req, file,cb)=>{
+    destination: (req, file, cb)=>{
         cb(null, path.join(__dirname, '../../public/img'))
     },
     filename: (req, file, cb)=>{
@@ -26,7 +26,8 @@ router.get('/products', controller.categorias);
 router.get('/probador', controller.probador);
 
 //FORM CREATE
-router.get('/altaProducto', controller.altaProducto)
+router.get('/altaProducto/create', controller.altaProducto)
+router.post('/altaProducto/create', fileUpload.single('fotoProdPpal'), controller.processAltaProducto)
 
 
 //FORM EDIT
