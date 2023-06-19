@@ -11,20 +11,19 @@
     "detalle": "Polera combinada manga campana Odesa prueba",
     "precio": 7690,
     "descuento": 2000,
-    "categoria": "Poleras",
     "colores": [
+      "Negro",
       "Rosa",
-      "Verde",
-      "Blanco"
+      "Crema"
     ],
     "talles": [
-      "S",
-      "M"
+      "Talle único",
+      "S"
     ],
-    "tU": "0",
-    "tS": "2",
-    "tM": "1",
-    "tL": "4"
+    "tU": "5",
+    "tS": "5",
+    "tM": "0",
+    "tL": "0"
   },
   {
     "id": 2,
@@ -275,32 +274,61 @@
   },
   {
     "id": 11,
-    "fotoPpal": "1687113569563.jpg",
-    "fotos": "",
+    "fotoPpal": "img-tv-samsung-smart.jpg",
+    "fotos": [],
     "nombre": "sdv",
     "detalle": "xcbxDescripción del producto",
-    "precio": "4",
-    "categoria": "Remeras",
-    "colores": "rosa",
-    "talles": "small",
+    "precio": 7690,
+    "categoria": "Poleras",
+    "colores": [
+      "Rosa"
+    ],
+    "talles": [
+      "S"
+    ],
+    "tU": "0",
+    "tS": "1",
+    "tM": "0",
+    "tL": "0",
+    "descuento": 2000
+  },
+  {
+    "id": 12,
+    "fotoPpal": "1687114642486.jpg",
+    "fotos": [],
+    "nombre": "uycv",
+    "detalle": "Descripción del productohv ihv",
+    "precio": "5476",
+    "categoria": "Pantalones",
+    "colores": [
+      "Blanco"
+    ],
+    "talles": [
+      "S"
+    ],
     "tU": "0",
     "tS": "1",
     "tM": "0",
     "tL": "0"
   },
   {
-    "id": 12,
-    "fotoPpal": "1687114642486.jpg",
-    "fotos": "",
-    "nombre": "uycv",
-    "detalle": "Descripción del productohv ihv",
-    "precio": "5476",
-    "categoria": "Pantalones",
-    "colores": "blanco",
-    "talles": "small",
+    "id": 13,
+    "fotoPpal": "1687184314970.jpg",
+    "fotos": [],
+    "nombre": "Prod Prueba",
+    "detalle": "Descripción del producto",
+    "precio": "2555",
+    "categoria": "Remeras",
+    "colores": [
+      "Blanco",
+      "Azul"
+    ],
+    "talles": [
+      "M"
+    ],
     "tU": "0",
-    "tS": "1",
-    "tM": "0",
+    "tS": "0",
+    "tM": "2",
     "tL": "0"
   }
 ]

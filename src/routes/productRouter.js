@@ -32,7 +32,7 @@ router.post('/altaProducto/create', fileUpload.single('fotoProdPpal'), controlle
 
 //FORM EDIT
 router.get('/modificarProd/:id', controller.modifProducto)
-router.patch('/modificarProd/:id', controller.processModifProd)
+router.patch('/modificarProd/:id', fileUpload.single('fotoProdPpal'), controller.processModifProd)
 
 //FORM DELETE
 

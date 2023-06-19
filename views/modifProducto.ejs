@@ -6,7 +6,7 @@
     <body>
         <%- include ('./partials/header') %>
             <main class="mainAltaProd">
-                <form action="/modificarProd/<%= detalle.id %>?_method=PATCH" method="post" class="altaProducto">
+                <form action="/modificarProd/<%= detalle.id %>?_method=patch" method="post" class="altaProducto">
                     <h2>MODIFICACIÓN DE PRODUCTO</h2>
                     <div class="formAltaProd">
 
@@ -23,12 +23,12 @@
                             <div class="nuevaFotoProd">
                                 <label for="fotoProdPpal">Cambiar foto principal</label>
                                 <input type="file" name="fotoProdPpal" accept=".jpg, .png" id="fotoProdPpal">
-                            </div>
-                                <div class="nuevaFotoProd">
+                             </div>
+                            <%#     <div class="nuevaFotoProd">
                                     <label for="fotoProdAlta">Agregar fotos nuevas</label>
                                     <input type="file" name="fotoProdAlta" accept=".jpg, .png" id="fotoProdAlta"
                                         multiple>
-                                </div>
+                            </div> %>
                         <div class="categoriasAlta">
                             <label for="categoriaProdAlta">Categoría del producto</label>
                             <select name="categoriaProdAlta" id="categoriaProdAlta">
@@ -36,7 +36,7 @@
                                     <% if (listCategorias[i]==detalle.categoria) {%>
                                         <option name="categoria" value="<%= detalle.categoria %>" selected><%= detalle.categoria %></option> "
                                     <% } else { %>
-                                        <option name="categorias" value="<%= listCategorias[i] %>"><%= listCategorias[i] %></option>   
+                                        <option name="categoria" value="<%= listCategorias[i] %>"><%= listCategorias[i] %></option>   
                                 <% }} %>
                             </select>
                         </div>
