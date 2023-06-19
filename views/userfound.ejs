@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head', {title: "Nahif Users"})%>
+
+<body>
+    <%- include('./partials/header') %>
+    <main id="main-registro">
+
+        <div class="form-registro">
+
+            <h2 class="subtitulo-crear-cuenta">CUENTA</h2>
+
+                <div class="nombre-registro">
+                    <p><%= users.nombreCompleto %></p>
+                </div>
+
+                <div class="email-registro">
+                    <p><%= users.email %></p>
+                </div>
+
+                <div class="contraseña-registro">
+                    <p><%= users.contrasenia %></p>
+                </div>
+                
+        </div>
+    </main>
+    <%- include('./partials/footer') %>
+</body>
+
+</html>

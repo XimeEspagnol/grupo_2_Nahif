@@ -24,14 +24,14 @@ const controller = {
     }
 
     fs.writeFileSync(path.resolve('./src/database/users.json'), JSON.stringify([...userId, userNuevo], null, 2), "utf-8")
-    return res.redirect('/users/:id')
+    return res.redirect('/users/'+ userNuevo.id)
 
    },
 
     users: (req, res) => {
       userId = JSON.parse(fs.readFileSync(path.resolve('./src/database/users.json')))
-      const userFound = userId[userId.length-1]
-      if (userFound) return res.render('userFound', { users: userFound })
+      const userFound = userId.find(row=> row.id == req.params.id)
+      if (userFound) return res.render('userfound', { users: userFound })
       else return res.send("Para poder ingresar, debe registrarse")
    },
    }

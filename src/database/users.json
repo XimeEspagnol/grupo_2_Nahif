@@ -118,5 +118,21 @@
     "contrasenia": "1234",
     "perfilDeUsuario": "comprador",
     "borrado": false
+  },
+  {
+    "id": 16,
+    "nombreCompleto": "ssss",
+    "email": "aaa@a.x",
+    "contrasenia": "1234",
+    "perfilDeUsuario": "comprador",
+    "borrado": false
+  },
+  {
+    "id": 17,
+    "nombreCompleto": "aaaa",
+    "email": "aaa@aa.a",
+    "contrasenia": "1234",
+    "perfilDeUsuario": "comprador",
+    "borrado": false
   }
 ]
