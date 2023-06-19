@@ -8,7 +8,7 @@ router.get('/login', controller.login);
 
 router.get('/register', controller.register);
 
-router.get ('/users', controller.users);
+router.get ('/users/:id', controller.users);
 
 
 module.exports = router

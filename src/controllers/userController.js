@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const userId = JSON.parse(fs.readFileSync(path.resolve('./src/database/users.json')))
 
 const controller = {
@@ -11,8 +12,8 @@ const controller = {
     },
 
     users: (req, res) => {
-      const userFinded = userId.find(row => row.id == req.params.id)
-      if (userFinded) return res.render('userFinded', { users: userFinded })
+      const userFound = userId.find(row => row.id == req.params.id)
+      if (userFound) return res.render('userFound', { users: userFound })
       else return res.send("Para poder ingresar, debe registrarse")
     },
    }
