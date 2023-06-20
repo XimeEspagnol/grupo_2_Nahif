@@ -66,7 +66,9 @@ main div section article h3{
     margin: 0;
     
 }
-
+.desc-prod{
+    padding: 5px;
+}
 main div section article p{
     display: block;
     width: 100%;
