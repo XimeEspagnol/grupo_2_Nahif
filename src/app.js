@@ -21,5 +21,5 @@ app.listen(3002, () =>{
 })
 
 app.use('/', mainRouter);
-app.use('/', productRouter);
-app.use('/', userRouter);
+app.use('/products', productRouter);
+app.use('/user', userRouter);

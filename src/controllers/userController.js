@@ -24,7 +24,7 @@ const controller = {
     }
 
     fs.writeFileSync(path.resolve('./src/database/users.json'), JSON.stringify([...userId, userNuevo], null, 2), "utf-8")
-    return res.redirect('/users/'+ userNuevo.id)
+    return res.redirect('/user/'+ userNuevo.id)
 
    },
 

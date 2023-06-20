@@ -43,11 +43,11 @@
 .input-registro {
     background-color: #FFF;   
     font-size: 14px;
-    width: 97%;
+    width: 95%;
     justify-content: space-around;
     border:none;
-    margin-left: 3px;
-    margin-right: 7px;
+    margin-left: 5px;
+    margin-right: 5px;
     padding-top: 7px;
     padding-bottom: 5px;
 }
@@ -89,7 +89,7 @@
 }
 
 .registro-reCaptcha {
-    width: 45%;
+    width: 25%;
 }
 
 .privacidad-condiciones {

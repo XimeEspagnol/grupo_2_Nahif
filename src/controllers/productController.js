@@ -24,6 +24,7 @@ const controller = {
     processAltaProducto: (req, res) => {
         console.log(req.body );
         console.log(req.file);
+        console.log(req.files)
         let prodNuevo = {
             "id": detalleProd.length + 1,
             "fotoPpal": req.file.filename,
@@ -40,7 +41,7 @@ const controller = {
             "tL": req.body.tL,
         }
         fs.writeFileSync(path.resolve('./src/database/products.json'), JSON.stringify([...detalleProd, prodNuevo], null, 2), "utf-8")
-        return res.redirect('/altaProducto/create')
+        return res.redirect('/products/altaProducto/create')
     },
     modifProducto: (req, res) => {
         const prodEncontrado = detalleProd.find(row => row.id == req.params.id)
@@ -49,19 +50,21 @@ const controller = {
     },
     processModifProd: (req, res) => {
         console.log(req.body)
-        console.log(req.file);
+        console.log(req.files)
         const prodEncontrado = detalleProd.find(prod => prod.id == req.params.id)
-        if (req.body.fotoProdPpal != "") prodEncontrado.fotoPpal = req.body.fotoProdPpal
-        //if (req.body.fotoProdAlta != "") prodEncontrado.fotos = req.body.fotoProdAlta
+        if (req.files != "") {
+            if (req.body.fotoProdPpal != ""& req.files[0].fieldname=='fotoProdPpal') prodEncontrado.fotoPpal = req.files[0].filename
+            if (req.body.fotoProdAlta != ""& req.files.length>=1) prodEncontrado.fotos = req.files.filter(row => row.fieldname=='fotoProdAlta')
+        }
         prodEncontrado.nombre = req.body.nombreProdAlta
         prodEncontrado.detalle = req.body.descProdAlta
         prodEncontrado.precio = req.body.precioProdAlta
         prodEncontrado.descuento = 2000
         if (req.body.categoriaProdAlta != "") prodEncontrado.categoria = req.body.categoriaProdAlta
         prodEncontrado.colores = req.body.coloresProdAlta
-        if (typeof(req.body.coloresProdAlta)== String || req.body.coloresProdAlta!= "") prodEncontrado.colores = [req.body.coloresProdAlta]
+        if (typeof(req.body.coloresProdAlta)== String || req.body.coloresProdAlta!= "") prodEncontrado.colores = req.body.coloresProdAlta
         else prodEncontrado.colores = req.body.coloresProdAlta
-        if (typeof(req.body.talleProdAlta)== String || req.body.talleProdAlta!= "") prodEncontrado.talles = [req.body.talleProdAlta]
+        if (typeof(req.body.talleProdAlta)== String || req.body.talleProdAlta!= "") prodEncontrado.talles = req.body.talleProdAlta
         else prodEncontrado.talles = req.body.talleProdAlta
         prodEncontrado.tU = req.body.tU
         prodEncontrado.tS = req.body.tS

@@ -9,6 +9,10 @@ footer{
     box-sizing: border-box; 
     font-family: migha; 
 }
+footer li a{
+    text-decoration: none;
+    color:#666
+}
 
 .footertop{
     display: flex;
@@ -21,7 +25,6 @@ footer{
 .footerbottom {
     display: flex;
     width: 100%;
-    justify-content: space-between;
     height: 30%;
 }
 
@@ -32,10 +35,6 @@ footer{
     transition: all 350ms;
 }   
 
-.footerbottom {
-    display: flex;
-    width: 100%;
-}
 .footermail{
     display: flex;
     flex-direction: column;
@@ -172,10 +171,11 @@ footer .buscadornh .input {
     }
     .suscribitenh{
         font-size: 12px;
-        max-width: 400px;
+        max-width: 450px;
     }
     .footermail{
         margin-left: 40px;
+        max-width: 330px;
     }
 }
 

@@ -21,8 +21,8 @@ const fileUpload = multer({
 
 
 //
-router.get('/product/:id', controller.product);
-router.get('/products', controller.categorias);
+router.get('/:id', controller.product);
+router.get('/', controller.categorias);
 router.get('/probador', controller.probador);
 
 //FORM CREATE
@@ -32,7 +32,7 @@ router.post('/altaProducto/create', fileUpload.single('fotoProdPpal'), controlle
 
 //FORM EDIT
 router.get('/modificarProd/:id', controller.modifProducto)
-router.patch('/modificarProd/:id', fileUpload.single('fotoProdPpal'), controller.processModifProd)
+router.patch('/modificarProd/:id', fileUpload.any('fotoProdPpal'), controller.processModifProd)
 
 //FORM DELETE
 

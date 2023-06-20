@@ -12,7 +12,7 @@
                 <p>$ <%= detalle.precio %></p>
                 <div class="productosC">
                     <% for (let i = 0; (i < detalle.fotos.length) ; i++) { %>
-                    <img src="/img/<%= detalle.fotos[i] %>" alt="foto <%= i%>">
+                    <img src="/img/<%= detalle.fotos[i].filename %>" alt="foto <%= i%>">
                     <% } %>
                 </div>
                 <div class="principal">
@@ -58,7 +58,7 @@
                     <form action="/carrito" method="get">
                         <button name="botonPagarProducto" class="botonPagar" type="submit">Añadir al Carrito</button>
                     </form>
-                    <form action="/modificarProd/<%= detalle.id %>" method="get">
+                    <form action="/products/modificarProd/<%= detalle.id %>" method="get">
                         <button name="botonModifProd" class="botonModifProd" type="submit">Modificar producto</button>
                     </form>
                 </div>

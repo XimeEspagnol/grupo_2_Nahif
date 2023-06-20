@@ -6,7 +6,7 @@
     <body>
         <%- include ('./partials/header') %>
             <main class="mainAltaProd">
-                <form action="/modificarProd/<%= detalle.id %>?_method=patch" method="post" class="altaProducto">
+                <form action="/products/modificarProd/<%= detalle.id %>?_method=patch" method="post" class="altaProducto" enctype="multipart/form-data">
                     <h2>MODIFICACIÓN DE PRODUCTO</h2>
                     <div class="formAltaProd">
 
@@ -15,20 +15,20 @@
                         <textarea name="descProdAlta" id="" cols="30" rows="7"><%= detalle.detalle %></textarea>
                             <div class="listaFotosMod">
                                 <label for="fotoProdAlta">Fotos del producto</label>
-                                <img class="fotoMod" src="/img/<%= detalle.fotoPpal %>" alt="fotoPpal">
+                                <<img class="fotoMod" src="/img/<%= detalle.fotoPpal %>" alt="fotoPpal">
                                 <% for (let i=0; (i < detalle.fotos.length) ; i++) { %> 
-                                    <img class="fotoMod" src="/img/<%= detalle.fotos[i] %>" alt="foto <%= i%>">
+                                    <img class="fotoMod" src="/img/<%= detalle.fotos[i].filename %>" alt="foto <%= i%>">
                                     <% } %>
                             </div>
                             <div class="nuevaFotoProd">
                                 <label for="fotoProdPpal">Cambiar foto principal</label>
                                 <input type="file" name="fotoProdPpal" accept=".jpg, .png" id="fotoProdPpal">
                              </div>
-                            <%#     <div class="nuevaFotoProd">
+                           <div class="nuevaFotoProd">
                                     <label for="fotoProdAlta">Agregar fotos nuevas</label>
                                     <input type="file" name="fotoProdAlta" accept=".jpg, .png" id="fotoProdAlta"
                                         multiple>
-                            </div> %>
+                            </div> 
                         <div class="categoriasAlta">
                             <label for="categoriaProdAlta">Categoría del producto</label>
                             <select name="categoriaProdAlta" id="categoriaProdAlta">
