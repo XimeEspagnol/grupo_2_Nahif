@@ -49,12 +49,13 @@ const controller = {
         else return res.send("ERROR 404 NOT FOUND")
     },
     processModifProd: (req, res) => {
-        console.log(req.body)
-        console.log(req.files)
         const prodEncontrado = detalleProd.find(prod => prod.id == req.params.id)
         if (req.files != "") {
             if (req.body.fotoProdPpal != ""& req.files[0].fieldname=='fotoProdPpal') prodEncontrado.fotoPpal = req.files[0].filename
-            if (req.body.fotoProdAlta != ""& req.files.length>=1) prodEncontrado.fotos = req.files.filter(row => row.fieldname=='fotoProdAlta')
+            if (req.body.fotoProdAlta != ""& req.files.length>=1)
+                req.files.forEach(row => {
+                   if (row.fieldname =='fotoProdAlta') prodEncontrado.fotos.push(row.filename)
+                });
         }
         prodEncontrado.nombre = req.body.nombreProdAlta
         prodEncontrado.detalle = req.body.descProdAlta

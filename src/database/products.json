@@ -12,17 +12,13 @@
     "precio": "7690",
     "descuento": 2000,
     "colores": [
-      [
-        "Negro",
-        "Rosa",
-        "Crema"
-      ]
+      "Negro",
+      "Rosa",
+      "Crema"
     ],
     "talles": [
-      [
-        "Talle único",
-        "S"
-      ]
+      "Talle único",
+      "S"
     ],
     "tU": "5",
     "tS": "5",
@@ -280,18 +276,10 @@
   {
     "id": 11,
     "nombre": "sdv",
-    "fotoPpal": "1687232106001.jpg",
+    "fotoPpal": "1687235201748.jpg",
     "fotos": [
-      {
-        "fieldname": "fotoProdAlta",
-        "originalname": "img-macbook-pro-2019.jpg",
-        "encoding": "7bit",
-        "mimetype": "image/jpeg",
-        "destination": "C:\\Users\\Ximena\\Documents\\Ximena\\DIGITAL HOUSE\\PROYECTO GRUPO 2\\grupo_2_Nahif\\public\\img",
-        "filename": "1687232106007.jpg",
-        "path": "C:\\Users\\Ximena\\Documents\\Ximena\\DIGITAL HOUSE\\PROYECTO GRUPO 2\\grupo_2_Nahif\\public\\img\\1687232106007.jpg",
-        "size": 268724
-      }
+      "1687235201752.jpg",
+      "1687235201757.jpg"
     ],
     "detalle": "xcbxDescripción del producto",
     "precio": "5555",
@@ -313,39 +301,14 @@
   },
   {
     "id": 12,
-    "fotoPpal": "1687232017440.jpg",
+    "fotoPpal": "1687235242327.jpg",
     "nombre": "uycv",
-    "fotos": [
-      {
-        "fieldname": "fotoProdAlta",
-        "originalname": "img-cafetera-moulinex.jpg",
-        "encoding": "7bit",
-        "mimetype": "image/jpeg",
-        "destination": "C:\\Users\\Ximena\\Documents\\Ximena\\DIGITAL HOUSE\\PROYECTO GRUPO 2\\grupo_2_Nahif\\public\\img",
-        "filename": "1687232017444.jpg",
-        "path": "C:\\Users\\Ximena\\Documents\\Ximena\\DIGITAL HOUSE\\PROYECTO GRUPO 2\\grupo_2_Nahif\\public\\img\\1687232017444.jpg",
-        "size": 151245
-      },
-      {
-        "fieldname": "fotoProdAlta",
-        "originalname": "img-tv-samsung-smart.jpg",
-        "encoding": "7bit",
-        "mimetype": "image/jpeg",
-        "destination": "C:\\Users\\Ximena\\Documents\\Ximena\\DIGITAL HOUSE\\PROYECTO GRUPO 2\\grupo_2_Nahif\\public\\img",
-        "filename": "1687232017450.jpg",
-        "path": "C:\\Users\\Ximena\\Documents\\Ximena\\DIGITAL HOUSE\\PROYECTO GRUPO 2\\grupo_2_Nahif\\public\\img\\1687232017450.jpg",
-        "size": 366630
-      }
-    ],
+    "fotos": [],
     "detalle": "Descripción del productohv ihv",
     "precio": "5476",
     "categoria": "Pantalones",
-    "colores": [
-      "Blanco"
-    ],
-    "talles": [
-      "S"
-    ],
+    "colores": "Blanco",
+    "talles": "S",
     "tU": "0",
     "tS": "1",
     "tM": "0",
@@ -354,22 +317,24 @@
   },
   {
     "id": 13,
-    "fotoPpal": "1687232029272.jpg",
-    "fotos": [],
+    "fotoPpal": "1687235708676.jpg",
+    "fotos": [
+      "1687235259094.jpg",
+      "1687235259096.jpg"
+    ],
     "nombre": "Prod Prueba",
     "detalle": "Descripción del producto",
     "precio": "2555",
     "categoria": "Remeras",
     "colores": [
-      [
-        "Blanco",
-        "Azul"
-      ]
+      "Blanco",
+      "Azul"
     ],
     "talles": [
+      "Talle único",
       "M"
     ],
-    "tU": "0",
+    "tU": "1",
     "tS": "0",
     "tM": "2",
     "tL": "0",

@@ -12,7 +12,7 @@
                 <p>$ <%= detalle.precio %></p>
                 <div class="productosC">
                     <% for (let i = 0; (i < detalle.fotos.length) ; i++) { %>
-                    <img src="/img/<%= detalle.fotos[i].filename %>" alt="foto <%= i%>">
+                    <img src="/img/<%= detalle.fotos[i] %>" alt="foto <%= i%>">
                     <% } %>
                 </div>
                 <div class="principal">

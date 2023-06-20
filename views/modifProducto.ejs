@@ -17,7 +17,7 @@
                                 <label for="fotoProdAlta">Fotos del producto</label>
                                 <<img class="fotoMod" src="/img/<%= detalle.fotoPpal %>" alt="fotoPpal">
                                 <% for (let i=0; (i < detalle.fotos.length) ; i++) { %> 
-                                    <img class="fotoMod" src="/img/<%= detalle.fotos[i].filename %>" alt="foto <%= i%>">
+                                    <img class="fotoMod" src="/img/<%= detalle.fotos[i] %>" alt="foto <%= i%>">
                                     <% } %>
                             </div>
                             <div class="nuevaFotoProd">
@@ -57,34 +57,17 @@
                         </div>
                         <div class="tallesProdAlta">
                             <p>Talles disponibles</p>
-                            <% let talleTU=detalle.talles.find(element=> element == 'Talle único')%>
-                                <%if (talleTU) {%>
-                                    <input type="checkbox" name="talleProdAlta" value="Talle único" id="talleUnico"
-                                        checked>
-                                <%}else {%>
-                                    <input type="checkbox" name="talleProdAlta" value="Talle único" id="talleUnico">
-                                <% }%>
+
+                            <input <%= detalle.talles.includes('Talle único') == true ? 'checked' : ""%> type="checkbox" name="talleProdAlta" value="Talle único" id="talleUnico">
                             <label for="talleUnico">Talle único</label>
-                            <% let talleTS=detalle.talles.find(element=> element == 'S')%>
-                            <%if (talleTS) {%>
-                                <input type="checkbox" name="talleProdAlta" value="S" id="small" checked>
-                            <%}else {%>
-                                <input type="checkbox" name="talleProdAlta" value="S" id="small">
-                            <% }%>
+
+                            <input <%= detalle.talles.includes('S') == true ? 'checked' : ""%> type="checkbox" name="talleProdAlta" value="S" id="small">
                             <label for="small">S</label>
-                            <% let talleTM=detalle.talles.find(element=> element =='M')%>
-                            <%if (talleTM) {%>
-                                <input type="checkbox" name="talleProdAlta" value="M" id="medium" checked>
-                            <%}else {%>
-                                <input type="checkbox" name="talleProdAlta" value="M" id="medium">
-                            <% }%>
+                            
+                            <input <%= detalle.talles.includes('M') == true ? 'checked' : ""%> type="checkbox" name="talleProdAlta" value="M" id="medium">        
                             <label for="medium">M</label>
-                            <% let talleTL=detalle.talles.find(element=>element == 'L')%>
-                            <%if (talleTL) {%>
-                                <input type="checkbox" name="talleProdAlta" value="L" id="large" checked>
-                            <%}else {%>
-                                <input type="checkbox" name="talleProdAlta" value="L" id="large">
-                            <% }%>
+                
+                            <input <%= detalle.talles.includes('L') == true ? 'checked' : ""%>type="checkbox" name="talleProdAlta" value="L" id="large" >
                             <label for="large">L</label>
                         </div>
                         <div class="cantTalleAltaProd">
