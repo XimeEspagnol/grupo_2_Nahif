@@ -131,13 +131,13 @@
     width: 45%;
 }
 
-.precioProdAlta {
+.precioProdAlta, .antesProdAlta {
     font-size: 18px;
     font-weight: bold;
     color: #666;
 }
 
-.precioProdAlta input {
+.precioProdAlta input, .antesProdAlta input {
     max-width: 60px;
 }
 
@@ -169,7 +169,7 @@
     .formAltaProd p {
         font-size: 18px;
     }
-    .precioProdAlta {
+    .precioProdAlta, .antesProdAlta {
         font-size: 20px;
     }
     .formAltaProd label {

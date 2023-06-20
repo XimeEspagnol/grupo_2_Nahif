@@ -27,7 +27,7 @@ router.get('/probador', controller.probador);
 
 //FORM CREATE
 router.get('/altaProducto/create', controller.altaProducto)
-router.post('/altaProducto/create', fileUpload.single('fotoProdPpal'), controller.processAltaProducto)
+router.post('/altaProducto/create', fileUpload.any('fotoProdPpal'), controller.processAltaProducto)
 
 
 //FORM EDIT

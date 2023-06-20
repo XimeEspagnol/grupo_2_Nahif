@@ -10,7 +10,7 @@
       "polera-c4.png"
     ],
     "precio": "7690",
-    "descuento": 2000,
+    "descuento": 10000,
     "colores": [
       "Negro",
       "Rosa",
@@ -37,7 +37,7 @@
     "nombre": "Polera lanilla",
     "detalle": "Polera lanilla brush con recorte tipo corset Bellrose",
     "precio": 7690,
-    "descuento": 2000,
+    "descuento": 10000,
     "categoria": "Poleras",
     "colores": [
       "Negro",
@@ -63,7 +63,7 @@
     "nombre": "Polera con diseño Trenza",
     "detalle": "Polera trenzas gruesas y finas Linette",
     "precio": 7690,
-    "descuento": 2000,
+    "descuento": 10000,
     "categoria": "Poleras",
     "colores": [
       "Crema",
@@ -91,7 +91,7 @@
     "nombre": "Polera Trenzas Black",
     "detalle": "Polera punto morley con trenza lateral",
     "precio": 7690,
-    "descuento": 2000,
+    "descuento": 10000,
     "categoria": "Poleras",
     "colores": [
       "Negro",
@@ -119,7 +119,7 @@
     "nombre": "Polera Combinada Marrón",
     "detalle": "Polera combinada manga campana Odesa",
     "precio": 8290,
-    "descuento": 2000,
+    "descuento": 10000,
     "categoria": "Poleras",
     "colores": [
       "Negro",
@@ -146,7 +146,7 @@
     "nombre": "Remera algodón",
     "detalle": "Polera lanilla brush con recorte tipo corset Bellrose",
     "precio": 5490,
-    "descuento": 2000,
+    "descuento": 10000,
     "categoria": "Remeras",
     "colores": [
       "Negro",
@@ -173,7 +173,7 @@
     "nombre": "Remera oversize",
     "detalle": "Polera trenzas gruesas y finas Linette",
     "precio": 6990,
-    "descuento": 2000,
+    "descuento": 10000,
     "categoria": "Remeras",
     "colores": [
       "Negro",
@@ -200,7 +200,7 @@
     "nombre": "Remera Corta",
     "detalle": "Polera punto morley con trenza lateral",
     "precio": 7690,
-    "descuento": 2000,
+    "descuento": 10000,
     "categoria": "Remeras",
     "colores": [
       "Negro",
@@ -228,7 +228,7 @@
     "nombre": "Remera lanilla",
     "detalle": "Polera trenzas gruesas y finas Linette",
     "precio": 6990,
-    "descuento": 2000,
+    "descuento": 10000,
     "categoria": "Remeras",
     "colores": [
       "Verde",
@@ -256,7 +256,7 @@
     "nombre": "Remera manga larga",
     "detalle": "Polera punto morley con trenza lateral",
     "precio": 7690,
-    "descuento": 2000,
+    "descuento": 10000,
     "categoria": "Remeras",
     "colores": [
       "Negro",
@@ -297,7 +297,7 @@
     "tS": "1",
     "tM": "2",
     "tL": "2",
-    "descuento": 2000
+    "descuento": 10000
   },
   {
     "id": 12,
@@ -313,7 +313,7 @@
     "tS": "1",
     "tM": "0",
     "tL": "0",
-    "descuento": 2000
+    "descuento": 10000
   },
   {
     "id": 13,
@@ -338,6 +338,32 @@
     "tS": "0",
     "tM": "2",
     "tL": "0",
-    "descuento": 2000
+    "descuento": 10000
+  },
+  {
+    "id": 14,
+    "fotoPpal": "1687283541896.jpg",
+    "fotos": [
+      "1687283541900.jpg",
+      "1687283541903.jpg",
+      "1687283541908.jpg"
+    ],
+    "nombre": "Prueba de alta",
+    "detalle": "Descripción del producto aaaa",
+    "precio": "8750",
+    "categoria": "Shorts",
+    "colores": [
+      "blanco",
+      "crema"
+    ],
+    "talles": [
+      "small",
+      "medium"
+    ],
+    "tU": "0",
+    "tS": "2",
+    "tM": "4",
+    "tL": "0",
+    "descuento": "10000"
   }
 ]

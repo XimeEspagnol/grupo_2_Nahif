@@ -22,13 +22,19 @@ const controller = {
         return res.render('altaProducto', { listCategorias: listCategorias })
     },
     processAltaProducto: (req, res) => {
-        console.log(req.body );
-        console.log(req.file);
-        console.log(req.files)
+        let fotoPpalNueva = ""
+        let fotosNuevas = []
+        if (req.files != "") {
+            if (req.body.fotoProdPpal != ""& req.files[0].fieldname=='fotoProdPpal') fotoPpalNueva = req.files[0].filename
+            if (req.body.fotoProdAlta != ""& req.files.length>=1)
+                req.files.forEach(row => {
+                   if (row.fieldname =='fotoProdAlta') fotosNuevas.push(row.filename)
+                });
+        }
         let prodNuevo = {
             "id": detalleProd.length + 1,
-            "fotoPpal": req.file.filename,
-            "fotos": "",
+            "fotoPpal": fotoPpalNueva,
+            "fotos": fotosNuevas,
             "nombre": req.body.nombreProdAlta,
             "detalle": req.body.descProdAlta,
             "precio": req.body.precioProdAlta,
@@ -39,6 +45,7 @@ const controller = {
             "tS": req.body.tS,
             "tM": req.body.tM,
             "tL": req.body.tL,
+            "descuento": req.body.antesProdAlta,
         }
         fs.writeFileSync(path.resolve('./src/database/products.json'), JSON.stringify([...detalleProd, prodNuevo], null, 2), "utf-8")
         return res.redirect('/products/altaProducto/create')
