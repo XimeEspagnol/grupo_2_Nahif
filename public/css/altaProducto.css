@@ -57,21 +57,6 @@
     border-radius: 5%;
 }
 
-.listaFotosMod{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5px;
-    margin-top: 10px;
-    width: 100%;
-}
-.listaFotosMod label{
-    width: 16%;
-}
-
-.fotoMod {
-    width: 15%;
-}
 
 .nuevaFotoProd {
     display: flex;

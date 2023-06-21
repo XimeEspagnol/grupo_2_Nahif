@@ -1,5 +1,6 @@
 const path = require('path');
-const fs = require('fs')
+const fs = require('fs');
+const { formatWithOptions } = require('util');
 
 const detalleProd = JSON.parse(fs.readFileSync(path.resolve('./src/database/products.json')))
 const listCategorias = JSON.parse(fs.readFileSync(path.resolve('./src/database/categorias.json')))
@@ -22,7 +23,7 @@ const controller = {
         return res.render('altaProducto', { listCategorias: listCategorias })
     },
     processAltaProducto: (req, res) => {
-        let fotoPpalNueva = ""
+        let fotoPpalNueva = "default-image.jpg"
         let fotosNuevas = []
         if (req.files != "") {
             if (req.body.fotoProdPpal != ""& req.files[0].fieldname=='fotoProdPpal') fotoPpalNueva = req.files[0].filename
@@ -61,25 +62,56 @@ const controller = {
             if (req.body.fotoProdPpal != ""& req.files[0].fieldname=='fotoProdPpal') prodEncontrado.fotoPpal = req.files[0].filename
             if (req.body.fotoProdAlta != ""& req.files.length>=1)
                 req.files.forEach(row => {
-                   if (row.fieldname =='fotoProdAlta') prodEncontrado.fotos.push(row.filename)
+                   if (row.fieldname =='fotoProdAlta') prodEncontrado.fotos = [...prodEncontrado.fotos,row.filename]
                 });
         }
         prodEncontrado.nombre = req.body.nombreProdAlta
         prodEncontrado.detalle = req.body.descProdAlta
         prodEncontrado.precio = req.body.precioProdAlta
-        prodEncontrado.descuento = 2000
         if (req.body.categoriaProdAlta != "") prodEncontrado.categoria = req.body.categoriaProdAlta
         prodEncontrado.colores = req.body.coloresProdAlta
         if (typeof(req.body.coloresProdAlta)== String || req.body.coloresProdAlta!= "") prodEncontrado.colores = req.body.coloresProdAlta
         else prodEncontrado.colores = req.body.coloresProdAlta
         if (typeof(req.body.talleProdAlta)== String || req.body.talleProdAlta!= "") prodEncontrado.talles = req.body.talleProdAlta
         else prodEncontrado.talles = req.body.talleProdAlta
+        prodEncontrado.descuento = req.body.antesProdAlta
         prodEncontrado.tU = req.body.tU
         prodEncontrado.tS = req.body.tS
         prodEncontrado.tM = req.body.tM
         prodEncontrado.tL = req.body.tL
         fs.writeFileSync(path.resolve('./src/database/products.json'), JSON.stringify(detalleProd, null, 2), "utf-8")
-        return res.redirect('/products')
+        return res.redirect('/products/modificarProd/'+req.params.id)
+    },
+    eliminarFoto:(req, res) => {
+        console.log(req.body);
+    
+        const producto = detalleProd.find(row=> row.id==req.params.id)
+        console.log(producto);
+        console.log(typeof(producto.fotos))
+        console.log(typeof(req.body.delFoto))
+        if (producto && req.body != undefined){
+            if (req.body.delPpal != "") {
+                 producto.fotoPpal = "default-image.jpg"
+                // fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delPpal))
+            }
+            if (req.body.delFoto != undefined){
+                if (typeof req.body.delFoto == "string"){
+                    producto.fotos = producto.fotos.filter(row=>row != req.body.delFoto)
+                  //  fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delFoto))
+                }
+                if (typeof req.body.delFoto != "string") {
+                    for (let i=0;i<req.body.delFoto.length;i++){
+                     let fotoEncontrada = producto.fotos.find(row=> row==req.body.delFoto[i])
+                        if (fotoEncontrada) {
+                    //         fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delFoto[i]))
+                             producto.fotos=producto.fotos.filter(row=>row !=req.body.delFoto[i])
+                        }
+                    }   
+                }
+            }
+        }            
+        fs.writeFileSync(path.join(__dirname,'../database/products.json'),JSON.stringify(detalleProd, null, 2))
+        return res.redirect('/products/modificarProd/'+req.params.id)
     }
 
 };

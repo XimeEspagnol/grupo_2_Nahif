@@ -5,21 +5,36 @@
 
     <body>
         <%- include ('./partials/header') %>
-            <main class="mainAltaProd">
-                <form action="/products/modificarProd/<%= detalle.id %>?_method=patch" method="post" class="altaProducto" enctype="multipart/form-data">
+            <main class="mainModProd">
+                <form class="eliminarFotos" action="/products/eliminarFoto/<%= detalle.id %>?_method=patch" method="post">
+                    <div class="listaFotosMod">
+                    <label class="fotoProdMod" for="fotoProdMod">Fotos del producto</label>
+                    
+                        <% if (detalle.fotoPpal != ""){ %>
+                            <label for="">Foto principal</label>
+                            <div class="check checkPpal">
+                                <img class="fotoMod fotoPpal" src="/img/<%= detalle.fotoPpal %>" alt="fotoPpal">
+                                <input type="checkbox" name="delPpal" class="eliminarFoto" value="<%= detalle.fotoPpal %>" id="delPpal">
+                            </div>
+                        <% } %>
+                        <% for (let i=0; (i < detalle.fotos.length) ; i++) { %> 
+                            <% if (detalle.fotos[i] != ""){ %>
+                            <div class="check">
+                                    <img class="fotoMod" src="/img/<%= detalle.fotos[i] %>" alt="foto <%= i%>">
+                                    <input type="checkbox" name="delFoto" class="eliminarFoto" value="<%= detalle.fotos[i] %>" id="delFoto">
+                            </div> 
+                        <% }} %>
+                        <button type="submit" class="borrar">ELIMINAR FOTOS SELECCIONADAS <i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                </form>               
+                <form action="/products/modificarProd/<%= detalle.id %>?_method=patch" method="post" class="modProducto" enctype="multipart/form-data">
                     <h2>MODIFICACIÓN DE PRODUCTO</h2>
                     <div class="formAltaProd">
 
                         <input type="text" name="nombreProdAlta" placeholder="Nombre del producto"
                             value="<%= detalle.nombre %>">
                         <textarea name="descProdAlta" id="" cols="30" rows="7"><%= detalle.detalle %></textarea>
-                            <div class="listaFotosMod">
-                                <label for="fotoProdAlta">Fotos del producto</label>
-                                <<img class="fotoMod" src="/img/<%= detalle.fotoPpal %>" alt="fotoPpal">
-                                <% for (let i=0; (i < detalle.fotos.length) ; i++) { %> 
-                                    <img class="fotoMod" src="/img/<%= detalle.fotos[i] %>" alt="foto <%= i%>">
-                                    <% } %>
-                            </div>
+                            
                             <div class="nuevaFotoProd">
                                 <label for="fotoProdPpal">Cambiar foto principal</label>
                                 <input type="file" name="fotoProdPpal" accept=".jpg, .png" id="fotoProdPpal">
@@ -94,14 +109,21 @@
                             <input type="number" name="precioProdAlta" id="precioProdAlta"
                                 value="<%= detalle.precio %>">
                         </div>
+                        <div class="antesProdAlta">
+                            <label for="antesProdAlta">Antes: $</label>
+                            <input type="number" name="antesProdAlta" id="antesProdAlta" value="<%= detalle.descuento %>">
+                        </div>
                         <div class="botonesAlta">
-                            <button type="submit" class="ingresar">MODIFICAR</button>
+                            <button type="submit" class="ingresar">GUARDAR</button>
                             <button type="reset" class="borrar">RESETEAR</button>
-                            <button type="button" class="borrar">ELIMINAR PRODUCTO</button>
+                            <a href="/products" class="borrar">VOLVER AL LISTADO</a>
                         </div>
                     </div>
                 </form>
-            </main>
+                <%# <form action="/products?_method=DELETE" method="post">
+                    <button type="button" class="borrar">ELIMINAR PRODUCTO</button> 
+                </form> %>
+        </main>
             <%- include ('./partials/footer') %>
     </body>
 

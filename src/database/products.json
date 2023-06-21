@@ -10,7 +10,7 @@
       "polera-c4.png"
     ],
     "precio": "7690",
-    "descuento": 10000,
+    "descuento": "10000",
     "colores": [
       "Negro",
       "Rosa",
@@ -276,10 +276,9 @@
   {
     "id": 11,
     "nombre": "sdv",
-    "fotoPpal": "1687235201748.jpg",
+    "fotoPpal": "",
     "fotos": [
-      "1687235201752.jpg",
-      "1687235201757.jpg"
+      "1687235242327.jpg"
     ],
     "detalle": "xcbxDescripción del producto",
     "precio": "5555",
@@ -297,13 +296,16 @@
     "tS": "1",
     "tM": "2",
     "tL": "2",
-    "descuento": 10000
+    "descuento": "10000"
   },
   {
     "id": 12,
     "fotoPpal": "1687235242327.jpg",
     "nombre": "uycv",
-    "fotos": [],
+    "fotos": [
+      "1687235242327.jpg",
+      "1687283541903.jpg"
+    ],
     "detalle": "Descripción del productohv ihv",
     "precio": "5476",
     "categoria": "Pantalones",
@@ -317,28 +319,29 @@
   },
   {
     "id": 13,
-    "fotoPpal": "1687235708676.jpg",
+    "fotoPpal": "default-image.jpg",
     "fotos": [
-      "1687235259094.jpg",
-      "1687235259096.jpg"
+      "1687981771413.jpg"
     ],
     "nombre": "Prod Prueba",
     "detalle": "Descripción del producto",
     "precio": "2555",
     "categoria": "Remeras",
     "colores": [
+      "Negro",
+      "Crema",
       "Blanco",
       "Azul"
     ],
     "talles": [
-      "Talle único",
+      "S",
       "M"
     ],
     "tU": "1",
     "tS": "0",
     "tM": "2",
     "tL": "0",
-    "descuento": 10000
+    "descuento": "2000"
   },
   {
     "id": 14,
