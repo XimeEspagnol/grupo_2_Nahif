@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-const { formatWithOptions } = require('util');
+//const { formatWithOptions } = require('util');
 
 const detalleProd = JSON.parse(fs.readFileSync(path.resolve('./src/database/products.json')))
 const listCategorias = JSON.parse(fs.readFileSync(path.resolve('./src/database/categorias.json')))
@@ -18,6 +18,9 @@ const controller = {
     },
     probador: (req, res) => {
         return res.render('probador')
+    },
+    productAdmin: (req, res) => {
+        return res.render('productAdmin', { categoriaProd: detalleProd, listCategorias: listCategorias })
     },
     altaProducto: (req, res) => {
         return res.render('altaProducto', { listCategorias: listCategorias })
@@ -82,13 +85,31 @@ const controller = {
         fs.writeFileSync(path.resolve('./src/database/products.json'), JSON.stringify(detalleProd, null, 2), "utf-8")
         return res.redirect('/products/modificarProd/'+req.params.id)
     },
+    eliminarProd:(req, res) => {
+        console.log(req.body);
+    
+        if (req.body){
+            if (req.body.borrarProd){
+                if (typeof req.body.borrarProd == "string"){
+                    let producto = detalleProd.find(row=>row.id == req.body.borrarProd)
+                    if (producto) producto.borrado=true
+                  //  fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delFoto))
+                }
+                if (typeof req.body.borrarProd != "string") {
+                    for (let i=0;i<req.body.borrarProd.length;i++){
+                     let prodEncontrado = detalleProd.find(row=> row.id==req.body.borrarProd)
+                        if (prodEncontrado) productoEncontrado.borrado=true
+                    }   
+                }
+            }
+        }            
+        fs.writeFileSync(path.join(__dirname,'../database/products.json'),JSON.stringify(detalleProd, null, 2))
+        return res.redirect('/products')
+    },
     eliminarFoto:(req, res) => {
         console.log(req.body);
     
         const producto = detalleProd.find(row=> row.id==req.params.id)
-        console.log(producto);
-        console.log(typeof(producto.fotos))
-        console.log(typeof(req.body.delFoto))
         if (producto && req.body != undefined){
             if (req.body.delPpal != "") {
                  producto.fotoPpal = "default-image.jpg"
@@ -113,6 +134,7 @@ const controller = {
         fs.writeFileSync(path.join(__dirname,'../database/products.json'),JSON.stringify(detalleProd, null, 2))
         return res.redirect('/products/modificarProd/'+req.params.id)
     }
+   
 
 };
 

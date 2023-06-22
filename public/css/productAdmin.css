@@ -1,0 +1,169 @@
+.mainProdAdmin{
+    background-color: #EAF4F4;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.mainProdAdmin h2{
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0px;
+    margin-top: 0%;
+    font-family: MIGHA;
+    font-size: 35px;
+}
+
+
+.prodAdmin2{
+    display: flex;
+}
+    
+.lista-prodAdmin{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 10px;
+    
+}
+.editProd{
+    background-color: #6B9080;
+    font-family: migha;
+    color: #EAF4F4;
+    padding: 8px;
+    text-align: center;
+    margin-top: 5px;
+    height: fit-content;
+    text-decoration: none;
+}
+
+
+.lista-prodAdmin .items-categoria{
+    display: block;
+    width: 70%;
+    padding: 15px 0px;
+    margin-bottom: 20px;
+    background-color: #6b9080;
+    text-align: center;
+    border-radius: 2px;
+    text-decoration: none;
+    color: black;
+}
+
+/* PRODUCTOS====== */
+
+.lista-productosAdmin{
+    display:flex;
+    flex-wrap: wrap;
+}
+.mainProdAdmin article{
+    background-color: #6b9080;
+    width: 100%;
+    box-shadow : 0px 0px 10px #666;
+    box-sizing: border-box;
+    flex-grow: 1;
+     
+ }
+ .formAdminProd{
+    display: flex;
+flex-direction: column;
+    gap:10px
+
+}
+.listadoProd{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap:10px
+
+}
+.contArt{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+.mainProdAdmin article img{
+    width: 100%;
+}
+.mainProdAdmin article h3{
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    width: 90%;
+}
+.mainProdAdmin article p{
+    display: block;
+    width: 90%;
+    padding: 2px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    text-align: left;
+    text-decoration: none;
+    margin-left: 5px;
+
+}
+.mainProdAdmin .descuento{
+    text-decoration: line-through;
+    width: 90%;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.borrarProd{
+    background-color: #6B9080;
+    font-family: migha;
+    color: #EAF4F4;
+    padding: 5px;
+    margin: 10px;
+    height: fit-content;
+}
+.artBottom{
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+}
+.artBottom input{
+    opacity: 10;
+}
+.artBottom div, .artBottom a{
+    width: 40%;
+}
+.artBottom div{
+    background-color: #6B9080 ;
+    color: #EAF4F4;
+    margin-top: 5px;
+    text-align: center;
+}
+.borrarProd:checked .artBottom div{
+    background-color: red ;
+    color: black;
+}
+
+
+@media(min-width:361px){
+    
+
+}
+
+    
+
+
+@media(min-width:780px){
+    .lista-prodAdmin{
+        display: flex;
+    }
+    
+    .mainProdAdmin article{
+        background-color: #6b9080;
+         box-shadow : 0px 0px 10px #666
+         
+     }
+     .contArt{
+        width: 20%;
+    }
+
+    
+}
+   

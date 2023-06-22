@@ -26,6 +26,8 @@ router.get('/:id', controller.product);
 router.get('/', controller.categorias);
 router.get('/probador', controller.probador);
 
+router.get('admin', controller.productAdmin)
+
 //FORM CREATE
 router.get('/altaProducto/create', controller.altaProducto)
 router.post('/altaProducto/create', fileUpload.any('fotoProdPpal'), controller.processAltaProducto)
@@ -37,6 +39,6 @@ router.patch('/modificarProd/:id', fileUpload.any('fotoProdPpal'), controller.pr
 router.patch('/eliminarFoto/:id', controller.eliminarFoto)
 
 //FORM DELETE
-
+router.delete('/admin', controller.eliminarProd)
 
 module.exports = router

@@ -14,7 +14,7 @@
     font-size: 35px;
 }
 
-.miCatergoria2{
+.miCategoria2{
     display: flex;
 }
     
@@ -47,7 +47,7 @@
     flex-wrap: wrap;
     width: 78%;
 }
-main div section article{
+.miCategorias article{
     background-color: #6b9080;
      width: 45%;
      margin-left: 5%;
@@ -58,18 +58,18 @@ main div section article{
 
 
 
-main div section article img{
+.miCategorias article img{
     width: 100%;
 }
-main div section article h3{
+.miCategorias article h3{
     text-align: center;
     margin: 0;
     
 }
-.desc-prod{
-    padding: 5cpx;
+.miCategorias .desc-prod{
+    padding: 5px;
 }
-main div section article p{
+.miCategorias article p{
     display: block;
     width: 100%;
     padding: 2px;
@@ -81,7 +81,7 @@ main div section article p{
     margin-left: 5px;
 
 }
-.descuento{
+.miCategorias .descuento{
     text-decoration: line-through;
     margin-left: 5px;
     margin-bottom: 10px;
@@ -101,7 +101,7 @@ main div section article p{
         display: flex;
     }
     
-    main div section article{
+    .miCategorias article{
         background-color: #6b9080;
          width: 20%;
          margin-left: 5%;

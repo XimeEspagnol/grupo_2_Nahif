@@ -24,7 +24,8 @@
     "tS": "5",
     "tM": "0",
     "tL": "0",
-    "categoria": "Buzos"
+    "categoria": "Buzos",
+    "borrado": false
   },
   {
     "id": 2,
@@ -50,7 +51,8 @@
     "tU": "0",
     "tS": "2",
     "tM": "1",
-    "tL": "4"
+    "tL": "4",
+    "borrado": false
   },
   {
     "id": 3,
@@ -78,7 +80,8 @@
     "tU": "0",
     "tS": "0",
     "tM": "5",
-    "tL": "2"
+    "tL": "2",
+    "borrado": false
   },
   {
     "id": 4,
@@ -106,7 +109,8 @@
     "tU": 8,
     "tS": 0,
     "tM": 0,
-    "tL": 0
+    "tL": 0,
+    "borrado": false
   },
   {
     "id": 5,
@@ -133,7 +137,8 @@
     "tU": 0,
     "tS": 3,
     "tM": 0,
-    "tL": 2
+    "tL": 2,
+    "borrado": false
   },
   {
     "id": 6,
@@ -160,7 +165,8 @@
     "tU": 0,
     "tS": 5,
     "tM": 3,
-    "tL": 4
+    "tL": 4,
+    "borrado": false
   },
   {
     "id": 7,
@@ -187,7 +193,8 @@
     "tU": 11,
     "tS": 0,
     "tM": 0,
-    "tL": 0
+    "tL": 0,
+    "borrado": false
   },
   {
     "id": 8,
@@ -215,7 +222,8 @@
     "tU": 0,
     "tS": 7,
     "tM": 3,
-    "tL": 4
+    "tL": 4,
+    "borrado": false
   },
   {
     "id": 9,
@@ -243,7 +251,8 @@
     "tU": 0,
     "tS": 0,
     "tM": 3,
-    "tL": 5
+    "tL": 5,
+    "borrado": false
   },
   {
     "id": 10,
@@ -271,7 +280,8 @@
     "tU": 0,
     "tS": 3,
     "tM": 2,
-    "tL": 1
+    "tL": 1,
+    "borrado": false
   },
   {
     "id": 11,
@@ -296,7 +306,8 @@
     "tS": "1",
     "tM": "2",
     "tL": "2",
-    "descuento": "10000"
+    "descuento": "10000",
+    "borrado": true
   },
   {
     "id": 12,
@@ -315,13 +326,15 @@
     "tS": "1",
     "tM": "0",
     "tL": "0",
-    "descuento": 10000
+    "descuento": 10000,
+    "borrado": false
   },
   {
     "id": 13,
     "fotoPpal": "default-image.jpg",
     "fotos": [
-      "1687981771413.jpg"
+      "1687746591618.jpg",
+      "1688251808102.jpg"
     ],
     "nombre": "Prod Prueba",
     "detalle": "Descripción del producto",
@@ -341,7 +354,8 @@
     "tS": "0",
     "tM": "2",
     "tL": "0",
-    "descuento": "2000"
+    "descuento": "2000",
+    "borrado": false
   },
   {
     "id": 14,
@@ -367,6 +381,7 @@
     "tS": "2",
     "tM": "4",
     "tL": "0",
-    "descuento": "10000"
+    "descuento": "10000",
+    "borrado": false
   }
 ]

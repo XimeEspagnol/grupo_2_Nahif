@@ -10,7 +10,7 @@
 
     <main class="miCategorias">
         <h2>Productos Disponibles</h2>
-            <div class="miCatergoria2">
+            <div class="miCategoria2">
                 
            
                 <div class="lista-categoria">
@@ -20,18 +20,17 @@
                 </div>
                 <section class="lista-productos">
                     <% categoriaProd.forEach(productos => {%>
+                        <% if (productos.borrado==false) {%>    
+                            <Article>
+
+                                <a href="/products/<%=productos.id%>"><img src = "img/<%=productos.fotoPpal%>" alt="<%=productos.nombre%>"></a>
                         
-                 
-                    <Article>
-
-                        <a href="/products/<%=productos.id%>"><img src = "img/<%=productos.fotoPpal%>" alt="<%=productos.nombre%>"></a>
-                
-                        <h3 class="desc-prod"><%=productos.nombre%></h3>
-                        <p class="precio">Precio: $ <%=productos.precio%></p>
-                        <p class="descuento">Antes: $ <%=productos.descuento%></p>
-                    </Article>
+                                <h3 class="desc-prod"><%=productos.nombre%></h3>
+                                <p class="precio">Precio: $ <%=productos.precio%></p>
+                                <p class="descuento">Antes: $ <%=productos.descuento%></p>
+                            </Article>
+                        <% } %>
                     <%}); %>
-
                     
                 </section>
             </div>

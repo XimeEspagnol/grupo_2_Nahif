@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head', {title: "Nahif" })%>
+
+
+    <body>
+
+        <%- include("./partials/header") %>
+
+            <main class="mainProdAdmin">
+                <h2>Productos Disponibles</h2>
+                <div class="prodAdmin2">
+
+                    <div class="lista-prodAdmin">
+                        <% for (i=0; i<listCategorias.length; i++){ %>
+                            <a href="#" class="items-categoria">
+                                <%= listCategorias[i] %>
+                            </a>
+                            <% } %>
+                    </div>
+                    <section class="lista-productosAdmin">
+                        <a class="editProd" href="/products/altaProducto/create">ALTA PRODUCTOS</a>
+                        <form action="/products/admin?_method=DELETE" method="post" class="formAdminProd">
+                            <div class="listadoProd">
+                                <% categoriaProd.forEach(productos=> {%>
+                                    <% if (productos.borrado==false) {%>    
+                                    <div class="contArt">
+                                        <Article>
+                                            <a href="/products/<%=productos.id%>"><img src="img/<%=productos.fotoPpal%>"
+                                                    alt="<%=productos.nombre%>"></a>
+                                            <h3 class="desc-prod"><%=productos.nombre%></h3>
+                                            <p class="precio">Precio: $ <%=productos.precio%></p>
+                                            <p class="descuento">Antes: $ <%=productos.descuento%> </p>
+                                        </Article>
+                                        <div class="artBottom">
+                                            <a class="editProd" href="/products/modificarProd/<%=productos.id%>">EDITAR</a>
+                                            <div>
+                                                <label for="<%=productos.id%>"><i class="fa-solid fa-trash-can"></i></label>
+                                                <input class="borrarProd" type="checkbox" name="borrarProd" value="<%=productos.id%>" id="<%=productos.id%>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <%} %>
+                                <%}); %>
+                            </div>
+                            <button type="submit" class="borrarProd">ELIMINAR PRODUCTOS SELECCIONADOS</button>
+                        </form>
+                        
+                    </section>
+                </div>
+            </main>
+            <%- include('./partials/footer')%>
+
+    </body>
+
+</html>
