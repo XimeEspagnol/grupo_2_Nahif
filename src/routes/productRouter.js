@@ -22,11 +22,10 @@ const fileUpload = multer({
 
 
 //
-router.get('/:id', controller.product);
+router.get('/detail/:id', controller.product);
 router.get('/', controller.categorias);
-router.get('/probador', controller.probador);
-
-router.get('admin', controller.productAdmin)
+router.get('/probador/:userid', controller.probador);
+router.get('/admin', controller.productAdmin)
 
 //FORM CREATE
 router.get('/altaProducto/create', controller.altaProducto)

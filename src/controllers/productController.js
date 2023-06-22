@@ -20,7 +20,8 @@ const controller = {
         return res.render('probador')
     },
     productAdmin: (req, res) => {
-        return res.render('productAdmin', { categoriaProd: detalleProd, listCategorias: listCategorias })
+        let prodActivos = detalleProd.filter(row => row.borrado==false)
+        return res.render('productAdmin', { categoriaProd: prodActivos, listCategorias: listCategorias })
     },
     altaProducto: (req, res) => {
         return res.render('altaProducto', { listCategorias: listCategorias })

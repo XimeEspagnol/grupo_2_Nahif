@@ -23,12 +23,10 @@
                         <a class="editProd" href="/products/altaProducto/create">ALTA PRODUCTOS</a>
                         <form action="/products/admin?_method=DELETE" method="post" class="formAdminProd">
                             <div class="listadoProd">
-                                <% categoriaProd.forEach(productos=> {%>
-                                    <% if (productos.borrado==false) {%>    
+                                <% categoriaProd.forEach (productos => { %> 
                                     <div class="contArt">
                                         <Article>
-                                            <a href="/products/<%=productos.id%>"><img src="img/<%=productos.fotoPpal%>"
-                                                    alt="<%=productos.nombre%>"></a>
+                                            <a href="/products/detail/<%= productos.id %>"><img src="/img/<%=productos.fotoPpal %>" alt="<%= productos.nombre %>"></a>
                                             <h3 class="desc-prod"><%=productos.nombre%></h3>
                                             <p class="precio">Precio: $ <%=productos.precio%></p>
                                             <p class="descuento">Antes: $ <%=productos.descuento%> </p>
@@ -41,8 +39,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <%} %>
-                                <%}); %>
+                                <%}) %>
                             </div>
                             <button type="submit" class="borrarProd">ELIMINAR PRODUCTOS SELECCIONADOS</button>
                         </form>

@@ -26,14 +26,13 @@
     
 }
 
-
 .lista-categoria .items-categoria{
     display: block;
     width: 70%;
     padding: 15px 0px;
     margin-bottom: 20px;
     background-color: #6b9080;
-
+    font-family: migha;
     text-align: center;
     border-radius: 2px;
     text-decoration: none;
