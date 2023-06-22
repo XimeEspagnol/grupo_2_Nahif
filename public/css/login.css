@@ -1,5 +1,6 @@
 .loginBody {
-    margin: 0
+    margin: 0;
+
 }
 
 .main-login {
@@ -9,6 +10,7 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100vw;
+    height: 60vh;
 }
 
 .main-login h2 {

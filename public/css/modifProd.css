@@ -22,6 +22,7 @@
     color: #666;
     transition: all 350ms;
     margin-bottom: 0px;
+    margin-top: 0;
 }
 .modProducto {
     background-color: #a4c3b2;
@@ -37,6 +38,13 @@
     box-shadow: 3px 3px 5px 1px #2a2e2c;
     margin-right: 0;
     transition: all 350ms;
+}
+.divFotos{
+    margin-right: 0;
+    width: 80%;
+}
+.descModif{
+    width: 70%;
 }
 .eliminarFotos{
     background-color: #a4c3b2;
@@ -75,6 +83,7 @@
     font-size: 18px;
     font-weight: bold;
     color: #666;
+    font-family: migha;
 }
 .check{
     display: flex;
@@ -101,7 +110,37 @@
     background-color: #557567;
     box-shadow: 1px 1px 5px 1px #2a2e2c;
 }
-    
+.botonesModif{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.botonModifProd{
+    text-decoration: none;
+}
+.formModifProd{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.divFotos, .descModif{
+    width: 80%;
+}
+.formModifProd button, .formModifProd a {
+    background-color: #6B9080;
+    font-family: migha;
+    margin: 0px 5px;
+    border-radius: 10%;
+    color: #EAF4F4;
+    height: fit-content;
+}
+.formModifProd a {
+    border-bottom: #2a2e2c solid 1px;
+    border-right:#2a2e2c solid 1px;
+}
+
 @media (min-width: 769px) {
     .mainModProd{
         flex-direction: row;
@@ -112,5 +151,12 @@
     }
     .eliminarFotos{
         width: 30%;
+    }
+    .listaFotosMod{
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .checkOtras{
+        width: 45%;
     }
 }

@@ -105,7 +105,7 @@ const controller = {
             }
         }            
         fs.writeFileSync(path.join(__dirname,'../database/products.json'),JSON.stringify(detalleProd, null, 2))
-        return res.redirect('/products')
+        return res.redirect('/products/admin')
     },
     eliminarFoto:(req, res) => {
         console.log(req.body);

@@ -12,13 +12,13 @@
     "precio": "7690",
     "descuento": "10000",
     "colores": [
-      "Negro",
       "Rosa",
-      "Crema"
+      "Crema",
+      "Verde"
     ],
     "talles": [
-      "Talle único",
-      "S"
+      "S",
+      "M"
     ],
     "tU": "5",
     "tS": "5",

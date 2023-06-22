@@ -13,9 +13,11 @@
     margin-top: 0%;
     font-family: MIGHA;
     font-size: 35px;
-    width: 90%;
+    width: 80%;
 }
-
+.topAdmin{
+    display: flex;
+}
 
 .prodAdmin2{
     display: flex;
@@ -24,7 +26,7 @@
 .lista-prodAdmin{
     display: none;
     flex-direction: column;
-    width: 50%;
+    width: 60%;
     margin-left: 10px;
     
 }
@@ -42,7 +44,6 @@
 
 .lista-prodAdmin .items-categoria{
     display: block;
-    width: 70%;
     font-family: migha;
     padding: 15px 0px;
     margin-bottom: 20px;
@@ -52,12 +53,21 @@
     text-decoration: none;
     color: black;
 }
+.lista-productosAdmin .botonAlta{
+    margin: 5px;
+}
+.botonAlta{
+    margin-top: 20px;
+    margin-left: 20px;
+    height: fit-content;
+}
 
 /* PRODUCTOS====== */
 
 .lista-productosAdmin{
     display:flex;
     flex-wrap: wrap;
+    margin-left: 10px;
 }
 .mainProdAdmin article{
     background-color: #6b9080;
@@ -84,6 +94,7 @@ flex-direction: column;
     display: flex;
     flex-direction: column;
     width: 45%;
+    transition: all 350ms;
 }
 
 .mainProdAdmin article img{
@@ -94,6 +105,7 @@ flex-direction: column;
     margin: 0;
     padding: 5px;
     width: 90%;
+    font-family: migha;
 }
 .mainProdAdmin article p{
     display: block;
@@ -131,9 +143,12 @@ flex-direction: column;
 }
 .artBottom div, .artBottom a{
     width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.artBottom div:hover, .artBottom a:hover{
+.artBottom div:hover, .artBottom a:hover, .borrarProd:hover{
     background-color: #557567;
     box-shadow: 1px 1px 5px 1px #2a2e2c;
 } 
@@ -145,7 +160,12 @@ flex-direction: column;
 }
 
 
-@media(min-width:361px){
+@media(min-width:430px){
+    .contArt{
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+    }
     
 
 }
@@ -166,7 +186,10 @@ flex-direction: column;
      .contArt{
         width: 15%;
     }
-
+    .listadoProd{
+        justify-content: space-between;
+        margin-right: 10px;
+    }
     
 }
    
