@@ -24,7 +24,7 @@ const controller = {
         return res.render('productAdmin', { categoriaProd: prodActivos, listCategorias: listCategorias })
     },
     altaProducto: (req, res) => {
-        return res.render('altaProducto', { listCategorias: listCategorias })
+        return res.render('altaProducto', { listCategorias: listCategorias, listColores: listColores })
     },
     processAltaProducto: (req, res) => {
         let fotoPpalNueva = "default-image.jpg"

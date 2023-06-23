@@ -30,40 +30,22 @@
                         </div>
                         <div class="colProdAlta">
                             <p>Colores disponibles</p>
+                            <% for(let i=0;i < listColores.length; i++) { %>
                             <div>
-                                <input type="checkbox" name="coloresProdAlta" value="negro" id="negro">
-                                <label for="negro">Negro</label>
+                                <input type="checkbox" name="coloresProdAlta" value="<%= listColores[i] %>" id="<%= listColores[i] %>">
+                                <label for="<%= listColores[i] %>"><%= listColores[i] %></label>
                             </div>
-                            <div>
-                                <input type="checkbox" name="coloresProdAlta" value="blanco" id="blanco">
-                                <label for="blanco">Blanco</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="coloresProdAlta" value="azul" id="azul">
-                                <label for="azul">Azul</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="coloresProdAlta" value="rosa" id="rosa">
-                                <label for="rosa">Rosa</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="coloresProdAlta" value="crema" id="crema">
-                                <label for="crema">Crema</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" name="coloresProdAlta" value="verde" id="verde">
-                                <label for="verde">Verde</label>
-                            </div>
+                            <% } %>
                         </div>
                         <div class="tallesProdAlta">
                             <p>Talles disponibles</p>
-                            <input type="checkbox" name="talleProdAlta" value="talleUnico" id="talleUnico">
+                            <input type="checkbox" name="talleProdAlta" value="Talle único" id="talleUnico">
                             <label for="talleUnico">Talle único</label>
-                            <input type="checkbox" name="talleProdAlta" value="small" id="small">
+                            <input type="checkbox" name="talleProdAlta" value="S" id="small">
                             <label for="small">S</label>
-                            <input type="checkbox" name="talleProdAlta" value="medium" id="medium">
+                            <input type="checkbox" name="talleProdAlta" value="M" id="medium">
                             <label for="medium">M</label>
-                            <input type="checkbox" name="talleProdAlta" value="large" id="large">
+                            <input type="checkbox" name="talleProdAlta" value="L" id="large">
                             <label for="large">L</label>
                         </div>
                         <div class="cantTalleAltaProd">
