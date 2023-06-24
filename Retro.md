@@ -22,4 +22,10 @@ El reCaptcha, ya que es un tema que aún no se vio, al cliquearlo nos llevará a
 
 Haciendo un breve resumen, el grupo mejora con cada entrega, con cada colaboración y sobre todo, con la empatía que existe entre nosotros. El crecimiento se hace cada vez más presente con la ayuda de y para el otro. 
 
+**NUESTRA RETROSPECTIVA DE GRUPO SPRINT 4**
 
+En este sprint hemos avanzado muy bien pero nos ha sido más difícil tener encuentros y reuniones semanales por cuestiones personales. De todas maneras, es importante aclarar que la dinámica de grupo logra compensar y hacer que paso a paso se vea crecer nuestra página y se ponga cada vez más linda!. 
+
+A su vez, cabe destacar que los temas se van volviendo más complejos e integradores, y que así vamos comprendiendo mejor el "para qué" de aprender sobre distintas herramientas vistas, que logran ir tomando forma en la medida que vamos continuando las clases. 
+
+Vamos por más!!!!!! 

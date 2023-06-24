@@ -150,5 +150,13 @@
     "contrasenia": "1234",
     "perfilDeUsuario": "comprador",
     "borrado": false
+  },
+  {
+    "id": 20,
+    "nombreCompleto": "",
+    "email": "",
+    "contrasenia": "",
+    "perfilDeUsuario": "comprador",
+    "borrado": false
   }
 ]
