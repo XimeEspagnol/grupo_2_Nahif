@@ -4,14 +4,14 @@
 }
 
 .miCategorias h2{
-    color: black;
+    color: #666;
     text-align: center;
     display: flex;
     flex-direction: column;
     padding: 15px 0px;
     margin-top: 0%;
     font-family: MIGHA;
-    font-size: 35px;
+    font-size: 17px;
 }
 
 .miCategoria2{
@@ -28,7 +28,7 @@
 
 .lista-categoria .items-categoria{
     display: block;
-    width: 70%;
+    width: vw70px;
     padding: 15px 0px;
     margin-bottom: 20px;
     background-color: #6b9080;
@@ -37,6 +37,7 @@
     border-radius: 2px;
     text-decoration: none;
     color: black;
+    font-size: 20px;
 }
 
 /* PRODUCTOS====== */
@@ -51,7 +52,7 @@
      width: 45%;
      margin-left: 5%;
      margin-bottom: 5%;
-     box-shadow : 0px 0px 10px #666
+    
      
  }
 
@@ -64,6 +65,7 @@
     text-align: center;
     margin: 0;
     font-family: migha;
+    font-size: 15px;
     
 }
 .miCategorias .desc-prod{
@@ -79,7 +81,14 @@
     text-align: left;
     text-decoration: none;
     margin-left: 5px;
-
+    
+}
+.precio{
+    font-weight: bold;
+    font-size: 14px;
+}
+.descuento{
+    font-size: 13px;
 }
 .miCategorias .descuento{
     text-decoration: line-through;
@@ -89,6 +98,30 @@
 }
 
 @media(min-width:361px){
+    .miCategorias h2{
+        color: #666;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        padding: 15px 0px;
+        margin-top: 0%;
+        font-family: MIGHA;
+        font-size: 40px;
+    }
+    .precio{
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .descuento{
+        font-size: 16px;
+    }
+    .miCategorias article h3{
+        text-align: center;
+        margin: 0;
+        font-family: migha;
+        font-size: 18px;
+        
+    }
     
 
 }
@@ -102,13 +135,28 @@
     }
     
     .miCategorias article{
-        background-color: #6b9080;
+        background-color: #CCE3DE;
          width: 20%;
          margin-left: 5%;
          margin-bottom: 5%;
-         box-shadow : 0px 0px 10px #666
+
          
      }
+     .miCategorias article:hover{
+        box-shadow : 0px 0px 10px #666
+     }
+     .lista-categoria .items-categoria{
+        display: block;
+        width: vw70px;
+        padding: 15px 0px;
+        margin-bottom: 20px;
+        background-color: #6b9080;
+        font-family: migha;
+        text-align: center;
+        border-radius: 2px;
+        text-decoration: none;
+        color: black;
+    }
 
     
 }
