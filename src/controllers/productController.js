@@ -87,8 +87,7 @@ const controller = {
         return res.redirect('/products/modificarProd/'+req.params.id)
     },
     eliminarProd:(req, res) => {
-        console.log(req.body);
-    
+  
         if (req.body){
             if (req.body.borrarProd){
                 if (typeof req.body.borrarProd == "string"){
@@ -108,7 +107,6 @@ const controller = {
         return res.redirect('/products/admin')
     },
     eliminarFoto:(req, res) => {
-        console.log(req.body);
     
         const producto = detalleProd.find(row=> row.id==req.params.id)
         if (producto && req.body != undefined){

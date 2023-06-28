@@ -11,9 +11,7 @@ const controller = {
        return res.render ('register')
     },
 
-    processRegister: (req, res) =>{
-         console.log(req.body );
-        
+    processRegister: (req, res) =>{        
          let userNuevo = {
              "id": userId.length + 1,
              "nombreCompleto": req.body.nombreCompleto,
