@@ -16,6 +16,11 @@ const controller = {
     categorias: (req, res) => {
         return res.render('categorias', { categoriaProd: detalleProd, listCategorias: listCategorias })
     },
+    filtroCategorias: (req, res) => {
+        const prodEncontrado = detalleProd.filter(row => row.categoria==req.params.categoria)
+        console.log (prodEncontrado)
+        return res.render('categorias', { categoriaProd: prodEncontrado, listCategorias: listCategorias })
+    },
     probador: (req, res) => {
         return res.render('probador')
     },

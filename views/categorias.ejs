@@ -15,7 +15,7 @@
            
                 <div class="lista-categoria">
                     <% for (i=0; i<listCategorias.length; i++){ %>
-                        <a href="#" class="items-categoria"><%= listCategorias[i] %></a>
+                        <a href="/products/list/<%=listCategorias[i]%>" class="items-categoria"><%= listCategorias[i] %></a>
                     <% } %>
                 </div>
                 <section class="lista-productos">
@@ -23,7 +23,7 @@
                         <% if (productos.borrado==false) {%>    
                             <Article>
 
-                                <a href="/products/detail/<%=productos.id%>"><img src = "img/<%=productos.fotoPpal%>" alt="<%=productos.nombre%>"></a>
+                                <a href="/products/detail/<%=productos.id%>"><img src = "/img/<%=productos.fotoPpal%>" alt="<%=productos.nombre%>"></a>
                         
                                 <h3 class="desc-prod"><%=productos.nombre%></h3>
                                 <p class="precio">Precio: $ <%=productos.precio%></p>
