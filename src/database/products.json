@@ -286,7 +286,7 @@
   {
     "id": 11,
     "nombre": "sdv",
-    "fotoPpal": "",
+    "fotoPpal": "1688357620496.jpg",
     "fotos": [
       "1687235242327.jpg"
     ],
@@ -327,7 +327,7 @@
     "tM": "0",
     "tL": "0",
     "descuento": 10000,
-    "borrado": false
+    "borrado": true
   },
   {
     "id": 13,
@@ -370,18 +370,42 @@
     "precio": "8750",
     "categoria": "Shorts",
     "colores": [
-      "blanco",
-      "crema"
+      "Blanco",
+      "Crema"
     ],
     "talles": [
-      "small",
-      "medium"
+      "S",
+      "M"
     ],
     "tU": "0",
     "tS": "2",
     "tM": "4",
     "tL": "0",
     "descuento": "10000",
+    "borrado": true
+  },
+  {
+    "id": 15,
+    "fotoPpal": "1688140928837.jpg",
+    "fotos": [],
+    "nombre": "Producto Nuevo",
+    "detalle": "Descripción del producto detalles",
+    "precio": "7980",
+    "categoria": "Buzos",
+    "colores": [
+      "Negro",
+      "Crema",
+      "Blanco"
+    ],
+    "talles": [
+      "M",
+      "L"
+    ],
+    "tU": "0",
+    "tS": "0",
+    "tM": "2",
+    "tL": "2",
+    "descuento": "8500",
     "borrado": false
   }
 ]

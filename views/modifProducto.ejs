@@ -57,18 +57,14 @@
                         </div>
                         <div class="colProdAlta">
                             <p>Colores disponibles</p>
-                            <% for (let i=0; i< listColores.length;i++) { %>
-                                <div>
-                                    <% let colorActual = detalle.colores.find(element=> element == listColores[i])%>
-                                    <%if (colorActual) {%>
-                                        <input type="checkbox" name="coloresProdAlta" value="<%= listColores[i] %>" id="<%= listColores[i] %>" checked>
-                                        <%}else {%>
-                                            <input type="checkbox" name="coloresProdAlta" value="<%= listColores[i] %>" id="<%= listColores[i] %>">
-                                            <% }%>
-                                                <label for="<%= listColores[i] %>"><%= listColores[i] %></label>
-                                </div>
+                            <% for(let i=0;i < listColores.length; i++) { %>
+                            <div>
+                                <% console.log(detalle.colores)
+                                 console.log(listColores[i]) %>
+                                <input type="checkbox" name="coloresProdAlta" <%= detalle.colores.includes(listColores[i]) == true ? 'checked' : ""%> value="<%= listColores[i] %>" id="<%= listColores[i] %>">
+                                <label for="<%= listColores[i] %>"><%= listColores[i] %></label>
+                            </div>
                             <% } %>
-                            
                         </div>
                         <div class="tallesProdAlta">
                             <p>Talles disponibles</p>

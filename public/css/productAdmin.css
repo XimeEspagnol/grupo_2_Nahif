@@ -23,7 +23,7 @@
     display: flex;
 }
     
-.lista-prodAdmin{
+.lista-catAdmin{
     display: none;
     flex-direction: column;
     width: 60%;
@@ -42,7 +42,7 @@
 }
 
 
-.lista-prodAdmin .items-categoria{
+.lista-catAdmin .items-categoria{
     display: block;
     font-family: migha;
     padding: 15px 0px;
@@ -94,7 +94,7 @@ flex-direction: column;
 .contArt{
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 45vw;
     background-color: #CCE3DE;
     box-shadow : 0px 0px 10px #666;
     transition: all 350ms;
@@ -169,7 +169,7 @@ flex-direction: column;
     .contArt{
         display: flex;
         flex-direction: column;
-        width: 30%;
+        width: 30vw;
     }
     
 
@@ -179,15 +179,17 @@ flex-direction: column;
 
 
 @media(min-width:780px){
-    .lista-prodAdmin{
+    .lista-catAdmin{
         display: flex;
+        width: 20%;
     }
     
      .contArt{
-        width: 15%;
+        width: 15vw;
     }
     .listadoProd{
-        justify-content: space-between;
+        justify-content: space-around;
+        
         margin-right: 10px;
     }
     

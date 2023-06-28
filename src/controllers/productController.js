@@ -18,8 +18,11 @@ const controller = {
     },
     filtroCategorias: (req, res) => {
         const prodEncontrado = detalleProd.filter(row => row.categoria==req.params.categoria)
-        console.log (prodEncontrado)
         return res.render('categorias', { categoriaProd: prodEncontrado, listCategorias: listCategorias })
+    },
+    filtroAdminCategorias: (req, res) => {
+        const prodEncontrado = detalleProd.filter(row => row.categoria==req.params.categoria && row.borrado==false)
+        return res.render('productAdmin', { categoriaProd: prodEncontrado, listCategorias: listCategorias })
     },
     probador: (req, res) => {
         return res.render('probador')
@@ -56,6 +59,7 @@ const controller = {
             "tM": req.body.tM,
             "tL": req.body.tL,
             "descuento": req.body.antesProdAlta,
+            "borrado":false
         }
         fs.writeFileSync(path.resolve('./src/database/products.json'), JSON.stringify([...detalleProd, prodNuevo], null, 2), "utf-8")
         return res.redirect('/products/altaProducto/create')
@@ -98,12 +102,11 @@ const controller = {
                 if (typeof req.body.borrarProd == "string"){
                     let producto = detalleProd.find(row=>row.id == req.body.borrarProd)
                     if (producto) producto.borrado=true
-                  //  fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delFoto))
                 }
-                if (typeof req.body.borrarProd != "string") {
+                if (typeof req.body.borrarProd == "object") {
                     for (let i=0;i<req.body.borrarProd.length;i++){
-                     let prodEncontrado = detalleProd.find(row=> row.id==req.body.borrarProd)
-                        if (prodEncontrado) productoEncontrado.borrado=true
+                     let prodEncontrado = detalleProd.find(row=> row.id==req.body.borrarProd[i])
+                        if (prodEncontrado != undefined) prodEncontrado.borrado=true
                     }   
                 }
             }

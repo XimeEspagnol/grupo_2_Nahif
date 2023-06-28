@@ -158,5 +158,13 @@
     "contrasenia": "",
     "perfilDeUsuario": "comprador",
     "borrado": false
+  },
+  {
+    "id": 21,
+    "nombreCompleto": "",
+    "email": "",
+    "contrasenia": "",
+    "perfilDeUsuario": "comprador",
+    "borrado": false
   }
 ]

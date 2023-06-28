@@ -15,9 +15,9 @@
                 </div>
                 <div class="prodAdmin2">
 
-                    <div class="lista-prodAdmin">
+                    <div class="lista-catAdmin">
                         <% for (i=0; i<listCategorias.length; i++){ %>
-                            <a href="#" class="items-categoria">
+                            <a href="/products/listAdmin/<%= listCategorias[i] %>" class="items-categoria">
                                 <%= listCategorias[i] %>
                             </a>
                             <% } %>

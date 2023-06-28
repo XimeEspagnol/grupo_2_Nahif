@@ -27,6 +27,7 @@ router.get('/', controller.categorias);
 router.get('/probador/:userid', controller.probador);
 router.get('/admin', controller.productAdmin)
 router.get('/list/:categoria', controller.filtroCategorias)
+router.get('/listAdmin/:categoria', controller.filtroAdminCategorias)
 
 //FORM CREATE
 router.get('/altaProducto/create', controller.altaProducto)
