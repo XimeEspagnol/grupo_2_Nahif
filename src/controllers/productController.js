@@ -117,8 +117,10 @@ const controller = {
     eliminarFoto:(req, res) => {
     
         const producto = detalleProd.find(row=> row.id==req.params.id)
-        if (producto && req.body != undefined){
-            if (req.body.delPpal != "") {
+        console.log(req.body);
+        console.log(req.body.delPpal);
+        if (producto && req.body != {}){
+            if (req.body.delPpal != undefined) {
                  producto.fotoPpal = "default-image.jpg"
                 // fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delPpal))
             }

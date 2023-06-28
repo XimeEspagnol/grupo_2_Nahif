@@ -59,8 +59,6 @@
                             <p>Colores disponibles</p>
                             <% for(let i=0;i < listColores.length; i++) { %>
                             <div>
-                                <% console.log(detalle.colores)
-                                 console.log(listColores[i]) %>
                                 <input type="checkbox" name="coloresProdAlta" <%= detalle.colores.includes(listColores[i]) == true ? 'checked' : ""%> value="<%= listColores[i] %>" id="<%= listColores[i] %>">
                                 <label for="<%= listColores[i] %>"><%= listColores[i] %></label>
                             </div>

@@ -355,7 +355,7 @@
     "tM": "2",
     "tL": "0",
     "descuento": "2000",
-    "borrado": false
+    "borrado": true
   },
   {
     "id": 14,
@@ -406,6 +406,6 @@
     "tM": "2",
     "tL": "2",
     "descuento": "8500",
-    "borrado": false
+    "borrado": true
   }
 ]
