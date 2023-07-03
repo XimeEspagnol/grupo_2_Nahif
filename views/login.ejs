@@ -8,10 +8,13 @@
     <%- include('./partials/header') %>
     
     <main class="main-login">
-        <form action="/" method="GET" class="login">
+        <form action="/user/login" method="post" class="login">
             <h2>ACCEDE A TU CUENTA</h2>
             <input type="email" name="loginEmail" placeholder="E-mail">
             <input type="password" name="loginPassword" placeholder="Contraseña">
+            <% if (locals.errors && errors.datosMal) { %>
+                <p><%=errors.datosMal.msg  %></p>
+                <% } %>
             <button type="submit" class="ingresar">INGRESAR</button>
             <a href="#" class="olvidaste">¿Olvidaste tu contraseña?</a>
             <p class="cuenta">Si no tenés cuenta</p>

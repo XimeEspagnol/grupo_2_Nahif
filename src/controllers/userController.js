@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const bcrypt = require("bcrypt");
 let userId = JSON.parse(fs.readFileSync(path.resolve('./src/database/users.json')))
 
 const controller = {
@@ -7,6 +8,30 @@ const controller = {
     login: (req,res) =>{
        return res.render('login')
     },
+    processLogin: (req, res)=>{
+      const usuario = userId.find(row=> row.id==req.body.email)
+      if (usuario) {
+          if (bycrypt.compareSync(req.body.contrasenia, usuario.contrasenia)){
+              delete usuario.contrasenia
+              req.session.usuarioLogueado = usuario
+              if (req.body.cookie) res.cookie('recordame', req.body.email,{maxAge: 10006060})
+              return res.redirect('/user/perfil')
+          } else{
+              return res.render('login', {errors: {
+                  datosMal: {
+                      msg:'Datos incorrectos'
+                      }
+                  }
+          })}
+      }else{
+          return res.render('login', {errors: {
+                                          datosMal: {
+                                              msg:'Datos incorrectos'
+                                              }
+                                          }
+                                  })
+      }
+  },
     register: (req,res) =>{
        return res.render ('register')
     },
@@ -16,7 +41,7 @@ const controller = {
              "id": userId.length + 1,
              "nombreCompleto": req.body.nombreCompleto,
              "email": req.body.usuario,
-             "contrasenia": req.body.contrasenia,
+             "contrasenia": bcrypt.hashSync (req.body.contrasenia, 10),
              "perfilDeUsuario": "comprador",
              "borrado": false
     }
