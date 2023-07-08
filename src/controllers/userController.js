@@ -9,12 +9,15 @@ const controller = {
        return res.render('login')
     },
     processLogin: (req, res)=>{
-      const usuario = userId.find(row=> row.id==req.body.email)
+      const usuario = userId.find(row=> row.email==req.body.loginEmail)
       if (usuario) {
-          if (bycrypt.compareSync(req.body.contrasenia, usuario.contrasenia)){
-              delete usuario.contrasenia
-              req.session.usuarioLogueado = usuario
-              if (req.body.cookie) res.cookie('recordame', req.body.email,{maxAge: 10006060})
+        if (bcrypt.compareSync(req.body.loginPassword, usuario.contrasenia)){
+              //delete usuario.contrasenia
+              console.log(usuario.email);
+              console.log(req.session);
+              req.session.usuarioLogueado = usuario.email
+              console.log(req.session.usuarioLogueado)
+              if (req.body.cookie) res.cookie('recordame', req.body.loginEmail,{maxAge: 10006060})
               return res.redirect('/user/perfil')
           } else{
               return res.render('login', {errors: {
@@ -47,10 +50,10 @@ const controller = {
     }
 
     fs.writeFileSync(path.resolve('./src/database/users.json'), JSON.stringify([...userId, userNuevo], null, 2), "utf-8")
-    return res.redirect('/user/'+ userNuevo.id)
+    return res.redirect('/user/login')
 
    },
-
+   // revisar que chequee la session con el email
     users: (req, res) => {
       userId = JSON.parse(fs.readFileSync(path.resolve('./src/database/users.json')))
       const userFound = userId.find(row=> row.id == req.params.id)

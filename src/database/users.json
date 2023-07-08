@@ -150,5 +150,13 @@
     "contrasenia": "1234",
     "perfilDeUsuario": "comprador",
     "borrado": false
+  },
+  {
+    "id": 20,
+    "nombreCompleto": "Ximena",
+    "email": "ximenaespagnol@gmail.com",
+    "contrasenia": "$2b$10$erYjJOeraH29g7f13H6xaeu4P02SEMIDLrRDoRZjluF.FL.TMHEDa",
+    "perfilDeUsuario": "comprador",
+    "borrado": false
   }
 ]
