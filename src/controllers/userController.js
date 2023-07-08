@@ -14,10 +14,7 @@ const controller = {
       if (usuario) {
         if (bcrypt.compareSync(req.body.loginPassword, usuario.contrasenia)){
               //delete usuario.contrasenia
-              console.log(usuario.email);
-              console.log(req.session);
               req.session.usuarioLogueado = usuario.email
-              console.log(req.session.usuarioLogueado)
               if (req.body.cookie) res.cookie('recordame', req.body.loginEmail,{maxAge: 10006060})
               return res.redirect('/user/perfil')
           } else{
@@ -37,40 +34,47 @@ const controller = {
       }
   },
     register: (req,res) =>{
-       return res.render ('register')
+        let userExists={msg:""}
+       return res.render ('register', { userExists : userExists})
     },
 
     processRegister: (req, res) =>{  
         const rdoValidacion = validationResult(req)
-        console.log(rdoValidacion.errors);
-        if (rdoValidacion.errors.length > 0) return res.render('register', {errors: rdoValidacion.mapped(), oldData: req.body})
-        let fotoPerfilNueva= "default-image.jpg"
-        console.log(req.file);
-        /*if (req.file != "") {
-            if (req.body.fotoRegistro != "") fotoPerfilNueva = req.file.filename                
-        }   */   
-         let userNuevo = {
-             "id": userId.length + 1,
-             "nombreCompleto": req.body.nombreCompleto,
-             "email": req.body.usuario,
-             "fotoPerfil": fotoPerfilNueva,
-             "contrasenia": bcrypt.hashSync (req.body.contrasenia, 10),
-             "perfilDeUsuario": "comprador",
-             "borrado": false
-    }
-
-    fs.writeFileSync(path.resolve('./src/database/users.json'), JSON.stringify([...userId, userNuevo], null, 2), "utf-8")
-    return res.redirect('/user/login')
+        let userExists = {msg:""}
+        if (rdoValidacion.errors.length > 0) return res.render('register', {errors: rdoValidacion.mapped(), oldData: req.body,userExists: userExists})
+        userId = JSON.parse(fs.readFileSync(path.resolve('./src/database/users.json')))
+        const userFound = userId.find(row=> row.email == req.body.usuario)
+        if(!userFound){
+            let fotoPerfilNueva= "default-user.jpg"
+            console.log(req.file);
+            if (req.file != "") {
+                if (req.body.fotoRegistro != "") fotoPerfilNueva = req.file.filename                
+            }      
+            let userNuevo = {
+                "id": userId.length + 1,
+                "nombreCompleto": req.body.nombreCompleto,
+                "email": req.body.usuario,
+                "fotoPerfil": fotoPerfilNueva,
+                "contrasenia": bcrypt.hashSync (req.body.contrasenia, 10),
+                "perfilDeUsuario": "comprador",
+                "borrado": false
+            }
+            fs.writeFileSync(path.resolve('./src/database/users.json'), JSON.stringify([...userId, userNuevo], null, 2), "utf-8")
+            return res.redirect('/user/login')
+        } else{
+            let userExists={ msg:"mail ya existente"}
+            return res.render('register', {userExists: userExists})
+        }
 
    },
-   // revisar que chequee la session con el email
+   
     users: (req, res) => {
       userId = JSON.parse(fs.readFileSync(path.resolve('./src/database/users.json')))
       const userFound = userId.find(row=> row.email == req.session.usuarioLogueado)
       if (userFound) return res.render('userfound', { users: userFound })
-      else return res.send("Para poder ingresar, debe registrarse")
-   },
+      else return res.render("login")
    }
+}
 
 
 module.exports = controller;

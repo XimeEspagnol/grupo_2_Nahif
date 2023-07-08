@@ -21,13 +21,11 @@
                     <p><%= users.email %></p>
                 </div>
 
-                <div>
+                <div class="div-foto-perfil">
                     <label class="label-perfil" for="foto-perfil-label">Foto de perfil</label>
                     
                         <% if (users.fotoPerfil != ""){ %>
-                            <div>
-                                <img class="foto-perfil" src="/img/<%= users.fotoPerfil %>" alt="fotoPerfil">
-                            </div>
+                            <img class="foto-perfil" src="/img/<%= users.fotoPerfil %>" alt="fotoPerfil">
                         <% } %>
                 </div>
                 

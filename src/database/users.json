@@ -89,14 +89,6 @@
   },
   {
     "id": 12,
-    "nombreCompleto": "Xime",
-    "email": "ifhirifhi@gmail.com",
-    "contrasenia": "1234",
-    "perfilDeUsuario": "comprador",
-    "borrado": false
-  },
-  {
-    "id": 13,
     "nombreCompleto": "Juli",
     "email": "hfhfgdgd@hotmail.com",
     "contrasenia": "1234",
@@ -104,7 +96,7 @@
     "borrado": false
   },
   {
-    "id": 14,
+    "id": 13,
     "nombreCompleto": "Lauti",
     "email": "jdjdjdj@hotmail.com",
     "contrasenia": "1234",
@@ -112,7 +104,7 @@
     "borrado": false
   },
   {
-    "id": 15,
+    "id": 14,
     "nombreCompleto": "Pedro",
     "email": "kdkdkdk@gmail.com",
     "contrasenia": "1234",
@@ -120,47 +112,16 @@
     "borrado": false
   },
   {
-    "id": 16,
-    "nombreCompleto": "ssss",
-    "email": "aaa@a.x",
-    "contrasenia": "1234",
-    "perfilDeUsuario": "comprador",
-    "borrado": false
-  },
-  {
-    "id": 17,
-    "nombreCompleto": "aaaa",
-    "email": "aaa@aa.a",
-    "contrasenia": "1234",
-    "perfilDeUsuario": "comprador",
-    "borrado": false
-  },
-  {
-    "id": 18,
-    "nombreCompleto": "",
-    "email": "",
-    "contrasenia": "",
-    "perfilDeUsuario": "comprador",
-    "borrado": false
-  },
-  {
-    "id": 19,
-    "nombreCompleto": "xxx",
-    "email": "aaa@a.x",
-    "contrasenia": "1234",
-    "perfilDeUsuario": "comprador",
-    "borrado": false
-  },
-  {
-    "id": 20,
+    "id": 15,
     "nombreCompleto": "Ximena",
     "email": "ximenaespagnol@gmail.com",
+    "fotoPerfil": "default-user.jpg",
     "contrasenia": "$2b$10$erYjJOeraH29g7f13H6xaeu4P02SEMIDLrRDoRZjluF.FL.TMHEDa",
     "perfilDeUsuario": "comprador",
     "borrado": false
   },
   {
-    "id": 21,
+    "id": 16,
     "nombreCompleto": "Julieta Carlomagno",
     "email": "julicarlo@gmail.com",
     "contrasenia": "$2b$10$8o9O/ifkX7SH94XI/3.Ap.XYNpibWcmrNVMsS.6osyNudQqQXHVtC",
@@ -168,20 +129,47 @@
     "borrado": false
   },
   {
-    "id": 22,
+    "id": 17,
     "nombreCompleto": "Ximena Espagnol",
     "email": "xime@gmail.com",
-    "fotoPerfil": "default-image.jpg",
+    "fotoPerfil": "default-user.jpg",
     "contrasenia": "$2b$10$f69AbBQ5gV0CAjGsdAa33uH5Yl5kW64IoIhxETS3NeCjuk.Z.o9q2",
     "perfilDeUsuario": "comprador",
     "borrado": false
   },
   {
-    "id": 23,
+    "id": 18,
     "nombreCompleto": "Ximena Espagnol",
     "email": "xime@gmail.com",
-    "fotoPerfil": "default-image.jpg",
+    "fotoPerfil": "default-user.jpg",
     "contrasenia": "$2b$10$ZKzjyiPqgO5EZtFaO80FA.8ipJILWn3T3wn58lO3n7UNRbDsdqPTC",
+    "perfilDeUsuario": "comprador",
+    "borrado": false
+  },
+  {
+    "id": 19,
+    "nombreCompleto": "Xime",
+    "email": "ximenaespagnol@gmail.com",
+    "fotoPerfil": "default-user.jpg",
+    "contrasenia": "$2b$10$ZTF6qHnBHinVwj.TSRH.cuvA6DOLGyCYO5UOwspcbl6.JXZi/gS8.",
+    "perfilDeUsuario": "comprador",
+    "borrado": false
+  },
+  {
+    "id": 20,
+    "nombreCompleto": "Xime",
+    "email": "ximenae@gmail.com",
+    "fotoPerfil": "default-user.jpg",
+    "contrasenia": "$2b$10$N5ziX3UOL5UOMiVMDL0GwuuGCGXo.R6mBXMSt.haXtg8Oc23JMv1O",
+    "perfilDeUsuario": "comprador",
+    "borrado": false
+  },
+  {
+    "id": 21,
+    "nombreCompleto": "Ximena Espagnol",
+    "email": "ximeEspagnol@gmail.com",
+    "fotoPerfil": "1688854178082.png",
+    "contrasenia": "$2b$10$UdgX60Ju97GsZBdSI6EmCuTRhfIqTmn22H.PuwYNIXhAMub7Ri5l6",
     "perfilDeUsuario": "comprador",
     "borrado": false
   }
