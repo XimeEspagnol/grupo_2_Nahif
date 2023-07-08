@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const bcrypt = require("bcrypt");
+const { validationResult } = require("express-validator")
 let userId = JSON.parse(fs.readFileSync(path.resolve('./src/database/users.json')))
 
 const controller = {
@@ -39,11 +40,20 @@ const controller = {
        return res.render ('register')
     },
 
-    processRegister: (req, res) =>{        
+    processRegister: (req, res) =>{  
+        const rdoValidacion = validationResult(req)
+        console.log(rdoValidacion.errors);
+        if (rdoValidacion.errors.length > 0) return res.render('register', {errors: rdoValidacion.mapped(), oldData: req.body})
+        let fotoPerfilNueva= "default-image.jpg"
+        console.log(req.file);
+        /*if (req.file != "") {
+            if (req.body.fotoRegistro != "") fotoPerfilNueva = req.file.filename                
+        }   */   
          let userNuevo = {
              "id": userId.length + 1,
              "nombreCompleto": req.body.nombreCompleto,
              "email": req.body.usuario,
+             "fotoPerfil": fotoPerfilNueva,
              "contrasenia": bcrypt.hashSync (req.body.contrasenia, 10),
              "perfilDeUsuario": "comprador",
              "borrado": false
@@ -56,7 +66,7 @@ const controller = {
    // revisar que chequee la session con el email
     users: (req, res) => {
       userId = JSON.parse(fs.readFileSync(path.resolve('./src/database/users.json')))
-      const userFound = userId.find(row=> row.id == req.params.id)
+      const userFound = userId.find(row=> row.email == req.session.usuarioLogueado)
       if (userFound) return res.render('userfound', { users: userFound })
       else return res.send("Para poder ingresar, debe registrarse")
    },

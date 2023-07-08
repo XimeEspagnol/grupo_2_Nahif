@@ -1,0 +1,50 @@
+.userPerfil {
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #a4c3b2;
+    border: #6b6d6c 1px;
+    border-radius: 5%;
+    box-shadow: 3px 3px 5px 1px #2a2e2c;
+    max-width: 600px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.userPerfil h2{
+    margin-bottom: 15px;
+}
+
+.nombre-perfil{
+    font-family: roboto;
+    background-color: #CCE3DE;
+    padding: 5px;
+    border-radius: 5%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.nombre-perfil p, .email-perfil p {
+    margin: 0;
+}
+
+.email-perfil {
+    font-family: roboto;
+    background-color: #CCE3DE;
+    padding: 5px;
+    border-radius: 5%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.label-perfil {
+    font-family: roboto;
+    font-weight: bold;
+    color: #666;
+}
+
+.foto-perfil {
+    margin: 10px 0px;
+    border-radius: 10%;
+}

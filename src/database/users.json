@@ -158,5 +158,31 @@
     "contrasenia": "$2b$10$erYjJOeraH29g7f13H6xaeu4P02SEMIDLrRDoRZjluF.FL.TMHEDa",
     "perfilDeUsuario": "comprador",
     "borrado": false
+  },
+  {
+    "id": 21,
+    "nombreCompleto": "Julieta Carlomagno",
+    "email": "julicarlo@gmail.com",
+    "contrasenia": "$2b$10$8o9O/ifkX7SH94XI/3.Ap.XYNpibWcmrNVMsS.6osyNudQqQXHVtC",
+    "perfilDeUsuario": "comprador",
+    "borrado": false
+  },
+  {
+    "id": 22,
+    "nombreCompleto": "Ximena Espagnol",
+    "email": "xime@gmail.com",
+    "fotoPerfil": "default-image.jpg",
+    "contrasenia": "$2b$10$f69AbBQ5gV0CAjGsdAa33uH5Yl5kW64IoIhxETS3NeCjuk.Z.o9q2",
+    "perfilDeUsuario": "comprador",
+    "borrado": false
+  },
+  {
+    "id": 23,
+    "nombreCompleto": "Ximena Espagnol",
+    "email": "xime@gmail.com",
+    "fotoPerfil": "default-image.jpg",
+    "contrasenia": "$2b$10$ZKzjyiPqgO5EZtFaO80FA.8ipJILWn3T3wn58lO3n7UNRbDsdqPTC",
+    "perfilDeUsuario": "comprador",
+    "borrado": false
   }
 ]

@@ -15,18 +15,35 @@
 
                 <div class="nombre-registro">
                     <label class="label-registro" for="nombreCompleto">Nombre Completo</label>
-                    <input class="input-registro" type="text" name="nombreCompleto" id="nombreCompleto">
+                    <input class="input-registro" type="text" name="nombreCompleto" id="nombreCompleto" value="<%= locals.oldData ? oldData.nombreCompleto : null %>">
                 </div>
+
+                <% if (locals.errors && errors.nombreCompleto) { %>
+                    <p class="mensajeError"><%=errors.nombreCompleto.msg  %></p>
+                    <% } %>
 
                 <div class="email-registro">
                     <label class="label-registro" for="email">E-mail</label>
-                    <input class="input-registro" type="text" name="usuario" id="email">
+                    <input class="input-registro" type="text" name="usuario" id="email" value="<%= locals.oldData ? oldData.usuario : null %>">
+                </div>
+
+                <% if (locals.errors && errors.usuario) { %>
+                    <p class="mensajeError"><%=errors.usuario.msg  %></p>
+                    <% } %>
+
+                <div class="foto-registro">
+                    <label for="fotoRegistro">Foto de perfil</label>
+                    <input type="file" name="fotoRegistro" accept=".jpg, .png" id="fotoRegistro">
                 </div>
 
                 <div class="contraseña-registro">
                     <label class="label-registro" for="Contraseña">Contraseña</label>
                     <input class="input-registro" type="password" name="contrasenia" id="Contraseña">
                 </div>
+
+                <% if (locals.errors && errors.contrasenia) { %>
+                    <p class="mensajeError"><%=errors.contrasenia.msg  %></p>
+                    <% } %>
 
                 <div class="conf-contra-registro">
                     <label class="label-registro" for="confirmarContraseña">Confirmar Contraseña</label>
@@ -47,6 +64,10 @@
                     </div>
 
                 </div>
+
+                <% if (locals.errors && errors.noSoyUnRobot) { %>
+                    <p class="mensajeError"><%=errors.noSoyUnRobot.msg  %></p>
+                    <% } %>
 
                 <div class="registro-div-boton">
                     <button href="/home" class="registro-boton-crearCuenta" type="submit">CREAR CUENTA</button>

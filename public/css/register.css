@@ -10,6 +10,7 @@
     border-radius: 5%;;
     box-shadow: 3px 3px 5px 1px #2a2e2c;
     max-width: 600px;
+    display: flex;
 }
 
 .subtitulo-crear-cuenta {
@@ -55,14 +56,15 @@
 .registro-noRobot {
     display: flex;
     background-color: #afcfbe;
-    margin-top: 20px;
-    margin-right: 15px;
-    margin-left: 15px;
     padding-right: 0;
     text-align: center;
     align-items: center;
     font-family: Roboto;
     border-radius: 5%;
+    width: 50%;
+    justify-items: center;
+    margin: auto;
+    margin-top: 20px;
 }
 
 .registro-robot {
@@ -85,11 +87,12 @@
 }
 
 .registro-captcha {
-    width: 45%;
+    width: 50%;
 }
 
 .registro-reCaptcha {
     width: 25%;
+    margin-top: 8px;
 }
 
 .privacidad-condiciones {
@@ -154,6 +157,14 @@
     padding-right: 20px;
 }
 
+.foto-registro {
+    font-family: roboto;
+    margin-left: 10px;
+    background-color: #CCE3DE;
+    margin-right: 15px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
  
 @media (min-width: 361px) {
 
@@ -189,7 +200,7 @@
     }
 
     .registro-label-noRobot {
-        font-size: 22px;
+        font-size: 15px;
     }
 
     .label-registro {
@@ -228,4 +239,7 @@
    .registro-link-iniciaSesion {
         margin-right: 60px;
 }
+    .foto-registro {
+        font-size: 20px;
+    }
 }
