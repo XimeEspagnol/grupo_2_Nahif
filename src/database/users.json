@@ -172,5 +172,14 @@
     "contrasenia": "$2b$10$UdgX60Ju97GsZBdSI6EmCuTRhfIqTmn22H.PuwYNIXhAMub7Ri5l6",
     "perfilDeUsuario": "comprador",
     "borrado": false
+  },
+  {
+    "id": 22,
+    "nombreCompleto": "Paula Raventós",
+    "email": "pau_89mdp@hotmail.com",
+    "fotoPerfil": "default-user.jpg",
+    "contrasenia": "$2b$10$2aOckHOxhtholv9nTrx9JO4.bTuyW/pvxoL1tZ8Y/YLNf5PO6moIy",
+    "perfilDeUsuario": "admin",
+    "borrado": false
   }
 ]

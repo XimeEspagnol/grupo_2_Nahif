@@ -47,7 +47,7 @@ const controller = {
         if(!userFound){
             let fotoPerfilNueva= "default-user.jpg"
             console.log(req.file);
-            if (req.file != "") {
+            if (req.file) {
                 if (req.body.fotoRegistro != "") fotoPerfilNueva = req.file.filename                
             }      
             let userNuevo = {

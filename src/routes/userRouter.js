@@ -10,6 +10,10 @@ const registerValidation = require('../middlewares/registerValidation')
 
 const controller = require('../controllers/userController');
 
+const cookieMiddleware = require ('../middlewares/cookieMiddleware');
+
+const logMiddleware = require ('../middlewares/logMiddleware');
+
 const storage= multer.diskStorage({
     destination: (req, file, cb)=>{
         cb(null, path.join(__dirname, '../../public/img'))
@@ -25,12 +29,12 @@ const fileUpload = multer({
     storage: storage
 })
 
-router.get('/login', controller.login);
+router.get('/login', cookieMiddleware, logMiddleware, controller.login);
 router.post('/login', controller.processLogin);
-router.get('/register', controller.register);
+router.get('/register', cookieMiddleware, logMiddleware, controller.register);
 router.post('/register', fileUpload.single('fotoRegistro'), registerValidation, controller.processRegister);
 
-router.get ('/perfil', controller.users);
+router.get ('/perfil', cookieMiddleware, controller.users);
 
 
 module.exports = router

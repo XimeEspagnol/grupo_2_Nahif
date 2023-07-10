@@ -4,9 +4,11 @@ const router = express.Router();
 
 const controller = require('../controllers/mainController');
 
-router.get('/', controller.home);
+const cookieMiddleware = require ('../middlewares/cookieMiddleware')
 
-router.get('/carrito', controller.carrito);
+router.get('/', cookieMiddleware, controller.home);
+
+router.get('/carrito', cookieMiddleware, controller.carrito);
 
 
 module.exports = router
