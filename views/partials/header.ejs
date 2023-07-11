@@ -7,14 +7,33 @@
     <div class="header-top">
         <h1 class="nombreMarca">NAHIF</h1>
         <div class="userMenu">
-            <a href="/user/register">REGISTRATE <i class="fas fa-id-card"></i></a>
-            <a href="/user/login">INGRESA <i class="fas fa-user"></i></a>
+            <ul>
+            <% if(locals.isLogged){ %>
+                <li>
+                    <a href="#" role="button" id="botonPerfil" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="/img/default-user.jpg" alt="Usuario">
+                        Hi, User
+                    </a>
+                    <ul aria-labelledby="navbarDropdown">
+                        <a href="/user/perfil">Mi perfil</a>
+                        <li><hr></li>
+                        <a href="/user/logout">Cerrar sesión</a>
+                    </ul>
+                </li>
+            <% } else{ %>
+                <li><a href="/user/register">REGISTRATE <i class="fas fa-id-card"></i></a></li>
+                <li><a href="/user/login">INGRESA <i class="fas fa-user"></i></a></li>
+            <% } %>
+            </ul>
         </div> 
         </div>
     <div class="header-menu">
         <i class="fas fa-bars"></i>
         <div class="nav-lateral">
-            <a href="/products/admin">PANEL ADMINISTRADOR</a>
+            <% console.log(locals.isAdmin); %>
+            <% if(locals.isAdmin) {%>
+              <a href="/products/admin">PANEL ADMINISTRADOR</a>
+            <% } %>
             <a href="/products">PRODUCTOS</a>
             <%#<a href="#">PROBADOR</a>%>
             <a href="#">CONTACTO</a>
@@ -28,7 +47,9 @@
         </div>
     </div>
     <nav class="header-bottom">
-        <a href="/products/admin">PANEL ADMINISTRADOR</a>
+        <% if(locals.isAdmin) {%>
+            <a href="/products/admin">PANEL ADMINISTRADOR</a>
+        <% } %>
         <a href="/products">PRODUCTOS</a>
         <%#<a href="#">PROBADOR</a>%>
         <a href="#">CONTACTO</a>

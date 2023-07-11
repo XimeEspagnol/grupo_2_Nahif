@@ -9,7 +9,7 @@ const cookieMiddleware = (req, res, next) => {
         delete usuario.contrasenia
         req.session.usuarioLogueado = usuario
     }
-    next()
+    next()     
 }
 
 module.exports = cookieMiddleware;

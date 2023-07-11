@@ -75,7 +75,13 @@ const controller = {
       const userFound = userId.find(row=> row.email == req.session.usuarioLogueado)
       if (userFound) return res.render('userfound', { users: userFound })
       else return res.render("login")
-   }
+   },
+
+    logout:(req, res) => {
+        req.session.destroy()
+        res.clearCookie("recordame")
+        return res.redirect('/')
+    }
 }
 
 

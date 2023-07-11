@@ -3,16 +3,16 @@ const path = require('path')
 
 const datos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/users.json')));
 
-const adminMiddleware = (req, res, next) => {
-        if (req.session.usuarioLogueado ) {  
+const userAdminMiddleware = (req, res, next) => {
+    res.locals.isAdmin = false
+    if (req.session.usuarioLogueado ) {  
       const usuario = datos.find((row) => row.email == req.session.usuarioLogueado);
       if (usuario.perfilDeUsuario=="admin") {
-         next ();
-      } else {
-      return res.redirect('/');  
-      } } else {
-      return res.redirect('/user/login');
+        res.locals.isAdmin = true
+        next ();
+      } 
     }
+    next()
 }
   
-  module.exports = adminMiddleware;
+  module.exports = userAdminMiddleware;
