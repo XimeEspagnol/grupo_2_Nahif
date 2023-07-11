@@ -181,5 +181,23 @@
     "contrasenia": "$2b$10$2aOckHOxhtholv9nTrx9JO4.bTuyW/pvxoL1tZ8Y/YLNf5PO6moIy",
     "perfilDeUsuario": "admin",
     "borrado": false
+  },
+  {
+    "id": 23,
+    "nombreCompleto": "Efrain Daza",
+    "email": "dazaa94@hotmail.com",
+    "fotoPerfil": "default-user.jpg",
+    "contrasenia": "$2b$10$xtRj64ObeI3jSjgw.LL3OuoT2tDqjjXa4JDFdsopvLUUuYE93MlkO",
+    "perfilDeUsuario": "admin",
+    "borrado": false
+  },
+  {
+    "id": 24,
+    "nombreCompleto": "Efrain Dazaa",
+    "email": "dazaaa94@hotmail.com",
+    "fotoPerfil": "default-user.jpg",
+    "contrasenia": "$2b$10$qdO.OFXWxV/rcTWwkwopGucNshdrZNg9SjoMmmg7kOIWSLq30CWwq",
+    "perfilDeUsuario": "comprador",
+    "borrado": false
   }
 ]

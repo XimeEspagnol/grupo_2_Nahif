@@ -60,7 +60,9 @@ const controller = {
                 "borrado": false
             }
             fs.writeFileSync(path.resolve('./src/database/users.json'), JSON.stringify([...userId, userNuevo], null, 2), "utf-8")
-            return res.redirect('/user/login')
+            req.session.usuarioLogueado = userNuevo.email
+            return res.redirect('/user/perfil')
+
         } else{
             let userExists={ msg:"mail ya existente"}
             return res.render('register', {userExists: userExists})

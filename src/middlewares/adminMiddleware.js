@@ -7,7 +7,6 @@ const adminMiddleware = (req, res, next) => {
     if (req.session.usuarioLogueado ) {  
       const usuario = datos.find((row) => row.email == req.session.usuarioLogueado);
       if (usuario.perfilDeUsuario=="admin") {
-        console.log (usuario);
         next ();
       } else {
       return res.redirect('/');  

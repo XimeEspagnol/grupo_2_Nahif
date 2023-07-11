@@ -9,6 +9,7 @@ const methodOverride = require('method-override')
 
 const cookie = require('cookie-parser')
 const session = require('express-session')
+const cookieMiddleware = require ('../src/middlewares/cookieMiddleware');
 
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false }));
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(session({secret:"Sitio Nahif",resave:false, saveUninitialized:false}));
 app.use(cookie());
+app.use(cookieMiddleware);
 
 app.set('views', path.join(__dirname, '../views'));
 app.set ('view engine', 'ejs')

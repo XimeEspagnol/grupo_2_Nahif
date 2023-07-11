@@ -5,7 +5,6 @@ const multer= require('multer');
 
 const controller = require('../controllers/productController');
 
-const cookieMiddleware = require ('../middlewares/cookieMiddleware');
 const adminMiddleware = require ('../middlewares/adminMiddleware');
 
 const { contextsKey } = require('express-validator/src/base');
@@ -27,20 +26,20 @@ const fileUpload = multer({
 
 
 //
-router.get('/detail/:id', cookieMiddleware, controller.product);
-router.get('/', cookieMiddleware, controller.categorias);
-router.get('/probador/:userid', cookieMiddleware, controller.probador);
-router.get('/admin', cookieMiddleware, adminMiddleware, controller.productAdmin)
-router.get('/list/:categoria', cookieMiddleware, controller.filtroCategorias)
-router.get('/listAdmin/:categoria', cookieMiddleware, adminMiddleware, controller.filtroAdminCategorias)
+router.get('/detail/:id' , controller.product);
+router.get('/', controller.categorias);
+router.get('/probador/:userid', controller.probador);
+router.get('/admin', adminMiddleware, controller.productAdmin)
+router.get('/list/:categoria', controller.filtroCategorias)
+router.get('/listAdmin/:categoria', adminMiddleware, controller.filtroAdminCategorias)
 
 //FORM CREATE
-router.get('/altaProducto/create', cookieMiddleware, adminMiddleware, controller.altaProducto)
+router.get('/altaProducto/create', adminMiddleware, controller.altaProducto)
 router.post('/altaProducto/create', fileUpload.any('fotoProdPpal'), controller.processAltaProducto)
 
 
 //FORM EDIT
-router.get('/modificarProd/:id', cookieMiddleware, adminMiddleware, controller.modifProducto)
+router.get('/modificarProd/:id', adminMiddleware, controller.modifProducto)
 router.patch('/modificarProd/:id', fileUpload.any('fotoProdPpal'), controller.processModifProd)
 router.patch('/eliminarFoto/:id', controller.eliminarFoto)
 
