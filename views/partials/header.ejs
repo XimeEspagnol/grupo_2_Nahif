@@ -3,60 +3,58 @@
         <a href="/">
             <div class="fotoLogo"><img src="/img/LOGO-01.png" alt="logo"></div>
         </a>
-     </div>
+    </div>
     <div class="header-top">
         <h1 class="nombreMarca">NAHIF</h1>
         <div class="userMenu">
-            <ul>
+
             <% if(locals.isLogged){ %>
-                <li>
-                    <a href="#" role="button" id="botonPerfil" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="/img/default-user.jpg" alt="Usuario">
-                        Hi, User
+                <div class="infoPerfilHeader">
+                    <a href="/user/perfil" id="botonPerfil">
+                        <img class="fotoPerfilHeader" src="/img/<%= locals.fotoPerfil %>" alt="Usuario">
+                        <p>
+                            <%= locals.nombre %>
+                        </p>
                     </a>
-                    <ul aria-labelledby="navbarDropdown">
-                        <a href="/user/perfil">Mi perfil</a>
-                        <li><hr></li>
-                        <a href="/user/logout">Cerrar sesión</a>
-                    </ul>
-                </li>
-            <% } else{ %>
-                <li><a href="/user/register">REGISTRATE <i class="fas fa-id-card"></i></a></li>
-                <li><a href="/user/login">INGRESA <i class="fas fa-user"></i></a></li>
-            <% } %>
-            </ul>
-        </div> 
+                </div>
+
+                <% } else{ %>
+                    <a href="/user/register">REGISTRATE <i class="fas fa-id-card"></i></a>
+                    <a href="/user/login">INGRESA <i class="fas fa-user"></i></a>
+                    <% } %>
+
         </div>
+    </div>
     <div class="header-menu">
         <i class="fas fa-bars"></i>
         <div class="nav-lateral">
             <% console.log(locals.isAdmin); %>
-            <% if(locals.isAdmin) {%>
-              <a href="/products/admin">PANEL ADMINISTRADOR</a>
-            <% } %>
-            <a href="/products">PRODUCTOS</a>
-            <%#<a href="#">PROBADOR</a>%>
-            <a href="#">CONTACTO</a>
-            <a href="/carrito">CARRITO <i class="fas fa-shopping-cart"></i></a>          
-            <a href="/register">REGISTRATE <i class="fas fa-id-card"></i></a>
-            <a href="/user/login">INGRESA <i class="fas fa-user"></i></a>
-            <form action="/" method="get" class="formSearch">
-                <input type="search" name="buscador" placeholder="Buscar">
-                <button type='submit' class="botonLupa" href="#"><i class="fas fa-search"></i></button>
-            </form>
+                <% if(locals.isAdmin) {%>
+                    <a href="/products/admin">PANEL ADMINISTRADOR</a>
+                    <% } %>
+                        <a href="/products">PRODUCTOS</a>
+                        <%#<a href="#">PROBADOR</a>%>
+                            <a href="#">CONTACTO</a>
+                            <a href="/carrito">CARRITO <i class="fas fa-shopping-cart"></i></a>
+                            <a href="/register">REGISTRATE <i class="fas fa-id-card"></i></a>
+                            <a href="/user/login">INGRESA <i class="fas fa-user"></i></a>
+                            <form action="/" method="get" class="formSearch">
+                                <input type="search" name="buscador" placeholder="Buscar">
+                                <button type='submit' class="botonLupa" href="#"><i class="fas fa-search"></i></button>
+                            </form>
         </div>
     </div>
     <nav class="header-bottom">
         <% if(locals.isAdmin) {%>
             <a href="/products/admin">PANEL ADMINISTRADOR</a>
-        <% } %>
-        <a href="/products">PRODUCTOS</a>
-        <%#<a href="#">PROBADOR</a>%>
-        <a href="#">CONTACTO</a>
-        <a href="/carrito">CARRITO <i class="fas fa-shopping-cart"></i></a>
-        <form action="/" method="get" class="formSearch">
-            <input type="search" name="buscador" placeholder="Buscar">
-            <button type='submit' class="botonLupa" href="#"><i class="fas fa-search"></i></button>
-        </form>
+            <% } %>
+                <a href="/products">PRODUCTOS</a>
+                <%#<a href="#">PROBADOR</a>%>
+                    <a href="#">CONTACTO</a>
+                    <a href="/carrito">CARRITO <i class="fas fa-shopping-cart"></i></a>
+                    <form action="/" method="get" class="formSearch">
+                        <input type="search" name="buscador" placeholder="Buscar">
+                        <button type='submit' class="botonLupa" href="#"><i class="fas fa-search"></i></button>
+                    </form>
     </nav>
 </header>

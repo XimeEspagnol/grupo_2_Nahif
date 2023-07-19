@@ -15,6 +15,8 @@ const controller = {
         if (bcrypt.compareSync(req.body.loginPassword, usuario.contrasenia)){
               //delete usuario.contrasenia
               req.session.usuarioLogueado = usuario.email
+              req.session.fotoPerfil = usuario.fotoPerfil
+              req.session.nombre = usuario.nombreCompleto
               if (req.body.cookie) res.cookie('recordame', req.body.loginEmail,{maxAge: 10006060})
               return res.redirect('/user/perfil')
           } else{

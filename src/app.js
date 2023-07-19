@@ -14,14 +14,17 @@ const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 const userAdminMiddleware = require('./middlewares/userAdminMiddleware')
 
 app.use(express.static('public'))
+app.use(session({secret:"Sitio Nahif",resave:false, saveUninitialized:false}));
+app.use(userLoggedMiddleware)
+app.use(userAdminMiddleware)
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.use(session({secret:"Sitio Nahif",resave:false, saveUninitialized:false}));
+
 app.use(cookie());
 app.use(cookieMiddleware);
-app.use(userLoggedMiddleware)
-app.use(userAdminMiddleware)
+
 
 app.set('views', path.join(__dirname, '../views'));
 app.set ('view engine', 'ejs')

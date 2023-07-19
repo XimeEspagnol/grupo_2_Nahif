@@ -121,14 +121,6 @@
     "borrado": false
   },
   {
-    "id": 16,
-    "nombreCompleto": "Julieta Carlomagno",
-    "email": "julicarlo@gmail.com",
-    "contrasenia": "$2b$10$8o9O/ifkX7SH94XI/3.Ap.XYNpibWcmrNVMsS.6osyNudQqQXHVtC",
-    "perfilDeUsuario": "comprador",
-    "borrado": false
-  },
-  {
     "id": 17,
     "nombreCompleto": "Ximena Espagnol",
     "email": "xime@gmail.com",
@@ -198,6 +190,15 @@
     "fotoPerfil": "default-user.jpg",
     "contrasenia": "$2b$10$qdO.OFXWxV/rcTWwkwopGucNshdrZNg9SjoMmmg7kOIWSLq30CWwq",
     "perfilDeUsuario": "comprador",
+    "borrado": false
+  },
+  {
+    "id": 24,
+    "nombreCompleto": "Julieta Carlomagno",
+    "email": "juli@gmail.com",
+    "fotoPerfil": "1689792860999.jpeg",
+    "contrasenia": "$2b$10$.oh1oM4RF24s1WIWvXplCe0nFTIi8jEyiEDtjgsvNvghmEKWmX/Ka",
+    "perfilDeUsuario": "admin",
     "borrado": false
   }
 ]

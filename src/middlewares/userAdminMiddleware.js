@@ -7,10 +7,12 @@ const userAdminMiddleware = (req, res, next) => {
     res.locals.isAdmin = false
     if (req.session.usuarioLogueado ) {  
       const usuario = datos.find((row) => row.email == req.session.usuarioLogueado);
-      if (usuario.perfilDeUsuario=="admin") {
-        res.locals.isAdmin = true
-        next ();
-      } 
+      if (usuario){
+        if (usuario.perfilDeUsuario=="admin") {
+          res.locals.isAdmin = true
+          next ();
+        }
+      }
     }
     next()
 }

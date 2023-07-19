@@ -3,6 +3,8 @@ function userLoggedMiddleware (req, res, next) {
 	if (req.session.usuarioLogueado) {
 	res.locals.isLogged = true;
 	res.locals.userLogged = req.session.usuarioLogueado
+	res.locals.fotoPerfil = req.session.fotoPerfil
+	res.locals.nombre = req.session.nombre
 	}
 	next();
 }

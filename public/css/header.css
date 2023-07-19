@@ -1,10 +1,12 @@
-body{
-    margin:0;
+body {
+    margin: 0;
     width: 100vw;
 }
-main{
+
+main {
     width: 100vw;
 }
+
 .header-top {
     display: flex;
     justify-content: space-between;
@@ -54,7 +56,7 @@ header .nombreMarca {
     transition: all 400ms;
 }
 
-.header-top .userMenu{
+.header-top .userMenu {
     display: none
 }
 
@@ -88,25 +90,32 @@ header .nombreMarca {
     display: none;
     transition: all 350ms;
 }
+
 .formSearch {
     color: #6b9080;
     background-color: #CCE3DE;
-    border:none;
+    border: none;
     display: flex;
 }
-.formSearch:hover{
+
+.formSearch:hover {
     box-shadow: 1px 1px 3px #2a2e2c;
 }
-.formSearch input, .formSearch button{
+
+.formSearch input,
+.formSearch button {
     background-color: #fff;
     border: none;
 }
-.botonLupa{
-    margin:0;
+
+.botonLupa {
+    margin: 0;
     padding: 0;
 }
+
 .header-bottom a,
-.nav-lateral a, .header-top .userMenu a {
+.nav-lateral a,
+.header-top .userMenu a {
     text-decoration: none;
     color: #6b9080;
     transition: all 350ms;
@@ -121,7 +130,6 @@ header .nombreMarca {
     text-shadow: 1px 1px 3px #6b9080;
 }
 
-
 @media (min-width: 769px) {
     .header-bottom {
         display: flex;
@@ -132,9 +140,10 @@ header .nombreMarca {
         padding: 5px 0px 5px 0px;
     }
 
-    .header-top .nombreMarca{
+    .header-top .nombreMarca {
         margin-left: 40%;
     }
+
     .header-menu {
         display: none;
     }
@@ -147,10 +156,11 @@ header .nombreMarca {
         font-size: 15px;
     }
 
-    .header-logo{
-        top:20px
+    .header-logo {
+        top: 20px
     }
-    .header-top .userMenu{
+
+    .header-top .userMenu {
         display: flex;
         flex-direction: column;
         font-size: 14px;
@@ -166,5 +176,24 @@ header .nombreMarca {
 
     .header-top .userMenu a:hover {
         text-shadow: 1px 1px 3px #6b9080;
+    }
+
+    .infoPerfilHeader{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0px;
+        justify-items: center;
+    }
+
+    .fotoPerfilHeader {
+        max-height: 65px;
+        border-radius: 5%;
+        align-items: center;
+    }
+    .infoPerfilHeader p {
+        width: 100%;
+        margin: 0px;
+        margin-top: 5px;
     }
 }

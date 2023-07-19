@@ -15,8 +15,10 @@
             <% if (locals.errors && errors.datosMal) { %>
                 <p class="mensajeError"><%=errors.datosMal.msg  %></p>
                 <% } %>
-            <input type="checkbox" name="cookie"  class="text-field" id="cookie">
-            <label for="cookie">Recordarme</label>
+            <div class="recordarmeLogin">
+                <input type="checkbox" name="cookie"  class="text-field" id="cookie">
+                <label class="recordarmePalabraLogin" for="cookie">Recordarme</label>
+            </div>
             <button type="submit" class="ingresar">INGRESAR</button>
             <a href="#" class="olvidaste">¿Olvidaste tu contraseña?</a>
             <p class="cuenta">Si no tenés cuenta</p>
