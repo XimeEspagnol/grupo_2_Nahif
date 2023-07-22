@@ -65,13 +65,14 @@ header .nombreMarca {
     transition: all 400ms;
 }
 
-.header-menu:hover .nav-lateral {
+.header-menu:hover .nav-lateral, .header-menu {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 10px;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 18px;
+    z-index: 100;
 }
 
 .header-menu:hover {
@@ -118,6 +119,7 @@ header .nombreMarca {
 .header-top .userMenu a {
     text-decoration: none;
     color: #6b9080;
+    text-align: center;
     transition: all 350ms;
 }
 
@@ -128,6 +130,16 @@ header .nombreMarca {
 
 .header-bottom a:hover {
     text-shadow: 1px 1px 3px #6b9080;
+}
+
+.fotoPerfilHeaderLat{
+    height: 70px;
+    text-align: center;
+}
+.infoPerfilHeaderLat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media (min-width: 769px) {
