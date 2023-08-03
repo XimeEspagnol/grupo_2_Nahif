@@ -200,5 +200,14 @@
     "contrasenia": "$2b$10$.oh1oM4RF24s1WIWvXplCe0nFTIi8jEyiEDtjgsvNvghmEKWmX/Ka",
     "perfilDeUsuario": "admin",
     "borrado": false
+  },
+  {
+    "id": 25,
+    "nombreCompleto": "Ro",
+    "email": "ro@gmail.com",
+    "fotoPerfil": "1690852757505.jpg",
+    "contrasenia": "$2b$10$4fe51/bf1F7zmcnyweH6YOWGGN9WrD9P4WNI40VKGktQxnV/k3lNm",
+    "perfilDeUsuario": "comprador",
+    "borrado": false
   }
 ]
