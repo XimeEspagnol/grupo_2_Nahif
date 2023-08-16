@@ -34,7 +34,8 @@ router.get('/register', logMiddleware, controller.register);
 router.post('/register', fileUpload.single('fotoRegistro'), registerValidation, controller.processRegister);
 
 router.get ('/perfil', controller.users);
-router.get ('/logout', controller.logout)
+router.get ('/logout', controller.logout);
+router.get ('/user', controller.userController);
 
 
 module.exports = router

@@ -1,8 +1,9 @@
 const path = require('path');
 const fs = require('fs');
 const bcrypt = require("bcrypt");
-const { validationResult } = require("express-validator")
-let userId = JSON.parse(fs.readFileSync(path.resolve('./src/database/users.json')))
+const { validationResult } = require("express-validator");
+let userId = JSON.parse(fs.readFileSync(path.resolve('./src/database/users.json')));
+let db = require ('../database/models');
 
 const controller = {
 
