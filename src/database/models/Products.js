@@ -76,7 +76,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey:'product_id',
             otherKey:'color_id'
         }),
-        Movie.belongsToMany(models.Ventas,{
+        Products.belongsToMany(models.Ventas,{
                
             through:'products-ventas',
             foreignKey:'product_id',
@@ -85,5 +85,5 @@ module.exports = (sequelize, dataTypes) => {
 
     }
 
-    return Actor
+    return Products
 };
