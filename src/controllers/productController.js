@@ -1,8 +1,121 @@
 const path = require('path');
-const fs = require('fs');
-//const { formatWithOptions } = require('util');
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+//const products = require('../database/models/products');
 
-const detalleProd = JSON.parse(fs.readFileSync(path.resolve('./src/database/products.json')))
+
+//Aqui tienen una forma de llamar a cada uno de los modelos
+// const {Movies,Genres,Actor} = require('../database/models');
+
+//Aquí tienen otra forma de llamar a los modelos creados
+const Products = db.Products;
+const Categorias = db.Categorias
+const Users = db.Users;
+const Talles = db.Talles
+const coloresProducts = db.colores-products
+const Colores = db.Colores
+
+
+const productController = {
+    list: async (req, res) => {
+        try {
+        db.Products.findAll()
+            await (products => {
+                res.render('categorias.ejs', {products})
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    detail: async (req, res) => {
+        try {
+        db.Products.findByPk(req.params.id,{include:[{association:'talles'},{association:'categorias'}]})
+            await (products => {
+              res.render('productDetail.ejs', {products});//
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    
+    //Aqui dispongo las rutas para trabajar con el CRUD
+    add: async function (req, res) {
+       try {
+       const Talles= await db.Talles.findAll()
+        res.render('altaProducto',{allTalles:Talles})
+       } catch (error) {
+        console.log(error);
+       }
+        
+    },
+    create: async function (req,res) {
+try {
+   const colores = req.body.color_id
+   const productoCreado=await db.Products.create({
+        nombre: req.body.nombre,
+        detalle: req.body.detalle,
+        fotoPpal: req.body.fotoPpal,
+        fotos: req.body.fotos,
+        precio: req.body.precio,
+        descuento: req.body.descuento,
+        talle_id: req.body.talle_id,
+        categoria_id: req.body.categoria_id,
+        color_id: req.body.color_id,
+        stock: req.body.stock
+    })
+
+//for (let i = 0; i< colores.length; i++) {
+// await productoCreado.addColor(colores[i].id,{through:{rating:actores[i].rating,participaciones:actores[i].apariciones}})
+  //  }
+
+    res.redirect('/products')
+} catch (error) {
+    console.log(error);
+}
+    },
+    edit:async function(req,res) {
+        try {
+            const productsEdit = db.Products.findByPk(req.params.id)
+            const tallesEdit = db.Talles.findAll()
+            const categoriasEdit = db.Categorias.findAll()
+            const coloresProdEdit = db.colores-products.findAll()
+            const [products,talles,categorias, coloresProd]= await Promise.all([productsEdit,tallesEdit, categoriasEdit, coloresProdEdit])
+            res.render('modifProducto',{Product:products,allTalles:talles,allCategorias:categorias, allColors:coloresProd})
+        } catch (error) {
+            console.log(error);
+        }
+
+    },
+    update: async function (req,res) {
+try {
+  await  db.Products.update({
+...req.body
+  },{
+    where:{
+        id:req.params.id
+    }
+
+  })
+
+
+    res.redirect('/products')
+} catch (error) {
+    console.log(error);
+}
+    },
+    delete: function (req,res) {
+
+    },
+    destroy: function (req,res) {
+
+    }
+
+}
+
+module.exports = controller;
+
+/*const detalleProd = JSON.parse(fs.readFileSync(path.resolve('./src/database/products.json')))
 const listCategorias = JSON.parse(fs.readFileSync(path.resolve('./src/database/categorias.json')))
 const listColores = JSON.parse(fs.readFileSync(path.resolve('./src/database/colores.json')))
 
@@ -143,8 +256,4 @@ const controller = {
     }
    
 
-};
-
-
-
-module.exports = controller;
+};*/

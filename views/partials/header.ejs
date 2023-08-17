@@ -3,39 +3,67 @@
         <a href="/">
             <div class="fotoLogo"><img src="/img/LOGO-01.png" alt="logo"></div>
         </a>
-     </div>
+    </div>
     <div class="header-top">
         <h1 class="nombreMarca">NAHIF</h1>
         <div class="userMenu">
-            <a href="/user/register">REGISTRATE <i class="fas fa-id-card"></i></a>
-            <a href="/user/login">INGRESA <i class="fas fa-user"></i></a>
-        </div> 
+
+            <% if(locals.isLogged){ %>
+                <div class="infoPerfilHeader">
+                    <a href="/user/perfil" id="botonPerfil">
+                        <img class="fotoPerfilHeader" src="/img/<%= locals.fotoPerfil %>" alt="Usuario">
+                        <p>
+                            <%= locals.nombre %>
+                        </p>
+                    </a>
+                </div>
+
+                <% } else{ %>
+                    <a href="/user/register">REGISTRATE <i class="fas fa-id-card"></i></a>
+                    <a href="/user/login">INGRESA <i class="fas fa-user"></i></a>
+                    <% } %>
+
         </div>
+    </div>
     <div class="header-menu">
         <i class="fas fa-bars"></i>
         <div class="nav-lateral">
-            <a href="/products/admin">PANEL ADMINISTRADOR</a>
-            <a href="/products">PRODUCTOS</a>
-            <%#<a href="#">PROBADOR</a>%>
-            <a href="#">CONTACTO</a>
-            <a href="/carrito">CARRITO <i class="fas fa-shopping-cart"></i></a>          
-            <a href="/register">REGISTRATE <i class="fas fa-id-card"></i></a>
-            <a href="/user/login">INGRESA <i class="fas fa-user"></i></a>
-            <form action="/" method="get" class="formSearch">
-                <input type="search" name="buscador" placeholder="Buscar">
-                <button type='submit' class="botonLupa" href="#"><i class="fas fa-search"></i></button>
-            </form>
+            <% if(locals.isAdmin) {%>
+                    <a href="/products/admin">PANEL ADMINISTRADOR</a>
+                <% } %>
+                <a href="/products">PRODUCTOS</a>
+                        <%#<a href="#">PROBADOR</a>%>
+                <a href="#">CONTACTO</a>
+                <a href="/carrito">CARRITO <i class="fas fa-shopping-cart"></i></a>
+                <% if(locals.isLogged){ %>
+                    <div class="infoPerfilHeaderLat">
+                        <a href="/user/perfil" id="botonPerfil">
+                            <img class="fotoPerfilHeaderLat" src="/img/<%= locals.fotoPerfil %>" alt="Usuario">
+                            <p> <%= locals.nombre %>  </p>
+                        </a>
+                    </div>
+                <% } else{ %>
+                    <a href="/user/register">REGISTRATE <i class="fas fa-id-card"></i></a>
+                    <a href="/user/login">INGRESA <i class="fas fa-user"></i></a>
+                <% } %>
+                            
+                            <form action="/" method="get" class="formSearch">
+                                <input type="search" name="buscador" placeholder="Buscar">
+                                <button type='submit' class="botonLupa" href="#"><i class="fas fa-search"></i></button>
+                            </form>
         </div>
     </div>
     <nav class="header-bottom">
-        <a href="/products/admin">PANEL ADMINISTRADOR</a>
-        <a href="/products">PRODUCTOS</a>
-        <%#<a href="#">PROBADOR</a>%>
-        <a href="#">CONTACTO</a>
-        <a href="/carrito">CARRITO <i class="fas fa-shopping-cart"></i></a>
-        <form action="/" method="get" class="formSearch">
-            <input type="search" name="buscador" placeholder="Buscar">
-            <button type='submit' class="botonLupa" href="#"><i class="fas fa-search"></i></button>
-        </form>
+        <% if(locals.isAdmin) {%>
+            <a href="/products/admin">PANEL ADMINISTRADOR</a>
+            <% } %>
+                <a href="/products">PRODUCTOS</a>
+                <%#<a href="#">PROBADOR</a>%>
+                    <a href="#">CONTACTO</a>
+                    <a href="/carrito">CARRITO <i class="fas fa-shopping-cart"></i></a>
+                    <form action="/" method="get" class="formSearch">
+                        <input type="search" name="buscador" placeholder="Buscar">
+                        <button type='submit' class="botonLupa" href="#"><i class="fas fa-search"></i></button>
+                    </form>
     </nav>
 </header>

@@ -1,8 +1,9 @@
 const path = require('path');
 const fs = require('fs');
 const bcrypt = require("bcrypt");
-const { validationResult } = require("express-validator")
-let userId = JSON.parse(fs.readFileSync(path.resolve('./src/database/users.json')))
+const { validationResult } = require("express-validator");
+let userId = JSON.parse(fs.readFileSync(path.resolve('./src/database/users.json')));
+let db = require ('../database/models');
 
 const controller = {
 
@@ -15,6 +16,8 @@ const controller = {
         if (bcrypt.compareSync(req.body.loginPassword, usuario.contrasenia)){
               //delete usuario.contrasenia
               req.session.usuarioLogueado = usuario.email
+              req.session.fotoPerfil = usuario.fotoPerfil
+              req.session.nombre = usuario.nombreCompleto
               if (req.body.cookie) res.cookie('recordame', req.body.loginEmail,{maxAge: 10006060})
               return res.redirect('/user/perfil')
           } else{
@@ -46,7 +49,7 @@ const controller = {
         const userFound = userId.find(row=> row.email == req.body.usuario)
         if(!userFound){
             let fotoPerfilNueva= "default-user.jpg"
-            console.log(req.file);
+            
             if (req.file) {
                 if (req.body.fotoRegistro != "") fotoPerfilNueva = req.file.filename                
             }      
@@ -75,7 +78,13 @@ const controller = {
       const userFound = userId.find(row=> row.email == req.session.usuarioLogueado)
       if (userFound) return res.render('userfound', { users: userFound })
       else return res.render("login")
-   }
+   },
+
+    logout:(req, res) => {
+        req.session.destroy()
+        res.clearCookie("recordame")
+        return res.redirect('/')
+    }
 }
 
 

@@ -1,37 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head', {title: "Nahif Users"})%>
+<%- include('./partials/head', {title: "Nahif Users" })%>
 
-<body>
-    <%- include('./partials/header') %>
-    <main id="main-registro">
+    <body>
+        <%- include('./partials/header') %>
+            <main id="main-registro">
 
-        <div class="userPerfil">
+                <div class="userPerfil">
 
-            <h2 class="subtitulo-crear-cuenta">CUENTA</h2>
+                    <h2 class="subtitulo-crear-cuenta">CUENTA</h2>
 
-                <label class="label-perfil">Nombre y apellido</label>
-                <div class="nombre-perfil">
-                    <p><%= users.nombreCompleto %></p>
-                </div>
 
-                <label class="label-perfil">Email</label>
-                <div class="email-perfil">
-                    <p><%= users.email %></p>
-                </div>
+                    <div class="div-foto-perfil">
+                        <label class="label-perfil" for="foto-perfil-label">Foto de perfil</label>
 
-                <div class="div-foto-perfil">
-                    <label class="label-perfil" for="foto-perfil-label">Foto de perfil</label>
-                    
-                        <% if (users.fotoPerfil != ""){ %>
+                        <% if (users.fotoPerfil !="" ){ %>
                             <img class="foto-perfil" src="/img/<%= users.fotoPerfil %>" alt="fotoPerfil">
-                        <% } %>
+                            <% } %>
+                    </div>
+                    
+                    <label class="label-perfil">Nombre y apellido</label>
+                    <div class="nombre-perfil">
+                        <p>
+                            <%= users.nombreCompleto %>
+                        </p>
+                    </div>
+
+                    <label class="label-perfil">Email</label>
+                    <div class="email-perfil">
+                        <p>
+                            <%= users.email %>
+                        </p>
+                    </div>
+
+                    <div class="botonLogout">
+                        <a class="cerrarSesion" href="/user/logout">Cerrar sesión</a>
+                    </div>
+
                 </div>
-                
-        </div>
-    </main>
-    <%- include('./partials/footer') %>
-</body>
+            </main>
+            <%- include('./partials/footer') %>
+    </body>
 
 </html>

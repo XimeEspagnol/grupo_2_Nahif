@@ -29,3 +29,10 @@ En este sprint hemos avanzado muy bien pero nos ha sido más difícil tener encu
 A su vez, cabe destacar que los temas se van volviendo más complejos e integradores, y que así vamos comprendiendo mejor el "para qué" de aprender sobre distintas herramientas vistas, que logran ir tomando forma en la medida que vamos continuando las clases. 
 
 Vamos por más!!!!!! 
+
+**NUESTRA RETROSPECTIVA DE GRUPO SPRINT 5**
+
+Este sprint se ha logrado de forma grupal, ya que casi en su totalidad hemos avanzado en grupo o haciéndolo de a varios, compartiendo pareceres, conocimientos y olvidos también!!!. Ha sido una etapa bastante movida para todos nosotros en cuestiones personales y laborales, con lo cual creemos que la mejor decisión fue haber logrado llevarlo adelante en reuniones grupales y aportando lo que cada uno podía en cada momento. 
+Entendemos que de esta forma posiblemente sea más sencillo y nutritivo para todos!
+
+A seguir avanzando con uñas y garras!!! 

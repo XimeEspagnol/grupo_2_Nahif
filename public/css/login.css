@@ -109,6 +109,20 @@
     background-color: #EAF4F4;
 }
 
+.recordarmeLogin {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.recordarmeLogin .recordarmePalabraLogin {
+    color: #666;
+}
+
+.recordarmeLogin .text-field {
+    margin-top: 10px;
+}
+
 @media (min-width:361px) {
     .main-login .login {
         max-width: 350px;
