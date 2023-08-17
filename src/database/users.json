@@ -199,5 +199,14 @@
     "contrasenia": "$2b$10$qdO.OFXWxV/rcTWwkwopGucNshdrZNg9SjoMmmg7kOIWSLq30CWwq",
     "perfilDeUsuario": "comprador",
     "borrado": false
-  }
+  },
+  {
+  "id": 25,
+  "nombreCompleto": "Obregon Pablo",
+  "email": "obregonpablo2022@gmail.com",
+  "fotoPerfil": "default-user.jpg",
+  "contrasenia": "$2b$10$qdO.OFXWxV/rcTWwkwopGucNshdrZNg9SjoMmmg7kOIWSLq30CWwq",
+  "perfilDeUsuario": "comprador",
+  "borrado": false
+}
 ]
