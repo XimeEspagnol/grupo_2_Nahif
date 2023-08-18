@@ -5,7 +5,7 @@ const { validationResult } = require("express-validator");
 let userId = JSON.parse(fs.readFileSync(path.resolve('./src/database/users.json')));
 let db = require ('../database/models');
 
-const controller = {
+const userController = {
 
     login: (req,res) =>{
        return res.render('login')
@@ -45,7 +45,23 @@ const controller = {
         const rdoValidacion = validationResult(req)
         let userExists = {msg:""}
         if (rdoValidacion.errors.length > 0) return res.render('register', {errors: rdoValidacion.mapped(), oldData: req.body,userExists: userExists})
-        userId = JSON.parse(fs.readFileSync(path.resolve('./src/database/users.json')))
+       
+    const userId = {
+        create: async function (req,res) {
+            try {
+                const usuarioCreado = await db.users.create({
+                    nombre: req.body.nombre,
+                    apellido: req.body.apellido,
+                    email: req.body.email,
+                    fotoPerfil: req.body.fotoPerfil,
+                    contrasenia: req.body.contrasenia
+                    })
+                res.redirect('/users')
+            } catch (error) {
+                console.log(error);
+    }
+
+
         const userFound = userId.find(row=> row.email == req.body.usuario)
         if(!userFound){
             let fotoPerfilNueva= "default-user.jpg"
@@ -62,23 +78,38 @@ const controller = {
                 "perfilDeUsuario": "comprador",
                 "borrado": false
             }
-            fs.writeFileSync(path.resolve('./src/database/users.json'), JSON.stringify([...userId, userNuevo], null, 2), "utf-8")
-            req.session.usuarioLogueado = userNuevo.email
-            return res.redirect('/user/perfil')
+
+        req.session.usuarioLogueado = userNuevo.email
+        return res.redirect('/user/perfil')
 
         } else{
             let userExists={ msg:"mail ya existente"}
             return res.render('register', {userExists: userExists})
         }
 
-   },
    
     users: (req, res) => {
-      userId = JSON.parse(fs.readFileSync(path.resolve('./src/database/users.json')))
+
+        const userId = {
+            create: async function (req,res) {
+                try {
+                    const usuarioCreado = await db.users.create({
+                        nombre: req.body.nombre,
+                        apellido: req.body.apellido,
+                        email: req.body.email,
+                        fotoPerfil: req.body.fotoPerfil,
+                        contrasenia: req.body.contrasenia
+                        })
+                    res.redirect('/users')
+                } catch (error) {
+                    console.log(error);
+        }
+    
       const userFound = userId.find(row=> row.email == req.session.usuarioLogueado)
       if (userFound) return res.render('userfound', { users: userFound })
       else return res.render("login")
    },
+   }
 
     logout:(req, res) => {
         req.session.destroy()
@@ -86,6 +117,6 @@ const controller = {
         return res.redirect('/')
     }
 }
+}
 
-
-module.exports = controller;
+module.exports = userController
