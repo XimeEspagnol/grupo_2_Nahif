@@ -36,3 +36,11 @@ Este sprint se ha logrado de forma grupal, ya que casi en su totalidad hemos ava
 Entendemos que de esta forma posiblemente sea más sencillo y nutritivo para todos!
 
 A seguir avanzando con uñas y garras!!! 
+
+**NUESTRA RETROSPECTIVA DE GRUPO SPRINT 6**
+
+El sprint 6 ha sido un poco más difícil continuar con el trabajo en grupo, ya que por cuestiones laborales y demás de cada participante, hemos tenido que repartir las tareas para luego evaluar el avance y los errores en conjunto. Pero, como siempre, nos tendemos la mano para quien que lo necesite y sabemos que el trabajo en equipo significa poder equilibrar y compensar en la medida que cada uno hace su aporte, aunque en cada instancia sea diferente. 
+Finalmente, lo importante es aprender de todos nosotros y poder seguir adelante!
+
+Y ahora, ¿Quién nos para?
+
