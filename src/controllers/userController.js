@@ -86,7 +86,8 @@ const userController = {
             let userExists={ msg:"mail ya existente"}
             return res.render('register', {userExists: userExists})
         }
-
+    },
+}
    
     users: (req, res) => {
 
@@ -118,5 +119,8 @@ const userController = {
     }
 }
 }
+}
 
-module.exports = userController
+module.exports = userController;
+
+    
