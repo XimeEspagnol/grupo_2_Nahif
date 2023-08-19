@@ -26,24 +26,27 @@ const fileUpload = multer({
 
 
 //
-router.get('/detail/:id' , controller.product);
-router.get('/', controller.categorias);
+router.get('/detail/:id' , controller.detail);
+//router.get('/detail/:id' , controller.product);
+router.get('/', controller.list);
+//router.get('/', controller.categorias);
 router.get('/probador/:userid', controller.probador);
 router.get('/admin', adminMiddleware, controller.productAdmin)
 router.get('/list/:categoria', controller.filtroCategorias)
 router.get('/listAdmin/:categoria', adminMiddleware, controller.filtroAdminCategorias)
 
 //FORM CREATE
-router.get('/altaProducto/create', adminMiddleware, controller.altaProducto)
-router.post('/altaProducto/create', fileUpload.any('fotoProdPpal'), controller.processAltaProducto)
+router.get('/altaProducto/create', adminMiddleware, controller.add)
+router.post('/altaProducto/create', fileUpload.any('fotoProdPpal'), controller.create)
 
 
 //FORM EDIT
-router.get('/modificarProd/:id', adminMiddleware, controller.modifProducto)
-router.patch('/modificarProd/:id', fileUpload.any('fotoProdPpal'), controller.processModifProd)
+router.get('/modificarProd/:id', adminMiddleware, controller.edit)
+router.patch('/modificarProd/:id', fileUpload.any('fotoProdPpal'), controller.update)
 router.patch('/eliminarFoto/:id', controller.eliminarFoto)
 
 //FORM DELETE
-router.delete('/admin', controller.eliminarProd)
+//router.get('/admin', controller.delete)
+//router.post('/admin', controller.destroy)
 
 module.exports = router
