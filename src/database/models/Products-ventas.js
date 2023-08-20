@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps:true,
         deletedAt:false
     }
-    /*const Products-ventas = sequelize.define(alias,cols,config)
+    const Products-ventas = sequelize.define(alias,cols,config)
 
     Products-ventas.hasMany(models.Ventas,{
         foreignKey:"ventas_id",
@@ -35,5 +35,5 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false
         })    
     }
-    return Products-ventas*/
+    return Products-ventas
 }
