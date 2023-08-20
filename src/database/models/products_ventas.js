@@ -1,18 +1,18 @@
-const {INTEGER} = requiere("sequelize");
+const {INTEGER} = require("sequelize");
 
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Products-ventas";
+    let alias = "products_ventas";
     let cols = {
         id:{
             type:dataTypes.INT(10).INSIGNED,
             primaryKey:true,
             autoIncrement:true
         },
-        ventas_id:{
+        venta_id:{
             type: dataTypes.INT(10).UNSIGNED,
             allowNull: false
         },
-        products_id:{
+        product_id:{
             type: dataTypes.INT(10).UNSIGNED,
             allowNull: false
         }
@@ -21,19 +21,19 @@ module.exports = (sequelize, dataTypes) => {
         timestamps:true,
         deletedAt:false
     }
-    const Products-ventas = sequelize.define(alias,cols,config)
+    const products_ventas = sequelize.define(alias,cols,config)
 
-    Products-ventas.hasMany(models.Ventas,{
-        foreignKey:"ventas_id",
-        as:"Ventas",
-        timestamps: false
-    }),
-    Products-ventas.associate = function(models){
-        Products-ventas.belongsTo(models.Products{
+    products_ventas.associate = function(models){
+        products_ventas.belongsTo(models.Products, {
             foreignKey:"products_id",
             as:"Products",
             timestamps: false
-        })    
+        }),
+        products_ventas.belongsTo(models.Ventas,{
+        foreignKey:"ventas_id",
+        as:"Ventas",
+        timestamps: false
+    }) 
     }
-    return Products-ventas
+    return products_ventas
 }
