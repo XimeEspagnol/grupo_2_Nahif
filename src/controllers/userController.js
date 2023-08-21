@@ -11,13 +11,18 @@ const userController = {
        return res.render('login')
     },
     processLogin: (req, res)=>{
-      const usuario = userId.find(row=> row.email==req.body.loginEmail)
+      const usuario = db.Users.findOne({
+        where:{
+          email: req.body.loginEmail
+        }
+      });
       if (usuario) {
         if (bcrypt.compareSync(req.body.loginPassword, usuario.contrasenia)){
               //delete usuario.contrasenia
               req.session.usuarioLogueado = usuario.email
               req.session.fotoPerfil = usuario.fotoPerfil
-              req.session.nombre = usuario.nombreCompleto
+              req.session.nombre = usuario.nombre
+              req.session.apellido = usuario.apellido
               if (req.body.cookie) res.cookie('recordame', req.body.loginEmail,{maxAge: 10006060})
               return res.redirect('/user/perfil')
           } else{
@@ -45,9 +50,8 @@ const userController = {
         const rdoValidacion = validationResult(req)
         let userExists = {msg:""}
         if (rdoValidacion.errors.length > 0) return res.render('register', {errors: rdoValidacion.mapped(), oldData: req.body,userExists: userExists})
-       
-    const userId = {
-        create: async function (req,res) {
+    },  
+    create: async function (req,res) {
             try {
                 const usuarioCreado = await db.users.create({
                     nombre: req.body.nombre,
@@ -62,7 +66,11 @@ const userController = {
     }
 
 
-        const userFound = userId.find(row=> row.email == req.body.usuario)
+        const userFound = db.Users.findOne({
+            where:{
+              email: req.body.usuario
+            }
+          });
         if(!userFound){
             let fotoPerfilNueva= "default-user.jpg"
             
@@ -70,8 +78,9 @@ const userController = {
                 if (req.body.fotoRegistro != "") fotoPerfilNueva = req.file.filename                
             }      
             let userNuevo = {
-                "id": userId.length + 1,
-                "nombreCompleto": req.body.nombreCompleto,
+                "id": req.body.id.length + 1,
+                "nombre": req.body.nombre,
+                "apellido": req.body.apellido,
                 "email": req.body.usuario,
                 "fotoPerfil": fotoPerfilNueva,
                 "contrasenia": bcrypt.hashSync (req.body.contrasenia, 10),
@@ -87,12 +96,10 @@ const userController = {
             return res.render('register', {userExists: userExists})
         }
     },
-}
-   
-    users: (req, res) => {
 
-        const userId = {
-            create: async function (req,res) {
+
+        
+        users: async function (req,res) {
                 try {
                     const usuarioCreado = await db.users.create({
                         nombre: req.body.nombre,
@@ -104,22 +111,26 @@ const userController = {
                     res.redirect('/users')
                 } catch (error) {
                     console.log(error);
-        }
+        
     
-      const userFound = userId.find(row=> row.email == req.session.usuarioLogueado)
+      const userFound = db.Users.findOne({
+        where:{
+          email: req.session.usuarioLogueado
+        }
+      });
       if (userFound) return res.render('userfound', { users: userFound })
       else return res.render("login")
-   },
-   }
+   }},
+   
 
     logout:(req, res) => {
         req.session.destroy()
         res.clearCookie("recordame")
         return res.redirect('/')
     }
+
 }
-}
-}
+
 
 module.exports = userController;
 

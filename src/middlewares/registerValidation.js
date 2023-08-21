@@ -1,8 +1,10 @@
 const {body} = require ('express-validator')
 
 module.exports = [
-    body('nombreCompleto')
-        .notEmpty().withMessage('Completá tu nombre y apellido'),
+    body('nombre')
+        .notEmpty().withMessage('Completá tu nombre'),
+    body('apellido')
+        .notEmpty().withMessage('Completá tu apellido'),
     body('usuario')
         .notEmpty().withMessage('Indicar un email')
         .isEmail().withMessage('Ingrese un email válido'),

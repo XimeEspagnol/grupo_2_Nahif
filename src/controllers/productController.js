@@ -39,6 +39,18 @@ const productController = {
             console.log(error);
         }
     },
+    productAdmin: (req, res) => {
+        let prodActivos = detalleProd.filter(row => row.borrado==false)
+        return res.render('productAdmin', { categoriaProd: prodActivos, listCategorias: listCategorias })
+    },
+    filtroCategorias: (req, res) => {
+        const prodEncontrado = detalleProd.filter(row => row.categoria==req.params.categoria)
+        return res.render('categorias', { categoriaProd: prodEncontrado, listCategorias: listCategorias })
+    },
+    filtroAdminCategorias: (req, res) => {
+        const prodEncontrado = detalleProd.filter(row => row.categoria==req.params.categoria && row.borrado==false)
+        return res.render('productAdmin', { categoriaProd: prodEncontrado, listCategorias: listCategorias })
+    },
 
     //Aqui dispongo las rutas para trabajar con el CRUD
     add: async (req, res) => {
@@ -139,6 +151,33 @@ const productController = {
         } catch (error) {
             console.log(error);
         }
+    },
+    eliminarFoto:(req, res) => {
+    
+        const producto = detalleProd.find(row=> row.id==req.params.id)
+        if (producto && req.body != {}){
+            if (req.body.delPpal != undefined) {
+                 producto.fotoPpal = "default-image.jpg"
+                // fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delPpal))
+            }
+            if (req.body.delFoto != undefined){
+                if (typeof req.body.delFoto == "string"){
+                    producto.fotos = producto.fotos.filter(row=>row != req.body.delFoto)
+                  //  fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delFoto))
+                }
+                if (typeof req.body.delFoto != "string") {
+                    for (let i=0;i<req.body.delFoto.length;i++){
+                     let fotoEncontrada = producto.fotos.find(row=> row==req.body.delFoto[i])
+                        if (fotoEncontrada) {
+                    //         fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delFoto[i]))
+                             producto.fotos=producto.fotos.filter(row=>row !=req.body.delFoto[i])
+                        }
+                    }   
+                }
+            }
+        }            
+        fs.writeFileSync(path.join(__dirname,'../database/products.json'),JSON.stringify(detalleProd, null, 2))
+        return res.redirect('/products/modificarProd/'+req.params.id)
     }
 
 }

@@ -8,13 +8,13 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        // created_at: dataTypes.TIMESTAMP,
-        // updated_at: dataTypes.TIMESTAMP,
+        created_at: dataTypes.DATETIME,
+        updated_at: dataTypes.DATETIME,
         nombre: {
             type: dataTypes.STRING(100),
             allowNull: false
         },
-        detalles: {
+        detalle: {
             type: dataTypes.STRING(100),
             allowNull: false
         },
@@ -72,13 +72,13 @@ module.exports = (sequelize, dataTypes) => {
         }),
         Products.belongsToMany(models.Colores,{
   
-            through:'colores-products',
+            through:'colores_products',
             foreignKey:'product_id',
             otherKey:'color_id'
         }),
         Products.belongsToMany(models.Ventas,{
 
-            through:'products-ventas',
+            through:'products_ventas',
             foreignKey:'product_id',
             otherKey:'venta_id'
         })

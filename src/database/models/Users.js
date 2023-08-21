@@ -37,8 +37,9 @@ module.exports = (sequelize, dataTypes) => {
         rol_id: {
             type: dataTypes.INTEGER(10).UNSIGNED,
             allowNull: false
-        }
-    
+        },
+        created_at: dataTypes.DATETIME,
+        updated_at: dataTypes.DATETIME
     };
     
     let config = {
