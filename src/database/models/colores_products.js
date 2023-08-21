@@ -18,6 +18,7 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
+        tableName: "colores_products",
         timestamps:true,
         deletedAt:false
     }
@@ -34,6 +35,6 @@ module.exports = (sequelize, dataTypes) => {
         as:"Color",
         timestamps: false
     }) 
-    }
+    } 
     return colores_products
 }

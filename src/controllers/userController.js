@@ -56,7 +56,7 @@ const userController = {
     },
     create: async function (req, res) {
         try {
-            console.log(req.body.email)
+            console.log(req.body.usuario)
             const usuarioEncontrado = db.Users.findOne({
                 where: {
                     email: req.body.usuario
@@ -115,7 +115,7 @@ const userController = {
             const usuarioCreado = await db.users.create({
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
-                email: req.body.email,
+                email: req.body.usuario,
                 fotoPerfil: req.body.fotoPerfil,
                 contrasenia: req.body.contrasenia
             })

@@ -2,7 +2,7 @@ const path = require('path');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
-const products = require('../database/models/products');
+const products = require('../database/models/Products');
 
 
 //Aqui tienen una forma de llamar a cada uno de los modelos
@@ -18,6 +18,14 @@ const Colores = db.Colores
 
 
 const productController = {
+    /*list: async (req, res) => {
+        try {
+            productos = await db.Products.findAll()
+    
+          res.render("categorias.ejs", { productos });
+        } catch (error) {
+          console.log(error)
+        }},*/
     list: async (req, res) => {
         try {
             db.Products.findAll()
