@@ -4,29 +4,29 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Ventas';
     let cols = {
         id: {
-            type: dataTypes.INT(10).UNSIGNED,
+            type: dataTypes.INTEGER(10).UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
-        // created_at: dataTypes.TIMESTAMP,
-        // updated_at: dataTypes.TIMESTAMP,
+        //created_at:  dataTypes.DATETIME,
+        //updated_at:  dataTypes.DATETIME,
         precio: {
-            type: dataTypes.INT(10),
+            type: dataTypes.INTEGER(10),
             allowNull: false
         },
         cantidad: {
-            type: dataTypes.INT(10),
+            type: dataTypes.INTEGER(10),
             allowNull: false
         },
         user_id: {
-            type: dataTypes.INT(10).UNSIGNED,
+            type: dataTypes.INTEGER(10).UNSIGNED,
             allowNull: false
         }
     };
     let config = {
         timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
+        //createdAt: 'created_at',
+        //updatedAt: 'updated_at',
         deletedAt: false
     }
     const Ventas = sequelize.define(alias, cols, config); 
@@ -39,7 +39,7 @@ module.exports = (sequelize, dataTypes) => {
         }),
         Ventas.belongsToMany(models.Products,{
                
-            through:'products-ventas',
+            through:'products_ventas',
             foreignKey:'venta_id',
             otherKey:'product_id'
         })

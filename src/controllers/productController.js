@@ -2,7 +2,7 @@ const path = require('path');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
-//const products = require('../database/models/products');
+const products = require('../database/models/products');
 
 
 //Aqui tienen una forma de llamar a cada uno de los modelos
@@ -13,7 +13,7 @@ const Products = db.Products;
 const Categorias = db.Categorias
 const Users = db.Users;
 const Talles = db.Talles
-const coloresProducts = db.colores - products
+const colores_products = db.colores_products
 const Colores = db.Colores
 
 
@@ -30,7 +30,7 @@ const productController = {
     },
     detail: async (req, res) => {
         try {
-            db.Products.findByPk(req.params.id, { include: [{ association: 'talles' }, { association: 'categorias' }, {association: 'colores-products' }] })
+            db.Products.findByPk(req.params.id, { include: [{ association: 'talles' }, { association: 'categorias' }, {association: 'colores_products' }] })
             await (products => {
                 //res.render('productDetail.ejs', {products});
                 res.send(products)
@@ -38,6 +38,18 @@ const productController = {
         } catch (error) {
             console.log(error);
         }
+    },
+    productAdmin: (req, res) => {
+        let prodActivos = detalleProd.filter(row => row.borrado==false)
+        return res.render('productAdmin', { categoriaProd: prodActivos, listCategorias: listCategorias })
+    },
+    filtroCategorias: (req, res) => {
+        const prodEncontrado = detalleProd.filter(row => row.categoria==req.params.categoria)
+        return res.render('categorias', { categoriaProd: prodEncontrado, listCategorias: listCategorias })
+    },
+    filtroAdminCategorias: (req, res) => {
+        const prodEncontrado = detalleProd.filter(row => row.categoria==req.params.categoria && row.borrado==false)
+        return res.render('productAdmin', { categoriaProd: prodEncontrado, listCategorias: listCategorias })
     },
 
     //Aqui dispongo las rutas para trabajar con el CRUD
@@ -86,7 +98,7 @@ const productController = {
             const productsEdit = db.Products.findByPk(req.params.id)
             const tallesEdit = db.Talles.findAll()
             const categoriasEdit = db.Categorias.findAll()
-            const coloresProdEdit = db.colores-products.findAll()
+            const coloresProdEdit = db.colores_products.findAll()
             const [products, talles, categorias, coloresProd] = await Promise.all([productsEdit, tallesEdit, categoriasEdit, coloresProdEdit])
             res.render('modifProducto', { Product: products, allTalles: talles, allCategorias: categorias, allColores: coloresProd })
         } catch (error) {
@@ -139,11 +151,38 @@ const productController = {
         } catch (error) {
             console.log(error);
         }
+    },
+    eliminarFoto:(req, res) => {
+    
+        const producto = detalleProd.find(row=> row.id==req.params.id)
+        if (producto && req.body != {}){
+            if (req.body.delPpal != undefined) {
+                 producto.fotoPpal = "default-image.jpg"
+                // fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delPpal))
+            }
+            if (req.body.delFoto != undefined){
+                if (typeof req.body.delFoto == "string"){
+                    producto.fotos = producto.fotos.filter(row=>row != req.body.delFoto)
+                  //  fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delFoto))
+                }
+                if (typeof req.body.delFoto != "string") {
+                    for (let i=0;i<req.body.delFoto.length;i++){
+                     let fotoEncontrada = producto.fotos.find(row=> row==req.body.delFoto[i])
+                        if (fotoEncontrada) {
+                    //         fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delFoto[i]))
+                             producto.fotos=producto.fotos.filter(row=>row !=req.body.delFoto[i])
+                        }
+                    }   
+                }
+            }
+        }            
+        fs.writeFileSync(path.join(__dirname,'../database/products.json'),JSON.stringify(detalleProd, null, 2))
+        return res.redirect('/products/modificarProd/'+req.params.id)
     }
 
 }
 
-module.exports = controller;
+module.exports = productController;
 
 //for (let i = 0; i< colores.length; i++) {
 // await productoCreado.addColor(colores[i].id,{through:{rating:actores[i].rating,participaciones:actores[i].apariciones}})

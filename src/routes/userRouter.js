@@ -35,7 +35,7 @@ router.post('/register', fileUpload.single('fotoRegistro'), registerValidation, 
 
 router.get ('/perfil', controller.users);
 router.get ('/logout', controller.logout);
-router.get ('/user', controller.userController);
+//router.get ('/user', controller.userController);
 
 
 module.exports = router

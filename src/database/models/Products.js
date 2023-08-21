@@ -4,17 +4,17 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Products';
     let cols = {
         id: {
-            type: dataTypes.INT(10).UNSIGNED,
+            type: dataTypes.INTEGER(10).UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
-        // created_at: dataTypes.TIMESTAMP,
-        // updated_at: dataTypes.TIMESTAMP,
+        created_at: dataTypes.DATETIME,
+        updated_at: dataTypes.DATETIME,
         nombre: {
             type: dataTypes.STRING(100),
             allowNull: false
         },
-        detalles: {
+        detalle: {
             type: dataTypes.STRING(100),
             allowNull: false
         },
@@ -27,27 +27,27 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         precio: {
-            type: dataTypes.INT(10),
+            type: dataTypes.INTEGER(10),
             allowNull: false
         },
         descuento: {
-            type: dataTypes.INT(10),
+            type: dataTypes.INTEGER(10),
             allowNull: false
         },
         talle_id: {
-            type: dataTypes.INT(10).UNSIGNED,
+            type: dataTypes.INTEGER(10).UNSIGNED,
             allowNull: false
         },
         categoria_id: {
-            type: dataTypes.INT(10).UNSIGNED,
+            type: dataTypes.INTEGER(10).UNSIGNED,
             allowNull: false
         },
         color_id: {
-            type: dataTypes.INT(10).UNSIGNED,
+            type: dataTypes.INTEGER(10).UNSIGNED,
             allowNull: false
         },
         stock: {
-            type: dataTypes.INT(10),
+            type: dataTypes.INTEGER(10),
             allowNull: false
         },
     };
@@ -72,13 +72,13 @@ module.exports = (sequelize, dataTypes) => {
         }),
         Products.belongsToMany(models.Colores,{
   
-            through:'colores-products',
+            through:'colores_products',
             foreignKey:'product_id',
             otherKey:'color_id'
         }),
         Products.belongsToMany(models.Ventas,{
 
-            through:'products-ventas',
+            through:'products_ventas',
             foreignKey:'product_id',
             otherKey:'venta_id'
         })

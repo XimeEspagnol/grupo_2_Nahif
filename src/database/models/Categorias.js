@@ -4,12 +4,10 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Categorias';
     let cols = {
         id: {
-            type: dataTypes.INT(10).UNSIGNED,
+            type: dataTypes.INTEGER(10).UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
-        // created_at: dataTypes.TIMESTAMP,
-        // updated_at: dataTypes.TIMESTAMP,
         nombre: {
             type: dataTypes.STRING(100),
             allowNull: false
@@ -19,8 +17,6 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         timestamps: true,
-        createdAt: 'created_at',
-        updatedAt: 'updated_at',
         deletedAt: false
     }
     const Categorias = sequelize.define(alias, cols, config); 
