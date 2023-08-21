@@ -2,7 +2,7 @@ const path = require('path');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
-//const products = require('../database/models/products');
+const products = require('../database/models/products');
 
 
 //Aqui tienen una forma de llamar a cada uno de los modelos
@@ -13,7 +13,7 @@ const Products = db.Products;
 const Categorias = db.Categorias
 const Users = db.Users;
 const Talles = db.Talles
-const coloresProducts = db.colores - products
+const colores_products = db.colores_products
 const Colores = db.Colores
 
 
@@ -30,7 +30,7 @@ const productController = {
     },
     detail: async (req, res) => {
         try {
-            db.Products.findByPk(req.params.id, { include: [{ association: 'talles' }, { association: 'categorias' }, {association: 'colores-products' }] })
+            db.Products.findByPk(req.params.id, { include: [{ association: 'talles' }, { association: 'categorias' }, {association: 'colores_products' }] })
             await (products => {
                 //res.render('productDetail.ejs', {products});
                 res.send(products)
@@ -86,7 +86,7 @@ const productController = {
             const productsEdit = db.Products.findByPk(req.params.id)
             const tallesEdit = db.Talles.findAll()
             const categoriasEdit = db.Categorias.findAll()
-            const coloresProdEdit = db.colores-products.findAll()
+            const coloresProdEdit = db.colores_products.findAll()
             const [products, talles, categorias, coloresProd] = await Promise.all([productsEdit, tallesEdit, categoriasEdit, coloresProdEdit])
             res.render('modifProducto', { Product: products, allTalles: talles, allCategorias: categorias, allColores: coloresProd })
         } catch (error) {
@@ -143,7 +143,7 @@ const productController = {
 
 }
 
-module.exports = controller;
+module.exports = productController;
 
 //for (let i = 0; i< colores.length; i++) {
 // await productoCreado.addColor(colores[i].id,{through:{rating:actores[i].rating,participaciones:actores[i].apariciones}})

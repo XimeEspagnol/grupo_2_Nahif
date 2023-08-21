@@ -4,7 +4,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Users';
     let cols = {
         id: {
-            type: dataTypes.INT(10).UNSIGNED,
+            type: dataTypes.INTEGER(10).UNSIGNED,
             primaryKey: true,
             autoIncrement: true
         },
@@ -35,16 +35,8 @@ module.exports = (sequelize, dataTypes) => {
         },
 
         rol_id: {
-            type: dataTypes.INT(10).UNSIGNED,
+            type: dataTypes.INTEGER(10).UNSIGNED,
             allowNull: false
-        },
-
-        created_at: {
-            type: dataTypes.TIMESTAMP
-        },
-
-        updated_at: {
-            type: dataTypes.TIMESTAMP
         }
     
     };

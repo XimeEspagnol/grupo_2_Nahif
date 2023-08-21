@@ -30,7 +30,7 @@ router.get('/detail/:id' , controller.detail);
 //router.get('/detail/:id' , controller.product);
 router.get('/', controller.list);
 //router.get('/', controller.categorias);
-router.get('/probador/:userid', controller.probador);
+//router.get('/probador/:userid', controller.probador);
 router.get('/admin', adminMiddleware, controller.productAdmin)
 router.get('/list/:categoria', controller.filtroCategorias)
 router.get('/listAdmin/:categoria', adminMiddleware, controller.filtroAdminCategorias)
@@ -46,7 +46,7 @@ router.patch('/modificarProd/:id', fileUpload.any('fotoProdPpal'), controller.up
 router.patch('/eliminarFoto/:id', controller.eliminarFoto)
 
 //FORM DELETE
-//router.get('/admin', controller.delete)
-//router.post('/admin', controller.destroy)
+router.get('/admin', controller.delete)
+router.post('/admin', controller.destroy)
 
 module.exports = router

@@ -121,6 +121,14 @@
     "borrado": false
   },
   {
+    "id": 16,
+    "nombreCompleto": "Julieta Carlomagno",
+    "email": "julicarlo@gmail.com",
+    "contrasenia": "$2b$10$8o9O/ifkX7SH94XI/3.Ap.XYNpibWcmrNVMsS.6osyNudQqQXHVtC",
+    "perfilDeUsuario": "comprador",
+    "borrado": false
+  },
+  {
     "id": 17,
     "nombreCompleto": "Ximena Espagnol",
     "email": "xime@gmail.com",
@@ -162,7 +170,7 @@
     "email": "ximeEspagnol@gmail.com",
     "fotoPerfil": "1688854178082.png",
     "contrasenia": "$2b$10$UdgX60Ju97GsZBdSI6EmCuTRhfIqTmn22H.PuwYNIXhAMub7Ri5l6",
-    "perfilDeUsuario": "admin",
+    "perfilDeUsuario": "comprador",
     "borrado": false
   },
   {
@@ -191,34 +199,5 @@
     "contrasenia": "$2b$10$qdO.OFXWxV/rcTWwkwopGucNshdrZNg9SjoMmmg7kOIWSLq30CWwq",
     "perfilDeUsuario": "comprador",
     "borrado": false
-  },
-  {
-<<<<<<< HEAD:src/database/users.json
-  "id": 25,
-  "nombreCompleto": "Obregon Pablo",
-  "email": "obregonpablo2022@gmail.com",
-  "fotoPerfil": "default-user.jpg",
-  "contrasenia": "$2b$10$qdO.OFXWxV/rcTWwkwopGucNshdrZNg9SjoMmmg7kOIWSLq30CWwq",
-  "perfilDeUsuario": "comprador",
-  "borrado": false
-}
-=======
-    "id": 24,
-    "nombreCompleto": "Julieta Carlomagno",
-    "email": "juli@gmail.com",
-    "fotoPerfil": "1689792860999.jpeg",
-    "contrasenia": "$2b$10$.oh1oM4RF24s1WIWvXplCe0nFTIi8jEyiEDtjgsvNvghmEKWmX/Ka",
-    "perfilDeUsuario": "admin",
-    "borrado": false
-  },
-  {
-    "id": 25,
-    "nombreCompleto": "Ro",
-    "email": "ro@gmail.com",
-    "fotoPerfil": "1690852757505.jpg",
-    "contrasenia": "$2b$10$4fe51/bf1F7zmcnyweH6YOWGGN9WrD9P4WNI40VKGktQxnV/k3lNm",
-    "perfilDeUsuario": "comprador",
-    "borrado": false
   }
->>>>>>> 59c016dd0feefe56faa673fe5860eff4e39db5ea:src/database/Json/users.json
 ]
