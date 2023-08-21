@@ -201,7 +201,6 @@
     "borrado": false
   },
   {
-<<<<<<< HEAD:src/database/users.json
   "id": 25,
   "nombreCompleto": "Obregon Pablo",
   "email": "obregonpablo2022@gmail.com",
@@ -209,9 +208,9 @@
   "contrasenia": "$2b$10$qdO.OFXWxV/rcTWwkwopGucNshdrZNg9SjoMmmg7kOIWSLq30CWwq",
   "perfilDeUsuario": "comprador",
   "borrado": false
-}
-=======
-    "id": 24,
+},
+{
+    "id": 26,
     "nombreCompleto": "Julieta Carlomagno",
     "email": "juli@gmail.com",
     "fotoPerfil": "1689792860999.jpeg",
@@ -220,7 +219,7 @@
     "borrado": false
   },
   {
-    "id": 25,
+    "id": 27,
     "nombreCompleto": "Ro",
     "email": "ro@gmail.com",
     "fotoPerfil": "1690852757505.jpg",

@@ -38,8 +38,8 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER(10).UNSIGNED,
             allowNull: false
         },
-        created_at: dataTypes.DATETIME,
-        updated_at: dataTypes.DATETIME
+        created_at: dataTypes.DATE,
+        updated_at: dataTypes.DATE
     };
     
     let config = {

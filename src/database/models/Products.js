@@ -8,8 +8,8 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        created_at: dataTypes.DATETIME,
-        updated_at: dataTypes.DATETIME,
+        created_at: dataTypes.DATE,
+        updated_at: dataTypes.DATE,
         nombre: {
             type: dataTypes.STRING(100),
             allowNull: false
