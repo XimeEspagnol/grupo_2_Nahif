@@ -28,10 +28,11 @@ const productController = {
         }},*/
     list: async (req, res) => {
         try {
-            db.Products.findAll()
-            await (products => {
-                res.render('categorias.ejs', { products })
-            })
+            const products = await db.Products.findAll()
+            const categorias = await db.Categorias.findAll()
+                console.log (products)
+                res.render('categorias.ejs', { products }, { categorias })
+         
         } catch (error) {
             console.log(error);
         }

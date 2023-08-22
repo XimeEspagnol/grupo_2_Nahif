@@ -45,15 +45,15 @@ const userController = {
         }
     },
     register: (req, res) => {
-        let userExists = { msg: "" }
-        return res.render('register', { userExists: userExists })
+        // let userExists = { msg: "" }
+        return res.render('register')
     },
 
-    processRegister: (req, res) => {
+    /*processRegister: (req, res) => {
         const rdoValidacion = validationResult(req)
         let userExists = { msg: "" }
         if (rdoValidacion.errors.length > 0) return res.render('register', { errors: rdoValidacion.mapped(), oldData: req.body, userExists: userExists })
-    },
+    },*/
     create: async function (req, res) {
         try {
             console.log(req.body.usuario)
