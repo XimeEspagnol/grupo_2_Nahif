@@ -24,7 +24,7 @@ module.exports = (sequelize, dataTypes) => {
     }
     const products_ventas = sequelize.define(alias,cols,config)
 
-   /* products_ventas.associate = function(models){
+   products_ventas.associate = function(models){
         products_ventas.belongsTo(models.Products, {
             foreignKey:"products_id",
             as:"Products",
@@ -35,6 +35,6 @@ module.exports = (sequelize, dataTypes) => {
         as:"Ventas",
         timestamps: false
     }) 
-    } */
-    return products_ventas
+    } 
+        return products_ventas
 }
