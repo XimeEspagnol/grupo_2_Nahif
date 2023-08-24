@@ -30,8 +30,8 @@ const productController = {
         try {
             const products = await db.Products.findAll()
             const categorias = await db.Categorias.findAll()
-                console.log (products)
-                res.render('categorias.ejs', { products }, { categorias })
+                console.log (categorias)
+            return res.render('categorias.ejs', { products, categorias })
          
         } catch (error) {
             console.log(error);
@@ -39,11 +39,10 @@ const productController = {
     },
     detail: async (req, res) => {
         try {
-            db.Products.findByPk(req.params.id, { include: [{ association: 'talles' }, { association: 'categorias' }, {association: 'colores_products' }] })
-            await (products => {
-                //res.render('productDetail.ejs', {products});
-                res.send(products)
-            });
+            let product = await db.Products.findByPk(req.params.id, { include: [{ association: 'talles' }, { association: 'categorias' }, {association: 'colores' }] })
+             console.log (product)
+            return res.render('productDetail.ejs', {detalle: product});
+
         } catch (error) {
             console.log(error);
         }
@@ -56,6 +55,7 @@ const productController = {
         const prodEncontrado = detalleProd.filter(row => row.categoria==req.params.categoria)
         return res.render('categorias', { categoriaProd: prodEncontrado, listCategorias: listCategorias })
     },
+    //listCategorias?
     filtroAdminCategorias: (req, res) => {
         const prodEncontrado = detalleProd.filter(row => row.categoria==req.params.categoria && row.borrado==false)
         return res.render('productAdmin', { categoriaProd: prodEncontrado, listCategorias: listCategorias })

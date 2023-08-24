@@ -15,7 +15,7 @@
            
                 <div class="lista-categoria">
                     <% for (i=0; i<categorias.length; i++){ %>
-                        <a href="/products/list/<%=categorias[i]%>" class="items-categoria"><%= categorias[i] %></a>
+                        <a href="/products/list/<%=categorias[i].id%>" class="items-categoria"><%= categorias[i].nombre %></a>
                     <% } %>
                 </div>
                 <section class="lista-productos">
