@@ -14,12 +14,12 @@
                 
            
                 <div class="lista-categoria">
-                    <% for (i=0; i<listCategorias.length; i++){ %>
-                        <a href="/products/list/<%=listCategorias[i]%>" class="items-categoria"><%= listCategorias[i] %></a>
+                    <% for (i=0; i<categorias.length; i++){ %>
+                        <a href="/products/list/<%=categorias[i].id%>" class="items-categoria"><%= categorias[i].nombre %></a>
                     <% } %>
                 </div>
                 <section class="lista-productos">
-                    <% categoriaProd.forEach(productos => {%>
+                    <% products.forEach(productos => {%>
                         <% if (productos.borrado==false) {%>    
                             <Article>
 

@@ -37,9 +37,9 @@
                 <% if (locals.errors && errors.usuario) { %>
                     <p class="mensajeError"><%=errors.usuario.msg  %></p>
                 <% } %>
-                <% if (userExists.msg !="") {%>
-                    <p class="mensajeError"><%=userExists.msg%></p>    
-                <% } %>
+                <%# if (userExists.msg !="") {%>
+                    <p class="mensajeError"><%#=userExists.msg%></p>    
+                <%# } %>
                 <div class="foto-registro">
                     <label for="fotoRegistro">Foto de perfil</label>
                     <input type="file" name="fotoRegistro" accept=".jpg, .png" id="fotoRegistro">

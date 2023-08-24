@@ -16,13 +16,14 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
-        timestamps: true,
-        deletedAt: false
+        timestamps: false
     }
     const Colores = sequelize.define(alias, cols, config); 
 
     Colores.associate = function (models) {
         Colores.belongsToMany(models.Products, { 
+
+            as: "productos",
             through:'colores_products',
             foreignKey:'color_id',
             otherKey:'product_id'

@@ -14,15 +14,14 @@ module.exports = (sequelize, dataTypes) => {
         }
     }
     let config = {
-        timestamps: true,
-        deletedAt: false
+        timestamps: false
     };
     const Talles = sequelize.define(alias, cols, config)
 
     Talles.associate= function(models) {
             Talles.hasMany(models.Products, {
                 as:'products',
-                foreignKey:'products_id',
+                foreignKey:'talle_id',
                 timestamps: false
         })
     }

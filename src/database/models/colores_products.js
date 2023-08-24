@@ -18,22 +18,10 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        timestamps:true,
-        deletedAt:false
+        tableName: "colores_products",
+        timestamps:false
     }
     const colores_products = sequelize.define(alias,cols,config)
 
-    colores_products.associate = function(models){
-        colores_products.belongsTo(models.Products, {
-            foreignKey:"product_id",
-            as:"Products",
-            timestamps: false
-        }),
-        colores_products.belongsTo(models.Colores,{
-        foreignKey:"color_id",
-        as:"Color",
-        timestamps: false
-    }) 
-    }
     return colores_products
 }

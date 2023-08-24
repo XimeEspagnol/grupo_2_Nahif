@@ -52,6 +52,7 @@ module.exports = (sequelize, dataTypes) => {
         },
     };
     let config = {
+        tableName: 'Products',
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
@@ -71,10 +72,10 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false
         }),
         Products.belongsToMany(models.Colores,{
-  
+            as: "colores",
             through:'colores_products',
             foreignKey:'product_id',
-            otherKey:'color_id'
+            otherKey: 'color_id'
         }),
         Products.belongsToMany(models.Ventas,{
 

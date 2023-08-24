@@ -2,7 +2,7 @@ const path = require('path');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
-const products = require('../database/models/products');
+const products = require('../database/models/Products');
 
 
 //Aqui tienen una forma de llamar a cada uno de los modelos
@@ -18,23 +18,31 @@ const Colores = db.Colores
 
 
 const productController = {
+    /*list: async (req, res) => {
+        try {
+            productos = await db.Products.findAll()
+    
+          res.render("categorias.ejs", { productos });
+        } catch (error) {
+          console.log(error)
+        }},*/
     list: async (req, res) => {
         try {
-            db.Products.findAll()
-            await (products => {
-                res.render('categorias.ejs', { products })
-            })
+            const products = await db.Products.findAll()
+            const categorias = await db.Categorias.findAll()
+                console.log (categorias)
+            return res.render('categorias.ejs', { products, categorias })
+         
         } catch (error) {
             console.log(error);
         }
     },
     detail: async (req, res) => {
         try {
-            db.Products.findByPk(req.params.id, { include: [{ association: 'talles' }, { association: 'categorias' }, {association: 'colores_products' }] })
-            await (products => {
-                //res.render('productDetail.ejs', {products});
-                res.send(products)
-            });
+            let product = await db.Products.findByPk(req.params.id, { include: [{ association: 'talles' }, { association: 'categorias' }, {association: 'colores' }] })
+             console.log (product)
+            return res.render('productDetail.ejs', {detalle: product});
+
         } catch (error) {
             console.log(error);
         }
@@ -47,6 +55,7 @@ const productController = {
         const prodEncontrado = detalleProd.filter(row => row.categoria==req.params.categoria)
         return res.render('categorias', { categoriaProd: prodEncontrado, listCategorias: listCategorias })
     },
+    //listCategorias?
     filtroAdminCategorias: (req, res) => {
         const prodEncontrado = detalleProd.filter(row => row.categoria==req.params.categoria && row.borrado==false)
         return res.render('productAdmin', { categoriaProd: prodEncontrado, listCategorias: listCategorias })
