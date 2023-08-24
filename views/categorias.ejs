@@ -20,7 +20,7 @@
                 </div>
                 <section class="lista-productos">
                     <% products.forEach(productos => {%>
-                        <% if (productos.borrado==false) {%>    
+                         
                             <Article>
 
                                 <a href="/products/detail/<%=productos.id%>"><img src = "/img/<%=productos.fotoPpal%>" alt="<%=productos.nombre%>"></a>
@@ -29,7 +29,7 @@
                                 <p class="precio">Precio: $ <%=productos.precio%></p>
                                 <p class="descuento">Antes: $ <%=productos.descuento%></p>
                             </Article>
-                        <% } %>
+                        
                     <%}); %>
                     
                 </section>

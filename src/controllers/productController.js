@@ -30,8 +30,8 @@ const productController = {
         try {
             const products = await db.Products.findAll()
             const categorias = await db.Categorias.findAll()
-                console.log (categorias)
-            return res.render('categorias.ejs', { products, categorias })
+                console.log (products)
+            return res.render('categorias.ejs', { products: products, categorias: categorias })
          
         } catch (error) {
             console.log(error);
