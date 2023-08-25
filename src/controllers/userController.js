@@ -16,6 +16,7 @@ const userController = {
                 email: req.body.loginEmail
             }
         });
+       
         if (usuario) {
             if (bcrypt.compareSync(req.body.loginPassword, usuario.contrasenia)) {
                 delete usuario.contrasenia
@@ -72,10 +73,13 @@ const userController = {
                     apellido: req.body.apellido,
                     email: req.body.usuario,
                     fotoPerfil: fotoRegistro,
-                    contrasenia: req.body.contrasenia,
+                    contrasenia: bcrypt.hashSync(req.body.contrasenia, 10),
                     rol_id: 2
                 })
                 req.session.usuarioLogueado = usuarioCreado.email
+                req.session.fotoPerfil = usuarioCreado.fotoPerfil
+                req.session.nombre = usuarioCreado.nombre
+                req.session.apellido = usuarioCreado.apellido
                 return res.redirect('/user/perfil')
             }
         } catch (error) {
@@ -88,19 +92,12 @@ const userController = {
 
     users: async function (req, res) {
         try {
-            /*const usuarioCreado = await db.Users.findOne({
-                nombre: req.body.nombre,
-                apellido: req.body.apellido,
-                email: req.body.usuario,
-                fotoPerfil: req.body.fotoPerfil,
-                contrasenia: req.body.contrasenia
-            })
-            res.redirect('/users')*/
             const userFound = await db.Users.findOne({
                 where: {
                     email: req.session.usuarioLogueado
                 }
             });
+            console.log(userFound);
             if (userFound) return res.render('userfound', { users: userFound })
             else return res.render("login")
         } catch (error) {

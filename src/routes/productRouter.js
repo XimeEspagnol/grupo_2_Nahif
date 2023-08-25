@@ -46,7 +46,7 @@ router.patch('/modificarProd/:id', fileUpload.any('fotoProdPpal'), controller.up
 router.patch('/eliminarFoto/:id', controller.eliminarFoto)
 
 //FORM DELETE
-router.get('/admin', controller.delete)
+router.delete('/admin', controller.delete)
 router.post('/admin', controller.destroy)
 
 module.exports = router

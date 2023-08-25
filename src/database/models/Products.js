@@ -22,10 +22,6 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100),
             allowNull: false
         },
-        fotos: {
-            type: dataTypes.STRING(100),
-            allowNull: false
-        },
         precio: {
             type: dataTypes.INTEGER(10),
             allowNull: false
@@ -78,10 +74,15 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: 'color_id'
         }),
         Products.belongsToMany(models.Ventas,{
-
+            as:"ventas",
             through:'products_ventas',
             foreignKey:'product_id',
             otherKey:'venta_id'
+        }),
+        Products.hasMany(models.FotosProd, { 
+            as: "fotos",
+            foreignKey: 'product_id',
+            timestamps: false
         })
 
     }

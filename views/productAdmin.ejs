@@ -17,8 +17,8 @@
 
                     <div class="lista-catAdmin">
                         <% for (i=0; i<listCategorias.length; i++){ %>
-                            <a href="/products/listAdmin/<%= listCategorias[i] %>" class="items-categoria">
-                                <%= listCategorias[i] %>
+                            <a href="/products/listAdmin/<%= listCategorias[i].nombre %>" class="items-categoria">
+                                <%= listCategorias[i].nombre %>
                             </a>
                             <% } %>
                     </div>
