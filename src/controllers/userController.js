@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const { validationResult } = require("express-validator");
 //let userId = JSON.parse(fs.readFileSync(path.resolve('./src/database/users.json')));
 let db = require('../database/models');
+const { log } = require('console');
 
 const userController = {
 
@@ -65,8 +66,8 @@ const userController = {
             if (usuarioEncontrado == undefined) {
 
                 let fotoRegistro = 'default-user.jpg';
-                if (req.files != undefined) {
-                    if (req.body.fotoRegistro != ""& req.files.fieldname=='fotoRegistro') fotoRegistro = req.files.filename
+                if (req.file != undefined) {
+                    if (req.body.fotoRegistro != ""& req.file.fieldname=='fotoRegistro') fotoRegistro = req.file.filename
                 }
                 const usuarioCreado = await db.Users.create({
                     nombre: req.body.nombre,
