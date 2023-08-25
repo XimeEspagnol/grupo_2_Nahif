@@ -36,9 +36,9 @@
                     <div>
                         <label>Cantidad</label>
                         <select class="Cantidad">
-                            <option value=1>1</option>
-                            <option value=2>2</option>
-                            <option value=3>3</option>
+                            <% for(let i=1;i<=detalle.stock;i++){ %>
+                                <option value=<%= i %> name="colores"><%= i %></option>
+                                <% } %>
                         </select>
                     </div>
                     <div>

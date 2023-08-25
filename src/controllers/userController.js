@@ -56,18 +56,22 @@ const userController = {
     },*/
     create: async function (req, res) {
         try {
-            console.log("Hola")
             const usuarioEncontrado = await db.Users.findOne({
                 where: {
                     email: req.body.usuario
                 }
             })
             if (usuarioEncontrado == undefined) {
+
+                let fotoRegistro = 'default-user.jpg';
+                if (req.files != undefined) {
+                    if (req.body.fotoRegistro != ""& req.files.fieldname=='fotoRegistro') fotoRegistro = req.files.filename
+                }
                 const usuarioCreado = await db.Users.create({
                     nombre: req.body.nombre,
                     apellido: req.body.apellido,
                     email: req.body.usuario,
-                    fotoPerfil: "foto",
+                    fotoPerfil: fotoRegistro,
                     contrasenia: req.body.contrasenia,
                     rol_id: 2
                 })
@@ -84,18 +88,14 @@ const userController = {
 
     users: async function (req, res) {
         try {
-            const usuarioCreado = await db.Users.create({
+            /*const usuarioCreado = await db.Users.findOne({
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
                 email: req.body.usuario,
                 fotoPerfil: req.body.fotoPerfil,
                 contrasenia: req.body.contrasenia
             })
-            res.redirect('/users')
-        } catch (error) {
-            console.log(error);
-
-
+            res.redirect('/users')*/
             const userFound = await db.Users.findOne({
                 where: {
                     email: req.session.usuarioLogueado
@@ -103,6 +103,8 @@ const userController = {
             });
             if (userFound) return res.render('userfound', { users: userFound })
             else return res.render("login")
+        } catch (error) {
+            console.log(error);
         }
     },
 
