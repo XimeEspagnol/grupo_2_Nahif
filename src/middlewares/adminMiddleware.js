@@ -3,9 +3,9 @@ const path = require('path')
 let db = require ('../database/models');
 const sequelize = db.sequelize;
 
-const adminMiddleware = (req, res, next) => {
+const adminMiddleware = async (req, res, next) => {
         if (req.session.usuarioLogueado ) {  
-      const usuario = db.Users.findOne({
+      const usuario = await db.Users.findOne({
         where:{
           email: req.session.usuarioLogueado
         }
