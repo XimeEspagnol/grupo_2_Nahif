@@ -11,7 +11,7 @@
                     <div class="formAltaProd">
 
                         <input type="text" name="nombreProdAlta" placeholder="Nombre del producto">
-                        <textarea name="descProdAlta" id="" cols="30" rows="7">Descripción del producto</textarea>
+                        <textarea name="descProdAlta" id="" cols="25" rows="5">Descripción del producto</textarea>
                             <div class="nuevaFotoProd">
                                 <label for="fotoProdPpal">Foto principal</label>
                                 <input type="file" name="fotoProdPpal" accept=".jpg, .png" id="fotoProdPpal">
@@ -24,7 +24,7 @@
                             <label for="categoriaProdAlta">Categoría del producto</label>
                             <select name="categoriaProdAlta" id="categoriaProdAlta">
                                 <% for (let i=0; i<listCategorias.length;i++){ %>
-                                <option value="<%= listCategorias[i] %>"><%= listCategorias[i] %></option>
+                                <option value="<%= listCategorias[i].id %>"><%= listCategorias[i].nombre %></option>
                                 <% } %>
                             </select>
                         </div>
@@ -32,39 +32,24 @@
                             <p>Colores disponibles</p>
                             <% for(let i=0;i < listColores.length; i++) { %>
                             <div>
-                                <input type="checkbox" name="coloresProdAlta" value="<%= listColores[i] %>" id="<%= listColores[i] %>">
-                                <label for="<%= listColores[i] %>"><%= listColores[i] %></label>
+                                <input type="checkbox" name="coloresProdAlta" value="<%= listColores[i].id %>" id="<%= listColores[i].id %>">
+                                <label for="<%= listColores[i].id %>"><%= listColores[i].nombre %></label>
                             </div>
                             <% } %>
                         </div>
                         <div class="tallesProdAlta">
-                            <p>Talles disponibles</p>
-                            <input type="checkbox" name="talleProdAlta" value="Talle único" id="talleUnico">
-                            <label for="talleUnico">Talle único</label>
-                            <input type="checkbox" name="talleProdAlta" value="S" id="small">
-                            <label for="small">S</label>
-                            <input type="checkbox" name="talleProdAlta" value="M" id="medium">
-                            <label for="medium">M</label>
-                            <input type="checkbox" name="talleProdAlta" value="L" id="large">
-                            <label for="large">L</label>
+                            <p>Talle</p>
+                            <select name="talleProdAlta" id="talleProdAlta">
+                                <% for (let i=0; i<listTalles.length;i++){ %>
+                                <option value="<%= listTalles[i].id %>"><%= listTalles[i].nombre %></option>
+                                <% } %>
+                            </select>
                         </div>
                         <div class="cantTalleAltaProd">
-                            <p>Cantidades por talle</p>
+                            <p>Stock</p>
                             <div>
-                                <label for="tU">Talle único</label>
-                                <input type="number" name="tU" id="tU" value="0">
-                            </div>
-                            <div>
-                                <label for="tS">S</label>
-                                <input type="number" name="tS" id="tS" value="0">
-                            </div>
-                            <div>
-                                <label for="tM">M</label>
-                                <input type="number" name="tM" id="tM" value="0">
-                            </div>
-                            <div>
-                                <label for="tL">L</label>
-                                <input type="number" name="tL" id="tL" value="0">
+                                <label for="stock">Cant</label>
+                                <input type="number" name="stock" id="stock" value="0">
                             </div>
                         </div>
                         <div class="precioProdAlta">
@@ -72,8 +57,8 @@
                             <input type="number" name="precioProdAlta" id="precioProdAlta" value="0">
                         </div>
                         <div class="antesProdAlta">
-                            <label for="antesProdAlta">Antes: $</label>
-                            <input type="number" name="antesProdAlta" id="antesProdAlta" value="0">
+                            <label for="descuentoProdAlta">Dscuento: %</label>
+                            <input type="number" name="descuentoProdAlta" id="descuentoProdAlta" value="0">
                         </div>
                         <div class="botonesAlta">
                             <button type="submit" class="ingresar">INGRESAR</button>

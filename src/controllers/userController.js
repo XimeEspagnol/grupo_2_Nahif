@@ -98,7 +98,6 @@ const userController = {
                     email: req.session.usuarioLogueado
                 }
             });
-            console.log(userFound);
             if (userFound) return res.render('userfound', { users: userFound })
             else return res.render("login")
         } catch (error) {

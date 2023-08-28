@@ -65,7 +65,8 @@ const productController = {
         try {
             const talles = await db.Talles.findAll()
             const categorias = await db.Categorias.findAll()
-            res.render('altaProducto', [{ allTalles: talles }, { allCategorias: categorias }])
+            const colores = await db.Colores.findAll()
+            return res.render('altaProducto', {listTalles: talles , listCategorias: categorias , listColores: colores})
         } catch (error) {
             console.log(error);
         }
@@ -73,31 +74,42 @@ const productController = {
     create: async (req, res) => {
         try {
             let fotoPpalNueva = "default-image.jpg"
-            let fotosNuevas = []
             if (req.files != "") {
                 if (req.body.fotoProdPpal != ""& req.files[0].fieldname=='fotoProdPpal') fotoPpalNueva = req.files[0].filename
-                if (req.body.fotoProdAlta != ""& req.files.length>=1)
-                    req.files.forEach(row => {
-                       if (row.fieldname =='fotoProdAlta') fotosNuevas.push(row.filename)
-                    });
             }
             const productoCreado = await db.Products.create({
-                nombre: req.body.nombre,
-                detalle: req.body.detalle,
+                nombre: req.body.nombreProdAlta,
+                detalle: req.body.descProdAlta,
                 fotoPpal: fotoPpalNueva,
-                fotos: fotosNuevas,
-                precio: req.body.precio,
-                descuento: req.body.descuento,
-                talle_id: req.body.talle_id,
-                categoria_id: req.body.categoria_id,
-                color_id: req.body.color_id,
+                precio: req.body.precioProdAlta,
+                descuento: req.body.descuentoProdAlta,
+                talle_id: req.body.talleProdAlta,
+                categoria_id: req.body.categoriaProdAlta,
+                color_id: 1,
                 stock: req.body.stock
             })
-            for (let i = 0; i < colores.length; i++) {
-                await productoCreado.addColores(colores[i].id)
-            }
+            
+            if (req.files != "") {
+                console.log(req.files);
+                if (req.body.fotoProdAlta != ""& req.files.length>=1)
+                    req.files.forEach(async row => {
+                       if (row.fieldname =='fotoProdAlta') {
+                        await db.FotosProd.create({
+                            product_id: productoCreado.id,
+                            nombreFoto: row.filename
+                        })
+                       }
+                    });
+                }
+                console.log(req.body.coloresProdAlta);
+                for (let i=0; i<req.body.coloresProdAlta.length;i++ ) {
+                         db.colores_products.create({
+                         product_id: productoCreado.id,
+                         color_id: req.body.coloresProdAlta[i]
+                     })
+                    }
             res.redirect('/products')
-        } catch (error) {
+        }   catch (error) {
             console.log(error);
         }
     },
@@ -123,8 +135,8 @@ const productController = {
                 fotos: req.body.fotos,
                 precio: req.body.precio,
                 descuento: req.body.descuento,
-                talle_id: req.body.talle_id,
-                categoria_id: req.body.categoria_id,
+                talle_id: req.body.talleProdAlta,
+                categoria_id: req.body.categoriaProdAlta,
                 color_id: req.body.colores,
                 stock: req.body.stock
             }, { 

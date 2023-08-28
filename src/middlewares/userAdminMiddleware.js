@@ -11,7 +11,6 @@ const userAdminMiddleware = async (req, res, next) => {
           email: req.session.usuarioLogueado
         }
       });
-      console.log(usuario);
       if (usuario){
         if (usuario.rol_id==1) {
           res.locals.isAdmin = true
