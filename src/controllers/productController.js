@@ -50,7 +50,7 @@ const productController = {
         const listCategorias = await db.Categorias.findAll()
         return res.render('productAdmin', { categoriaProd: prodActivos, listCategorias: listCategorias })
     },
-    filtroCategorias: (req, res) => {
+    filtroCategorias:(req, res) => {
         const prodEncontrado = detalleProd.filter(row => row.categoria==req.params.categoria)
         return res.render('categorias', { categoriaProd: prodEncontrado, listCategorias: listCategorias })
     },
