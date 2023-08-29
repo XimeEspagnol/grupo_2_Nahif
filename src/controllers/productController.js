@@ -115,12 +115,13 @@ const productController = {
     },
     edit: async (req, res) => {
         try {
-            const productsEdit = db.Products.findByPk(req.params.id)
-            const tallesEdit = db.Talles.findAll()
-            const categoriasEdit = db.Categorias.findAll()
-            const coloresProdEdit = db.colores_products.findAll()
+            const colores = await db.Colores.findAll()
+            const productsEdit = await db.Products.findByPk(req.params.id, { include: [{ association: 'talles' }, { association: 'categorias' }, {association: 'colores' }, {association:'fotos'}] })
+            const tallesEdit = await db.Talles.findAll()
+            const categoriasEdit = await db.Categorias.findAll()
+            const coloresProdEdit = await db.colores_products.findAll()
             const [products, talles, categorias, coloresProd] = await Promise.all([productsEdit, tallesEdit, categoriasEdit, coloresProdEdit])
-            res.render('modifProducto', { Product: products, allTalles: talles, allCategorias: categorias, allColores: coloresProd })
+            res.render('modifProducto', { detalle: products, listTalles: talles, listCategorias: categorias, listColores: coloresProd, listColor: colores })
         } catch (error) {
             console.log(error);
         }
@@ -144,7 +145,24 @@ const productController = {
                     id: req.params.id
                 }
             })
-
+            if (req.files != "") {
+                console.log(req.files);
+                if (req.body.fotoProdAlta != ""& req.files.length>=1)
+                    req.files.forEach(async row => {
+                       if (row.fieldname =='fotoProdAlta') {
+                        await db.FotosProd.create({
+                            product_id: productoCreado.id,
+                            nombreFoto: row.filename
+                        })
+                       }
+                    });
+                }
+            for (let i=0; i<req.body.coloresProdAlta.length;i++ ) {
+                db.colores_products.create({
+                product_id: productoCreado.id,
+                color_id: req.body.coloresProdAlta[i]
+            })
+           }
 
             res.redirect('/products')
         } catch (error) {
