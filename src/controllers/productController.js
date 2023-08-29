@@ -18,14 +18,6 @@ const Colores = db.Colores
 
 
 const productController = {
-    /*list: async (req, res) => {
-        try {
-            productos = await db.Products.findAll()
-    
-          res.render("categorias.ejs", { productos });
-        } catch (error) {
-          console.log(error)
-        }},*/
     list: async (req, res) => {
         try {
             const products = await db.Products.findAll()
@@ -129,16 +121,20 @@ const productController = {
     },
     update: async (req, res) => {
         try {
+            let prodModif = await db.Products.findByPk(req.params.id)
+            let fotoPpalNueva = prodModif.fotoPpal
+            if (req.files != "") {
+                if (req.body.fotoProdPpal != ""& req.files[0].fieldname=='fotoProdPpal') fotoPpalNueva = req.files[0].filename
+            }
             await db.Products.update({
-                nombre: req.body.nombre,
-                detalle: req.body.detalle,
-                fotoPpal: req.body.fotoPpal,
-                fotos: req.body.fotos,
-                precio: req.body.precio,
-                descuento: req.body.descuento,
+                nombre: req.body.nombreProdAlta,
+                detalle: req.body.detalleProdAlta,
+                fotoPpal: fotoPpalNueva,
+                precio: req.body.precioProdAlta,
+                descuento: req.body.descuentoProdAlta,
                 talle_id: req.body.talleProdAlta,
                 categoria_id: req.body.categoriaProdAlta,
-                color_id: req.body.colores,
+                color_id: 1,
                 stock: req.body.stock
             }, { 
                 where: {
@@ -151,7 +147,7 @@ const productController = {
                     req.files.forEach(async row => {
                        if (row.fieldname =='fotoProdAlta') {
                         await db.FotosProd.create({
-                            product_id: productoCreado.id,
+                            product_id: req.params.id,
                             nombreFoto: row.filename
                         })
                        }
@@ -159,7 +155,7 @@ const productController = {
                 }
             for (let i=0; i<req.body.coloresProdAlta.length;i++ ) {
                 db.colores_products.create({
-                product_id: productoCreado.id,
+                product_id: req.params.id,
                 color_id: req.body.coloresProdAlta[i]
             })
            }

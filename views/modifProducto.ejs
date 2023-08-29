@@ -13,7 +13,7 @@
                         <% if (detalle.fotoPpal != ""){ %>
                             <label for="">Foto principal</label>
                             <div class="check checkPpal">
-                                <img class="fotoMod fotoPpal" src="/img/<%= detalle.fotoPpal.nombreFoto %>" alt="fotoPpal">
+                                <img class="fotoMod fotoPpal" src="/img/<%= detalle.fotoPpal %>" alt="fotoPpal">
                                 <input type="checkbox" name="delPpal" class="eliminarFoto" value="<%= detalle.fotoPpal %>" id="delPpal">
                             </div>
                         <% } %>
@@ -48,8 +48,8 @@
                             <label for="categoriaProdAlta">Categoría del producto</label>
                             <select name="categoriaProdAlta" id="categoriaProdAlta">
                                 <% for (i=0; i<listCategorias.length; i++){ %>
-                                    <% if (listCategorias[i]==detalle.categoria) {%>
-                                        <option name="categoria" value="<%= detalle.categoria.nombre %>" selected><%= detalle.categoria.nombre %></option> "
+                                    <% if (listCategorias[i].id==detalle.categoria_id) {%>
+                                        <option name="categoria" value="<%= listCategorias[i].id %>" selected><%= listCategorias[i].nombre %></option> "
                                     <% } else { %>
                                         <option name="categoria" value="<%= listCategorias[i].id %>"><%= listCategorias[i].nombre %></option>   
                                 <% }} %>
@@ -74,18 +74,18 @@
                             <label for="tallesProdAlta">Talle del producto</label>
                             <select name="tallesProdAlta" id="tallesProdAlta">
                                 <% for (i=0; i<listTalles.length; i++){ %>
-                                    <% if (listTalles[i]==detalle.talles) {%>
-                                        <option name="talles" <%= detalle.talles.includes(listTalles[i]) == true ? 'selected': ""%> value="<%= detalle.talles[i].id%>" id="<%= detalle.talles[i].nombre %>" selected><%= i %></option> 
+                                    <% if (listTalles[i].id==detalle.talle_id) {%>
+                                        <option name="talles" value="<%= listTalles[i].id%>" id="<%= listTalles[i].nombre %>" selected><%= listTalles[i].nombre %></option> 
                                     <% } else { %>
-                                        <option name="talles" value="<%= listTalles[i] %>"><%= listTalles[i].nombre %></option>   
+                                        <option name="talles" value="<%= listTalles[i].id %>"><%= listTalles[i].nombre %></option>   
                                 <% }} %>
                             </select>
                         </div>
                         
                         <div class="cantTalleAltaProd">
                             <div>
-                                <label for="cantTalleAltaProd">Cantidad</label>
-                                <input type="number" name="cantTalleAltaProd" id="cantTalleAltaProd" value="<%= detalle.stock %>">
+                                <label for="stock">Cantidad</label>
+                                <input type="number" name="stock" id="stock" value="<%= detalle.stock %>">
                             </div>
                             <!--<div>
                                 <label for="tS">S</label>
