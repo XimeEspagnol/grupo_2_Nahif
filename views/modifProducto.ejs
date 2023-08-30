@@ -6,68 +6,84 @@
     <body>
         <%- include ('./partials/header') %>
             <main class="mainModProd">
-                <form class="eliminarFotos" action="/products/eliminarFoto/<%= detalle.id %>?_method=patch" method="post">
+                <form class="eliminarFotos" action="/products/eliminarFoto/<%= detalle.id %>?_method=patch"
+                    method="post">
                     <div class="listaFotosMod">
-                    <label class="fotoProdMod" for="fotoProdMod">Fotos del producto</label>
-                    
-                        <% if (detalle.fotoPpal != ""){ %>
+                        <label class="fotoProdMod" for="fotoProdMod">Fotos del producto</label>
+
+                        <% if (detalle.fotoPpal !="" ){ %>
                             <label for="">Foto principal</label>
                             <div class="check checkPpal">
                                 <img class="fotoMod fotoPpal" src="/img/<%= detalle.fotoPpal %>" alt="fotoPpal">
-                                <input type="checkbox" name="delPpal" class="eliminarFoto" value="<%= detalle.fotoPpal %>" id="delPpal">
+                                <input type="checkbox" name="delPpal" class="eliminarFoto"
+                                    value="<%= detalle.fotoPpal %>" id="delPpal">
                             </div>
-                        <% } %>
-                        <% for (let i=0; (i < detalle.fotos.length) ; i++) { %> 
-                            <% if (detalle.fotos[i] != ""){ %>
-                            <div class="check checkOtras">
-                                    <img class="fotoMod" src="/img/<%= detalle.fotos[i].nombreFoto %>" alt="foto <%= i%>">
-                                    <input type="checkbox" name="delFoto" class="eliminarFoto" value="<%= detalle.fotos[i].id %>" id="delFoto">
-                            </div> 
-                        <% }} %>
-                        <button type="submit" class="borrar">ELIMINAR FOTOS SELECCIONADAS  <i class="fa-solid fa-trash-can"></i></button>
+                            <% } %>
+                                <% for (let i=0; (i < detalle.fotos.length) ; i++) { %>
+                                    <% if (detalle.fotos[i] !="" ){ %>
+                                        <div class="check checkOtras">
+                                            <img class="fotoMod" src="/img/<%= detalle.fotos[i].nombreFoto %>"
+                                                alt="foto <%= i%>">
+                                            <input type="checkbox" name="delFoto" class="eliminarFoto"
+                                                value="<%= detalle.fotos[i].id %>" id="delFoto">
+                                        </div>
+                                        <% }} %>
+                                            <button type="submit" class="borrar">ELIMINAR FOTOS SELECCIONADAS <i
+                                                    class="fa-solid fa-trash-can"></i></button>
                     </div>
-                </form>               
-                <form action="/products/modificarProd/<%= detalle.id %>?_method=patch" method="post" class="modProducto" enctype="multipart/form-data">
+                </form>
+                <form action="/products/modificarProd/<%= detalle.id %>?_method=patch" method="post" class="modProducto"
+                    enctype="multipart/form-data">
                     <h2>MODIFICACIÓN DE PRODUCTO</h2>
                     <div class="formModifProd">
 
                         <input type="text" name="nombreProdAlta" placeholder="Nombre del producto"
                             value="<%= detalle.nombre %>" class="descModif">
-                        <textarea name="descProdAlta" class="descModif" id="" cols="30" rows="7"><%= detalle.detalle %></textarea>
-                            
-                            <div class="nuevaFotoProd divFotos">
-                                <label for="fotoProdPpal ">Cambiar foto principal</label>
-                                <input type="file" name="fotoProdPpal" accept=".jpg, .png" id="fotoProdPpal">
-                             </div>
-                           <div class="nuevaFotoProd divFotos">
-                                    <label for="fotoProdAlta">Agregar fotos nuevas</label>
-                                    <input type="file" name="fotoProdAlta" accept=".jpg, .png" id="fotoProdAlta"
-                                        multiple>
-                            </div> 
+                        <textarea name="descProdAlta" class="descModif" id="" cols="30"
+                            rows="7"><%= detalle.detalle %></textarea>
+
+                        <div class="nuevaFotoProd divFotos">
+                            <label for="fotoProdPpal ">Cambiar foto principal</label>
+                            <input type="file" name="fotoProdPpal" accept=".jpg, .png" id="fotoProdPpal">
+                        </div>
+                        <div class="nuevaFotoProd divFotos">
+                            <label for="fotoProdAlta">Agregar fotos nuevas</label>
+                            <input type="file" name="fotoProdAlta" accept=".jpg, .png" id="fotoProdAlta" multiple>
+                        </div>
                         <div class="categoriasAlta">
                             <label for="categoriaProdAlta">Categoría del producto</label>
                             <select name="categoriaProdAlta" id="categoriaProdAlta">
                                 <% for (i=0; i<listCategorias.length; i++){ %>
                                     <% if (listCategorias[i].id==detalle.categoria_id) {%>
-                                        <option name="categoria" value="<%= listCategorias[i].id %>" selected><%= listCategorias[i].nombre %></option> "
-                                    <% } else { %>
-                                        <option name="categoria" value="<%= listCategorias[i].id %>"><%= listCategorias[i].nombre %></option>   
-                                <% }} %>
+                                        <option name="categoria" value="<%= listCategorias[i].id %>" selected>
+                                            <%= listCategorias[i].nombre %>
+                                        </option> "
+                                        <% } else { %>
+                                            <option name="categoria" value="<%= listCategorias[i].id %>">
+                                                <%= listCategorias[i].nombre %>
+                                            </option>
+                                            <% }} %>
                             </select>
                         </div>
-                        <div class="colProdAlta"><p>Colores disponibles</p>
-                            <% for(let i=0;i < listColor.length; i++) { %>
+                        <div class="colProdAlta">
+                            <p>Colores disponibles</p>
+                            
                             <div>
-                                <input type="checkbox" name="coloresProdAlta" value="<%= listColor[i].id %>" id="<%= listColor[i].id %>">
-                                <label for="<%= listColor[i].id %>"><%= listColor[i].nombre %></label>
+                                <% for(let i=0; i < listColor.length; i++) { %>
+                                    <% console.log(detalle.colores.includes(listColor[i].nombre)); %>
+                                <input type="checkbox" name="coloresProdAlta" <%=detalle.colores.includes(listColores[i].nombre) == true ? 'checked' : ""%> value="<%= listColor[i].id %>" id="<%= listColor[i].id %>">
+                                <label for="<%= listColor[i].id %>"><%= listColor[i].nombre %></label>   
+                                <% } %>                                           
                             </div>
-                           <% } %> 
-                           <% for(let i=0;i < detalle.colores.length; i++) { %> 
+                            
                             <div>
+                                <% for(let i=0;i < detalle.colores.length; i++) { %>
                                 <input type="checkbox" name="coloresProdAlta" <%= detalle.colores.includes(listColores[i]) == true ? 'checked' : ""%> value="<%= detalle.colores[i].id%>" id="<%= detalle.colores[i].nombre %>" checked>
-                                <label for="<%= detalle.colores %>"><%= detalle.colores[i].nombre %></label>                                
+                                <label for="<%= detalle.colores %>"><%= detalle.colores[i].nombre %></label>
+                                <% } %>
                             </div>
-                           <% } %>
+                            
+                           
                             
                         </div>
                         <div class="tallesProdAlta">
@@ -75,13 +91,18 @@
                             <select name="tallesProdAlta" id="tallesProdAlta">
                                 <% for (i=0; i<listTalles.length; i++){ %>
                                     <% if (listTalles[i].id==detalle.talle_id) {%>
-                                        <option name="talles" value="<%= listTalles[i].id%>" id="<%= listTalles[i].nombre %>" selected><%= listTalles[i].nombre %></option> 
-                                    <% } else { %>
-                                        <option name="talles" value="<%= listTalles[i].id %>"><%= listTalles[i].nombre %></option>   
-                                <% }} %>
+                                        <option name="talles" value="<%= listTalles[i].id%>"
+                                            id="<%= listTalles[i].nombre %>" selected>
+                                            <%= listTalles[i].nombre %>
+                                        </option>
+                                        <% } else { %>
+                                            <option name="talles" value="<%= listTalles[i].id %>">
+                                                <%= listTalles[i].nombre %>
+                                            </option>
+                                            <% }} %>
                             </select>
                         </div>
-                        
+
                         <div class="cantTalleAltaProd">
                             <div>
                                 <label for="stock">Cantidad</label>
@@ -100,23 +121,24 @@
                                 <input type="number" name="tL" id="tL" value="<%= detalle.tL %>">
                             </div>
                         </div>-->
-                        <div class="precioProdAlta">
-                            <label for="precioProdAlta">Precio: $</label>
-                            <input type="number" name="precioProdAlta" id="precioProdAlta"
-                                value="<%= detalle.precio %>">
+                            <div class="precioProdAlta">
+                                <label for="precioProdAlta">Precio: $</label>
+                                <input type="number" name="precioProdAlta" id="precioProdAlta"
+                                    value="<%= detalle.precio %>">
+                            </div>
+                            <div class="antesProdAlta">
+                                <label for="antesProdAlta">Descuento: %</label>
+                                <input type="number" name="antesProdAlta" id="antesProdAlta"
+                                    value="<%= detalle.descuento %>">
+                            </div>
+                            <div class="botonesModif">
+                                <button type="submit" class="ingresar borrar">GUARDAR</button>
+                                <button type="reset" class="borrar">RESETEAR</button>
+                                <a href="/products/admin" class="botonModifProd">VOLVER AL LISTADO</a>
+                            </div>
                         </div>
-                        <div class="antesProdAlta">
-                            <label for="antesProdAlta">Descuento: %</label>
-                            <input type="number" name="antesProdAlta" id="antesProdAlta" value="<%= detalle.descuento %>">
-                        </div>
-                        <div class="botonesModif">
-                            <button type="submit" class="ingresar borrar">GUARDAR</button>
-                            <button type="reset" class="borrar">RESETEAR</button>
-                            <a href="/products/admin" class="botonModifProd">VOLVER AL LISTADO</a>
-                        </div>
-                    </div>
                 </form>
-        </main>
+            </main>
             <%- include ('./partials/footer') %>
     </body>
 
