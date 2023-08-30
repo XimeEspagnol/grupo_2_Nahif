@@ -17,7 +17,7 @@ const adminMiddleware = async (req, res, next) => {
       } } else {
       return res.redirect('/user/login');
     }
-    next();
+
 }
   
   module.exports = adminMiddleware;
