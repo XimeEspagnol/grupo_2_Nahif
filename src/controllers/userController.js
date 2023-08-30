@@ -58,6 +58,9 @@ const userController = {
     },*/
     create: async function (req, res) {
         try {
+            const rdoValidacion = validationResult(req)
+            let userExists = { msg: "" }
+            if (rdoValidacion.errors.length > 0) return res.render('register', { errors: rdoValidacion.mapped(), oldData: req.body, userExists: userExists })
             const usuarioEncontrado = await db.Users.findOne({
                 where: {
                     email: req.body.usuario

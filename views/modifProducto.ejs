@@ -39,8 +39,15 @@
 
                         <input type="text" name="nombreProdAlta" placeholder="Nombre del producto"
                             value="<%= detalle.nombre %>" class="descModif">
+                            <% if (locals.errors && errors.nombreProdAlta) { %>
+                                <p class="mensajeError"><%=errors.nombreProdAlta.msg  %></p>
+                            <% } %>
+
                         <textarea name="descProdAlta" class="descModif" id="" cols="30"
                             rows="7"><%= detalle.detalle %></textarea>
+                            <% if (locals.errors && errors.descProdAlta) { %>
+                                <p class="mensajeError"><%=errors.descProdAlta.msg  %></p>
+                            <% } %>
 
                         <div class="nuevaFotoProd divFotos">
                             <label for="fotoProdPpal ">Cambiar foto principal</label>

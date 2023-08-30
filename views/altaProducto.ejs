@@ -10,15 +10,21 @@
                     <h2>ALTA DE PRODUCTO</h2>
                     <div class="formAltaProd">
 
-                        <input type="text" name="nombreProdAlta" placeholder="Nombre del producto">
-                        <textarea name="descProdAlta" id="" cols="25" rows="5">Descripción del producto</textarea>
+                        <input type="text" name="nombreProdAlta" placeholder="Nombre del producto"  value="<%= locals.oldData ? oldData.nombreProdAlta : null %>">
+                        <% if (locals.errors && errors.nombreProdAlta) { %>
+                            <p class="mensajeError"><%=errors.nombreProdAlta.msg  %></p>
+                            <% } %>
+                        <textarea name="descProdAlta" id="" cols="25" rows="5"  value="<%= locals.oldData ? oldData.descProdAlta : null %>">Descripción del producto</textarea>
+                        <% if (locals.errors && errors.descProdAlta) { %>
+                            <p class="mensajeError"><%=errors.descProdAlta.msg  %></p>
+                            <% } %>
                             <div class="nuevaFotoProd">
                                 <label for="fotoProdPpal">Foto principal</label>
-                                <input type="file" name="fotoProdPpal" accept=".jpg, .png" id="fotoProdPpal">
+                                <input type="file" name="fotoProdPpal" accept=".jpg, .png, .jpeg, .gif" id="fotoProdPpal">
                             </div>
                             <div class="nuevaFotoProd">
                                 <label for="fotoProdAlta">Agregar fotos</label>
-                                <input type="file" name="fotoProdAlta" accept=".jpg, .png" id="fotoProdAlta" multiple>
+                                <input type="file" name="fotoProdAlta" accept=".jpg, .png, .jpeg, .gif" id="fotoProdAlta" multiple>
                             </div>
                         <div class="categoriasAlta">
                             <label for="categoriaProdAlta">Categoría del producto</label>

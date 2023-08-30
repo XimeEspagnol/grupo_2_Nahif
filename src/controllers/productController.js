@@ -3,7 +3,7 @@ const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const products = require('../database/models/Products');
-
+const { validationResult } = require("express-validator");
 
 //Aqui tienen una forma de llamar a cada uno de los modelos
 // const {Movies,Genres,Actor} = require('../database/models');
@@ -65,6 +65,9 @@ const productController = {
     },
     create: async (req, res) => {
         try {
+            const rdoValidacion = validationResult(req)
+            let prodExists = { msg: "" }
+            if (rdoValidacion.errors.length > 0) return res.render('register', { errors: rdoValidacion.mapped(), oldData: req.body, prodExists: prodExists })
             let fotoPpalNueva = "default-image.jpg"
             if (req.files != "") {
                 if (req.body.fotoProdPpal != ""& req.files[0].fieldname=='fotoProdPpal') fotoPpalNueva = req.files[0].filename
@@ -93,14 +96,13 @@ const productController = {
                        }
                     });
                 }
-                console.log(req.body.coloresProdAlta);
                 for (let i=0; i<req.body.coloresProdAlta.length;i++ ) {
                          db.colores_products.create({
                          product_id: productoCreado.id,
                          color_id: req.body.coloresProdAlta[i]
                      })
                     }
-            res.redirect('/products')
+            return res.redirect('/products')
         }   catch (error) {
             console.log(error);
         }
