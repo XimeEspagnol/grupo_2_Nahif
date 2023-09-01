@@ -8,7 +8,7 @@ const controller = require('../controllers/productController');
 const adminMiddleware = require ('../middlewares/adminMiddleware');
 const productValidation = require ('../middlewares/productValidation');
 
-const { contextsKey } = require('express-validator/src/base');
+//const { contextsKey } = require('express-validator/src/base');
 
 
 const storage= multer.diskStorage({
@@ -39,12 +39,12 @@ router.get('/listAdmin/:categoria', adminMiddleware, controller.filtroAdminCateg
 
 //FORM CREATE
 router.get('/altaProducto/create', adminMiddleware, controller.add)
-router.post('/altaProducto/create', productValidation, fileUpload.any('fotoProdPpal'), controller.create)
+router.post('/altaProducto/create', fileUpload.any('fotoProdPpal'),productValidation, controller.create)
 
 
 //FORM EDIT
 router.get('/modificarProd/:id', adminMiddleware, controller.edit)
-router.patch('/modificarProd/:id', productValidation, fileUpload.any('fotoProdPpal'), controller.update)
+router.patch('/modificarProd/:id',  fileUpload.any('fotoProdPpal'),productValidation, controller.update)
 router.patch('/eliminarFoto/:id', controller.eliminarFoto)
 
 //FORM DELETE

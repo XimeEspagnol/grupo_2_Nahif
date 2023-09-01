@@ -68,9 +68,12 @@ const productController = {
             const talles = await db.Talles.findAll()
             const categorias = await db.Categorias.findAll()
             const colores = await db.Colores.findAll()
+            console.log(req.body);
             const rdoValidacion = validationResult(req)
+            console.log(rdoValidacion)
             let prodExists = { msg: "" }
-            if (rdoValidacion.errors.length > 0) return res.render('altaProducto', { errors: rdoValidacion.mapped(), oldData: req.body, prodExists: prodExists, listTalles: talles , listCategorias: categorias , listColores: colores })
+            //poner busqueda si existe el producto
+            if (!rdoValidacion.isEmpty()) return res.render('altaProducto', { errors: rdoValidacion.mapped(), oldData: req.body, prodExists: prodExists, listTalles: talles , listCategorias: categorias , listColores: colores })
             let fotoPpalNueva = "default-image.jpg"
             if (req.files != "") {
                 if (req.body.fotoProdPpal != ""& req.files[0].fieldname=='fotoProdPpal') fotoPpalNueva = req.files[0].filename

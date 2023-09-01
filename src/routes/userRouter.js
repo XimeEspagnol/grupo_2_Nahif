@@ -31,7 +31,7 @@ const fileUpload = multer({
 router.get('/login', logMiddleware, controller.login);
 router.post('/login', controller.processLogin);
 router.get('/register', logMiddleware, controller.register);
-router.post('/register', registerValidation, fileUpload.single('fotoRegistro'), controller.create);
+router.post('/register',  fileUpload.single('fotoRegistro'),registerValidation, controller.create);
 
 router.get ('/perfil', controller.users);
 router.get ('/logout', controller.logout);
