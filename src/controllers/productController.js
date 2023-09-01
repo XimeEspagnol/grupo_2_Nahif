@@ -58,7 +58,8 @@ const productController = {
             const talles = await db.Talles.findAll()
             const categorias = await db.Categorias.findAll()
             const colores = await db.Colores.findAll()
-            return res.render('altaProducto', {listTalles: talles , listCategorias: categorias , listColores: colores})
+            const errores = {msg:""}
+            return res.render('altaProducto', {errors: errores, listTalles: talles , listCategorias: categorias , listColores: colores})
         } catch (error) {
             console.log(error);
         }
@@ -68,9 +69,7 @@ const productController = {
             const talles = await db.Talles.findAll()
             const categorias = await db.Categorias.findAll()
             const colores = await db.Colores.findAll()
-            console.log(req.body);
             const rdoValidacion = validationResult(req)
-            console.log(rdoValidacion)
             let prodExists = { msg: "" }
             //poner busqueda si existe el producto
             if (!rdoValidacion.isEmpty()) return res.render('altaProducto', { errors: rdoValidacion.mapped(), oldData: req.body, prodExists: prodExists, listTalles: talles , listCategorias: categorias , listColores: colores })
@@ -129,6 +128,13 @@ const productController = {
     },
     update: async (req, res) => {
         try {
+            let productos = await db.Products.findByPk(req.params.id, { include: [{ association: 'talles' }, { association: 'categorias' }, {association: 'colores' }, {association:'fotos'}] })
+            const talles = await db.Talles.findAll()
+            const categorias = await db.Categorias.findAll()
+            const colores = await db.Colores.findAll()
+            const coloresProdEdit = await db.colores_products.findAll()
+            const rdoValidacion = validationResult(req)
+            if (!rdoValidacion.isEmpty()) return res.render('modifProducto', { errors: rdoValidacion.mapped(), oldData: req.body, detalle: productos, listTalles: talles , listCategorias: categorias , listColor: colores, listColores: coloresProdEdit })
             let prodModif = await db.Products.findByPk(req.params.id)
             let fotoPpalNueva = prodModif.fotoPpal
             if (req.files != "") {
@@ -136,7 +142,7 @@ const productController = {
             }
             await db.Products.update({
                 nombre: req.body.nombreProdAlta,
-                detalle: req.body.detalleProdAlta,
+                detalle: req.body.descProdAlta,
                 fotoPpal: fotoPpalNueva,
                 precio: req.body.precioProdAlta,
                 descuento: req.body.descuentoProdAlta,
@@ -168,7 +174,7 @@ const productController = {
             })
            }
 
-            res.redirect('/products')
+            res.redirect('/products/admin')
         } catch (error) {
             console.log(error);
         }

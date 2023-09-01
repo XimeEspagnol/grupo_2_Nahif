@@ -7,6 +7,15 @@
     width: 100vw;
     text-align: center;
 }
+.mensajeError {
+        color: rgb(101, 19, 19);
+        margin-top: 8px;
+        margin-bottom: 8px;
+        font-family: roboto;
+        font-style: italic;
+        font-weight: bold;
+        text-align: center;
+    }
 
 .mainAltaProd h2 {
     text-align: center;
@@ -46,7 +55,6 @@
 .formAltaProd p {
     font-size: 15px;
     font-weight: bold;
-    color: #666;
 }
 
 .formAltaProd textarea{
@@ -116,8 +124,8 @@
     width: 45%;
 }
 
-.precioProdAlta, .antesProdAlta {
-    font-size: 18px;
+.precioProdAlta, .antesProdAlta, .precioProdAlta p{
+    font-size: 13px;
     font-weight: bold;
     color: #666;
 }
@@ -152,10 +160,10 @@
         font-size: 25px;
     }
     .formAltaProd p {
-        font-size: 18px;
+        font-size: 17px;
     }
     .precioProdAlta, .antesProdAlta {
-        font-size: 20px;
+        font-size: 17px;
     }
     .formAltaProd label {
         border-radius: 5%;

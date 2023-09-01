@@ -53,11 +53,17 @@
                             <label for="fotoProdPpal ">Cambiar foto principal</label>
                             <input type="file" name="fotoProdPpal" accept=".jpg, .png" id="fotoProdPpal">
                         </div>
+                        <% if (locals.errors && errors.fotoProdPpal) { %>
+                            <p class="mensajeError"><%=errors.fotoProdPpal.msg  %></p>
+                        <% } %>
                         <div class="nuevaFotoProd divFotos">
                             <label for="fotoProdAlta">Agregar fotos nuevas</label>
                             <input type="file" name="fotoProdAlta" accept=".jpg, .png" id="fotoProdAlta" multiple>
                         </div>
-                        <div class="categoriasAlta">
+                        <% if (locals.errors && errors.fotoProdAlta) { %>
+                            <p class="mensajeError"><%=errors.fotoProdAlta.msg  %></p>
+                        <% } %>
+                        <div class="precioProdAlta">
                             <label for="categoriaProdAlta">Categoría del producto</label>
                             <select name="categoriaProdAlta" id="categoriaProdAlta">
                                 <% for (i=0; i<listCategorias.length; i++){ %>
@@ -73,27 +79,30 @@
                             </select>
                         </div>
                         <div class="colProdAlta">
-                            <p>Colores disponibles</p>
+                            <p class="precioProdAlta">Colores disponibles</p>
                             
                             <div>
                                 <% for(let i=0; i < listColor.length; i++) { %>
                                     <% console.log(detalle.colores.includes(listColor[i].nombre)); %>
-                                <input type="checkbox" name="coloresProdAlta" <%=detalle.colores.includes(listColores[i].nombre) == true ? 'checked' : ""%> value="<%= listColor[i].id %>" id="<%= listColor[i].id %>">
+                                <input type="checkbox" name="coloresProdAlta"  value="<%= listColor[i].id %>" id="<%= listColor[i].id %>">
                                 <label for="<%= listColor[i].id %>"><%= listColor[i].nombre %></label>   
                                 <% } %>                                           
                             </div>
+                            <% if (locals.errors && errors.coloresProdAlta) { %>
+                                <p class="mensajeError"><%=errors.coloresProdAlta.msg  %></p>
+                            <% } %>
                             
                             <div>
                                 <% for(let i=0;i < detalle.colores.length; i++) { %>
                                 <input type="checkbox" name="coloresProdAlta" <%= detalle.colores.includes(listColores[i]) == true ? 'checked' : ""%> value="<%= detalle.colores[i].id%>" id="<%= detalle.colores[i].nombre %>" checked>
                                 <label for="<%= detalle.colores %>"><%= detalle.colores[i].nombre %></label>
                                 <% } %>
-                            </div>
+                            </div> 
                             
                            
                             
                         </div>
-                        <div class="tallesProdAlta">
+                        <div class="precioProdAlta">
                             <label for="tallesProdAlta">Talle del producto</label>
                             <select name="tallesProdAlta" id="tallesProdAlta">
                                 <% for (i=0; i<listTalles.length; i++){ %>
@@ -110,11 +119,14 @@
                             </select>
                         </div>
 
-                        <div class="cantTalleAltaProd">
+                        <div class="precioProdAlta">
                             <div>
                                 <label for="stock">Cantidad</label>
                                 <input type="number" name="stock" id="stock" value="<%= detalle.stock %>">
                             </div>
+                            <% if (locals.errors && errors.stock) { %>
+                                <p class="mensajeError"><%=errors.stock.msg  %></p>
+                            <% } %>
                             <!--<div>
                                 <label for="tS">S</label>
                                 <input type="number" name="tS" id="tS" value="<%= detalle.tS %>">
@@ -133,11 +145,17 @@
                                 <input type="number" name="precioProdAlta" id="precioProdAlta"
                                     value="<%= detalle.precio %>">
                             </div>
+                            <% if (locals.errors && errors.precioProdAlta) { %>
+                                <p class="mensajeError"><%=errors.precioProdAlta.msg  %></p>
+                            <% } %>
                             <div class="antesProdAlta">
-                                <label for="antesProdAlta">Descuento: %</label>
-                                <input type="number" name="antesProdAlta" id="antesProdAlta"
+                                <label for="descuentoProdAlta">Descuento: %</label>
+                                <input type="number" name="descuentoProdAlta" id="descuentoProdAlta"
                                     value="<%= detalle.descuento %>">
                             </div>
+                            <% if (locals.errors && errors.descuentoProdAlta) { %>
+                                <p class="mensajeError"><%=errors.descuentoProdAlta.msg  %></p>
+                            <% } %>
                             <div class="botonesModif">
                                 <button type="submit" class="ingresar borrar">GUARDAR</button>
                                 <button type="reset" class="borrar">RESETEAR</button>

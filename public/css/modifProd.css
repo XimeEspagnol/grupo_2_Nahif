@@ -24,6 +24,15 @@
     margin-bottom: 0px;
     margin-top: 0;
 }
+.mensajeError {
+    color: rgb(101, 19, 19);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-family: roboto;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
 .modProducto {
     background-color: #a4c3b2;
     display: flex;
