@@ -8,13 +8,18 @@
             <main class="mainAltaProd">
                 <form action="/products/altaProducto/create" method="post" class="altaProducto" enctype="multipart/form-data">
                     <h2>ALTA DE PRODUCTO</h2>
+                    <section id="errores">
+                        <ul>
+
+                        </ul>
+                    </section>
                     <div class="formAltaProd">
 
-                        <input type="text" name="nombreProdAlta" placeholder="Nombre del producto"  value="<%= locals.oldData ? oldData.nombreProdAlta : null %>">
+                        <input type="text" id="nombreProdAlta" name="nombreProdAlta" placeholder="Nombre del producto"  value="<%= locals.oldData ? oldData.nombreProdAlta : null %>">
                         <% if (locals.errors && errors.nombreProdAlta) { %>
                             <p class="mensajeError"><%=errors.nombreProdAlta.msg  %></p>
                             <% } %>
-                        <textarea name="descProdAlta" id="" cols="25" rows="5"  value="<%= locals.oldData ? oldData.descProdAlta : null %>">Descripción del producto</textarea>
+                        <textarea name="descProdAlta" id="descProdAlta" cols="25" rows="5"  value="<%= locals.oldData ? oldData.descProdAlta : null %>">Descripción del producto</textarea>
                         <% if (locals.errors && errors.descProdAlta) { %>
                             <p class="mensajeError"><%=errors.descProdAlta.msg  %></p>
                             <% } %>
@@ -44,7 +49,7 @@
                             <p class="precioProdAlta">Colores disponibles</p>
                             <% for(let i=0;i < listColores.length; i++) { %>
                             <div>
-                                <input type="checkbox" name="coloresProdAlta" value="<%= listColores[i].id %>" id="<%= listColores[i].id %>">
+                                <input type="checkbox" id="coloresProdAlta" name="coloresProdAlta" value="<%= listColores[i].id %>" id="<%= listColores[i].id %>">
                                 <label for="<%= listColores[i].id %>"><%= listColores[i].nombre %></label>
                             </div>
                             <% } %>
@@ -71,7 +76,7 @@
                         </div>
                         <div class="precioProdAlta">
                             <label for="precioProdAlta">Precio: $</label>
-                            <input type="number" name="precioProdAlta" id="precioProdAlta" value="0">
+                            <input type="number" id="precioProdAlta" name="precioProdAlta" id="precioProdAlta" value="0">
                             <% if (locals.errors && errors.precioProdAlta) { %>
                                 <p class="mensajeError"><%=errors.precioProdAlta.msg  %></p>
                             <% } %>
@@ -91,6 +96,8 @@
                 </form>
             </main>
             <%- include ('./partials/footer') %>
+            <script src="/js/altaProducto.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>
 
 </html>
