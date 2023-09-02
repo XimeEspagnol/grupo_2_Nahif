@@ -17,23 +17,28 @@ window.addEventListener("load", function(){
         const campoDetalle = document.querySelector("#descProdAlta");
         if (campoDetalle.value == ""){
             errores.push('Debe completar con una descripción de producto')
-        } else if (campoNombre.value.length < 20){
+        } else if (campoDetalle.value.length <= 20){
             errores.push('Debe tener al menos 20 caracteres')
         }
 
         const campoColores = document.querySelector('#coloresProdAlta');
-        if (campoColores.value == ""){
+        if (campoColores.value.length <= 0){
             errores.push('Debe seleccionar al menos 1 color')
         }
 
         const campoStock = document.querySelector('#stock');
-        if (campoStock.value < 0){
+        if (campoStock.value <= 0){
             errores.push('El stock tiene que ser 0 o más')
         }
 
         const campoPrecio = document.querySelector('#precioProdAlta');
         if (campoPrecio.value <= 0){
             errores.push('Debe ingresar un precio para el producto')
+        }
+
+        const campoDesc = document.querySelector('#descuentoProdAlta');
+        if (campoDesc.value <= 0){
+            errores.push('Debe tener un descuento de 0 o más')
         }
 
         if (errores.length > 0){
@@ -43,12 +48,7 @@ window.addEventListener("load", function(){
                 erroresLista.innerHTML += `<li>${error}</li>`
             }
         } else {
-            erroresLista.innerHTML = ` `
-            Swal.fire (
-                'Producto creado con éxito!',
-                'success'
-            )
-            .then (()=>{formulario.submit()})
+            formulario.submit()
         }
     })
 })

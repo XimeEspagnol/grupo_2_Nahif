@@ -68,7 +68,7 @@
                         <div class="precioProdAlta">
                             <div>
                                 <label for="stock">Cant</label>
-                                <input type="number" name="stock" id="stock" value="0">
+                                <input type="number" name="stock" id="stock" value="<%= locals.oldData ? oldData.stock : null %>">
                                 <% if (locals.errors && errors.stock) { %>
                                 <p class="mensajeError"><%=errors.stock.msg  %></p>
                                 <% } %>
@@ -76,14 +76,14 @@
                         </div>
                         <div class="precioProdAlta">
                             <label for="precioProdAlta">Precio: $</label>
-                            <input type="number" id="precioProdAlta" name="precioProdAlta" id="precioProdAlta" value="0">
+                            <input type="number" id="precioProdAlta" name="precioProdAlta" id="precioProdAlta" value="<%= locals.oldData ? oldData.precioProdAlta : null %>">
                             <% if (locals.errors && errors.precioProdAlta) { %>
                                 <p class="mensajeError"><%=errors.precioProdAlta.msg  %></p>
                             <% } %>
                         </div>
                         <div class="antesProdAlta">
                             <label for="descuentoProdAlta">Descuento: %</label>
-                            <input type="number" name="descuentoProdAlta" id="descuentoProdAlta" value="0">
+                            <input type="number" name="descuentoProdAlta" id="descuentoProdAlta" value="<%= locals.oldData ? oldData.descuentoProdAlta : null %>">
                             <% if (locals.errors && errors.descuentoProdAlta) { %>
                                 <p class="mensajeError"><%=errors.descuentoProdAlta.msg  %></p>
                             <% } %>
