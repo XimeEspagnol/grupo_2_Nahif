@@ -44,3 +44,10 @@ Finalmente, lo importante es aprender de todos nosotros y poder seguir adelante!
 
 Y ahora, ¿Quién nos para?
 
+**NUESTRA RETROSPECTIVA DE GRUPO SPRINT 7**
+
+Nos estamos acercando al final de la cursada y de este gran camino que emprendimos en equipo, con el apoyo del grupo, de los compañeros y por sobre todo, de los profes que siempre estuvieron ahí para alentarnos y enseñarnos. 
+Y así llegamos a este anteúltimo sprint, cansados, con muchas cosas, un poco mareados entre tantos temas, pero muy motivados para avanzar y tratar de absorber hasta lo último de esta experiencia. 
+Hemos realizado algunas actividades en grupos y otras de forma individual con la ayuda de nuestros compañeros, logrando así llegar al objetivo de esta etapa.
+
+...Qué poquito falta para terminar!!! 
