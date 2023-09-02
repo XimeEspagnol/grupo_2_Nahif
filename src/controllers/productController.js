@@ -13,7 +13,7 @@ const Products = db.Products;
 const Categorias = db.Categorias
 const Users = db.Users;
 const Talles = db.Talles
-const colores_products = db.colores_products
+const colores_products = db.coloes_products
 const Colores = db.Colores
 
 

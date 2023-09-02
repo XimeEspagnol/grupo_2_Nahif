@@ -9,9 +9,14 @@
 
         <div class="form-registro">
 
-            <form action="/user/register" method="post" enctype="multipart/form-data">
+            <form class="formularioUser" action="/user/register" method="post" enctype="multipart/form-data">
 
                 <h2 class="subtitulo-crear-cuenta">CREAR CUENTA</h2>
+                <section id="errores">
+                    <ul>
+
+                    </ul>
+                </section>
                 <div class="nombre-registro">
                     <label class="label-registro" for="nombre">Nombre</label>
                     <input class="input-registro" type="text" name="nombre" id="nombre" value="<%= locals.oldData ? oldData.nombre : null %>">
@@ -79,7 +84,7 @@
                     <% } %>
 
                 <div class="registro-div-boton">
-                    <button href="/home" class="registro-boton-crearCuenta" type="submit">CREAR CUENTA</button>
+                    <button  class="registro-boton-crearCuenta" type="submit">CREAR CUENTA</button>
                 </div>
 
                 <div class="registro-div-iniciaSesion">
@@ -90,6 +95,9 @@
         </div>
         
     </main>
+   
+    <script src="/js/register.js"></script> 
+    <!--<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11%22%3E"></script> -->
     <%- include('./partials/footer') %>
 </body>
 
