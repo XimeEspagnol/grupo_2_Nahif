@@ -32,18 +32,21 @@
                                                     class="fa-solid fa-trash-can"></i></button>
                     </div>
                 </form>
-                <form action="/products/modificarProd/<%= detalle.id %>?_method=patch" method="post" class="modProducto"
+                
+                <form action="/products/modificarProd/<%= detalle.id %>?_method=patch" method="post" class="altaProducto modProducto"
                     enctype="multipart/form-data">
                     <h2>MODIFICACIÓN DE PRODUCTO</h2>
                     <div class="formModifProd">
-
-                        <input type="text" name="nombreProdAlta" placeholder="Nombre del producto"
+                    <section id="errores">
+                            <ul>  </ul>
+                    </section>
+                        <input type="text" id="nombreProdAlta" name="nombreProdAlta" placeholder="Nombre del producto"
                             value="<%= detalle.nombre %>" class="descModif">
                             <% if (locals.errors && errors.nombreProdAlta) { %>
                                 <p class="mensajeError"><%=errors.nombreProdAlta.msg  %></p>
                             <% } %>
 
-                        <textarea name="descProdAlta" class="descModif" id="" cols="30"
+                        <textarea name="descProdAlta" id="descProdAlta" class="descModif" id="" cols="30"
                             rows="7"><%= detalle.detalle %></textarea>
                             <% if (locals.errors && errors.descProdAlta) { %>
                                 <p class="mensajeError"><%=errors.descProdAlta.msg  %></p>
@@ -51,14 +54,14 @@
 
                         <div class="nuevaFotoProd divFotos">
                             <label for="fotoProdPpal ">Cambiar foto principal</label>
-                            <input type="file" name="fotoProdPpal" accept=".jpg, .png" id="fotoProdPpal">
+                            <input type="file" id="fotoProdPpal" name="fotoProdPpal" accept=".jpg, .png" id="fotoProdPpal">
                         </div>
                         <% if (locals.errors && errors.fotoProdPpal) { %>
                             <p class="mensajeError"><%=errors.fotoProdPpal.msg  %></p>
                         <% } %>
                         <div class="nuevaFotoProd divFotos">
                             <label for="fotoProdAlta">Agregar fotos nuevas</label>
-                            <input type="file" name="fotoProdAlta" accept=".jpg, .png" id="fotoProdAlta" multiple>
+                            <input type="file" id="fotoProdAlta"  name="fotoProdAlta" accept=".jpg, .png" id="fotoProdAlta" multiple>
                         </div>
                         <% if (locals.errors && errors.fotoProdAlta) { %>
                             <p class="mensajeError"><%=errors.fotoProdAlta.msg  %></p>
@@ -84,7 +87,7 @@
                             <div>
                                 <% for(let i=0; i < listColor.length; i++) { %>
                                     <% console.log(detalle.colores.includes(listColor[i].nombre)); %>
-                                <input type="checkbox" name="coloresProdAlta"  value="<%= listColor[i].id %>" id="<%= listColor[i].id %>">
+                                <input type="checkbox" name="coloresProdAlta" id="coloresProdAlta" value="<%= listColor[i].id %>" id="<%= listColor[i].id %>">
                                 <label for="<%= listColor[i].id %>"><%= listColor[i].nombre %></label>   
                                 <% } %>                                           
                             </div>
@@ -94,7 +97,7 @@
                             
                             <div>
                                 <% for(let i=0;i < detalle.colores.length; i++) { %>
-                                <input type="checkbox" name="coloresProdAlta" <%= detalle.colores.includes(listColores[i]) == true ? 'checked' : ""%> value="<%= detalle.colores[i].id%>" id="<%= detalle.colores[i].nombre %>" checked>
+                                <input type="checkbox" id="coloresProdAlta" name="coloresProdAlta" <%= detalle.colores.includes(listColores[i]) == true ? 'checked' : ""%> value="<%= detalle.colores[i].id%>" id="<%= detalle.colores[i].nombre %>" checked>
                                 <label for="<%= detalle.colores %>"><%= detalle.colores[i].nombre %></label>
                                 <% } %>
                             </div> 
@@ -165,6 +168,8 @@
                 </form>
             </main>
             <%- include ('./partials/footer') %>
+            <script src="/js/altaProducto.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>
 
 </html>

@@ -7,3 +7,12 @@
     font-weight: bold;
     text-align: center;
 }
+.errores {
+    color: rgb(101, 19, 19);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-family: roboto;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
