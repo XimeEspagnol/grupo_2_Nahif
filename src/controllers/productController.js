@@ -59,7 +59,6 @@ const productController = {
     },
     filtroAdminCategorias: async(req, res) => {
         try {
-            console.log(req.params.categoria);
             const listCategorias = await db.Categorias.findAll()
             let prodEncontrado = await db.Products.findAll({ 
                  where: {
@@ -111,7 +110,6 @@ const productController = {
             })
             
             if (req.files != "") {
-                console.log(req.files);
                 if (req.body.fotoProdAlta != ""& req.files.length>=1)
                     req.files.forEach(async row => {
                        if (row.fieldname =='fotoProdAlta') {
@@ -177,7 +175,6 @@ const productController = {
                 }
             })
             if (req.files != "") {
-                console.log(req.files);
                 if (req.body.fotoProdAlta != ""& req.files.length>=1)
                     req.files.forEach(async row => {
                        if (row.fieldname =='fotoProdAlta') {
@@ -213,7 +210,6 @@ const productController = {
         borrarFoto = await db.FotosProd.findAll({
             where: {product_id: productoEncontrado}
         })
-        console.log(borrarFoto);
         if (borrarFoto.length > 1){
             borrarFoto.forEach(async foto=>{
                 fs.unlinkSync(path.join(__dirname, '../../public/img/' + borrarFoto.nombreFoto))},
