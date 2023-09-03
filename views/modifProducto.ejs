@@ -86,7 +86,7 @@
                             
                             <div>
                                 <% for(let i=0; i < listColor.length; i++) { %>
-                                    <% console.log(detalle.colores.includes(listColor[i].nombre)); %>
+                                    <%# console.log(detalle.colores.includes(listColor[i].nombre)); %>
                                 <input type="checkbox" name="coloresProdAlta" id="coloresProdAlta" value="<%= listColor[i].id %>" id="<%= listColor[i].id %>">
                                 <label for="<%= listColor[i].id %>"><%= listColor[i].nombre %></label>   
                                 <% } %>                                           
