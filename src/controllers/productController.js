@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs')
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
@@ -198,13 +199,35 @@ const productController = {
         } catch (error) {
             console.log(error);
         }
+        
     },
     delete: async (req, res) =>{
         try {
-         const productoEncontrado = await db.Products.findByPk(req.params.id)
-         //throw new Error("Hubo un error")
-         return res.render('productAdmin', {Product: productoEncontrado})
-        }
+        console.log(req.body.borrarProd);
+        const delProd =[]
+        delProd.push(req.body.borrarProd)
+        delProd.forEach(async productoEncontrado =>{
+         await db.colores_products.destroy({
+                where: {product_id: productoEncontrado}, force:true
+            })
+         let borrarFoto = await db.FotosProd.findByPk(productoEncontrado)
+         if (borrarFoto){
+         fs.unlinkSync(path.join(__dirname, '../../public/img/' + borrarFoto.nombreFoto))}
+         await db.FotosProd.destroy({
+            where: {product_id: productoEncontrado}, force:true
+         })
+        let borrarProd = await db.Products.findByPk(productoEncontrado)
+        if (borrarProd){   
+            await db.Products.destroy({
+                where: {id: productoEncontrado},force:true
+            })
+        }})
+        //muestra el que acaba de borrar ver como se actualiza
+        const prodActivos = await db.Products.findAll()
+        const listCategorias = await db.Categorias.findAll()
+        //return res.render('productAdmin', { categoriaProd: prodActivos, listCategorias: listCategorias })
+        return res.redirect('/products/admin')    
+    }
          catch (error) {
              console.log(error);
         } 
@@ -214,7 +237,6 @@ const productController = {
             const productoEliminado = await db.Products.destroy({
                 where: {id: req.params.id}
             })
-            //console.log(productoEliminado);
             return res.redirect('/products')
         } catch (error) {
             console.log(error);
