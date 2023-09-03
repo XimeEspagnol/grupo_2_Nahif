@@ -42,17 +42,37 @@ const productController = {
         const listCategorias = await db.Categorias.findAll()
         return res.render('productAdmin', { categoriaProd: prodActivos, listCategorias: listCategorias })
     },
-    filtroCategorias:(req, res) => {
-        const prodEncontrado = detalleProd.filter(row => row.categoria==req.params.categoria)
-        return res.render('categorias', { categoriaProd: prodEncontrado, listCategorias: listCategorias })
+    filtroCategorias:async (req, res) => {
+        try {
+            const listCategorias = await db.Categorias.findAll()
+            let prodEncontrado = await db.Products.findAll({ 
+                 where: {
+                    categoria_id: req.params.categoria
+                }
+            })
+            return res.render('categorias', { products: prodEncontrado, categorias: listCategorias })
+        } catch (error) {
+            console.log(error);
+        }
+        
     },
-    //listCategorias?
-    filtroAdminCategorias: (req, res) => {
-        const prodEncontrado = detalleProd.filter(row => row.categoria==req.params.categoria && row.borrado==false)
-        return res.render('productAdmin', { categoriaProd: prodEncontrado, listCategorias: listCategorias })
+    filtroAdminCategorias: async(req, res) => {
+        try {
+            console.log(req.params.categoria);
+            const listCategorias = await db.Categorias.findAll()
+            let prodEncontrado = await db.Products.findAll({ 
+                 where: {
+                    categoria_id: req.params.categoria
+                }
+            })
+            return res.render('productAdmin', { categoriaProd: prodEncontrado, listCategorias: listCategorias })
+        } catch (error) {
+            console.log(error);
+        }
+        
     },
 
-    //Aqui dispongo las rutas para trabajar con el CRUD
+    // rutas para trabajar con el CRUD
     add: async (req, res) => {
         try {
             const talles = await db.Talles.findAll()
