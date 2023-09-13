@@ -7,12 +7,11 @@ module.exports={
     list: async (req, res) =>{
         let response = {}
         try {
-           const [productos, categorias] = await Promise.all([Products,findAll({include:[{association:"categorias"}]}), Categorias.findAll({include:[{association:"productos"}]})])
+           const [productos, categorias] = await Promise.all([Products.findAll({include:[{association:"categorias"}]}), Categorias.findAll({include:[{association:"productos"}]})])
            response.count = productos.length
            response.countByCategoria = {}
-           
            categorias.forEach((categoria)=>{
-            response.countByCategoria[categoria.nombre]= categoria.products.nombre
+            response.countByCategoria[categoria.nombre]= categoria.productos.nombre
            })
            response.products = productos.map(productos => {
                 return {
