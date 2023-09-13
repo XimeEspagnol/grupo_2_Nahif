@@ -82,7 +82,6 @@ module.exports={
     update: async (req, res) => {
       let response = {};
       let userId = req.params.id;
-      console.log(req);
       try {
         const editUser = await Users.update(
           {
@@ -107,8 +106,7 @@ module.exports={
           delete editUser.password;
           req.session.userLogged = editUser;
         }
-  
-        console.log(editUser);
+
         response.meta = {
           status: 201,
           url: `/api/user/edit/${req.params.id}`,

@@ -62,7 +62,7 @@ function ready(){
                             <option value=2>Cantidad: 2</option>
                             <option value=3>Cantidad: 3</option>
                         </select>
-                        <p onClick=borrarElemento(${elemtent.id})>Eliminar</p>
+                        <p onClick=borrarElemento(${element.id})>Eliminar</p>
                     </div>
                 </div>
             </div>`

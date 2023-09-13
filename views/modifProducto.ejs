@@ -86,21 +86,19 @@
                             
                             <div>
                                 <% for(let i=0; i < listColor.length; i++) { %>
-                                    <%# console.log(detalle.colores.includes(listColor[i].nombre)); %>
-                                <input type="checkbox" name="coloresProdAlta" id="coloresProdAlta" value="<%= listColor[i].id %>" id="<%= listColor[i].id %>">
+                                    <% let colorOk = listColores.find(row=>row.color_id==listColor[i].id)
+                                    console.log((colorOk !=undefined) ? "cheked" : "")
+                                    console.log('colorok '+ colorOk);
+                                    console.log(listColor[i].id);
+                                     %>
+                                    
+                                <input type="checkbox" name="coloresProdAlta"  <%= (colorOk !=undefined) ? "checked" : ""%> id="coloresProdAlta" value="<%= listColor[i].id %>" id="<%= listColor[i].id %>">
                                 <label for="<%= listColor[i].id %>"><%= listColor[i].nombre %></label>   
                                 <% } %>                                           
                             </div>
                             <% if (locals.errors && errors.coloresProdAlta) { %>
                                 <p class="mensajeError"><%=errors.coloresProdAlta.msg  %></p>
                             <% } %>
-                            
-                            <div>
-                                <% for(let i=0;i < detalle.colores.length; i++) { %>
-                                <input type="checkbox" id="coloresProdAlta" name="coloresProdAlta" <%= detalle.colores.includes(listColores[i]) == true ? 'checked' : ""%> value="<%= detalle.colores[i].id%>" id="<%= detalle.colores[i].nombre %>" checked>
-                                <label for="<%= detalle.colores %>"><%= detalle.colores[i].nombre %></label>
-                                <% } %>
-                            </div> 
                             
                            
                             

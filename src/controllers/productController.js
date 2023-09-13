@@ -137,7 +137,7 @@ const productController = {
             const productsEdit = await db.Products.findByPk(req.params.id, { include: [{ association: 'talles' }, { association: 'categorias' }, {association: 'colores' }, {association:'fotos'}] })
             const tallesEdit = await db.Talles.findAll()
             const categoriasEdit = await db.Categorias.findAll()
-            const coloresProdEdit = await db.colores_products.findAll()
+            const coloresProdEdit = await db.colores_products.findAll({where:{product_id:req.params.id}})
             const [products, talles, categorias, coloresProd] = await Promise.all([productsEdit, tallesEdit, categoriasEdit, coloresProdEdit])
             res.render('modifProducto', { detalle: products, listTalles: talles, listCategorias: categorias, listColores: coloresProd, listColor: colores })
         } catch (error) {

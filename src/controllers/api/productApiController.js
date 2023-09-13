@@ -88,7 +88,6 @@ module.exports={
     update: async (req, res) => {
       let response = {};
       let productId = req.params.id;
-      console.log(req);
       try {
         const editproduct = await Products.update(
           {
@@ -113,8 +112,7 @@ module.exports={
           delete editproduct.password;
           req.session.productLogged = editproduct;
         }
-  
-        console.log(editproduct);
+
         response.meta = {
           status: 201,
           url: `/api/products/edit/${req.params.id}`,
