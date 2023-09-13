@@ -34,7 +34,7 @@ module.exports={
           url: `/api/user/${req.params.id}`,
         };
         response.data = findUser;
-        response.data.fotoPerfil = "http://localhost:3002/public/img/"+ findUser.fotoPerfil
+        response.data.fotoPerfil = `/public/img/${findUser.fotoPpal}`
         return res.json(response);
       } catch (error) {
         console.error("Error finding user:", error);

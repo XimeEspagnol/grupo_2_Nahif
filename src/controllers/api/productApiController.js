@@ -1,23 +1,28 @@
 const db = require ('../../database/models')
 const bcrypt = require('bcrypt')
 const Products = db.Products
+const Categorias = db.Categorias
 
 module.exports={
     list: async (req, res) =>{
         let response = {}
         try {
-           const productos  = await Products.findAll()
+           const [productos, categorias] = await Promise.all([Products,findAll({include:[{association:"categorias"}]}), Categorias.findAll({include:[{association:"productos"}]})])
            response.count = productos.length
+           response.countByCategoria = {}
+           
+           categorias.forEach((categoria)=>{
+            response.countByCategoria[categoria.nombre]= categoria.products.nombre
+           })
            response.products = productos.map(productos => {
                 return {
                     id: productos.id,
                     name: productos.nombre,
-                    detalle: productos.detalle,
-                    precio: productos.precio,
-                    stock: productos.stock,
+                    description: productos.detalle,
+                    category: productos.categorias,
                     detail: `api/products/${productos.id}`
-                
-                }})
+                }
+            })
             
             return res.json(response)
         } catch (error) {
@@ -29,14 +34,14 @@ module.exports={
     detail: async (req, res) => {
       let response = {};
       try {
-        const findproduct = await Products.findByPk(req.params.id);
+        const findProduct = await Products.findByPk(req.params.id, {include:[{ association: 'talles' }, { association: 'categorias' }, {association: 'colores' }, {association:'fotos'}]});
         response.meta = {
           status: 200,
-          total: findproduct.length,
           url: `/api/products/${req.params.id}`,
         };
-        response.data = findproduct;
-        response.data.fotoPpal = "/public/img/"+ findproduct.fotoPpal
+        response.data = findProduct;
+        response.data.fotoPpal = `/public/img/${findProduct.fotoPpal}`
+        
         return res.json(response);
       } catch (error) {
         console.error("Error finding product:", error);
