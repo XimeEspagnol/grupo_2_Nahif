@@ -86,11 +86,7 @@
                             
                             <div>
                                 <% for(let i=0; i < listColor.length; i++) { %>
-                                    <% let colorOk = listColores.find(row=>row.color_id==listColor[i].id)
-                                    console.log((colorOk !=undefined) ? "cheked" : "")
-                                    console.log('colorok '+ colorOk);
-                                    console.log(listColor[i].id);
-                                     %>
+                                    <% let colorOk = listColores.find(row=>row.color_id==listColor[i].id) %>
                                     
                                 <input type="checkbox" name="coloresProdAlta"  <%= (colorOk !=undefined) ? "checked" : ""%> id="coloresProdAlta" value="<%= listColor[i].id %>" id="<%= listColor[i].id %>">
                                 <label for="<%= listColor[i].id %>"><%= listColor[i].nombre %></label>   

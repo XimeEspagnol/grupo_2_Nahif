@@ -5,15 +5,15 @@ const Categorias = db.Categorias
 
 module.exports={
     list: async (req, res) =>{
-        let response = {}
+      let response = {data:{}}
         try {
            const [productos, categorias] = await Promise.all([Products.findAll({include:[{association:"categorias"}]}), Categorias.findAll({include:[{association:"productos"}]})])
-           response.count = productos.length
-           response.countByCategoria = {}
+           response.data.count = productos.length
+           response.data.countByCategoria = {}
            categorias.forEach((categoria)=>{
-            response.countByCategoria[categoria.nombre]= categoria.productos.nombre
+            response.data.countByCategoria[categoria.nombre]= categoria.productos.nombre
            })
-           response.products = productos.map(productos => {
+           response.data.products = productos.map(productos => {
                 return {
                     id: productos.id,
                     name: productos.nombre,

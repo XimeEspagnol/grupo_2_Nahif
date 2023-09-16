@@ -150,7 +150,7 @@ const productController = {
             let productos = await db.Products.findByPk(req.params.id, { include: [{ association: 'talles' }, { association: 'categorias' }, {association: 'colores' }, {association:'fotos'}] })
             const talles = await db.Talles.findAll()
             const categorias = await db.Categorias.findAll()
-            const colores = await db.Colores.findAll()
+            let colores = await db.Colores.findAll()
             const coloresProdEdit = await db.colores_products.findAll()
             const rdoValidacion = validationResult(req)
             if (!rdoValidacion.isEmpty()) return res.render('modifProducto', { errors: rdoValidacion.mapped(), oldData: req.body, detalle: productos, listTalles: talles , listCategorias: categorias , listColor: colores, listColores: coloresProdEdit })
@@ -185,13 +185,46 @@ const productController = {
                        }
                     });
                 }
-            for (let i=0; i<req.body.coloresProdAlta.length;i++ ) {
-                db.colores_products.create({
-                product_id: req.params.id,
-                color_id: req.body.coloresProdAlta[i]
-            })
-           }
-
+            //chequear si la combinacion ya existe, si no existe crearla.
+            //chequear si el color no esta chequeado, y existe en la tabla, si existe borrarlo
+            
+            
+            //
+            colores = await db.Colores.findAll()
+            console.log(req.body.coloresProdAlta);
+            for (let i=0; i<colores.length;i++){
+                let colorMarcado=false
+                console.log('colores I id ' +colores[i].id);
+                if (req.body.coloresProdAlta.length==0) {
+                    if (req.body.coloresProdAlta[0]==(colores[i].id)) {colorMarcado = true}
+                } else{
+                for (j=0; j<req.body.coloresProdAlta.length;j++){
+                    if (req.body.coloresProdAlta[j]==(colores[i].id)) {colorMarcado = true}
+                }
+                }
+                let colorExiste = await db.colores_products.findAll({
+                        where:{[Op.and]:[
+                            {product_id: req.params.id},
+                            {color_id: colores[i].id}]
+                        }})
+                console.log('colorexiste length'+colorExiste.length);
+                console.log('colorMarcado '+colorMarcado);
+                if (colorMarcado == true && colorExiste.length<=0){
+                        db.colores_products.create({
+                        product_id: req.params.id,
+                        color_id: colores[i].id
+                        })
+                     
+                } 
+                if (colorMarcado == false && colorExiste.length>=0){
+                    await db.colores_products.destroy({
+                        where: {[Op.and]:[
+                            {product_id: req.params.id},
+                            {color_id: colores[i].id}]
+                        }, force:true
+                    })
+                }}
+            
             res.redirect('/products/admin')
         } catch (error) {
             console.log(error);
@@ -247,12 +280,12 @@ const productController = {
         if (producto && req.body != {}){
             if (req.body.delPpal != undefined) {
                  producto.fotoPpal = "default-image.jpg"
-                // fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delPpal))
+                 //fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delPpal))
             }
             if (req.body.delFoto != undefined){
                 if (typeof req.body.delFoto == "string"){
                     producto.fotos = producto.fotos.filter(row=>row != req.body.delFoto)
-                  //  fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delFoto))
+                   // fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delFoto))
                 }
                 if (typeof req.body.delFoto != "string") {
                     for (let i=0;i<req.body.delFoto.length;i++){
