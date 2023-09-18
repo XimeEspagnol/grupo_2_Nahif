@@ -19,7 +19,7 @@ module.exports={
                     name: productos.nombre,
                     description: productos.detalle,
                     category: productos.categorias,
-                    detail: `api/products/${productos.id}`
+                    detail: `api/product/${productos.id}`
                 }
             })
             
@@ -36,7 +36,7 @@ module.exports={
         const findProduct = await Products.findByPk(req.params.id, {include:[{ association: 'talles' }, { association: 'categorias' }, {association: 'colores' }, {association:'fotos'}]});
         response.meta = {
           status: 200,
-          url: `/api/products/${req.params.id}`,
+          url: `/api/product/${req.params.id}`,
         };
         response.data = findProduct;
         response.data.fotoPpal = `/public/img/${findProduct.fotoPpal}`
@@ -47,7 +47,7 @@ module.exports={
         response.meta = {
           status: 500,
           total: null,
-          url: `/api/products/${req.params.id}`,
+          url: `/api/product/${req.params.id}`,
         };
         response.msg = `Error! No encontramos el usuario con id: ${req.params.id}.`;
         return res.status(500).json(response);

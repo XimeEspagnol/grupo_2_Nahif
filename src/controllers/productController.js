@@ -191,10 +191,8 @@ const productController = {
             
             //
             colores = await db.Colores.findAll()
-            console.log(req.body.coloresProdAlta);
             for (let i=0; i<colores.length;i++){
                 let colorMarcado=false
-                console.log('colores I id ' +colores[i].id);
                 if (req.body.coloresProdAlta.length==0) {
                     if (req.body.coloresProdAlta[0]==(colores[i].id)) {colorMarcado = true}
                 } else{
@@ -207,8 +205,6 @@ const productController = {
                             {product_id: req.params.id},
                             {color_id: colores[i].id}]
                         }})
-                console.log('colorexiste length'+colorExiste.length);
-                console.log('colorMarcado '+colorMarcado);
                 if (colorMarcado == true && colorExiste.length<=0){
                         db.colores_products.create({
                         product_id: req.params.id,

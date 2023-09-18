@@ -42,4 +42,4 @@ app.use('/products', productRouter);
 app.use('/user', userRouter);
 
 app.use('/api/user',userApiRouter);
-app.use('/api/products',productApiRouter);
+app.use('/api/product',productApiRouter);
