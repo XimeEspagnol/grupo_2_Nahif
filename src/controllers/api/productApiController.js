@@ -12,7 +12,8 @@ module.exports={
            response.data.countByCategory = {}
            //revisar que no llegan las categorias
            categorias.forEach((categoria)=>{
-            response.data.countByCategory[categoria.nombre]= categoria.productos.nombre
+            console.log(categoria);
+           response.data.countByCategory[categoria.nombre]= categoria.productos.length
            })
            response.data.products = productos.map(productos => {
                 return {
