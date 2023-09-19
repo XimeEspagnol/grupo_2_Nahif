@@ -9,16 +9,17 @@ module.exports={
         try {
            const [productos, categorias] = await Promise.all([Products.findAll({include:[{association:"categorias"}]}), Categorias.findAll({include:[{association:"productos"}]})])
            response.data.count = productos.length
-           response.data.countByCategoria = {}
+           response.data.countByCategory = {}
+           //revisar que no llegan las categorias
            categorias.forEach((categoria)=>{
-            response.data.countByCategoria[categoria.nombre]= categoria.productos.nombre
+            response.data.countByCategory[categoria.nombre]= categoria.productos.nombre
            })
            response.data.products = productos.map(productos => {
                 return {
                     id: productos.id,
                     name: productos.nombre,
                     description: productos.detalle,
-                    category: productos.categorias,
+                    category: productos.categorias.nombre,
                     detail: `api/product/${productos.id}`
                 }
             })

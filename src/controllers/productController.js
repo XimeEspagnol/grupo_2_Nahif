@@ -241,7 +241,7 @@ const productController = {
         })
         if (borrarFoto.length > 1){
             borrarFoto.forEach(async foto=>{
-                fs.unlinkSync(path.join(__dirname, '../../public/img/' + borrarFoto.nombreFoto))},
+                fs.unlinkSync(path.join(__dirname, '../../public/img/' + foto.nombreFoto))},
                 
         )}
         await db.FotosProd.destroy({
@@ -270,31 +270,42 @@ const productController = {
             console.log(error);
         }
     },
-    eliminarFoto:(req, res) => {
+    eliminarFoto:async (req, res) => {
     
-        const producto = detalleProd.find(row=> row.id==req.params.id)
+        const producto = await db.Products.findByPk(req.params.id) 
+        const fotosProd = await db.FotosProd.findAll({
+            where:{
+                product_id: req.params.id
+            }})
+        console.log(fotosProd);
+        console.log(req.body.delFoto)
         if (producto && req.body != {}){
             if (req.body.delPpal != undefined) {
                  producto.fotoPpal = "default-image.jpg"
-                 //fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delPpal))
+                 fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delPpal))
             }
             if (req.body.delFoto != undefined){
                 if (typeof req.body.delFoto == "string"){
-                    producto.fotos = producto.fotos.filter(row=>row != req.body.delFoto)
-                   // fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delFoto))
+                    let fotoBorrada = await db.FotosProd.findOne({where:{nombreFoto: req.body.delFoto}})
+                    fs.unlinkSync(path.join(__dirname, '../../public/img/' + fotoBorrada.nombreFoto))
+
+                    await db.FotosProd.destroy({
+                        where: {nombreFoto: req.body.delFoto}, force:true
+                    })
+                
                 }
                 if (typeof req.body.delFoto != "string") {
                     for (let i=0;i<req.body.delFoto.length;i++){
-                     let fotoEncontrada = producto.fotos.find(row=> row==req.body.delFoto[i])
-                        if (fotoEncontrada) {
-                    //         fs.unlinkSync(path.join(__dirname, '../../public/img/' + req.body.delFoto[i]))
-                             producto.fotos=producto.fotos.filter(row=>row !=req.body.delFoto[i])
-                        }
+                        let fotoBorrada = await db.FotosProd.findOne({where:{nombreFoto: req.body.delFoto[i]}})
+                        fs.unlinkSync(path.join(__dirname, '../../public/img/' + fotoBorrada.nombreFoto))
+                        await db.FotosProd.destroy({
+                            where: {nombreFoto: req.body.delFoto[i]}, force:true
+                        })
+                
                     }   
                 }
             }
         }            
-        fs.writeFileSync(path.join(__dirname,'../database/products.json'),JSON.stringify(detalleProd, null, 2))
         return res.redirect('/products/modificarProd/'+req.params.id)
     }
 
