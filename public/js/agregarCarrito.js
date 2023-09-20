@@ -25,18 +25,18 @@ function agregarItem(){
 
     }
     if(productosCarrito.length == 0){
-        productoAgregado.cantidad = parseInt(document.querySelector(".Cantidad").value)
+        productoAgregado.cantidad = parseInt(document.querySelector(".cantidadCarrito").value)
         productoAgregado.subTotal = productoAgregado.cantidad*productoAgregado.precio
         productosCarrito.push(productoAgregado)
     }
     else{
         let buscarProducto = productosCarrito.find(producto => producto.id == productoAgregado.id)
         if(buscarProducto){
-            buscarProducto.cantidad += parseInt(document.querySelector(".Cantidad").value)
+            buscarProducto.cantidad += parseInt(document.querySelector(".cantidadCarrito").value)
             buscarProducto.subTotal = buscarProducto.cantidad*productoAgregado.precio
         }
         else{
-        productoAgregado.cantidad = parseInt(document.querySelector(".Cantidad").value)
+        productoAgregado.cantidad = parseInt(document.querySelector(".cantidadCarrito").value)
         productoAgregado.subTotal = productoAgregado.cantidad*productoAgregado.precio
         productosCarrito.push(productoAgregado)
         }

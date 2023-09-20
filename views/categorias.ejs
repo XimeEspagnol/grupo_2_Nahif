@@ -16,7 +16,8 @@
                 <div class="lista-categoria">
                     <% for (i=0; i<categorias.length; i++){ %>
                         <a href="/products/list/<%=categorias[i].id%>" class="items-categoria"><%= categorias[i].nombre %></a>
-                    <% } %>
+                        <p hidden class="totalCategorias" value="<%= i%>"></p>
+                        <% } %>
                 </div>
                 <section class="lista-productos">
                     <% products.forEach(productos => {%>

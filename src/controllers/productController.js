@@ -277,8 +277,6 @@ const productController = {
             where:{
                 product_id: req.params.id
             }})
-        console.log(fotosProd);
-        console.log(req.body.delFoto)
         if (producto && req.body != {}){
             if (req.body.delPpal != undefined) {
                  producto.fotoPpal = "default-image.jpg"

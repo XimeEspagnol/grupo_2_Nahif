@@ -1,7 +1,6 @@
 window.addEventListener("load",function(){ 
     
     const formulario = document.querySelector(".formularioUser") //capturmamos el formulario
-    //console.log(form)
     formulario.addEventListener("submit", function(event){
 
     event.preventDefault();

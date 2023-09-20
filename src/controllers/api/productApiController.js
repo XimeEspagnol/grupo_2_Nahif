@@ -10,9 +10,10 @@ module.exports={
            const [productos, categorias] = await Promise.all([Products.findAll({include:[{association:"categorias"}]}), Categorias.findAll({include:[{association:"productos"}]})])
            response.data.count = productos.length
            response.data.countByCategory = {}
+           response.data.cantCategorias = 0
            //revisar que no llegan las categorias
            categorias.forEach((categoria)=>{
-            console.log(categoria);
+            response.data.cantCategorias +=1
            response.data.countByCategory[categoria.nombre]= categoria.productos.length
            })
            response.data.products = productos.map(productos => {

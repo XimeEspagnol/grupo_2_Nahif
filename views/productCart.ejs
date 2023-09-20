@@ -17,7 +17,7 @@
                         <img src="/img/<%= prodCart.foto %>" alt="<%= prodCart.nombre %>">
                     </div>
                     <div class="detalleProdCarrito">
-                        <h4><%= prodCart.nombre %></h4>
+                        <h4 class="nombre"><%= prodCart.nombre %></h4>
                         <p>$<%= prodCart.precio %></p>
                         <div>
                             <p>Talle: <%= prodCart.talle %></p>
@@ -67,7 +67,8 @@
     </main>
 
     <%- include('./partials/footer') %>
-
+<script src="/js/agregarCarrito.js"></script>
+<script src="/js/carrito.js"></script>
 </body>
 
 </html>

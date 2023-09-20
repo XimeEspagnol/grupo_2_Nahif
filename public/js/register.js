@@ -1,7 +1,6 @@
 window.addEventListener("load",function(){ // sincronizamos el register.js con la vista register.ejs
     
     const formulario = document.querySelector(".formularioUser") //capturmamos el formulario
-    //console.log(form)
     formulario.addEventListener("submit", function(event){
 
     event.preventDefault();
