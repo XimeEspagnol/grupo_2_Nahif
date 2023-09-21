@@ -13,10 +13,11 @@ module.exports={
                     id: usuario.id,
                     name: usuario.nombre,
                     email: usuario.email,
-                    detail: `api/user/${usuario.id}`
+                    detail: `api/user/${usuario.id}`,
+                    imagen: usuario.fotoPerfil
                 
                 }})
-            
+            response.data.lastUser = response.data.users.pop()
             return res.json(response)
         } catch (error) {
             response.msg = "Hubo un error!"

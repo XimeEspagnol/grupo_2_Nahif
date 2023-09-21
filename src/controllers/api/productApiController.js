@@ -16,16 +16,18 @@ module.exports={
             response.data.cantCategorias +=1
            response.data.countByCategory[categoria.nombre]= categoria.productos.length
            })
+           
            response.data.products = productos.map(productos => {
                 return {
                     id: productos.id,
                     name: productos.nombre,
                     description: productos.detalle,
                     category: productos.categorias.nombre,
-                    detail: `api/product/${productos.id}`
+                    detail: `api/product/${productos.id}`,
+                    imagen: productos.fotoPpal
                 }
             })
-            
+            response.data.lastProduct = response.data.products.pop()
             return res.json(response)
         } catch (error) {
             response.msg = "Hubo un error!"

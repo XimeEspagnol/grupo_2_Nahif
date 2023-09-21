@@ -51,11 +51,53 @@ const userController = {
         return res.render('register')
     },
 
-    /*processRegister: (req, res) => {
-        const rdoValidacion = validationResult(req)
-        let userExists = { msg: "" }
-        if (rdoValidacion.errors.length > 0) return res.render('register', { errors: rdoValidacion.mapped(), oldData: req.body, userExists: userExists })
-    },*/
+    editUser: async (req, res) => {
+        try {
+            const users = await db.Users.findOne({
+                where: {
+                    email: req.session.usuarioLogueado
+                }
+            });
+            console.log(users);          
+            res.render('modifUsuario', { usuario: users })
+        } catch (error) {
+            console.log(error);
+        }
+
+    },
+    update: async (req, res) => {
+        try {
+            const users = await db.Users.findOne({
+                where: {
+                    email: req.session.usuarioLogueado
+                }
+            });
+            const rdoValidacion = validationResult(req)
+            if (!rdoValidacion.isEmpty()) return res.render('modifUsuario', { errors: rdoValidacion.mapped(), oldData: req.body, usuario: users })
+            let userModif = await db.Users.findByPk(req.params.id)
+            let fotoPerfilNueva = userModif.fotoPerfil
+            if (req.files != "") {
+                if (req.body.fotoRegistro != ""& req.files[0].fieldname=='fotoRegistro') fotoPerfilNueva = req.files[0].filename
+            }
+            await db.Users.update({
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                fotoPerfil: fotoPerfilNueva,
+                email: req.body.usuario,
+                contrasenia: bcrypt.hashSync(req.body.contrasenia, 10),
+            }, { 
+                where: {
+                    id: req.params.id
+                }
+            })
+                       
+            
+            res.redirect('/user/perfil')
+        } catch (error) {
+            console.log(error);
+        }
+        
+    },
     create: async function (req, res) {
         try {
             const rdoValidacion = validationResult(req)

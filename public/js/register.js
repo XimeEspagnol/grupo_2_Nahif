@@ -28,8 +28,8 @@ window.addEventListener("load",function(){ // sincronizamos el register.js con l
     }
     if(email.value == ""){
         errores.push("debe completar el campo email")
-    }else if(email.value.length){
-        errores.push("debe indicar un emal validoo")
+    }else if(email.value.length<2){
+        errores.push("debe indicar un email valido")
     }
     if(contraseña.value == ""){
         errores.push("debe comppletar el campo contraseña")
