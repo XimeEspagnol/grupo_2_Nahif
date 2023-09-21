@@ -23,7 +23,8 @@ const productController = {
         try {
             const products = await db.Products.findAll()
             const categorias = await db.Categorias.findAll()
-                return res.render('categorias.ejs', { products: products, categorias: categorias })
+            let nombreCategoria=""
+                return res.render('categorias.ejs', { products: products, categorias: categorias, nombreCategoria:nombreCategoria })
          
         } catch (error) {
             console.log(error);
@@ -51,7 +52,13 @@ const productController = {
                     categoria_id: req.params.categoria
                 }
             })
-            return res.render('categorias', { products: prodEncontrado, categorias: listCategorias })
+            let categoriaElegida = await db.Categorias.findOne({ 
+                where: {
+                   id: req.params.categoria
+               }
+           })
+           let nombreCategoria= categoriaElegida.nombre
+            return res.render('categorias', { products: prodEncontrado, categorias: listCategorias, nombreCategoria: nombreCategoria })
         } catch (error) {
             console.log(error);
         }
