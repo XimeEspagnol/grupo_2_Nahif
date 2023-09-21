@@ -43,6 +43,7 @@ footer li a{
     width: 40%;
     transition: all 350ms;
 }
+
 .buscadornh{
     width: 58% ;
     padding-left: 35px;
@@ -51,18 +52,11 @@ footer li a{
 }
 
 
-footer .buscadornh .input {
-    background-color: #FFF;
-    border: 1px solid #000;
-    color: #666;  
-    border-radius: 5px;     
-}
-
 .newsletter{
     background-color: #FFF;
-    border: 1px solid #000;
+    border: none;
     color: #666;  
-    border-radius: 5px;
+    border-radius: 2px;
    /* height: 15px;*/ 
     width: 70%;  
 }

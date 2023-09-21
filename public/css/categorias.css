@@ -3,7 +3,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.miCategorias h2{
+.miCategorias h2, .miCategorias h3{
     color: #666;
     text-align: center;
     display: flex;
@@ -12,8 +12,11 @@
     margin-top: 0%;
     font-family: MIGHA;
     font-size: 17px;
+    margin-bottom: 0;
 }
-
+.miCategorias h3{
+    color: #6b9080
+}
 .miCategoria2{
     display: flex;
 }
@@ -98,13 +101,14 @@
 }
 
 @media(min-width:361px){
-    .miCategorias h2{
+    .miCategorias h2, .miCategorias h3{
         color: #666;
         text-align: center;
         display: flex;
         flex-direction: column;
         padding: 15px 0px;
         margin-top: 0%;
+        margin-bottom: 0;
         font-family: MIGHA;
         font-size: 40px;
     }
@@ -122,7 +126,9 @@
         font-size: 18px;
         
     }
-    
+    .miCategorias h3{
+        color: #6b9080
+    }
 
 }
 
@@ -157,7 +163,9 @@
         text-decoration: none;
         color: black;
     }
-
+    .miCategorias h3{
+        color: #6b9080
+    }
     
 }
    
