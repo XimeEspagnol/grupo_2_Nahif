@@ -3,12 +3,13 @@
 
 <%- include('./partials/head', {title: "Contacto"})%>
 
-<body class="loginBody">
+<body class="contactoBody">
     
     <%- include('./partials/header') %>
     
-    <main class="main-login">
-        <form action="/user/contacto" method="get" class="login">
+    <main class="main-contacto">
+        <div class="contenedorContacto">
+        <div class="contacto">
             <h2>CONTACTATE CON NOSOTROS!</h2>
             <h2>A través de nuestras redes sociales</h2>
             <h4>Instagram @Nahif</h4>
@@ -18,7 +19,8 @@
             <h4>2235-381122 // 2235-661897</h4>
             <h2>A través de correo electrónico</h2>
             <h4>info@nahif.com.ar</h4>
-        </form>
+        </div>
+    </div>
     </main>
 
     <%- include('./partials/footer') %>

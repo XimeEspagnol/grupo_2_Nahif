@@ -51,4 +51,6 @@ router.patch('/eliminarFoto/:id', controller.eliminarFoto)
 router.delete('/admin', controller.delete)
 router.post('/admin', controller.destroy)
 
+router.get('/compra', controller.compra)
+
 module.exports = router

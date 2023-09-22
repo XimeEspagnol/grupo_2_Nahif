@@ -3,7 +3,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.miCategorias h2, .miCategorias h3{
+.miCategorias h2, .miCategorias h3, .tituloCategoria{
     color: #666;
     text-align: center;
     display: flex;
@@ -14,7 +14,7 @@
     font-size: 17px;
     margin-bottom: 0;
 }
-.miCategorias h3{
+.miCategorias h3, .tituloCategoria{
     color: #6b9080
 }
 .miCategoria2{
@@ -101,7 +101,7 @@
 }
 
 @media(min-width:361px){
-    .miCategorias h2, .miCategorias h3{
+    .miCategorias h2, .miCategorias h3, .tituloCategoria{
         color: #666;
         text-align: center;
         display: flex;
@@ -126,7 +126,7 @@
         font-size: 18px;
         
     }
-    .miCategorias h3{
+    .miCategorias h3, .tituloCategoria{
         color: #6b9080
     }
 
@@ -163,7 +163,7 @@
         text-decoration: none;
         color: black;
     }
-    .miCategorias h3{
+    .miCategorias h3, .tituloCategoria{
         color: #6b9080
     }
     
