@@ -9,7 +9,7 @@
     border: #6b6d6c 1px;
     border-radius: 5%;;
     box-shadow: 3px 3px 5px 1px #2a2e2c;
-    max-width: 600px;
+    max-width: 400px;
     display: flex;
 }
 
@@ -18,8 +18,7 @@
     font-family: migha;
     font-weight: bold;
     color: #666;
-    padding-top: 20px;
-    padding-bottom: 5px;
+
 }
 
 .email-registro {
@@ -64,7 +63,7 @@
     width: 50%;
     justify-items: center;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .registro-robot {
@@ -72,7 +71,7 @@
 }
 
 .registro-label-noRobot {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .registro-input-checkbox {
@@ -97,6 +96,7 @@
 
 .privacidad-condiciones {
     font-size: 11px;
+    margin: 0;
 }
 
 
@@ -106,7 +106,7 @@
     font-family: migha;
     font-size: 17px;
     font-weight: bold;
-    padding: 10px;
+    padding: 5px;
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 5%;
@@ -125,7 +125,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-bottom: 20px;
+
 }
 
 .registro-yaTenesUnaCuenta {
@@ -158,6 +158,8 @@
 }
 
 .foto-registro {
+    display: flex;
+    flex-direction: column;
     font-family: roboto;
     margin-left: 8px;
     background-color: #CCE3DE;
@@ -197,11 +199,11 @@
 @media (min-width: 769px) {
 
     .form-registro {
-        max-width: 600px;
+        max-width: 400px;
     }
 
     .registro-label-noRobot {
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .label-registro {
@@ -209,21 +211,21 @@
     }
 
     .input-registro {
-        font-size: 20px;
+        font-size: 16px;
         font-weight: normal;
         margin-left: 10px;
     }
 
    .label-registro {
-        font-size: 20px;
+        font-size: 16px;
    }
 
    .subtitulo-crear-cuenta {
-        font-size: 30px;
+        font-size: 24px;
    }
 
    .registro-boton-crearCuenta {
-        font-size: 22px;
+        font-size: 16px;
    }
 
    .registro-div-iniciaSesion {
@@ -233,7 +235,7 @@
    }
 
    .privacidad-condiciones {
-        font-size: 16px;
+        font-size: 14px;
         margin-top: 0;
    }
    
@@ -241,6 +243,6 @@
         margin-right: 60px;
 }
     .foto-registro {
-        font-size: 20px;
+        font-size: 16px;
     }
 }

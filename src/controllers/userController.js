@@ -57,8 +57,7 @@ const userController = {
                 where: {
                     email: req.session.usuarioLogueado
                 }
-            });
-            console.log(users);          
+            });        
             res.render('modifUsuario', { usuario: users })
         } catch (error) {
             console.log(error);
@@ -67,18 +66,24 @@ const userController = {
     },
     update: async (req, res) => {
         try {
-            const users = await db.Users.findOne({
+            const users = await await db.Users.findOne({
                 where: {
                     email: req.session.usuarioLogueado
                 }
             });
             const rdoValidacion = validationResult(req)
+            console.log(rdoValidacion);
             if (!rdoValidacion.isEmpty()) return res.render('modifUsuario', { errors: rdoValidacion.mapped(), oldData: req.body, usuario: users })
-            let userModif = await db.Users.findByPk(req.params.id)
+            let userModif = await db.Users.findOne({
+                where: {
+                    email: req.session.usuarioLogueado
+                }
+            });
+            console.log("update users " + userModif);
             let fotoPerfilNueva = userModif.fotoPerfil
-            if (req.files != "") {
-                if (req.body.fotoRegistro != ""& req.files[0].fieldname=='fotoRegistro') fotoPerfilNueva = req.files[0].filename
-            }
+            if (req.file != undefined) {
+                    if (req.body.fotoRegistro != ""& req.file.fieldname=='fotoRegistro') fotoPerfilNueva = req.file.filename
+                }
             await db.Users.update({
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
@@ -87,10 +92,13 @@ const userController = {
                 contrasenia: bcrypt.hashSync(req.body.contrasenia, 10),
             }, { 
                 where: {
-                    id: req.params.id
+                    email: req.session.usuarioLogueado
                 }
             })
-                       
+            req.session.usuarioLogueado = userModif.email
+            req.session.fotoPerfil = userModif.fotoPerfil
+            req.session.nombre = userModif.nombre
+            req.session.apellido = userModif.apellido          
             
             res.redirect('/user/perfil')
         } catch (error) {

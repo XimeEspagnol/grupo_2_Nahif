@@ -12,6 +12,7 @@ const controller = require('../controllers/userController');
 
 
 const logMiddleware = require ('../middlewares/logMiddleware');
+const userModValidation = require ('../middlewares/userModValidation')
 
 const storage= multer.diskStorage({
     destination: (req, file, cb)=>{
@@ -37,7 +38,7 @@ router.get ('/perfil', controller.users);
 router.get ('/logout', controller.logout);
 //router.get ('/user', controller.userController);
 router.get('/modifUsuario', controller.editUser)
-router.post('/editarUsuario', controller.update)
+router.patch('/editarUsuario',fileUpload.single('fotoRegistro'),userModValidation, controller.update)
 
 
 module.exports = router
