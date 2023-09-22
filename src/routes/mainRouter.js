@@ -9,5 +9,7 @@ router.get('/', controller.home);
 
 router.get('/carrito', controller.carrito);
 
+router.get('/contacto', controller.contacto);
+
 
 module.exports = router

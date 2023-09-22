@@ -28,6 +28,9 @@ const controller = {
     carrito: (req,res) =>{
         return res.render('productCart', {cart: prodCart})
     },
+    contacto: (req,res) =>{
+        return res.render('contacto')
+    }
 };
 
 module.exports = controller;
