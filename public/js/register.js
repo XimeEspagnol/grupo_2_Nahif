@@ -52,7 +52,7 @@ window.addEventListener("load",function(){ // sincronizamos el register.js con l
                 msjError.innerHTML += `<li>${error}</li>`
             }
         } else {
-            form.submit()
+            formulario.submit()
         }
     })
 

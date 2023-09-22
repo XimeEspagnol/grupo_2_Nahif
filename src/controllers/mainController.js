@@ -27,7 +27,7 @@ const controller = {
     },
     carrito: (req,res) =>{
         return res.render('productCart', {cart: prodCart})
-    }
+    },
 };
 
 module.exports = controller;
