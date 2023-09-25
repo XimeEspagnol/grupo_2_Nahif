@@ -31,7 +31,7 @@
     padding: 15px 0;
     margin-bottom: 10px;
     border-radius: 5%;
-    font-size: 80%;
+    font-size: 75%;
     box-shadow: 3px 3px 5px 1px #2a2e2c;
     padding: 15px;
     margin-top: 52px;
@@ -39,10 +39,20 @@
 }
 
 .main-contacto h2, .main-contacto h4{
-    margin: 5px;
+    margin: 10px;
 }
 
-.main-contacto h2 {
+.contactoLegend {
+    color: #345e4c;
+    font-family: migha;
+    font-size: 25px;
+    margin: 10px;
+}
+.fa-brands, .fa-solid{
+    font-size: 15px;
+}
+
+.main-contacto h2{
     color: #345e4c;
     font-family: migha;
 }
