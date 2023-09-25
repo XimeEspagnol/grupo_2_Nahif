@@ -35,7 +35,7 @@ window.addEventListener("load",function(){
                 msjError.innerHTML += `<li>${error}</li>`
             }
         } else {
-            form.submit()
+            formulario.submit()
         }
     })
 
