@@ -29,6 +29,7 @@
                         
                         <form action="/products/admin?_method=DELETE" method="post" class="formAdminProd">
                             <div class="listadoProd">
+                                <% if (categoriaProd.length>0){ %>
                                 <% categoriaProd.forEach (productos => { %> 
                                     <div class="contArt">
                                         <Article>
@@ -45,7 +46,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                <%}) %>
+                                <%}) }else{ %>
+                                    <div class="gracias">
+                                        <h1 >No hay productos por el momento</h1>
+                                    </div>
+                                <%} %>
                             </div>
                             <button type="submit" class="borrarProd">ELIMINAR PRODUCTOS SELECCIONADOS</button>
                         </form>

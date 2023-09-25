@@ -18,6 +18,7 @@ module.exports={
                 
                 }})
             response.data.lastUser = response.data.users.pop()
+            response.data.users.push(response.data.lastUser)
             return res.json(response)
         } catch (error) {
             response.msg = "Hubo un error!"

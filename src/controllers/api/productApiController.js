@@ -11,7 +11,6 @@ module.exports={
            response.data.count = productos.length
            response.data.countByCategory = {}
            response.data.cantCategorias = 0
-           //revisar que no llegan las categorias
            categorias.forEach((categoria)=>{
             response.data.cantCategorias +=1
            response.data.countByCategory[categoria.nombre]= categoria.productos.length
@@ -28,6 +27,8 @@ module.exports={
                 }
             })
             response.data.lastProduct = response.data.products.pop()
+            response.data.products.push(response.data.lastProduct)
+            
             return res.json(response)
         } catch (error) {
             response.msg = "Hubo un error!"
