@@ -1,0 +1,53 @@
+.contactoBody {
+    margin: 0;
+}
+
+.main-contacto {
+    background-color: #EAF4F4;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin-right: 0;
+    align-items: center;
+    width: 100vw;
+}
+
+.contenedorContacto {
+    display: flex;
+    justify-content: center;
+
+}
+
+.contacto {
+    /*background: linear-gradient(#a4c3b2, #EAF4F4);*/
+    background-color: #a4c3b2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    max-width: 700px;
+    padding: 15px 0;
+    margin-bottom: 10px;
+    border-radius: 5%;
+    font-size: 80%;
+    box-shadow: 3px 3px 5px 1px #2a2e2c;
+    padding: 15px;
+    margin-top: 52px;
+    margin-bottom: 54px;
+}
+
+.main-contacto h2, .main-contacto h4{
+    margin: 5px;
+}
+
+.main-contacto h2 {
+    color: #345e4c;
+    font-family: migha;
+}
+
+.main-contacto h4 {
+    font-family: roboto;
+    color: #345e4c
+}

@@ -42,7 +42,8 @@ const productController = {
     productAdmin: async (req, res) => {
         const prodActivos = await db.Products.findAll()
         const listCategorias = await db.Categorias.findAll()
-        return res.render('productAdmin', { categoriaProd: prodActivos, listCategorias: listCategorias })
+        let nombreCategoria=""
+        return res.render('productAdmin', { categoriaProd: prodActivos, listCategorias: listCategorias, nombreCategoria:nombreCategoria })
     },
     filtroCategorias:async (req, res) => {
         try {
@@ -72,7 +73,13 @@ const productController = {
                     categoria_id: req.params.categoria
                 }
             })
-            return res.render('productAdmin', { categoriaProd: prodEncontrado, listCategorias: listCategorias })
+            let categoriaElegida = await db.Categorias.findOne({ 
+                where: {
+                   id: req.params.categoria
+               }
+           })
+           let nombreCategoria= categoriaElegida.nombre
+            return res.render('productAdmin', { categoriaProd: prodEncontrado, listCategorias: listCategorias, nombreCategoria: nombreCategoria })
         } catch (error) {
             console.log(error);
         }
@@ -312,7 +319,14 @@ const productController = {
             }
         }            
         return res.redirect('/products/modificarProd/'+req.params.id)
-    }
+    },
+    compra: (req, res) =>{
+        try {
+            return res.render('compra')
+        } catch (error) {
+            console.log(error);
+        }
+    },
 
 }
 

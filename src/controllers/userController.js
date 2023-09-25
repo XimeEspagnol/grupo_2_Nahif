@@ -95,10 +95,10 @@ const userController = {
                     email: req.session.usuarioLogueado
                 }
             })
-            req.session.usuarioLogueado = userModif.email
-            req.session.fotoPerfil = userModif.fotoPerfil
-            req.session.nombre = userModif.nombre
-            req.session.apellido = userModif.apellido          
+            req.session.usuarioLogueado = req.body.usuario
+            req.session.fotoPerfil = fotoPerfilNueva
+            req.session.nombre = req.body.nombre
+            req.session.apellido = req.body.apellido          
             
             res.redirect('/user/perfil')
         } catch (error) {
