@@ -44,7 +44,7 @@ module.exports={
           url: `/api/product/${req.params.id}`,
         };
         response.data = findProduct;
-        response.data.fotoPpal = `/public/img/${findProduct.fotoPpal}`
+        response.data.fotoPpal = `/img/${findProduct.fotoPpal}`
         
         return res.json(response);
       } catch (error) {
