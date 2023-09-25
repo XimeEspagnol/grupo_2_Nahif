@@ -187,7 +187,11 @@
 background-color: #557567;
 box-shadow: 1px 1px 5px 1px #2a2e2c;
 }
-
+.gracias{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
 .gracias h1{
     margin-top: 158px;
     margin-bottom: 159px;

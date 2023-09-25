@@ -23,6 +23,7 @@
                         <% } %>
                 </div>
                 <section class="lista-productos">
+                    <% if (products.length>0){ %>
                     <% products.forEach(productos => {%>
                          
                             <Article>
@@ -34,8 +35,11 @@
                                 <p class="descuento">Descuento: <%=productos.descuento%>%</p>
                             </Article>
                         
-                    <%}); %>
-                    
+                    <%}) }else{ %>
+                        <div class="gracias">
+                            <h1 >No hay productos por el momento</h1>
+                        </div>
+                    <%} %>
                 </section>
             </div>
     </main>
