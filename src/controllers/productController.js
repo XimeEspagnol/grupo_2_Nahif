@@ -85,6 +85,25 @@ const productController = {
         }
         
     },
+    buscador:async(req, res) => {
+        try {
+            console.log(req.body);
+            if (req.body.buscador !=""){
+            const listCategorias = await db.Categorias.findAll()
+            let prodEncontrado = await db.Products.findAll({ 
+                 where: {nombre: {[db.Sequelize.Op.like]: '%' + req.body.buscador + '%'}
+                }})
+                let nombreCategoria=""
+            return res.render('categorias', { products: prodEncontrado, categorias: listCategorias, nombreCategoria: nombreCategoria })
+        } else{
+            return res.redirect('/')
+        }
+
+        } catch (error) {
+            console.log(error);
+        }
+        
+    },
 
     // rutas para trabajar con el CRUD
     add: async (req, res) => {

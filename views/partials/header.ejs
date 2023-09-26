@@ -47,9 +47,9 @@
                     <a href="/user/login">INGRESA <i class="fas fa-user"></i></a>
                 <% } %>
                             
-                            <form action="/" method="get" class="formSearch">
+                            <form action="/products/listSearch/search" role="search" method="post" class="formSearch">
                                 <input type="search" name="buscador" placeholder="Buscar">
-                                <button type='submit' class="botonLupa" href="#"><i class="fas fa-search"></i></button>
+                                <button type='submit' class="botonLupa"><i class="fas fa-search"></i></button>
                             </form>
         </div>
     </div>
@@ -61,9 +61,9 @@
                 <%#<a href="#">PROBADOR</a>%>
                     <a href="/contacto">CONTACTO</a>
                     <a href="/carrito">CARRITO <i class="fas fa-shopping-cart"></i></a>
-                    <form action="/" method="get" class="formSearch">
-                        <input type="search" name="buscador" placeholder="Buscar">
-                        <button type='submit' class="botonLupa" href="#"><i class="fas fa-search"></i></button>
+                    <form action="/products/listSearch/search" role="search" method="post" class="formSearch">
+                        <input type="search" name="buscador" placeholder="Buscar" value="">
+                        <button type='submit' class="botonLupa"><i class="fas fa-search"></i></button>
                     </form>
     </nav>
 </header>

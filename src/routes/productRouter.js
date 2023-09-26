@@ -34,8 +34,10 @@ router.get('/', controller.list);
 //router.get('/', controller.categorias);
 //router.get('/probador/:userid', controller.probador);
 router.get('/admin', adminMiddleware, controller.productAdmin)
+router.post('/listSearch/search', controller.buscador)
 router.get('/list/:categoria', controller.filtroCategorias)
 router.get('/listAdmin/:categoria', adminMiddleware, controller.filtroAdminCategorias)
+
 
 //FORM CREATE
 router.get('/altaProducto/create', adminMiddleware, controller.add)
