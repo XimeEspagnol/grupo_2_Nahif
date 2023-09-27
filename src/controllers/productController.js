@@ -346,6 +346,19 @@ const productController = {
             console.log(error);
         }
     },
+    procesoCompra: (req, res) =>{
+        try {
+            let detalleCompra = {
+                email: req.session.usuarioLogueado,
+                total: req.body.total,
+                productos: req.body.productos,
+                fecha: new Date()
+            }
+            return res.send(detalleCompra)
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
 }
 

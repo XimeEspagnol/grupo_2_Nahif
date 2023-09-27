@@ -54,5 +54,6 @@ router.delete('/admin', controller.delete)
 router.post('/admin', controller.destroy)
 
 router.get('/compra', controller.compra)
+router.post('/carrito/finalizar', controller.procesoCompra)
 
 module.exports = router

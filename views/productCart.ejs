@@ -11,17 +11,19 @@
         <h1>Mi carrito</h1>
         <div class="contenedorCarrito">
             <div class="productosCarrito">
+                <p class="mensajeVacio"></p>
                 <% cart.forEach(prodCart => { %>
-                <div class="prodCarrito">
+                <div class="mostrarCarrito">
+                <!--<div class="prodCarrito">
                     <div class="divFotoCarrito">
-                        <img src="/img/<%= prodCart.foto %>" alt="<%= prodCart.nombre %>">
+                        <img class="imagenCarrito" src="/img/<%#= prodCart.foto %>" alt="<%#= prodCart.nombre %>">
                     </div>
                     <div class="detalleProdCarrito">
-                        <h4 class="nombre"><%= prodCart.nombre %></h4>
-                        <p>$<%= prodCart.precio %></p>
+                        <h4 class="nombreCarrito"><%#= prodCart.nombre %></h4>
+                        <p class="precioCarrito">$<%#= prodCart.precio %></p>
                         <div>
-                            <p>Talle: <%= prodCart.talle %></p>
-                            <p>Color: <%= prodCart.color %></p>
+                            <p class="tallesCarrito">Talle: <%#= prodCart.talle %></p>
+                            <p class="colorCarrito">Color: <%#= prodCart.color %></p>
                         </div>
                         <div>
                             <select name="cantidadCarrito" id="cantidadCarrito">
@@ -31,29 +33,30 @@
                             </select>
                             <a href="#">Eliminar</a>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
                 <% }) %>
             </div>
             <div class="resumenCarrito">
-                <h3>Resumen del pedido</h3>
+                <div class="mostrarTotal">
+                <!--<h3>Resumen del pedido</h3>
                 <div class="detalleCarrito">
-                    <% cart.forEach(prodCart => { %>
+                    <%# cart.forEach(prodCart => { %>
                     <div class="preciosCarrito">
-                        <h4><%= prodCart.nombre %></h4>
+                        <h4><%#= prodCart.nombre %></h4>
                         <p class="preciosResumenCarrito">Precio</p>
-                        <p class="pesosResumenCarritos">$<%= prodCart.precio %></p>
+                        <p class="pesosResumenCarritos">$<%#= prodCart.precio %></p>
                     </div>
-                    <% }) %>
+                    <%# }) %>
                     <div class="total">
                         <h4>Total</h4>
-                        <% let total = 0 %> 
-                        <% cart.forEach(prodCart => { %>
-                            <% total += prodCart.precio %>
-                        <% } )%>
-                        <p>$ <%= total %></p>
-                    </div>
-                </div>
+                        <%# let total = 0 %> 
+                        <%# cart.forEach(prodCart => { %>
+                            <%# total += prodCart.precio %>
+                        <%# } )%>
+                        <p>$ <%#= total %></p>
+                    </div> 
+                </div>  
                 <div class="botonesCarrito">
                     <form action="/products/compra" method="get">
                         <button class="botonPagar" type="submit">Ir a pagar</button>
@@ -61,13 +64,12 @@
                     <form action="/products" method="get">
                         <button class="botonSeguir" type="submit">Seguir comprando</button>
                     </form>
-                </div>
+                </div>-->
             </div>
         </div>
     </main>
 
     <%- include('./partials/footer') %>
-<script src="/js/agregarCarrito.js"></script>
 <script src="/js/carrito.js"></script>
 </body>
 

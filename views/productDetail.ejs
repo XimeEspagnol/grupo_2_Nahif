@@ -35,14 +35,14 @@
                     </div>
                     <div>
                         <label>Cantidad</label>
-                        <select class="Cantidad">
+                        <select class="cantidadCarrito">
                             <% for(let i=1;i<=detalle.stock;i++){ %>
-                                <option value=<%= i %> name="colores"><%= i %></option>
+                                <option value=<%= i %> name="cantidadCarrito"><%= i %></option>
                                 <% } %>
                         </select>
                     </div>
                     <div>
-                        <label>Talles: <%= detalle.talles.nombre %> </label>            
+                        <label class="talles">Talle: <%= detalle.talles.nombre %> </label>            
                     </div>
                 </div>
                 <div class="botones">                 
@@ -62,6 +62,7 @@
 
     <%- include('./partials/footer') %>
 <script src="/js/agregarCarrito.js"></script>
+
 </body>
 
 

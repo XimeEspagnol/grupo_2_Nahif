@@ -1,22 +1,25 @@
 if (document.readyState == "loading") {
     document.addEventListener("DOMContentLoaded", ready)
-}
-else {
+} else {
     ready()
 }
 
 function ready(){
+    console.log(localStorage.getItem("carrito"));
     if (JSON.parse(localStorage.getItem("carrito")) == null) {
         localStorage.setItem('carrito', JSON.stringify([])
         )
     } 
-    mostrarCarrito(localStorage("carrito"))
+    let productos=JSON.parse(localStorage.getItem("carrito"))
+    mostrarCarrito(productos)
 }
     
     function borrarElemento(id) {
-        //necesito traer los prod del localstorage
+        let productos=JSON.parse(localStorage.getItem("carrito"))
         let elemento = productos.filter(row => row.id != id)
-        //tengo q setear los prod en localStorage
+        productos=localStorage.setItem('carrito', JSON.stringify(elemento))
+        document.querySelector('.mostrarCarrito').innerHTML = ``
+            document.querySelector('.mostrarTotal').innerHTML = ``
         mostrarCarrito(elemento)
     }
     function vaciarCarrito(){
@@ -35,59 +38,63 @@ function ready(){
     }
 
     function mostrarCarrito(productosCarrito) {
-        const carritoProd = document.querySelector(".prodCarrito")
+        const carritoProd = document.querySelector(".mostrarCarrito")
+        const mensajeVacio = document.querySelector(".mensajeVacio")
         if (productosCarrito.length == 0) {
-            carritoProd.innerHTML = `<h2> El carrito esta vacío <a href=/>Compra ahora</a></h2>`
-            document.querySelector('detalleCarrito').innerHTML = ``
+            mensajeVacio.innerHTML = `<h2 class="mensajeCarritoVacio"> El carrito esta vacío <a href=/>Compra ahora</a></h2>`
+            document.querySelector('.mostrarCarrito').innerHTML = ``
+            document.querySelector('.mostrarTotal').innerHTML = ``
         } else {
             let subtotal =0
-            subtotal +=element.precio
-            carritoProd.innerHTML = ``
-            carritoProd.forEach(element => {
+            let cantProd=0
+            //carritoProd.innerHTML = ``
+            productosCarrito.forEach(element => {
+                subtotal += parseInt(element.precio*element.cantidad)
+                cantProd += parseInt(element.cantidad)
                 carritoProd.innerHTML += `
                 <div class="prodCarrito">
                 <div class="divFotoCarrito">
-                    <img src="/img/${element.foto}" alt="${element.nombre}">
+                    <img class="imagenCarrito" src="../img/${element.imagen}" alt="${element.nombre}">
                 </div>
                 <div class="detalleProdCarrito">
-                    <h4>${element.nombre}</h4>
-                    <p>$${element.precio}</p>
+                    <h4 class="nombreCarrito">${element.nombre}</h4>
+                    <p class="precioCarrito">$${element.precio}</p>
                     <div>
-                        <p>Talle: ${element.talle}</p>
-                        <p>Color: ${element.color}</p>
+                        <p class="tallesCarrito"> ${element.talle}</p>
+                        <p class="colorCarrito">Color: ${element.color}</p>
                     </div>
                     <div>
-                        <select name="cantidadCarrito" id="cantidadCarrito">
-                            <option value=1 selected>Cantidad: 1</option>
-                            <option value=2>Cantidad: 2</option>
-                            <option value=3>Cantidad: 3</option>
-                        </select>
-                        <p onClick=borrarElemento(${element.id})>Eliminar</p>
+                        <p class="cantidadCarrito">Cantidad: ${element.cantidad}
+                        <button type=submit onClick=borrarElemento(${element.id})>Eliminar</button>
                     </div>
                 </div>
-            </div>`
+                `
             
-            });
-            /*document.querySelector('detalleCarrito').innerHTML =
-            `<div class="preciosCarrito">
-                        <h4>${element.nombre}</h4>
-                        <p class="preciosResumenCarrito">Precio</p>
-                        <p class="pesosResumenCarritos">$ ${element.precio}</p>
-                    </div>
-                    <div class="total">
+            document.querySelector('.mostrarTotal').innerHTML =
+            `
+            <h3>Resumen del pedido</h3>
+            <div class="detalleCarrito">
+            
+                <div class="total">
+                        <h4>Cantidad de Productos:</h4>
+                        <p >${cantProd}</p>
+                </div>
+                <div class="total">
                         <h4>Total</h4>
                         <p>$ ${subtotal}</p>
-                    </div>
                 </div>
+            </div>
                 <div class="botonesCarrito">
-                    <form action="#" method="get">
+                    <form action="/products/compra" method="get">
                         <button class="botonPagar onClick=crearCompra" type="submit">Ir a pagar</button>
                     </form>
                     <form action="/products" method="get">
                         <button class="botonSeguir " type="submit">Seguir comprando</button>
                     </form>
                     <button class="botonSeguir" onClick=vaciarCarrito()>Vaciar Carrito</button>
-                </div>`*/
+                </div>
+            `
+            })
         }
     }
 
